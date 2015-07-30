@@ -1,0 +1,78 @@
+# Our .tmux.conf file
+
+# setting the prefix from C-b to C-a
+set -g prefix C-a
+
+# free the original Crtl-b prefix keybinding
+unbind C-b
+
+# change the default delay
+set -sg escape-time 1
+
+# change window indexing to 1-index
+set -g base-index 1
+
+# change pane indexing to 1-index
+setw -g pane-base-index 1
+
+# reload config file with key stroke
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# send prefix to other applications
+bind C-a send-prefix
+
+# splitting panes
+bind \ split-window -h
+bind - split-window -v
+
+# remap movement keys
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# cycle through windows
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+# resizing panes
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
+
+# change colors
+set -g default-terminal "screen-256color"
+setw -g window-status-fg default
+setw -g window-status-bg default
+setw -g window-status-attr default
+
+setw -g window-status-current-fg white
+setw -g window-status-current-bg red
+setw -g window-status-current-attr bright
+
+set -g pane-border-fg green
+set -g pane-border-bg black
+set -g pane-active-border-fg white
+set -g pane-active-border-bg yellow
+
+set -g status-fg white
+set -g status-bg black
+
+# change status bar
+set -g message-fg white
+set -g message-bg black
+set -g message-attr bright
+
+set -g status-left-length 40
+set -g status-left "#[fg=white]Session: #S #[fg=yellow]#I #[fg=cyan]#P"
+
+set -g status-right "#[fg=cyan]%d %b %R"
+set -g status-utf8 on
+
+set -g status-interval 60 # refresh interval in seconds
+
+set -g status-justify centre # center status bar
+
+setw -g monitor-activity on
+set -g visual-activity on
