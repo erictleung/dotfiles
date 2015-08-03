@@ -18,6 +18,9 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
+" never make a swap file
+set noswapfile
+
 "
 " VIM User Interface
 "
