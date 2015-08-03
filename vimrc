@@ -38,8 +38,6 @@ set backspace=eol,start,indent
 set incsearch
 
 " toggle relative numbering
-
-"Toggle relative numbering, and set to absolute on loss of focus or insert mode
 set rnu
 function! ToggleNumbersOn()
     set nu!
