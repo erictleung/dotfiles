@@ -22,3 +22,4 @@ export PATH="/Applications/neo4j/bin:$PATH"
 # change limits for riak to work
 ulimit -n 65536
 ulimit -u 2048
+export PATH=/usr/local/bin:$PATH
