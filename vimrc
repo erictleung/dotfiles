@@ -99,3 +99,14 @@ let g:user_emmet_leader_key='<C-E>'
 
 " changes the default filetype back to .tex instead of plaintex
 let g:tex_flavor='latex'
+
+
+" syntastic defaults until I understand this plugin better
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
