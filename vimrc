@@ -28,7 +28,7 @@ augroup END " }
 set noswapfile
 
 "
-" VIM User Interface
+" VIM User Interface and Experience
 "
 
 " set ruler
