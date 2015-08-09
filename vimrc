@@ -40,6 +40,9 @@ set backspace=eol,start,indent
 " make search act like search in modern browsers
 set incsearch
 
+" ignore case when searching
+set ignorecase
+
 " toggle relative numbering
 set rnu
 function! ToggleNumbersOn()
