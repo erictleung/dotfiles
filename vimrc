@@ -58,6 +58,9 @@ autocmd FocusGained * call ToggleRelativeOn()
 autocmd InsertEnter * call ToggleRelativeOn()
 autocmd InsertLeave * call ToggleRelativeOn()
 
+" set 7 lines up/down of the cursor - when moving vertically using j/k
+set so=7
+
 "
 " Colors and Fonts
 "
