@@ -37,9 +37,6 @@ set ruler
 " configure backspace 
 set backspace=eol,start,indent
 
-" highlight search results
-" set hlsearch
-
 " make search act like search in modern browsers
 set incsearch
 
