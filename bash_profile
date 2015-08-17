@@ -23,3 +23,7 @@ export PATH="/Applications/neo4j/bin:$PATH"
 ulimit -n 65536
 ulimit -u 2048
 export PATH=/usr/local/bin:$PATH
+
+# add scala path manually Aug 12, 2015
+export SCALA_HOME="/Applications/scala-2.11.7"
+export PATH="$PATH:$SCALA_HOME/bin"
