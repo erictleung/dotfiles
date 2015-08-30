@@ -10,7 +10,7 @@ export PATH="//anaconda/bin:$PATH"
 # added manually May 13th, 2015
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
-# added manual May 13th, 2015
+# added manually May 13th, 2015
 export PATH="/Applications/neo4j/bin:$PATH"
 
 # change limits for riak to work
