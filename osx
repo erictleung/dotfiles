@@ -19,6 +19,9 @@ sudo systemsetup -setrestartfreeze on
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
 ####################################################
 # Trackpad, Mouse, Keyboard, Bluetooth, and Input
 ####################################################
