@@ -65,6 +65,17 @@ set so=7
 " enable spell check (good to know but horrible to code with on)
 " "set spell
 
+" add keys to account for laziness
+command WQ wq
+command Wq wq
+command W w
+command Q q
+command Q! q!
+command WQ! wq!
+command Wq! wq!
+command wQ! wq!
+nnoremap ; :
+
 """ Colors and Fonts """
 
 " enable syntax highlighting
