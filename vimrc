@@ -70,10 +70,6 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
-command Q! q!
-command WQ! wq!
-command Wq! wq!
-command wQ! wq!
 nnoremap ; :
 
 """ Colors and Fonts """
