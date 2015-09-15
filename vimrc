@@ -72,6 +72,9 @@ command W w
 command Q q
 nnoremap ; :
 
+" use syntax highlighting in .md as .markdown
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
 """ Colors and Fonts """
 
 " enable syntax highlighting
