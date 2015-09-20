@@ -1,0 +1,40 @@
+# quicker navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+
+# git shortcuts
+alias gs="git status"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+alias gd="git diff"
+
+# detect which `ls` flavor is in use
+if ls --color > /devnull 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # OS X `ls`
+    colorflag="-G"
+fi
+
+# make ls work like I want it
+alias ls="ls -ltrh $colorflag"
+
+# list files colorized in long format
+alias l="ls -l ${colorflag}"
+
+# list all files colorized in long format
+alias la="ls -la ${colorflag}"
+
+# list only directories
+alias lsd="ls -l ${colorflag}" | grep --color=never '^d'""
+
+# get feedback from user for these commands
+alias cp="cp -vi" # prompt you when copying if you are going to overwrite
+alias rm="rm -i" # prompt you if you really want to remove file
+alias mv="mv -i" # prompt you if you are going to overwrite something
