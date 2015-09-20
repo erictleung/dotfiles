@@ -7,6 +7,7 @@ alias .....="cd ../../../.."
 # shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias doc="cd ~/Documents"
 
 # git shortcuts
 alias gs="git status"
