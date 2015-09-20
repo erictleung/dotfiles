@@ -51,3 +51,8 @@ alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git push"
 alias gd="git diff"
+
+# run npm completion scrpt if it exists
+if [ -f ~/.npm-completion.bash ]; then
+    . ~/.npm-completion.bash;
+fi
