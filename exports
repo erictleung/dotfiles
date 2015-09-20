@@ -1,0 +1,20 @@
+# MacPorts Installer Addition 2015 Mar 29th
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+# Anaconda 2.1.0 Installer
+export PATH="//anaconda/bin:$PATH"
+
+# PostgreSQL Path added manually 2015 May 13th
+export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+
+# Neo4j Path added manually 2015 May 13th
+export PATH="/Applications/neo4j/bin:$PATH"
+
+# change limits for riak to work
+ulimit -n 65536
+ulimit -u 2048
+export PATH="/usr/local/bin:$PATH"
+
+# Scala Path added manually 2015 Aug 12th
+export SCALA_HOME="/Applications/scala-2.11.7"
+export PATH="$SCALA_HOME/bin:$PATH"
