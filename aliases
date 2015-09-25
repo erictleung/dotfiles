@@ -35,6 +35,9 @@ alias la="ls -la ${colorflag}"
 # list only directories
 alias lsd="ls -l ${colorflag}" | grep --color=never '^d'""
 
+# account for misspelling
+alias sl="ls"
+
 # get feedback from user for these commands
 alias cp="cp -vi" # prompt you when copying if you are going to overwrite
 alias rm="rm -i" # prompt you if you really want to remove file
