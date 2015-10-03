@@ -42,3 +42,6 @@ alias sl="ls"
 alias cp="cp -vi" # prompt you when copying if you are going to overwrite
 alias rm="rm -i" # prompt you if you really want to remove file
 alias mv="mv -i" # prompt you if you are going to overwrite something
+
+# find disk space hogs
+alias ducks='du -cks * | sort -rn | head'
