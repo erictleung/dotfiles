@@ -45,3 +45,6 @@ alias mv="mv -i" # prompt you if you are going to overwrite something
 
 # find disk space hogs
 alias ducks='du -cks * | sort -rn | head'
+
+# clear terminal screen with simple letter
+alias c="clear"
