@@ -51,3 +51,6 @@ alias ducks='du -cks * | sort -rn | head'
 
 # clear terminal screen with simple letter
 alias c="clear"
+
+# simple calculator with math support
+alias bc="bc -l"
