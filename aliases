@@ -41,6 +41,7 @@ alias l.="ls -d .* ${colorflag}"
 
 # account for misspelling
 alias sl="ls"
+alias cd..="cd .."
 
 # get feedback from user for these commands
 alias cp="cp -vi" # prompt you when copying if you are going to overwrite
