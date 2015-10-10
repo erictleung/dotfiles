@@ -28,7 +28,7 @@ fi
 alias ls="ls -ltrh $colorflag"
 
 # list files colorized in long format
-alias l="ls -l ${colorflag}"
+alias ll="ls -l ${colorflag}"
 
 # list all files colorized in long format
 alias la="ls -la ${colorflag}"
