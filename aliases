@@ -56,3 +56,6 @@ alias c="clear"
 
 # simple calculator with math support
 alias bc="bc -l"
+
+# nice echo of PATH
+alias path='echo -e ${PATH//:/\\n}'
