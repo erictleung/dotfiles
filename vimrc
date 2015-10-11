@@ -11,9 +11,7 @@ set ffs=unix,dos,mac
 " use only vim
 set nocompatible
 
-
 """ General Settings """
-
 
 " set to auto read when a file is changed from the outside
 set autoread
@@ -133,6 +131,10 @@ set smarttab
 " 1 tab == 4 spaces
 set tabstop=4
 set shiftwidth=4
+
+" for html/scala files, 2 space tabs
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype scala setlocal ts=2 sw=2 expandtab
 
 set ai " auto indent
 set si " smart indent
