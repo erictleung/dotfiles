@@ -72,6 +72,7 @@ nnoremap ; :
 
 " use syntax highlighting in .md as .markdown
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+au BufNewFile,BufFilePre,BufRead *.scala set filetype=java
 
 " status line setup
 set laststatus=2
