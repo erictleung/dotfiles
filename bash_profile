@@ -1,3 +1,6 @@
+# add `~/bin` to path
+export PATH="$HOME/bin:$PATH"
+
 # enable tab completion
 source ~/.git-completion.bash
 
