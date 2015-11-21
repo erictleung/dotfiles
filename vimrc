@@ -133,6 +133,9 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 
+" Shift+Tab for tabs when necessary
+inoremap <S-Tab> <C-V><Tab>
+
 " for html/scala files, 2 space tabs
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype scala setlocal ts=2 sw=2 expandtab
