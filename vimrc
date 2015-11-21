@@ -106,6 +106,10 @@ hi User8 guifg=#ffffff  guibg=#5b7fbb
 hi User9 guifg=#ffffff  guibg=#810085
 hi User0 guifg=#ffffff  guibg=#094afe
 
+" highlight tabs and trailing spaces
+set listchars=tab:>-,trail:-
+set list
+
 """ Colors and Fonts """
 
 " enable syntax highlighting
