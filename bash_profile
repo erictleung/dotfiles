@@ -1,9 +1,3 @@
-# add `~/bin` to path
-export PATH="$HOME/bin:$PATH"
-
-# enable tab completion
-source ~/.git-completion.bash
-
 # colors!
 green="\[\033[0;32m\]"
 blue="\[\033[0;34m\]"
@@ -26,6 +20,11 @@ fi
 # add export commands
 if [ -f ~/.exports ]; then
     source ~/.exports;
+fi
+
+# run git completion script if it exists
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash;
 fi
 
 # run npm completion scrpt if it exists

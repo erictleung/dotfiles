@@ -1,3 +1,6 @@
+# add `~/bin` to path
+export PATH="$HOME/bin:$PATH"
+
 # MacPorts Installer Addition 2015 Mar 29th
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
