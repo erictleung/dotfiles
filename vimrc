@@ -1,5 +1,23 @@
-" set plugin manager
-execute pathogen#infect()
+set nocompatible " better vim
+filetype off " required for Vundle
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" plugins
+Plugin 'scrooloose/syntastic'
+Plugin 'mattn/emmet-vim'
+" Plugin 'tomtom/tcomment_vim'
+" Plugin 'msanders/snipmate.vim'
+Plugin 'jiangmiao/auto-pairs'
+Bundle 'vim-scripts/Vim-R-plugin'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
 filetype plugin indent on
 
 " set utf8 as standard encoding and en_US as the standard language
@@ -7,9 +25,6 @@ set encoding=utf8
 
 " use Unix as the standard file type
 set ffs=unix,dos,mac
-
-" use only vim
-set nocompatible
 
 """ General Settings """
 
@@ -168,3 +183,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" R script settings
+let maplocalleader = ","
+vmap <Space> <Plug>RDSendSelection
+nmap <Space> <Plug>RDSendLine
+let vimrplugin_applescript=0
+let vimrplugin_vsplit=1
