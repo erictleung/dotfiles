@@ -31,3 +31,8 @@ fi
 if [ -f ~/.npm-completion.bash ]; then
     . ~/.npm-completion.bash;
 fi
+
+# run bash completion script if it exists
+if [ -f /opt/local/etc/profile.d/bash_completion.sh  ]; then
+    . /opt/local/etc/profile.d/bash_completion.sh
+fi
