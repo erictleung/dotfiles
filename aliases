@@ -61,3 +61,8 @@ alias bc="bc -l"
 
 # nice echo of PATH
 alias path='echo -e ${PATH//:/\\n}'
+
+# export local exports if found
+if [ -f ~/.aliases.local ]; then
+    . ~/.aliases.local
+fi
