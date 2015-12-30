@@ -17,8 +17,3 @@ export PATH="/Applications/neo4j/bin:$PATH"
 ulimit -n 65536
 ulimit -u 2048
 export PATH="/usr/local/bin:$PATH"
-
-# export pandoc if exists with RStudio (specific to Mac)
-if [ -f /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc ]; then
-    export PATH="/Applications/RStudio.app/Contents/MacOS/pandoc:$PATH";
-fi
