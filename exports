@@ -18,10 +18,6 @@ ulimit -n 65536
 ulimit -u 2048
 export PATH="/usr/local/bin:$PATH"
 
-# Scala Path added manually 2015 Aug 12th
-export SCALA_HOME="/Applications/scala-2.11.7"
-export PATH="$SCALA_HOME/bin:$PATH"
-
 # export pandoc if exists with RStudio (specific to Mac)
 if [ -f /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc ]; then
     export PATH="/Applications/RStudio.app/Contents/MacOS/pandoc:$PATH";
