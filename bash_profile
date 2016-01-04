@@ -1,3 +1,6 @@
+# set vim bindings for CLI
+set -o vi
+
 # colors!
 green="\[\033[0;32m\]"
 blue="\[\033[0;34m\]"
