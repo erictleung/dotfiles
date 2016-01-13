@@ -26,7 +26,7 @@ set encoding=utf8
 " use Unix as the standard file type
 set ffs=unix,dos,mac
 
-""" General Settings """
+""" General Settings
 
 " set to auto read when a file is changed from the outside
 set autoread
@@ -43,7 +43,13 @@ augroup END " }
 " never make a swap file
 set noswapfile
 
-""" VIM User Interface and Experience """
+""" VIM User Interface and Experience
+
+" easier split navigations with ctrl
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " set ruler
 set ruler
@@ -125,13 +131,13 @@ hi User0 guifg=#ffffff  guibg=#094afe
 set listchars=tab:>-,trail:-
 set list
 
-""" Colors and Fonts """
+""" Colors and Fonts
 
 " enable syntax highlighting
 syntax enable
 syntax on
 
-""" Text, Tab, and Indent Related """
+""" Text, Tab, and Indent Related
 
 " auto-indent new lines
 set autoindent
@@ -162,17 +168,17 @@ autocmd Filetype scala setlocal ts=2 sw=2 expandtab
 set ai " auto indent
 set si " smart indent
 
-""" emmet customization """
+""" emmet customization
 
 " redefine trigger key
 let g:user_emmet_leader_key='<C-E>'
 
-""" LaTeX Suite settings """
+""" LaTeX Suite settings
 
 " changes the default filetype back to .tex instead of plaintex
 let g:tex_flavor='latex'
 
-""" syntastic settings """
+""" syntastic settings
 
 " syntastic defaults until I understand this plugin better
 set statusline+=%#warningmsg#
