@@ -51,6 +51,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" more natural split opening
+set splitbelow
+set splitright
+
 " set ruler
 set ruler
 
