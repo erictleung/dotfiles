@@ -85,8 +85,8 @@ autocmd InsertLeave * call ToggleRelativeOn()
 " set 7 lines up/down of the cursor - when moving vertically using j/k
 set so=7
 
-" enable spell check (good to know but horrible to code with on)
-" "set spell
+" turn on spell check for markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
 
 " add keys to account for laziness
 command WQ wq
