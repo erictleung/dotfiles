@@ -68,19 +68,7 @@ set incsearch
 set ignorecase
 
 " toggle relative numbering
-set rnu
-function! ToggleNumbersOn()
-    set nu!
-    set rnu
-endfunction
-function! ToggleRelativeOn()
-    set rnu!
-    set nu
-endfunction
-autocmd FocusLost * call ToggleRelativeOn()
-autocmd FocusGained * call ToggleRelativeOn()
-autocmd InsertEnter * call ToggleRelativeOn()
-autocmd InsertLeave * call ToggleRelativeOn()
+set relativenumber
 
 " set 7 lines up/down of the cursor - when moving vertically using j/k
 set so=7
