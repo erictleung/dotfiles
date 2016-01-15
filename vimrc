@@ -11,8 +11,8 @@ Plugin 'VundleVim/Vundle.vim'
 " plugins
 Plugin 'scrooloose/syntastic'
 Plugin 'mattn/emmet-vim'
-" Plugin 'tomtom/tcomment_vim'
-" Plugin 'msanders/snipmate.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 Plugin 'jiangmiao/auto-pairs'
 Bundle 'vim-scripts/Vim-R-plugin'
 
@@ -58,7 +58,7 @@ set splitright
 " set ruler
 set ruler
 
-" configure backspace 
+" configure backspace
 set backspace=eol,start,indent
 
 " make search act like search in modern browsers
