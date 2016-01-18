@@ -14,6 +14,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-repeat'
 Bundle 'vim-scripts/Vim-R-plugin'
 
 " All of your Plugins must be added before the following line
