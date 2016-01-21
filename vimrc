@@ -127,6 +127,9 @@ hi User0 guifg=#ffffff  guibg=#094afe
 set listchars=tab:>-,trail:-
 set list
 
+" exit insert mode faster with just `jk`
+inoremap jk <esc>
+
 """ Colors and Fonts
 
 " enable syntax highlighting
