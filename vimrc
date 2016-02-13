@@ -127,6 +127,9 @@ inoremap jk <esc>
 " set cursor vertical line
 set cursorline
 
+" add fenced code block syntax highlighting in Markdown
+let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r']
+
 """ Colors and Fonts
 
 " enable syntax highlighting
