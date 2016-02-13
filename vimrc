@@ -124,6 +124,9 @@ set list
 " exit insert mode faster with just `jk`
 inoremap jk <esc>
 
+" set cursor vertical line
+set cursorline
+
 """ Colors and Fonts
 
 " enable syntax highlighting
