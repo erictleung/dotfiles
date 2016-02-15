@@ -130,6 +130,12 @@ set cursorline
 " add fenced code block syntax highlighting in Markdown
 let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r']
 
+" highlight 81st column for long lines of text
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=magenta ctermfg=white
+  autocmd BufEnter * match OverLength /\%82v.*/
+augroup END
+
 """ Colors and Fonts
 
 " enable syntax highlighting
