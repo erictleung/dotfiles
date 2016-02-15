@@ -93,11 +93,11 @@ set statusline+=%1*\ %<%F\                                "File+path
 set statusline+=%2*\ %y\                                  "FileType
 set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
 set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
-set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..)
+set statusline+=%4*\ %{&ff}\                              "FileFormat
 set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellang+HiLight on?
 set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=%9*\ col:%03c\                            "Column number
-set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modify? Read? Top/bot
+set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Mod? Read? Top/bot
 
 function! HighlightSearch()
     if &hls
@@ -128,7 +128,7 @@ inoremap jk <esc>
 set cursorline
 
 " add fenced code block syntax highlighting in Markdown
-let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r']
+let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r', 'scala', 'java', 'scheme']
 
 " highlight 81st column for long lines of text
 augroup vimrc_autocmds
