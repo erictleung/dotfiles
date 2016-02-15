@@ -154,7 +154,7 @@ set wrap
 set expandtab
 
 " change text width to 80
-set tw=80
+set tw=79
 
 " be smarter with tabs
 set smarttab
