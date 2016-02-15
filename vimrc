@@ -128,7 +128,7 @@ inoremap jk <esc>
 set cursorline
 
 " add fenced code block syntax highlighting in Markdown
-let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r', 'scala', 'java', 'scheme']
+let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r', 'scala=java', 'java', 'scheme']
 
 " highlight 81st column for long lines of text
 augroup vimrc_autocmds
