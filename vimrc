@@ -137,6 +137,9 @@ augroup vimrc_autocmds
   autocmd BufEnter * match OverLength /\%82v.*/
 augroup END
 
+" ignore LaTeX math subscript notation within Markdown files
+syn match markdownIgnore "\$.*_.*\$"
+
 """ Colors and Fonts
 
 " enable syntax highlighting
