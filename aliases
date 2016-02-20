@@ -41,6 +41,9 @@ alias lsd="ls -l ${colorflag}" | grep --color=never '^d'""
 # list hidden files
 alias l.="ls -d .* ${colorflag}"
 
+# quick fast way to list files
+alias a="ll"
+
 # account for misspelling
 alias sl="ls"
 alias cd..="cd .."
