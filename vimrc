@@ -139,6 +139,9 @@ augroup END
 " ignore LaTeX math subscript notation within Markdown files
 syn match markdownIgnore "\$.*_.*\$"
 
+" remap leader
+let mapleader = ","
+
 """ Colors and Fonts
 
 " enable syntax highlighting
