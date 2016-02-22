@@ -36,11 +36,8 @@ set autoread
 " display line numbers
 set number
 
-" autoreload vimrc
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+" reload vimrc from within vim
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " never make a swap file
 set noswapfile
