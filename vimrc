@@ -72,11 +72,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " turn on spell check for git commit messages
 autocmd FileType gitcommit setlocal spell
 
-" add keys to account for laziness
-command WQ wq
-command Wq wq
-command W w
-command Q q
+" add key to account for laziness
 nnoremap ; :
 
 " use syntax highlighting in .md as .markdown
