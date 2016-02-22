@@ -26,7 +26,9 @@ set encoding=utf8
 " use Unix as the standard file type
 set ffs=unix,dos,mac
 
-""" General Settings
+""""""""""""""""""""
+" General Settings "
+""""""""""""""""""""
 
 " set to auto read when a file is changed from the outside
 set autoread
@@ -142,7 +144,9 @@ syn match markdownIgnore "\$.*_.*\$"
 " remap leader
 let mapleader = ","
 
-""" Colors and Fonts
+""""""""""""""""""""
+" Colors and Fonts "
+""""""""""""""""""""
 
 " enable syntax highlighting
 syntax enable
@@ -179,17 +183,23 @@ autocmd Filetype scala setlocal ts=2 sw=2 expandtab
 set ai " auto indent
 set si " smart indent
 
-""" emmet customization
+"""""""""""""""""""""""
+" emmet customization "
+"""""""""""""""""""""""
 
 " redefine trigger key
 let g:user_emmet_leader_key='<C-E>'
 
-""" LaTeX Suite settings
+""""""""""""""""""""""""
+" LaTeX Suite settings "
+""""""""""""""""""""""""
 
 " changes the default filetype back to .tex instead of plaintex
 let g:tex_flavor='latex'
 
-""" syntastic settings
+""""""""""""""""""""""
+" syntastic settings "
+""""""""""""""""""""""
 
 " syntastic defaults until I understand this plugin better
 set statusline+=%#warningmsg#
