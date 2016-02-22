@@ -144,6 +144,9 @@ syn match markdownIgnore "\$.*_.*\$"
 " remap leader
 let mapleader = ","
 
+" easy opening of .vimrc file
+nnoremap <leader>ev :split $MYVIMRC<cr>
+
 """"""""""""""""""""
 " Colors and Fonts "
 """"""""""""""""""""
