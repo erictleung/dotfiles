@@ -57,6 +57,7 @@ nnoremap <leader>ev :split $MYVIMRC<cr> " easy opening of .vimrc file
 set showcmd "show partial commands and visual mode selection size
 set matchpairs+=<:> "enable %-matching for angle brackets <>
 set shiftround " round indentation to nearest shiftwidth
+set breakindent " keep indentation when wrapping lines
 
 " Status Line Setup "
 
