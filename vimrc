@@ -146,6 +146,9 @@ set showcmd
 " eable %-matching for angle brackets <>
 set matchpairs+=<:>
 
+" round indentation
+set shiftround
+
 """"""""""""""""""""
 " Colors and Fonts "
 """"""""""""""""""""
