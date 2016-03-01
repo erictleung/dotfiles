@@ -140,6 +140,9 @@ let mapleader = ","
 " easy opening of .vimrc file
 nnoremap <leader>ev :split $MYVIMRC<cr>
 
+" show partial commands typed and visual mode selection size
+set showcmd
+
 """"""""""""""""""""
 " Colors and Fonts "
 """"""""""""""""""""
