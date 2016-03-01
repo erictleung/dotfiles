@@ -99,7 +99,7 @@ endif
 " Text, Tab, and Indent Related "
 
 set autoindent " auto-indent new lines
-set wrap " always wrap long lines
+set linebreak " always wrap long lines by words
 set expandtab " change tab to spaces
 set tw=79 " change text width to 80
 set smarttab " be smarter with tabs
