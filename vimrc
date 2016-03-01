@@ -1,86 +1,65 @@
+" Basic Changes "
+
 set nocompatible " better vim
 filetype off " required for Vundle
+set rtp+=~/.vim/bundle/Vundle.vim " set runtime path to include Vundle
+call vundle#begin() " initialize vundle
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Plugins "
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" plugins
-Plugin 'scrooloose/syntastic'
-Plugin 'mattn/emmet-vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'AutoClose'
-Plugin 'tpope/vim-repeat'
-
-" All of your Plugins must be added before the following line
-call vundle#end()
+Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
+Plugin 'scrooloose/syntastic' " syntax highlighing
+Plugin 'mattn/emmet-vim' " easier HTML/CSS editing
+Plugin 'tpope/vim-surround' " surround objects easier
+Plugin 'tpope/vim-commentary' " comment lines with shortcut
+Plugin 'AutoClose' " autoclose pairs of items
+Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
+call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
-" set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" use Unix as the standard file type
-set ffs=unix,dos,mac
-
-""""""""""""""""""""
 " General Settings "
-""""""""""""""""""""
 
-" set to auto read when a file is changed from the outside
-set autoread
+set ffs=unix,dos,mac " use Unix as standard file type"
+set encoding=utf8 " set utf8 as standard encoding
+set autoread " set to auto read when file is changed from outside Vim
+set number " display line numbers
+let mapleader = "," " remap leader to comma
+nnoremap <leader>sv :source $MYVIMRC<cr> " reload vimrc from within vim
+set noswapfile " no swap file
 
-" display line numbers
-set number
+" VIM User Interface and Experience "
 
-" reload vimrc from within vim
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" never make a swap file
-set noswapfile
-
-""" VIM User Interface and Experience
-
-" more natural split opening
-set splitbelow
-set splitright
-
-" set ruler
-set ruler
-
-" configure backspace
-set backspace=eol,start,indent
-
-" make search act like search in modern browsers
-set incsearch
-
-" ignore case when searching
-set ignorecase
-
-" toggle relative numbering
-set relativenumber
-
-" set 7 lines up/down of the cursor - when moving vertically using j/k
-set so=7
-
-" turn on spell check for markdown files
-autocmd BufRead,BufNewFile *.md setlocal spell
-
-" turn on spell check for git commit messages
-autocmd FileType gitcommit setlocal spell
-
-" add key to account for laziness
+set splitbelow " make window split below
+set splitright " make window split to the right
+set ruler " set ruler to show where I'm at
+set backspace=eol,start,indent " configure backspace
+set incsearch " make search act like search in modern browsers
+set ignorecase " ignore case when searching
+set relativenumber " toggle relative numbering
+set so=7 " set 7 lines up/down of cursor when moving vertically
+autocmd BufRead,BufNewFile *.md setlocal spell " spell check in Markdown
+autocmd FileType gitcommit setlocal spell " spell check in Git commit message
 nnoremap ; :
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown " Markdown syntax
+au BufNewFile,BufFilePre,BufRead *.Rmd,*.rmd set filetype=markdown " Rmd syntax
+au BufNewFile,BufFilePre,BufRead *.scala set filetype=java " Scala syntax
+set listchars=tab:>-,trail:- " highlight tabs and trailing spaces
+set list " enable highlighting indicated above
+inoremap jk <esc> " exit insert mode faster with just `jk`
+set cursorline " set cursor vertical line
+let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r', 'scala=java', 'java', 'scheme']
+augroup vimrc_autocmds " highlight 81st column for long lines of text
+  autocmd BufEnter * highlight OverLength ctermbg=magenta ctermfg=white
+  autocmd BufEnter * match OverLength /\%82v.*/
+augroup END
+syn match markdownIgnore "\$.*_.*\$" " ignore TeX math notation in Markdown file
+nnoremap <leader>ev :split $MYVIMRC<cr> " easy opening of .vimrc file
+set showcmd "show partial commands and visual mode selection size
+set matchpairs+=<:> "enable %-matching for angle brackets <>
+set shiftround " round indentation to nearest shiftwidth
 
-" use syntax highlighting in .md as .markdown
-au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-au BufNewFile,BufFilePre,BufRead *.Rmd,*.rmd set filetype=markdown
-au BufNewFile,BufFilePre,BufRead *.scala set filetype=java
+" Status Line Setup "
 
-" status line setup
 set laststatus=2
 set statusline=
 set statusline+=%7*\[%n]                                  "buffernr
@@ -93,7 +72,6 @@ set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellang+HiLight on?
 set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 set statusline+=%9*\ col:%03c\                            "Column number
 set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Mod? Read? Top/bot
-
 function! HighlightSearch()
     if &hls
         return 'H'
@@ -101,7 +79,6 @@ function! HighlightSearch()
         return ''
     endif
 endfunction
-
 hi User1 guifg=#ffdad8  guibg=#880c0e
 hi User2 guifg=#000000  guibg=#F4905C
 hi User3 guifg=#292b00  guibg=#f4f597
@@ -112,105 +89,41 @@ hi User8 guifg=#ffffff  guibg=#5b7fbb
 hi User9 guifg=#ffffff  guibg=#810085
 hi User0 guifg=#ffffff  guibg=#094afe
 
-" highlight tabs and trailing spaces
-set listchars=tab:>-,trail:-
-set list
-
-" exit insert mode faster with just `jk`
-inoremap jk <esc>
-
-" set cursor vertical line
-set cursorline
-
-" add fenced code block syntax highlighting in Markdown
-let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r', 'scala=java', 'java', 'scheme']
-
-" highlight 81st column for long lines of text
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=magenta ctermfg=white
-  autocmd BufEnter * match OverLength /\%82v.*/
-augroup END
-
-" ignore LaTeX math subscript notation within Markdown files
-syn match markdownIgnore "\$.*_.*\$"
-
-" remap leader
-let mapleader = ","
-
-" easy opening of .vimrc file
-nnoremap <leader>ev :split $MYVIMRC<cr>
-
-" show partial commands typed and visual mode selection size
-set showcmd
-
-" eable %-matching for angle brackets <>
-set matchpairs+=<:>
-
-" round indentation
-set shiftround
-
-""""""""""""""""""""
 " Colors and Fonts "
-""""""""""""""""""""
 
 " enable syntax highlighting
-syntax enable
-syntax on
+if !exists("g:syntax_on")
+    syntax enable
+endif
 
-""" Text, Tab, and Indent Related
+" Text, Tab, and Indent Related "
 
-" auto-indent new lines
-set autoindent
-
-" always wrap long lines
-set wrap
-
-" change tab to spaces
-set expandtab
-
-" change text width to 80
-set tw=79
-
-" be smarter with tabs
-set smarttab
-
-" 1 tab == 4 spaces
+set autoindent " auto-indent new lines
+set wrap " always wrap long lines
+set expandtab " change tab to spaces
+set tw=79 " change text width to 80
+set smarttab " be smarter with tabs
 set tabstop=4
 set shiftwidth=4
-
-" Shift+Tab for tabs when necessary
-inoremap <S-Tab> <C-V><Tab>
-
-" for html/scala files, 2 space tabs
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
-autocmd Filetype scala setlocal ts=2 sw=2 expandtab
-
+inoremap <S-Tab> <C-V><Tab> " Shift+Tab for tabs when necessary
+autocmd Filetype html setlocal ts=2 sw=2 expandtab " HTML uses 2 spaces
+autocmd Filetype scala setlocal ts=2 sw=2 expandtab " Scala uses 2 spaces
 set ai " auto indent
 set si " smart indent
 
-"""""""""""""""""""""""
 " emmet customization "
-"""""""""""""""""""""""
 
-" redefine trigger key
-let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_leader_key='<C-E>' " redefine trigger key
 
-""""""""""""""""""""""""
 " LaTeX Suite settings "
-""""""""""""""""""""""""
 
-" changes the default filetype back to .tex instead of plaintex
-let g:tex_flavor='latex'
+let g:tex_flavor='latex' " changes default filetype to .tex instead of plaintex
 
-""""""""""""""""""""""
 " syntastic settings "
-""""""""""""""""""""""
 
-" syntastic defaults until I understand this plugin better
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
