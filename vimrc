@@ -143,6 +143,9 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 " show partial commands typed and visual mode selection size
 set showcmd
 
+" eable %-matching for angle brackets <>
+set matchpairs+=<:>
+
 """"""""""""""""""""
 " Colors and Fonts "
 """"""""""""""""""""
