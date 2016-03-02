@@ -1,0 +1,8 @@
+$if mode=vi
+    set keymap vi-command
+    "gg": beginning-of-history
+    "G": end-of-history
+    set keymap vi-insert
+    "jk": vi-movement-mode
+$endif
+
