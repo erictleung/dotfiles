@@ -45,7 +45,7 @@ au BufNewFile,BufFilePre,BufRead *.Rmd,*.rmd set filetype=markdown " Rmd syntax
 au BufNewFile,BufFilePre,BufRead *.scala set filetype=java " Scala syntax
 set listchars=tab:>-,trail:- " highlight tabs and trailing spaces
 set list " enable highlighting indicated above
-inoremap jk <esc> " exit insert mode faster with just `jk`
+inoremap jk <esc>
 set cursorline " set cursor vertical line
 let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r', 'scala=java', 'java', 'scheme']
 augroup vimrc_autocmds " highlight 81st column for long lines of text
