@@ -3,6 +3,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias cd..="cd .." # account for misspelling
 
 # shortcuts
 alias dl="cd ~/Downloads"
@@ -26,27 +27,15 @@ else # OS X `ls`
     colorflag="-G"
 fi
 
-# make ls work like I want it
-alias ls="ls -ltrh $colorflag"
+# ls aliases
+alias ls="ls -ltrh $colorflag" # make ls work like I want it
+alias ll="ls -l ${colorflag}" # list files colorized in long format
+alias la="ls -la ${colorflag}" # list all files colorized in long format
+alias lsd="ls -l ${colorflag}" | grep --color=never '^d'"" # only directories
+alias l.="ls -d .* ${colorflag}" # list hidden files
+alias a="ll" # quick fast way to list files
+alias sl="ls" # catch misspellings
 
-# list files colorized in long format
-alias ll="ls -l ${colorflag}"
-
-# list all files colorized in long format
-alias la="ls -la ${colorflag}"
-
-# list only directories
-alias lsd="ls -l ${colorflag}" | grep --color=never '^d'""
-
-# list hidden files
-alias l.="ls -d .* ${colorflag}"
-
-# quick fast way to list files
-alias a="ll"
-
-# account for misspelling
-alias sl="ls"
-alias cd..="cd .."
 
 # get feedback from user for these commands
 alias cp="cp -vi" # prompt you when copying if you are going to overwrite
