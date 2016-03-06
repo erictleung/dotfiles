@@ -36,7 +36,6 @@ alias l.="ls -d .* ${colorflag}" # list hidden files
 alias a="ll" # quick fast way to list files
 alias sl="ls" # catch misspellings
 
-
 # get feedback from user for these commands
 alias cp="cp -vi" # prompt you when copying if you are going to overwrite
 alias rm="rm -i" # prompt you if you really want to remove file
@@ -53,6 +52,9 @@ alias bc="bc -l"
 
 # nice echo of PATH
 alias path='echo -e ${PATH//:/\\n}'
+
+# exit terminal faster
+alias e="exit"
 
 # export local exports if found
 if [ -f ~/.aliases.local ]; then
