@@ -107,7 +107,7 @@ set tw=79 " change text width to 80
 set smarttab " be smarter with tabs
 set tabstop=4
 set shiftwidth=4
-inoremap <S-Tab> <C-V><Tab> " Shift+Tab for tabs when necessary
+inoremap <S-Tab> <C-V><Tab>
 autocmd Filetype html setlocal ts=2 sw=2 expandtab " HTML uses 2 spaces
 autocmd Filetype scala setlocal ts=2 sw=2 expandtab " Scala uses 2 spaces
 set ai " auto indent
