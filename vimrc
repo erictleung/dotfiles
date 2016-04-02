@@ -23,7 +23,7 @@ set ffs=unix,dos,mac " use Unix as standard file type"
 set encoding=utf8 " set utf8 as standard encoding
 set autoread " set to auto read when file is changed from outside Vim
 set number " display line numbers
-let mapleader = " " " remap leader to comma
+let mapleader = " " " remap leader to space
 set noswapfile " no swap file
 
 " VIM User Interface and Experience "
