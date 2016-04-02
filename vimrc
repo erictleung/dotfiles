@@ -24,7 +24,6 @@ set encoding=utf8 " set utf8 as standard encoding
 set autoread " set to auto read when file is changed from outside Vim
 set number " display line numbers
 let mapleader = " " " remap leader to comma
-nnoremap <leader>sv :source $MYVIMRC<cr> " reload vimrc from within vim
 set noswapfile " no swap file
 
 " VIM User Interface and Experience "
@@ -53,12 +52,17 @@ augroup vimrc_autocmds " highlight 81st column for long lines of text
   autocmd BufEnter * match OverLength /\%82v.*/
 augroup END
 syn match markdownIgnore "\$.*_.*\$" " ignore TeX math notation in Markdown file
-nnoremap <leader>ev :split $MYVIMRC<cr> " easy opening of .vimrc file
 set showcmd "show partial commands and visual mode selection size
 set matchpairs+=<:> "enable %-matching for angle brackets <>
 set shiftround " round indentation to nearest shiftwidth
 set breakindent " keep indentation when wrapping lines
+
+" Leader Mapping Shortcuts "
+
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel"
+nnoremap <leader>ev :split $MYVIMRC<cr> " easy opening of .vimrc file
+nnoremap <leader>sv :source $MYVIMRC<cr> " reload vimrc from within vim
+nnoremap <leader>t :SyntasticToggleMode<cr>
 
 " Status Line Setup "
 
@@ -130,4 +134,3 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-nnoremap <leader>t :SyntasticToggleMode<cr>
