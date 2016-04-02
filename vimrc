@@ -47,10 +47,7 @@ set list " enable highlighting indicated above
 inoremap jk <esc>
 set cursorline " set cursor vertical line
 let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r', 'scala=java', 'java', 'scheme']
-augroup vimrc_autocmds " highlight 81st column for long lines of text
-  autocmd BufEnter * highlight OverLength ctermbg=magenta ctermfg=white
-  autocmd BufEnter * match OverLength /\%82v.*/
-augroup END
+2mat ErrorMsg '\%81v.' " toggle wrapping of text
 syn match markdownIgnore "\$.*_.*\$" " ignore TeX math notation in Markdown file
 set showcmd "show partial commands and visual mode selection size
 set matchpairs+=<:> "enable %-matching for angle brackets <>
