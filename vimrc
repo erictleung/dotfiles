@@ -105,6 +105,7 @@ endif
 " Text, Tab, and Indent Related "
 
 set autoindent " auto-indent new lines
+set smartindent " set smart indent with new lines
 set linebreak " always wrap long lines by words
 set expandtab " change tab to spaces
 set tw=79 " change text width to 80
@@ -114,8 +115,6 @@ set shiftwidth=4
 inoremap <S-Tab> <C-V><Tab>
 autocmd Filetype html setlocal ts=2 sw=2 expandtab " HTML uses 2 spaces
 autocmd Filetype scala setlocal ts=2 sw=2 expandtab " Scala uses 2 spaces
-set ai " auto indent
-set si " smart indent
 
 " emmet customization "
 
