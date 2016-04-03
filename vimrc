@@ -62,6 +62,7 @@ nnoremap <leader>ev :split $MYVIMRC<cr> " easy opening of .vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr> " reload vimrc from within vim
 nnoremap <leader>t :SyntasticToggleMode<cr>
 nnoremap <leader>w :set wrap!<cr> " toggle wrapping of text
+nnoremap <leader>e :e 
 
 " Status Line Setup "
 
