@@ -12,13 +12,13 @@ alias doc="cd ~/Documents"
 
 # git shortcuts
 alias gs="git status"
-alias ga="git add ."
-alias gc="git commit -m"
+alias ga="git add"
+alias gcom="git commit -v"
 alias gp="git push"
 alias gd="git diff"
-alias gg="git pull"
+alias gpull="git pull"
 alias gl="git log"
-alias gb="git branch"
+alias gbranch="git branch"
 
 # detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
