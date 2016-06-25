@@ -1,0 +1,7 @@
+[alias]
+    d = diff
+    o = checkout
+    ca = commit --amend
+    cm = commit --message
+    rb = rebase
+    s = status
