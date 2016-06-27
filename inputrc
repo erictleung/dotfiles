@@ -5,4 +5,3 @@ $if mode=vi
     set keymap vi-insert
     "jk": vi-movement-mode
 $endif
-
