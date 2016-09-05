@@ -36,6 +36,11 @@ if [ -f ~/.npm-completion.bash ]; then
 fi
 
 # run bash completion script if it exists
-if [ -f /opt/local/etc/profile.d/bash_completion.sh  ]; then
+if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
     . /opt/local/etc/profile.d/bash_completion.sh
+fi
+
+# run local bash configurations
+if [ -f ~/.bash_local ]; then
+    source ~/.bash_local;
 fi
