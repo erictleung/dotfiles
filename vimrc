@@ -37,7 +37,6 @@ set ignorecase " ignore case when searching
 set relativenumber " toggle relative numbering
 set so=7 " set 7 lines up/down of cursor when moving vertically
 autocmd BufRead,BufNewFile *.md setlocal spell " spell check in Markdown
-autocmd FileType gitcommit setlocal spell " spell check in Git commit message
 nnoremap ; :
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown " Markdown syntax
 au BufNewFile,BufFilePre,BufRead *.Rmd,*.rmd set filetype=markdown " Rmd syntax
@@ -115,6 +114,10 @@ set shiftwidth=4
 inoremap <S-Tab> <C-V><Tab>
 autocmd Filetype html setlocal ts=2 sw=2 expandtab " HTML uses 2 spaces
 autocmd Filetype scala setlocal ts=2 sw=2 expandtab " Scala uses 2 spaces
+
+" git commit experience "
+autocmd FileType gitcommit setlocal spell " spell check in Git commit message
+au FileType gitcommit set tw=72 " wrap git commit messages to 72 characters
 
 " emmet customization "
 
