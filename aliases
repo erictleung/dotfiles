@@ -14,7 +14,7 @@ alias doc="cd ~/Documents"
 alias gs="git status"
 alias ga="git add"
 alias gcom="git commit -v"
-alias gp="git push"
+alias gpush="git push"
 alias gd="git diff"
 alias gpull="git pull"
 alias gl="git log"
@@ -55,6 +55,9 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # exit terminal faster
 alias e="exit"
+
+# access history
+alias h="history"
 
 # export local exports if found
 if [ -f ~/.aliases.local ]; then
