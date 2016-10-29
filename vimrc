@@ -32,8 +32,6 @@ set splitbelow " make window split below
 set splitright " make window split to the right
 set ruler " set ruler to show where I'm at
 set backspace=eol,start,indent " configure backspace
-set incsearch " make search act like search in modern browsers
-set ignorecase " ignore case when searching
 set relativenumber " toggle relative numbering
 set so=7 " set 7 lines up/down of cursor when moving vertically
 autocmd BufRead,BufNewFile *.md setlocal spell " spell check in Markdown
@@ -55,6 +53,11 @@ set breakindent " keep indentation when wrapping lines
 set nowrapscan " do not wrap around when searching
 nnoremap j gj
 nnoremap k gk
+
+" Searching "
+
+set incsearch " make search act like search in modern browsers
+set ignorecase " ignore case when searching
 
 " Leader Mapping Shortcuts "
 
