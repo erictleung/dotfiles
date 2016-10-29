@@ -22,35 +22,38 @@ filetype plugin indent on
 set ffs=unix,dos,mac " use Unix as standard file type"
 set encoding=utf8 " set utf8 as standard encoding
 set autoread " set to auto read when file is changed from outside Vim
-set number " display line numbers
 let mapleader = " " " remap leader to space
 set noswapfile " no swap file
 
-" VIM User Interface and Experience "
+" VIM User Interface (UI) "
 
-set splitbelow " make window split below
-set splitright " make window split to the right
+set number " display line numbers
 set ruler " set ruler to show where I'm at
-set backspace=eol,start,indent " configure backspace
 set relativenumber " toggle relative numbering
-set so=7 " set 7 lines up/down of cursor when moving vertically
-autocmd BufRead,BufNewFile *.md setlocal spell " spell check in Markdown
-nnoremap ; :
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown " Markdown syntax
 au BufNewFile,BufFilePre,BufRead *.Rmd,*.rmd set filetype=markdown " Rmd syntax
 au BufNewFile,BufFilePre,BufRead *.scala set filetype=java " Scala syntax
 set listchars=tab:>-,trail:- " highlight tabs and trailing spaces
 set list " enable highlighting indicated above
-inoremap jk <esc>
 set cursorline " set cursor vertical line
 let g:markdown_fenced_languages = ['html', 'python', 'javascript', 'bash=sh', 'r', 'scala=java', 'java', 'scheme']
 2mat ErrorMsg '\%81v.' " toggle wrapping of text
 syn match markdownIgnore "\$.*_.*\$" " ignore TeX math notation in Markdown file
 set showcmd "show partial commands and visual mode selection size
 set matchpairs+=<:> "enable %-matching for angle brackets <>
+
+" VIM User Experience (UX) "
+
+inoremap jk <esc>
+set splitbelow " make window split below
+set splitright " make window split to the right
+set so=7 " set 7 lines up/down of cursor when moving vertically
+set backspace=eol,start,indent " configure backspace
+autocmd BufRead,BufNewFile *.md setlocal spell " spell check in Markdown
 set shiftround " round indentation to nearest shiftwidth
 set breakindent " keep indentation when wrapping lines
 set nowrapscan " do not wrap around when searching
+nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 
@@ -124,6 +127,7 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab " HTML uses 2 spaces
 autocmd Filetype scala setlocal ts=2 sw=2 expandtab " Scala uses 2 spaces
 
 " git commit experience "
+
 autocmd FileType gitcommit setlocal spell " spell check in Git commit message
 au FileType gitcommit set tw=72 " wrap git commit messages to 72 characters
 
