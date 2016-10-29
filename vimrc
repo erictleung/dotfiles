@@ -59,8 +59,6 @@ nnoremap k gk
 set incsearch " make search act like search in modern browsers
 set ignorecase " ignore case when searching
 set smartcase " ...but keep case if specified
-set hlsearch " highlights current search, and below stops highlight
-nnoremap <leader>q :nohlsearch<CR>
 
 " Leader Mapping Shortcuts "
 
@@ -69,7 +67,9 @@ nnoremap <leader>ev :split $MYVIMRC<cr> " easy opening of .vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr> " reload vimrc from within vim
 nnoremap <leader>t :SyntasticToggleMode<cr>
 nnoremap <leader>w :set wrap!<cr> " toggle wrapping of text
-nnoremap <leader>e :e 
+nnoremap <leader>l :buffers<CR>
+nnoremap <leader>n :bnext<CR>
+nnoremap <leader>p :bprev<CR>
 
 " Status Line Setup "
 
