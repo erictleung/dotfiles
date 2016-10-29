@@ -58,6 +58,7 @@ nnoremap k gk
 
 set incsearch " make search act like search in modern browsers
 set ignorecase " ignore case when searching
+set smartcase " ...but keep case if specified
 
 " Leader Mapping Shortcuts "
 
