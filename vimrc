@@ -53,6 +53,8 @@ set matchpairs+=<:> "enable %-matching for angle brackets <>
 set shiftround " round indentation to nearest shiftwidth
 set breakindent " keep indentation when wrapping lines
 set nowrapscan " do not wrap around when searching
+nnoremap j gj
+nnoremap k gk
 
 " Leader Mapping Shortcuts "
 
