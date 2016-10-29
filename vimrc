@@ -73,6 +73,10 @@ nnoremap <leader>w :set wrap!<cr> " toggle wrapping of text
 nnoremap <leader>l :buffers<CR>
 nnoremap <leader>n :bnext<CR>
 nnoremap <leader>p :bprev<CR>
+nnoremap <leader>t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nnoremap <leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+nnoremap <leader>M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+nnoremap <leader>m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
 " Status Line Setup "
 
@@ -123,8 +127,6 @@ set smarttab " be smarter with tabs
 set tabstop=4
 set shiftwidth=4
 inoremap <S-Tab> <C-V><Tab>
-autocmd Filetype html setlocal ts=2 sw=2 expandtab " HTML uses 2 spaces
-autocmd Filetype scala setlocal ts=2 sw=2 expandtab " Scala uses 2 spaces
 
 " git commit experience "
 
