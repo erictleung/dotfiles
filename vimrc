@@ -59,6 +59,8 @@ nnoremap k gk
 set incsearch " make search act like search in modern browsers
 set ignorecase " ignore case when searching
 set smartcase " ...but keep case if specified
+set hlsearch " highlights current search, and below stops highlight
+nnoremap <leader>q :nohlsearch<CR>
 
 " Leader Mapping Shortcuts "
 
