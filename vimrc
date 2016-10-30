@@ -68,7 +68,7 @@ set smartcase " ...but keep case if specified
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel"
 nnoremap <leader>ev :split $MYVIMRC<cr> " easy opening of .vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr> " reload vimrc from within vim
-nnoremap <leader>t :SyntasticToggleMode<cr>
+nnoremap <leader>g :SyntasticToggleMode<cr>
 nnoremap <leader>w :set wrap!<cr> " toggle wrapping of text
 nnoremap <leader>l :buffers<CR>
 nnoremap <leader>n :bnext<CR>
