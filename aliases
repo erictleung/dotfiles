@@ -34,6 +34,7 @@ alias la="ls -la ${colorflag}" # list all files colorized in long format
 alias lsd="ls -l ${colorflag}" | grep --color=never '^d'"" # only directories
 alias l.="ls -d .* ${colorflag}" # list hidden files
 alias a="ll" # quick fast way to list files
+alias l="ll" # being lazy again
 alias sl="ls" # catch misspellings
 
 # get feedback from user for these commands
