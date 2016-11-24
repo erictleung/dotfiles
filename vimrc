@@ -56,6 +56,8 @@ set nowrapscan " do not wrap around when searching
 nnoremap ; :
 nnoremap j gj
 nnoremap k gk
+set path+=** " search recursively through files within other folders
+set wildmenu " show options above commands
 
 " Searching "
 
