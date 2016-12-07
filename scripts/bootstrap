@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/env bash
 
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# get to parent directory
+BASEDIR=`cd ..; pwd`
 
-# vim
+# setup vim, download vundle plugin manager, and install plugins
 ln -s ${BASEDIR}/vimrc ~/.vimrc
-ln -s ${BASEDIR}/vim/ ~/.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 # git
 ln -s ${BASEDIR}/gitconfig ~/.gitconfig
