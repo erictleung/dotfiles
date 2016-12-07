@@ -50,6 +50,7 @@ set splitright " make window split to the right
 set so=7 " set 7 lines up/down of cursor when moving vertically
 set backspace=eol,start,indent " configure backspace
 autocmd BufRead,BufNewFile *.md setlocal spell " spell check in Markdown
+autocmd BufRead,BufNewFile *.tex setlocal spell " spell check in LaTeX files
 set shiftround " round indentation to nearest shiftwidth
 set breakindent " keep indentation when wrapping lines
 set nowrapscan " do not wrap around when searching
