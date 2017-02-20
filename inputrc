@@ -5,3 +5,9 @@ $if mode=vi
     set keymap vi-insert
     "jk": vi-movement-mode
 $endif
+
+# Make tab autocomplete regardless of case
+set completion-ignore-case on
+
+# List all matches in case multiple completions possible
+set show-all-if-ambiguous on
