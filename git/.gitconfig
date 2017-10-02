@@ -7,3 +7,6 @@
 	s = status
 [core]
 	editor = vim
+[user]
+	email = eric@erictleung.com
+	name = Eric Leung
