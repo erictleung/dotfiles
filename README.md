@@ -28,3 +28,18 @@ cd dotfiles
 # Install specific configurations
 stow bash # e.g. bash configuration files
 ```
+
+# Homebrew and Linuxbrew
+
+[Homebrew](https://brew.sh/) and [Linuxbrew](http://linuxbrew.sh/) are both
+great package managers when you don't have access to root.
+
+**Note**: must have [Ruby](https://www.ruby-lang.org/) installed.
+
+```shell
+# For macOS
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# For Linux
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
