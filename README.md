@@ -29,7 +29,7 @@ cd dotfiles
 stow bash # e.g. bash configuration files
 ```
 
-# Homebrew and Linuxbrew
+## Homebrew and Linuxbrew
 
 [Homebrew](https://brew.sh/) and [Linuxbrew](http://linuxbrew.sh/) are both
 great package managers when you don't have access to root.
@@ -42,4 +42,12 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 # For Linux
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+## Vim Setup
+
+Run the following.
+
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
