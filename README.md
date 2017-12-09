@@ -44,10 +44,18 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## Vim Setup
+## Specific Setups
+
+### Vim Setup
 
 Run the following.
 
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
+
+### Git Setup
+
+Reminder that this directory has git configurations that can be done again, but
+the information already exists here to make a consistent configuration across
+computers.
