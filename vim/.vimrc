@@ -29,6 +29,7 @@ set noswapfile " no swap file
 
 " VIM User Interface (UI) "
 
+colorscheme pablo
 set number " display line numbers
 set ruler " set ruler to show where I'm at
 set relativenumber " toggle relative numbering
