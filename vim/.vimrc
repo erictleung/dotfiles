@@ -14,7 +14,8 @@ Plugin 'tpope/vim-surround' " surround objects easier
 Plugin 'tpope/vim-commentary' " comment lines with shortcut
 Plugin 'AutoClose' " autoclose pairs of items
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
-Plugin 'faith/vim-go' " add syntax highlighting to Go
+Plugin 'fatih/vim-go' " add syntax highlighting to Go
+Plugin 'jalvesaq/Nvim-R' " add functionality with R
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
