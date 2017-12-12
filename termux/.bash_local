@@ -1,0 +1,2 @@
+# Add golang packages to path, added specifically for rclone
+PATH=$PATH:~/go/bin
