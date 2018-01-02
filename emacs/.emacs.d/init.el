@@ -99,7 +99,9 @@
 (setq-default word-wrap t)
 (setq-default fill-column 79)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Load Markdown exporter
+;; source: https://stackoverflow.com/a/22990257/6873133
+(eval-after-load "org" '(require 'ox-md nil t))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
