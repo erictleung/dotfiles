@@ -1,3 +1,18 @@
+;; Packages I use
+(setq required-packages
+      '(ido
+        ace-jump-mode))
+
+;; M-x install-missing-packages to install above packages on new computer
+(defun install-missing-packages ()
+  "Install all required packages that haven’t been installed."
+  (interactive)
+  (mapc (lambda (package)
+          (unless (package-installed-p package)
+            (package-install package)))
+        required-packages)
+  (message "Installed all missing packages!"))
+
 ;; I prefer cmd key for meta
 (setq mac-option-key-is-meta nil
       mac-command-key-is-meta t
