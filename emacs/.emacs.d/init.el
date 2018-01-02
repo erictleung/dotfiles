@@ -4,6 +4,7 @@
         ace-jump-mode))
 
 ;; M-x install-missing-packages to install above packages on new computer
+;; source: https://dthompson.us/syncing-required-packages-in-emacs.html
 (defun install-missing-packages ()
   "Install all required packages that haven’t been installed."
   (interactive)
