@@ -100,6 +100,5 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
 ;; set up ace-jump-mode
-(add-to-list 'load-path "which-folder-ace-jump-mode-file-in/")
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c C-SPC" ) 'ace-jump-mode)
