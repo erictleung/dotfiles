@@ -121,3 +121,7 @@
 ;; set up ace-jump-mode
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c C-SPC" ) 'ace-jump-mode)
+
+;; Use spaces instead of tabs
+;; source: http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/
+(setq-default indent-tabs-mode nil)
