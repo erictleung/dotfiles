@@ -98,8 +98,7 @@
 (setq org-directory "~/Dropbox/org/")
 (setq org-agenda-files '("~/Dropbox/org/todo.org"
                          "~/Dropbox/org/gtd.org"
-                         "~/Dropbox/org/inbox.org"
-                         "~/Dropbox/org/someday.org"))
+                         "~/Dropbox/org/inbox.org"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 
 ;; set up refile targets
