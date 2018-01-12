@@ -96,8 +96,17 @@
 (setq org-startup-indented t)
 (setq org-startup-folded "showall")
 (setq org-directory "~/Dropbox/org/")
-(setq org-agenda-files (list "~/Dropbox/org/todo.org"))
+(setq org-agenda-files '("~/Dropbox/org/todo.org"
+                         "~/Dropbox/org/gtd.org"
+                         "~/Dropbox/org/inbox.org"
+                         "~/Dropbox/org/someday.org"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
+
+;; set up refile targets
+(setq org-refile-targets '((nil :maxlevel . 9)
+                           (org-agenda-files :maxlevel . 9)))
+(setq org-outline-path-complete-in-steps nil) ; Refile in a single go
+(setq org-refile-use-outline-path t)          ; Show full paths for refiling
 
 ;; Word wrap lines
 (setq-default word-wrap t)
