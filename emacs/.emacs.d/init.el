@@ -96,9 +96,7 @@
 (setq org-startup-indented t)
 (setq org-startup-folded "showall")
 (setq org-directory "~/Dropbox/org/")
-(setq org-agenda-files '("~/Dropbox/org/todo.org"
-                         "~/Dropbox/org/gtd.org"
-                         "~/Dropbox/org/inbox.org"))
+(setq org-agenda-files '("~/Dropbox/org/gtd.org"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 
 ;; set up refile targets
