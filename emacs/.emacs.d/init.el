@@ -100,7 +100,7 @@
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 
 ;; set up refile targets
-(setq org-refile-targets '(("~/Dropbox/org/gtd.org" :maxlevel . 3)
+(setq org-refile-targets '(("~/Dropbox/org/gtd.org" :maxlevel . 2)
                            ("~/Dropbox/org/someday.org" :level . 2)))
 (setq org-outline-path-complete-in-steps nil) ; Refile in a single go
 (setq org-refile-use-outline-path t)          ; Show full paths for refiling
