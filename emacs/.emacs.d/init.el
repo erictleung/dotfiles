@@ -101,6 +101,7 @@
 (setq org-directory "~/Dropbox/org/")
 (setq org-agenda-files '("~/Dropbox/org/gtd.org"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
+(setq org-log-done t)
 
 ;; set up refile targets
 (setq org-refile-targets '(("~/Dropbox/org/gtd.org" :maxlevel . 2)
