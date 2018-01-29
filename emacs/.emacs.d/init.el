@@ -1,7 +1,10 @@
 ;; Packages I use
 (setq required-packages
       '(ido
-        ace-jump-mode))
+        ace-jump-mode
+        org-ref
+        interleave
+        helm-bibtex))
 
 ;; M-x install-missing-packages to install above packages on new computer
 ;; source: https://dthompson.us/syncing-required-packages-in-emacs.html
@@ -44,10 +47,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-;; Start emacs in evil-mode
-; (require 'evil)
-; (evil-mode t)
 
 ;; Add line numbers
 (global-linum-mode t)
