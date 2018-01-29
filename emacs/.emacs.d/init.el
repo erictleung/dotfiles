@@ -139,3 +139,30 @@
 ;; Use spaces instead of tabs
 ;; source: http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/
 (setq-default indent-tabs-mode nil)
+
+;; Add org-ref notes
+(setq org-ref-notes-directory "~/Dropbox/org/references/notes"
+      org-ref-bibliography-notes "~/Dropbox/org/references/articles.org"
+      org-ref-default-bibliography '("~/Dropbox/org/references/references.bib")
+      org-ref-pdf-directory "~/Dropbox/zotero/")
+
+;; Setup org-capture templates
+(setq org-capture-templates (quote (
+    ;; Capture article summaries
+    ("a"
+     "Article"
+     entry
+     (file+headline "~/Dropbox/org/phd.org" "Article")
+     "* %^{Title} %(org-set-tags)  :article: \n:PROPERTIES:\n:Created: %U\n:Linked: %a\n:END:\n%i\nBrief description:\n%?"
+     :prepend t
+     :empty-lines 1
+     :created t
+    )
+    ;; Capture incoming tasks
+    ("t"
+     "Task"
+     entry
+     (file+olp "~/Dropbox/org/inbox.org" "Tasks")
+     "* TODO %?\n:CREATED: %U"
+    )
+)))
