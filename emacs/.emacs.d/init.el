@@ -102,6 +102,7 @@
 (setq org-agenda-files '("~/Dropbox/org/gtd.org"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 (setq org-log-done t)
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 ;; set up refile targets
 (setq org-refile-targets '(("~/Dropbox/org/gtd.org" :maxlevel . 2)
