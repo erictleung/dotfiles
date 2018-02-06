@@ -110,6 +110,7 @@
 (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
 (setq org-outline-path-complete-in-steps nil) ; Refile in a single go
 (setq org-refile-use-outline-path t)          ; Show full paths for refiling
+(setq org-refile-allow-creating-parent-nodes 'confirm) ; New parents on refile
 
 ;; define keywords for projects and tasks
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
