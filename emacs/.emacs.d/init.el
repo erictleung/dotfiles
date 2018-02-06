@@ -97,7 +97,7 @@
 
 ;; set up org mode
 (setq org-startup-indented t)
-(setq org-startup-folded "showall")
+(setq org-startup-folded t)
 (setq org-directory "~/Dropbox/org/")
 (setq org-agenda-files '("~/Dropbox/org/gtd.org"
                          "~/Dropbox/org/someday.org"))
