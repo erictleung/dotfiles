@@ -99,14 +99,15 @@
 (setq org-startup-indented t)
 (setq org-startup-folded "showall")
 (setq org-directory "~/Dropbox/org/")
-(setq org-agenda-files '("~/Dropbox/org/gtd.org"))
+(setq org-agenda-files '("~/Dropbox/org/gtd.org"
+                         "~/Dropbox/org/someday.org"))
+(add-to-list 'org-agenda-files (expand-file-name "~/Dropbox/org/references"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 (setq org-log-done t)
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 ;; set up refile targets
-(setq org-refile-targets '(("~/Dropbox/org/gtd.org" :maxlevel . 2)
-                           ("~/Dropbox/org/someday.org" :maxlevel . 2)))
+(setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
 (setq org-outline-path-complete-in-steps nil) ; Refile in a single go
 (setq org-refile-use-outline-path t)          ; Show full paths for refiling
 
