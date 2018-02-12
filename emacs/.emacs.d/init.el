@@ -172,4 +172,11 @@
      (file+olp "~/Dropbox/org/inbox.org" "Tasks")
      "* TODO %?\n:CREATED: %U"
     )
+    ;; Journaling
+    ("j"
+     "Journal"
+     entry
+     (file+olp "~/Dropbox/org/journal.org" "Journal")
+     "** %T\n*** Morning\n****Grateful?\n**** %?\n**** Making today great?\n**** Daily affirmations. I am...\n*** Night\n**** Three amazing things\n**** How to make today better?"
+    )
 )))
