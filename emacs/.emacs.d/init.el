@@ -56,6 +56,9 @@
 (global-linum-mode t)
 (setq linum-format "%d ")
 
+;; Word wrap long lines
+(global-visual-line-mode t)
+
 ;; Set basic backup settings
 ;; Source: https://stackoverflow.com/a/20824625/6873133
 (setq version-control t     ;; Use version numbers for backups.
