@@ -177,6 +177,6 @@
      "Journal"
      entry
      (file+olp "~/Dropbox/org/journal.org")
-     "* %T\n**Grateful?\n*** %?\n** Making today great?\n** Daily affirmations. I am...\n** Three amazing things\n** How to make today better?"
+     "* %T\n** Grateful?\n*** %?\n** Making today great?\n** Daily affirmations. I am...\n** Three amazing things\n** How to make today better?"
     )
 )))
