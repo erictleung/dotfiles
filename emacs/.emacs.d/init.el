@@ -165,6 +165,13 @@
      :empty-lines 1
      :created t
     )
+    ;; Capture notes and reference material
+    ("n"
+     "Note"
+     entry
+     (file+olp "~/Dropbox/org/inbox.org" "Tasks")
+     "* %?\n:CREATED: %U"
+    )
     ;; Capture incoming tasks
     ("t"
      "Task"
