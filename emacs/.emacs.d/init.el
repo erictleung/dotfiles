@@ -185,6 +185,6 @@
      "Journal"
      entry
      (file "~/Dropbox/org/journal.org")
-     "* %T\n** Grateful?\n*** %?\n** Making today great?\n** Daily affirmations. I am...\n** Three amazing things\n*** \n** How to make today better?\n*** \n"
+     "* %T\n** Grateful?\n*** %?\n** Making today great?\n** Daily affirmations. I am...\n** Three amazing things\n*** \n** How to make today better?\n*** \n** Comments\n***"
     )
 )))
