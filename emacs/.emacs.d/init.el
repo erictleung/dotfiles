@@ -127,7 +127,8 @@
 ;; source: https://stackoverflow.com/a/22990257/6873133
 (eval-after-load "org" '(require 'ox-md nil t))
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+;; Add extra lisp files to path of files to call from
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; set up ido mode
 (require `ido)
