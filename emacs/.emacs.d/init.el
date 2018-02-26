@@ -116,8 +116,8 @@
 (setq org-refile-use-outline-path t)          ; Show full paths for refiling
 (setq org-refile-allow-creating-parent-nodes 'confirm) ; New parents on refile
 
-;; define keywords for projects and tasks
-(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+;; Define keywords for projects and tasks
+(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 ;; Word wrap lines
 (setq-default word-wrap t)
