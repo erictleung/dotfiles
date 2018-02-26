@@ -130,18 +130,18 @@
 ;; Add extra lisp files to path of files to call from
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;; set up ido mode
+;; Set up ido mode
 (require `ido)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-use-filename-at-point 'guess)
 (ido-mode 1)
 
-;; remove unnecessary toolbars, scrollbars, etc
+;; Remove unnecessary toolbars, scrollbars, etc
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
-;; set up ace-jump-mode
+;; Set up ace-jump-mode
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c C-SPC" ) 'ace-jump-mode)
 
