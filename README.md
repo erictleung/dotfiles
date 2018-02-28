@@ -1,8 +1,29 @@
 # dotfiles
 
-A repository of my dotfiles
+A repository of my dotfiles and OS-specific configuration details.
 
-## Management
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Motivation](#motivation)
+- [Setup](#setup)
+- [Installation](#installation)
+- [Operating Systems](#operating-systems)
+  - [Windows](#windows)
+  - [Unix](#unix)
+- [Software Specific Setups](#software-specific-setups)
+  - [Vim Setup](#vim-setup)
+  - [Git Setup](#git-setup)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Motivation
+
+This directory, as with many dotfile repositories, aim to create a reproducible
+configuration setup for when you move to a new computer. Because of my work and
+personal computer usage, I am to account for all major operating systems i.e.
+macOS, Windows, and Unix.
 
 [GNU Stow](https://www.gnu.org/software/stow/) is used to manage my dotfiles.
 It symbolically links my configuration files to their appropriate places.
@@ -29,7 +50,18 @@ cd dotfiles
 stow bash # e.g. bash configuration files
 ```
 
-## Homebrew and Linuxbrew
+## Operating Systems
+
+### Windows
+
+Currently using [Cygwin](http://cygwin.com/) as the terminal window I use.
+Updates and package management are done using the Cygwin executable file.
+
+There is a package manager, [chocolatey](https://chocolatey.org/), that I've
+heard about and have downloaded, but it is less utilized. I will note here on
+using it in the future.
+
+### Unix
 
 [Homebrew](https://brew.sh/) and [Linuxbrew](http://linuxbrew.sh/) are both
 great package managers when you don't have access to root.
@@ -44,7 +76,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## Specific Setups
+## Software Specific Setups
 
 ### Vim Setup
 
