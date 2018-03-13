@@ -72,4 +72,9 @@
     )
 )))
 
+;; Setup optional org-modules
+(setq org-modules '(org-habit))
+(eval-after-load 'org
+                 '(org-load-modules-maybe t))
+
 (provide 'init-org)
