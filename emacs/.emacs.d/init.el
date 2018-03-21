@@ -42,7 +42,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (htmlize markdown-mode helm-bibtexkey interleave org-ref ## evil-visual-mark-mode)))
+    (xclip htmlize markdown-mode helm-bibtexkey interleave org-ref ## evil-visual-mark-mode)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
