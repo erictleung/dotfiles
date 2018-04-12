@@ -14,8 +14,8 @@ Plugin 'tpope/vim-surround' " surround objects easier
 Plugin 'tpope/vim-commentary' " comment lines with shortcut
 Plugin 'AutoClose' " autoclose pairs of items
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
-Plugin 'fatih/vim-go' " add syntax highlighting to Go
-Plugin 'jalvesaq/Nvim-R' " add functionality with R
+Plugin 'vim-pandoc/vim-pandoc' " add pandoc integration with vim
+Plugin 'vim-pandoc/vim-pandoc-syntax' " add pandoc syntax
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
@@ -164,3 +164,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" vim-pandoc configurations "
+
+let g:pandoc#formatting#mode = "hA"
+let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
+let g:pandoc#folding#level = 2
+let g:pandoc#folding#mode = "relative"
+let g:pandoc#after#modules#enabled = ["nrrwrgn", "tablemode"]
+let g:pandoc#completion#bib#mode = 'citeproc'
+let g:pandoc#biblio#bibs = ["refs.bib"]
+let g:pandoc#syntax#colorcolumn = 1
