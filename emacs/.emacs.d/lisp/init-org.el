@@ -28,6 +28,9 @@
 ;; Define keywords for projects and tasks
 (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
+;; Define tags available
+(setq org-tag-alist '(("@office" . ?o) ("@home" . ?h) ("@transit" . ?t)))
+
 ;; Load Markdown exporter
 ;; source: https://stackoverflow.com/a/22990257/6873133
 (eval-after-load "org" '(require 'ox-md nil t))
