@@ -81,4 +81,7 @@
 (eval-after-load 'org
                  '(org-load-modules-maybe t))
 
+;; Taskjuggler exporter
+(require 'ox-taskjuggler)
+
 (provide 'init-org)

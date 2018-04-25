@@ -1,5 +1,6 @@
 ;; Add extra lisp files to path of files to call from
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "elpa" user-emacs-directory))
 
 ;; Packages I use
 (setq required-packages
@@ -93,7 +94,7 @@
 (setq-default fill-column 79)
 
 ;; Set up ido mode
-(require `ido)
+(require 'ido)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-use-filename-at-point 'guess)
