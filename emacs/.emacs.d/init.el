@@ -43,7 +43,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (xclip htmlize markdown-mode helm-bibtexkey interleave org-ref ## evil-visual-mark-mode)))
+    (ox-pandoc xclip htmlize markdown-mode helm-bibtexkey interleave org-ref ## evil-visual-mark-mode)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -117,3 +117,5 @@
 (require 'init-org)
 
 (require 'init-osx-keys)
+
+(require 'init-ref)

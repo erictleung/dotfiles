@@ -44,14 +44,14 @@
 ;; Setup org-capture templates
 (setq org-capture-templates (quote (
     ;; Capture article summaries
-    ("a"
-     "Article"
-     entry
-     (file+headline "~/Dropbox/org/phd.org" "Article")
-     "* %^{Title} %(org-set-tags)  :article: \n:PROPERTIES:\n:Created: %U\n:Linked: %a\n:END:\n%i\nBrief description:\n%?"
-     :prepend t
-     :empty-lines 1
-     :created t
+    ("a"              ; key
+     "Article"        ; name
+     entry            ; type
+     (file+headline "~/Dropbox/org/phd.org" "Article") ; target
+     "* %^{Title} %(org-set-tags)  :article: \n:PROPERTIES:\n:Created: %U\n:Linked: %a\n:END:\n%i\nBrief description:\n%?" ; template
+     :prepend t       ; properties
+     :empty-lines 1   ; properties
+     :created t       ; properties
     )
     ;; Capture notes and reference material
     ("n"
