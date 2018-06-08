@@ -119,3 +119,5 @@
 (require 'init-osx-keys)
 
 (require 'init-ref)
+
+(require 'init-babel)
