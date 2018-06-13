@@ -112,6 +112,9 @@
 ;; source: http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/
 (setq-default indent-tabs-mode nil)
 
+;; Use Emacs Speaks Statistics (ESS)
+(require 'ess-site)
+
 ;; Load configs for specific modes -------------------------------------
 
 (require 'init-org)
