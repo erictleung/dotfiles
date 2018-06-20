@@ -35,12 +35,6 @@
 ;; source: https://stackoverflow.com/a/22990257/6873133
 (eval-after-load "org" '(require 'ox-md nil t))
 
-;; Add org-ref notes
-(setq org-ref-notes-directory "~/Dropbox/org/references/notes"
-      org-ref-bibliography-notes "~/Dropbox/org/references/articles.org"
-      org-ref-default-bibliography '("~/Dropbox/org/references/references.bib")
-      org-ref-pdf-directory "~/Dropbox/zotero/")
-
 ;; Setup org-capture templates
 (setq org-capture-templates (quote (
     ;; Capture article summaries
