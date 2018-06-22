@@ -12,13 +12,6 @@
         org-ref-default-bibliography (expand-file-name "articles.bib")
         org-ref-pdf-directory "~/Dropbox/zotero/"))
 
-;; Add org-ref notes
-(setq org-ref-notes-directory "~/Dropbox/org/references/notes"
-      org-ref-bibliography-notes "~/Dropbox/org/references/articles.org"
-      org-ref-default-bibliography '("~/Dropbox/org/references/references.bib")
-      org-ref-pdf-directory "~/Dropbox/zotero/")
-
-
 ;; setup management of bibliographies
 (let ((default-directory "~/Dropbox/org/references/"))
   (setq helm-bibtex-bibliography (expand-file-name "articles.bib")
