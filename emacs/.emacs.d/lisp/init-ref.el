@@ -18,4 +18,12 @@
         helm-bibtex-library-path "~/Dropbox/zotero/"
         helm-bibtex-notes-path (expand-file-name "articles.org")))
 
+;; setup bibliography path
+(setq bibtex-completion-bibliography
+      '("~/Dropbox/org/references/articles.bib"))
+
+;; setup where PDFs can be found
+(setq bibtex-completion-library-path
+      '("~/Dropbox/zotero"))
+
 (provide 'init-ref)
