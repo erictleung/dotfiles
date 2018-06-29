@@ -29,7 +29,13 @@
 (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 ;; Define tags available
-(setq org-tag-alist '(("@office" . ?o) ("@home" . ?h) ("@transit" . ?t)))
+(setq org-tag-alist
+      '(("@office" . ?o)
+        ("@home" . ?h)
+        ("@computer" . ?c)
+        ("@project" . ?p)
+        ("@lunchtime" . ?l)
+        ("@transit" . ?t)))
 
 ;; Load Markdown exporter
 ;; source: https://stackoverflow.com/a/22990257/6873133
