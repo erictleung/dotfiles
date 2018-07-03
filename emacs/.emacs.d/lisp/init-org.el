@@ -81,6 +81,10 @@
 (eval-after-load 'org
                  '(org-load-modules-maybe t))
 
+;; Additional org functions for checklist handling
+;; https://orgmode.org/worg/org-contrib/org-checklist.html
+(require 'org-checklist)
+
 ;; Taskjuggler exporter
 (require 'ox-taskjuggler)
 
