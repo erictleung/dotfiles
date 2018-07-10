@@ -115,6 +115,12 @@
 ;; Use Emacs Speaks Statistics (ESS)
 ;; (require 'ess-site)
 
+;; Enable CUA mode
+;; C-x for cut
+;; C-c for copy
+;; C-v for paste
+(cua-mode 1)
+
 ;; Load configs for specific modes -------------------------------------
 
 (require 'init-org)
