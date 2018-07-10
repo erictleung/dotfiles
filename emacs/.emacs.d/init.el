@@ -113,7 +113,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Use Emacs Speaks Statistics (ESS)
-(require 'ess-site)
+;; (require 'ess-site)
 
 ;; Load configs for specific modes -------------------------------------
 
