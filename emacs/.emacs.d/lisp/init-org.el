@@ -12,7 +12,7 @@
 (setq org-directory "~/Dropbox/org/")
 (setq org-agenda-files '("~/Dropbox/org/gtd.org"
                          "~/Dropbox/org/someday.org"
-                         "~/Dropbox/org/habits.org"
+                         "~/Dropbox/org/reminders.org"
                          "~/Dropbox/org/read.org"))
 (add-to-list 'org-agenda-files (expand-file-name "~/Dropbox/org/references"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
