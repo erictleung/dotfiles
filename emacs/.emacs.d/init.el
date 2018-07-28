@@ -40,6 +40,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(doc-view-continuous t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
@@ -119,7 +120,8 @@
 ;; C-x for cut
 ;; C-c for copy
 ;; C-v for paste
-(cua-mode 1)
+;; (cua-mode 1)
+;; Note: Had issues with C-RET in Orgmode
 
 ;; Load configs for specific modes -------------------------------------
 
