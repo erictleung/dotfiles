@@ -1,3 +1,5 @@
+(setq debug-on-error t)
+
 ;; Add extra lisp files to path of files to call from
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "elpa" user-emacs-directory))
