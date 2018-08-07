@@ -11,9 +11,11 @@
 (setq org-startup-folded t)
 (setq org-directory "~/Dropbox/org/")
 (setq org-agenda-files '("~/Dropbox/org/gtd.org"
+                         "~/Dropbox/org/gtd.org_archive"
                          "~/Dropbox/org/someday.org"
                          "~/Dropbox/org/reminders.org"
-                         "~/Dropbox/org/read.org"))
+                         "~/Dropbox/org/read.org"
+                         "~/Dropbox/org/references/articles.org"))
 (add-to-list 'org-agenda-files (expand-file-name "~/Dropbox/org/references"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 (setq org-log-done t)
@@ -85,7 +87,9 @@
 ;; https://orgmode.org/worg/org-contrib/org-checklist.html
 (require 'org-checklist)
 
-;; Taskjuggler exporter
-(require 'ox-taskjuggler)
+;; Org-mode exporters
+(require 'ox-taskjuggler) ;; Taskjuggler exporter
+(require 'ox-freemind) ;; Freemind mindmapping
+
 
 (provide 'init-org)
