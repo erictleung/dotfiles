@@ -5,7 +5,9 @@
 (add-to-list 'load-path (expand-file-name "elpa" user-emacs-directory))
 
 ;; Inhibit startup screen
-(setq inhibit-startup-message t)
+(setq inhibit-startup-message t
+      inhibit-startup-echo-area-message t)
+
 
 ;; Packages I use
 (setq required-packages
