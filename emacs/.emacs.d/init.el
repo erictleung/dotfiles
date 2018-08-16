@@ -55,14 +55,14 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (ox-pandoc xclip htmlize markdown-mode helm-bibtexkey interleave org-ref ## evil-visual-mark-mode)))
+    (ace-window magit ox-pandoc xclip htmlize markdown-mode helm-bibtexkey interleave org-ref ## evil-visual-mark-mode)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
 
 ;; Add line numbers
 (global-linum-mode t)
@@ -119,6 +119,18 @@
 ;; Set up ace-jump-mode
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c C-SPC" ) 'ace-jump-mode)
+
+;; Better window management and navigation
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key (kbd "C-x O") 'other-frame)
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+    ))
 
 ;; Use spaces instead of tabs
 ;; source: http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/
