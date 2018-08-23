@@ -13,4 +13,7 @@
     (css . t)
     (python . t)))
 
+;; Remove requirement of confirmation for evaluating
+(setq org-confirm-babel-evaluate nil)
+
 (provide 'init-babel)
