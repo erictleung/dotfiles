@@ -28,7 +28,12 @@
 (setq org-refile-allow-creating-parent-nodes 'confirm) ; New parents on refile
 
 ;; Define keywords for projects and tasks
-(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+(setq org-todo-keywords '((sequence "TODO(t)"
+                                    "NEXT(n)"
+                                    "WAITING(w)"
+                                    "|"
+                                    "DONE(d)"
+                                    "CANCELLED(c)")))
 
 ;; Define tags available
 (setq org-tag-alist
@@ -75,6 +80,13 @@
      entry
      (file "~/Dropbox/org/journal.org")
      "* %T\n** Grateful?\n- %?\n** Making today great?\n- \n** Daily affirmations. I am...\n- \n** Three amazing things\n- \n** How to make today better?\n- \n** Learned\n- \n** Comments\n- "
+    )
+    ;; Journaling
+    ("r"
+     "Weekly Review"
+     entry
+     (file "~/Dropbox/org/weekly.org")
+     "* %T\n** Most enjoyable work activity?\n%?\n** Number of enjoyable work moments\n\n** Number of frustrating moments\n\n** Words to describe impact on others\n\n*** Type of impact you want?\n\n*** What prompted desire of impact?\n\n** Challenged this week?\n\n** Biggest and most exciting challenge this week?\n\n** Confidence level this week?\n\n** Any negative mental chatter about yourself?\n\n** Practicing activitly believing you can achieve?\n\n** Committed to joy and groundbreaking results at work?\n\n** Distractions that came up preventing optimial work?\n\n*** How can you avoid them going forward?\n\n"
     )
 )))
 
