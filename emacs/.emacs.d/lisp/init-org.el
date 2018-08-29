@@ -54,7 +54,7 @@
     ("a"              ; key
      "Article"        ; name
      entry            ; type
-     (file+headline "~/Dropbox/org/phd.org" "Article") ; target
+     (file+headline "~/Dropbox/org/phd.org" "To Sort") ; target
      "* %^{Title} %^G\n:PROPERTIES:\n:Created: %U\n:Linked: %a\n:END:\n\n%?" ; template
      :prepend t       ; properties
      :empty-lines 1   ; properties
