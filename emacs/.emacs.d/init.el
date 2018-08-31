@@ -132,6 +132,16 @@
        ((t (:inherit ace-jump-face-foreground :height 3.0)))))
     ))
 
+;; Create major mode for editing Markdown-formatted text
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.txt\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
 ;; Use spaces instead of tabs
 ;; source: http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/
 (setq-default indent-tabs-mode nil)
