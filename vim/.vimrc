@@ -14,8 +14,6 @@ Plugin 'tpope/vim-surround' " surround objects easier
 Plugin 'tpope/vim-commentary' " comment lines with shortcut
 Plugin 'AutoClose' " autoclose pairs of items
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
-Plugin 'vim-pandoc/vim-pandoc' " add pandoc integration with vim
-Plugin 'vim-pandoc/vim-pandoc-syntax' " add pandoc syntax
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
