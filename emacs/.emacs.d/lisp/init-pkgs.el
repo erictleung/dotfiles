@@ -12,7 +12,7 @@
 ;; Quick cursor jump mode
 (use-package ace-jump-mode
   :ensure t
-  :bind (kbd "C-c C-SPC" . ace-jump-mode))
+  :bind ("C-." . ace-jump-mode))
 
 ;; Convert buffer text and decorations to HTML
 (use-package htmlize
