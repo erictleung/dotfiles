@@ -8,35 +8,16 @@
 (setq inhibit-startup-message t
       inhibit-startup-echo-area-message t)
 
-
-;; Packages I use
-(setq required-packages
-      '(ido
-        ace-jump-mode
-        org-ref
-        interleave
-        helm-bibtex))
-
-;; M-x install-missing-packages to install above packages on new computer
-;; source: https://dthompson.us/syncing-required-packages-in-emacs.html
-(defun install-missing-packages ()
-  "Install all required packages that haven’t been installed."
-  (interactive)
-  (mapc (lambda (package)
-          (unless (package-installed-p package)
-            (package-install package)))
-        required-packages)
-  (message "Installed all missing packages!"))
-
 ;; Add built-in package manager
 (require 'package)
 
-;; Add in popular packages
+;; Add in popular package repositories
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
 (package-initialize)
 
+;; Install use-package for easy package management
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -53,9 +34,6 @@
  '(column-number-mode t)
  '(doc-view-continuous t)
  '(inhibit-startup-screen t)
- '(package-selected-packages
-   (quote
-    (ace-window magit ox-pandoc xclip htmlize markdown-mode helm-bibtexkey interleave org-ref ## evil-visual-mark-mode)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -105,20 +83,9 @@
 (setq-default word-wrap t)
 (setq-default fill-column 79)
 
-;; Set up ido mode
-(require 'ido)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(setq ido-use-filename-at-point 'guess)
-(ido-mode 1)
-
 ;; Remove unnecessary toolbars, scrollbars, etc
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-
-;; Set up ace-jump-mode
-(require 'ace-jump-mode)
-(define-key global-map (kbd "C-c C-SPC" ) 'ace-jump-mode)
 
 ;; Better window management and navigation
 (use-package ace-window
@@ -142,10 +109,6 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
-;; Help convert text to HTML, needed for org-mode export
-(use-package htmlize
-  :ensure t)
-
 ;; Use spaces instead of tabs
 ;; source: http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/
 (setq-default indent-tabs-mode nil)
@@ -161,6 +124,8 @@
 ;; Note: Had issues with C-RET in Orgmode
 
 ;; Load configs for specific modes -------------------------------------
+
+(require 'init-pkgs)
 
 (require 'init-org)
 
