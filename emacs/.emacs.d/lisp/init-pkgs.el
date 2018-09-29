@@ -35,8 +35,6 @@
 ;; Search and manage bibliographies in Emacs
 (use-package helm-bibtex
   :ensure t)
-(use-package helm-bibtexkey
-  :ensure t)
 
 ;; Minor mode to interleave notes and textbooks
 (use-package interleave
