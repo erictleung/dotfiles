@@ -40,4 +40,12 @@
 (use-package interleave
   :ensure t)
 
+;; Org-mode bibliography reference management
+(use-package org-ref
+  :ensure t)
+
+;; Try out package briefly before committing to them
+(use-package try
+  :ensure t)
+
 (provide 'init-pkgs)
