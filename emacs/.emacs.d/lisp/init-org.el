@@ -95,6 +95,9 @@
 (eval-after-load 'org
                  '(org-load-modules-maybe t))
 
+;; Enable native fontification in code blocks
+(setq org-src-fontify-natively t)
+
 ;; Additional org functions for checklist handling
 ;; https://orgmode.org/worg/org-contrib/org-checklist.html
 (require 'org-checklist)
