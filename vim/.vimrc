@@ -5,6 +5,7 @@ filetype off " required for Vundle
 set rtp+=~/.vim/bundle/Vundle.vim " set runtime path to include Vundle
 call vundle#begin() " initialize vundle
 
+
 " Plugins "
 
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
@@ -17,6 +18,7 @@ Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
+
 " General Settings "
 
 set ffs=unix,dos,mac " use Unix as standard file type"
@@ -24,6 +26,7 @@ set encoding=utf8 " set utf8 as standard encoding
 set autoread " set to auto read when file is changed from outside Vim
 let mapleader = " " " remap leader to space
 set noswapfile " no swap file
+
 
 " VIM User Interface (UI) "
 
@@ -61,11 +64,13 @@ nnoremap k gk
 set path+=** " search recursively through files within other folders
 set wildmenu " show options above commands
 
+
 " Searching "
 
 set incsearch " make search act like search in modern browsers
 set ignorecase " ignore case when searching
 set smartcase " ...but keep case if specified
+
 
 " File Browsing "
 
@@ -73,6 +78,7 @@ let g:netrw_banner=0 " disable banner
 let g:netrw_browse_split=4 " open in prior window
 let g:netrw_altv=1 " open splits to the right
 let g:netrw_liststyle=3 " tree view
+
 
 " Leader Mapping Shortcuts "
 
@@ -89,6 +95,7 @@ nnoremap <leader>t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nnoremap <leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
 nnoremap <leader>M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
 nnoremap <leader>m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+
 
 " Status Line Setup "
 
@@ -121,12 +128,14 @@ hi User8 guifg=#ffffff  guibg=#5b7fbb
 hi User9 guifg=#ffffff  guibg=#810085
 hi User0 guifg=#ffffff  guibg=#094afe
 
+
 " Colors and Fonts "
 
 " enable syntax highlighting
 if !exists("g:syntax_on")
     syntax enable
 endif
+
 
 " Text, Tab, and Indent Related "
 
@@ -140,18 +149,22 @@ set tabstop=4
 set shiftwidth=4
 inoremap <S-Tab> <C-V><Tab>
 
+
 " git commit experience "
 
 autocmd FileType gitcommit setlocal spell " spell check in Git commit message
 au FileType gitcommit set tw=72 " wrap git commit messages to 72 characters
 
+
 " emmet customization "
 
 let g:user_emmet_leader_key='<C-E>' " redefine trigger key
 
+
 " LaTeX Suite settings "
 
 let g:tex_flavor='latex' " changes default filetype to .tex instead of plaintex
+
 
 " syntastic settings "
 
