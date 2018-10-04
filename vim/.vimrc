@@ -34,9 +34,6 @@ colorscheme pablo
 set number " display line numbers
 set ruler " set ruler to show where I'm at
 set relativenumber " toggle relative numbering
-au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown " Markdown syntax
-au BufNewFile,BufFilePre,BufRead *.Rmd,*.rmd set filetype=markdown " Rmd syntax
-au BufNewFile,BufFilePre,BufRead *.scala set filetype=java " Scala syntax
 set listchars=tab:>-,trail:- " highlight tabs and trailing spaces
 set list " enable highlighting indicated above
 set cursorline " set cursor vertical line
@@ -53,8 +50,6 @@ set splitbelow " make window split below
 set splitright " make window split to the right
 set so=7 " set 7 lines up/down of cursor when moving vertically
 set backspace=eol,start,indent " configure backspace
-autocmd BufRead,BufNewFile *.md setlocal spell " spell check in Markdown
-autocmd BufRead,BufNewFile *.tex setlocal spell " spell check in LaTeX files
 set shiftround " round indentation to nearest shiftwidth
 set breakindent " keep indentation when wrapping lines
 set nowrapscan " do not wrap around when searching
@@ -135,6 +130,27 @@ hi User0 guifg=#ffffff  guibg=#094afe
 if !exists("g:syntax_on")
     syntax enable
 endif
+
+
+" File Specific Settings "
+
+" Spell check in Org-mode, Markdown, text, and LaTeX files
+au BufNewFile,BufRead,BufNewFile *.org,*.md,*.tex,*.txt setlocal spell
+
+" Set syntax highlighting for alternative files
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown " Markdown syntax
+au BufNewFile,BufFilePre,BufRead *.Rmd,*.rmd set filetype=markdown " Rmd syntax
+au BufNewFile,BufFilePre,BufRead *.scala set filetype=java " Scala syntax
+
+" General Python PEP8 Settings "
+au BufNewFile,BufFilePre,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
 
 
 " Text, Tab, and Indent Related "
