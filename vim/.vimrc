@@ -144,12 +144,12 @@ au BufNewFile,BufFilePre,BufRead *.scala set filetype=java " Scala syntax
 
 " General Python PEP8 Settings "
 au BufNewFile,BufFilePre,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
     \ set fileformat=unix
 
 
