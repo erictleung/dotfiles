@@ -16,7 +16,6 @@
                          "~/Dropbox/org/reminders.org"
                          "~/Dropbox/org/read.org"
                          "~/Dropbox/org/references/articles.org"))
-(add-to-list 'org-agenda-files (expand-file-name "~/Dropbox/org/references"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 (setq org-log-done t)
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
