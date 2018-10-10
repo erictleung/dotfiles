@@ -38,6 +38,9 @@ function extract () {
     fi
 }
 
+# Make bash append rather than overwrite the history on disk
+shopt -s histappend
+
 # use aliases
 if [ -f ~/.aliases ]; then
     source ~/.aliases;
