@@ -19,7 +19,7 @@ export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 # usage: extract <file>
 function extract () {
     if [ -f $1 ]; then
-        case $ in
+        case $1 in
             *.tar.bz2)  tar xjf $1;;
             *.tar.gz)   tar xzf $1;;
             *.bz2)      bunzip2 $1;;
