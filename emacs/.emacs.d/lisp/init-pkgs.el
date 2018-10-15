@@ -1,5 +1,22 @@
 ;; Miscellaneous small package configurations
 
+;; Better window management and navigation
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key (kbd "C-x O") 'other-frame)
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+    ))
+
+;; Quick cursor jump mode
+(use-package ace-jump-mode
+  :ensure t
+  :bind ("C-." . ace-jump-mode))
+
 ;; Setup interactively do things
 (use-package ido
   :ensure t
@@ -9,13 +26,34 @@
   (setq ido-use-filename-at-point 'guess)
   (ido-mode 1))
 
-;; Quick cursor jump mode
-(use-package ace-jump-mode
-  :ensure t
-  :bind ("C-." . ace-jump-mode))
+;; Search and manage bibliographies in Emacs
+(use-package helm-bibtex
+  :ensure t)
 
 ;; Convert buffer text and decorations to HTML
 (use-package htmlize
+  :ensure t)
+
+;; Minor mode to interleave notes and textbooks
+(use-package interleave
+  :ensure t)
+
+;; Interfafce to version control system Git
+(use-package magit
+  :ensure t)
+
+;; Create major mode for editing Markdown-formatted text
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.txt\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
+;; Org-mode bibliography reference management
+(use-package org-ref
   :ensure t)
 
 ;; Another org-mode exporter via pandoc
@@ -24,28 +62,12 @@
   :init
   (with-eval-after-load 'org '(require 'ox-pandoc)))
 
-;; Copy-paste yank to clipboard
-(use-package xclip
-  :ensure t)
-
-;; Interfafce to version control system Git
-(use-package magit
-  :ensure t)
-
-;; Search and manage bibliographies in Emacs
-(use-package helm-bibtex
-  :ensure t)
-
-;; Minor mode to interleave notes and textbooks
-(use-package interleave
-  :ensure t)
-
-;; Org-mode bibliography reference management
-(use-package org-ref
-  :ensure t)
-
 ;; Try out package briefly before committing to them
 (use-package try
+  :ensure t)
+
+;; Copy-paste yank to clipboard
+(use-package xclip
   :ensure t)
 
 (provide 'init-pkgs)
