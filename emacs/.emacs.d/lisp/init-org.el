@@ -47,6 +47,10 @@
 ;; source: https://stackoverflow.com/a/22990257/6873133
 (eval-after-load "org" '(require 'ox-md nil t))
 
+;; Separate fill-column value for org-mode
+;; source: https://emacs.stackexchange.com/a/29063/
+(add-hook 'org-mode-hook (lambda () (setq fill-column nil)))
+
 ;; Setup org-capture templates
 (setq org-capture-templates (quote (
     ;; Capture article summaries
