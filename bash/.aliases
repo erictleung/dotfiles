@@ -19,6 +19,8 @@ alias gd="git diff"
 alias gpull="git pull"
 alias gl="git log"
 alias gbranch="git branch"
+alias gmv="git move"
+alias gcp="git cp"
 
 # detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
