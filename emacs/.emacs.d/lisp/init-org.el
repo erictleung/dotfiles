@@ -103,6 +103,8 @@
 
 ;; Additional org functions for checklist handling
 ;; https://orgmode.org/worg/org-contrib/org-checklist.html
+(use-package org-plus-contrib
+  :ensure t)
 (require 'org-checklist)
 
 ;; Org-mode exporters
