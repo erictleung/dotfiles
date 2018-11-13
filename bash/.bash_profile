@@ -41,6 +41,12 @@ function extract () {
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
 
+# ls after cd
+# source: https://dev.to/wulfmann/comment/6mp9
+function cd {
+    builtin cd "$@" && ls -Gltr --color
+}
+
 # use aliases
 if [ -f ~/.aliases ]; then
     source ~/.aliases;
