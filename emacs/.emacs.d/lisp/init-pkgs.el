@@ -75,4 +75,14 @@
 (use-package writegood-mode
   :ensure t)
 
+;; Use org file to organize RSS feeds
+;; http://pragmaticemacs.com/emacs/read-your-rss-feeds-in-emacs-with-elfeed/
+(use-package elfeed
+  :ensure t)
+(use-package elfeed-org
+  :ensure t
+  :config
+  (elfeed-org)
+  (setq rmh-elfeed-org-files (list "~/Dropbox/org/elfeed.org")))
+
 (provide 'init-pkgs)
