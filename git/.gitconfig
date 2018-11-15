@@ -26,6 +26,7 @@
 	ui = auto
 [core]
 	editor = vim
+	whitespace = warn
 [user]
 	email = eric@erictleung.com
 	name = Eric Leung
