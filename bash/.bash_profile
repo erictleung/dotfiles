@@ -41,6 +41,9 @@ function extract () {
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
 
+# Make bash be okay with small directory change typos
+shopt -s cdspell
+
 # ls after cd
 # source: https://dev.to/wulfmann/comment/6mp9
 function cd {
