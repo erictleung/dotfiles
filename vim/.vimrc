@@ -15,6 +15,8 @@ Plugin 'tpope/vim-surround' " surround objects easier
 Plugin 'tpope/vim-commentary' " comment lines with shortcut
 Plugin 'AutoClose' " autoclose pairs of items
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
@@ -142,11 +144,21 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown " Markdown syntax
 au BufNewFile,BufFilePre,BufRead *.Rmd,*.rmd set filetype=markdown " Rmd syntax
 au BufNewFile,BufFilePre,BufRead *.scala set filetype=java " Scala syntax
 
-" General Python PEP8 Settings "
+" General Python PEP8 settings "
 au BufNewFile,BufFilePre,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+" General JavaScript and JSX settings "
+au BufNewFile,BufFilePre,BufRead *.js,*.jsx
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
     \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
