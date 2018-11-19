@@ -70,6 +70,13 @@
      (file+olp "~/Dropbox/org/inbox.org" "Tasks")
      "* %?\n:CREATED: %U"
     )
+    ;; Capture reading materials
+    ("d"
+     "To Read"
+     entry
+     (file+olp "~/Dropbox/org/read.org" "Read")
+     "** %?\n:CREATED: %U"
+    )
     ;; Capture incoming tasks
     ("t"
      "Task"
