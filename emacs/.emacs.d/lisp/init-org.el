@@ -58,7 +58,7 @@
      "Article"        ; name
      entry            ; type
      (file+headline "~/Dropbox/org/phd.org" "To Sort") ; target
-     "* %^{Title} %^G\n:PROPERTIES:\n:Created: %U\n:Linked: %a\n:END:\n\n%?" ; template
+     (file "~/Dropbox/org/templates/article.orgcaptempl") ; template
      :prepend t       ; properties
      :empty-lines 1   ; properties
      :created t       ; properties
@@ -68,35 +68,35 @@
      "Note"
      entry
      (file+olp "~/Dropbox/org/inbox.org" "Tasks")
-     "* %?\n:CREATED: %U"
+     (file "~/Dropbox/org/templates/note.orgcaptempl")
     )
     ;; Capture reading materials
     ("d"
      "To Read"
      entry
      (file+olp "~/Dropbox/org/read.org" "Read")
-     "** %?\n:CREATED: %U"
+     (file "~/Dropbox/org/templates/read.orgcaptempl")
     )
     ;; Capture incoming tasks
     ("t"
      "Task"
      entry
      (file+olp "~/Dropbox/org/inbox.org" "Tasks")
-     "* TODO %?\n:CREATED: %U"
+     (file "~/Dropbox/org/templates/task.orgcaptempl")
     )
     ;; Journaling
     ("j"
      "Journal"
      entry
      (file "~/Dropbox/org/journal.org")
-     "* %T\n** Grateful?\n- %?\n** Making today great?\n- \n** Daily affirmations. I am...\n- \n** Three amazing things\n- \n** How to make today better?\n- \n** Learned\n- \n** Comments\n- "
+     (file "~/Dropbox/org/templates/journal.orgcaptempl")
     )
     ;; Journaling
     ("r"
      "Weekly Review"
      entry
      (file "~/Dropbox/org/weekly.org")
-     "* %T\n** Most enjoyable work activity?\n%?\n** Number of enjoyable work moments\n\n** Number of frustrating moments\n\n** Words to describe impact on others\n\n*** Type of impact you want?\n\n*** What prompted desire of impact?\n\n** Challenged this week?\n\n** Biggest and most exciting challenge this week?\n\n** Confidence level this week?\n\n** Any negative mental chatter about yourself?\n\n** Practicing activitly believing you can achieve?\n\n** Committed to joy and groundbreaking results at work?\n\n** Distractions that came up preventing optimial work?\n\n*** How can you avoid them going forward?\n\n"
+     (file "~/Dropbox/org/templates/weekly.orgcaptempl")
     )
 )))
 
