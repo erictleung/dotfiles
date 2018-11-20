@@ -58,6 +58,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # exit terminal faster
 alias e="exit"
+alias x="exit"
 
 # access history
 alias h="history"
