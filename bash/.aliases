@@ -47,6 +47,9 @@ alias mv="mv -i" # prompt you if you are going to overwrite something
 # find disk space hogs
 alias ducks='du -cks * | sort -rn | head'
 
+# find top 10 largest files
+alias top10="find . -type f -exec ls -sh {} \; | sort -n -r | head -10"
+
 # clear terminal screen with simple letter
 alias c="clear"
 
