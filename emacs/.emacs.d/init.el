@@ -109,3 +109,5 @@
 (require 'init-ref)
 
 (require 'init-babel)
+
+(require 'init-elfeed)
