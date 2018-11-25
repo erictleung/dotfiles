@@ -1,9 +1,6 @@
 ;; Create gloabl binding for elfeed
 (global-set-key (kbd "C-x w") 'elfeed)
 
-;; Set database for sync among computers
-(elfeed-db-directory "~/Dropbox/org/elfeed/")
-
 ;; Shortcut functions to certain feeds
 ;; Need to create these bookmarks manually using C-x r m whenever in the
 ;; filtered result.
@@ -48,6 +45,8 @@
 ;; http://pragmaticemacs.com/emacs/read-your-rss-feeds-in-emacs-with-elfeed/
 (use-package elfeed
   :ensure t
+  :config
+  (setq elfeed-db-directory "~/Dropbox/org/elfeed/")
   :bind (:map elfeed-search-mode-map
               ("A" . etl/elfeed-show-all)
               ("E" . etl/elfeed-show-emacs)
