@@ -3,7 +3,7 @@
 
 ;; Shortcut functions to certain feeds
 ;; Need to create these bookmarks manually using C-x r m whenever in the
-;; filtered result.
+;; filtered result. Then type in the bookmark name e.g. elfeed-all
 ;; http://pragmaticemacs.com/emacs/read-your-rss-feeds-in-emacs-with-elfeed/
 (defun etl/elfeed-show-all ()
   (interactive)
