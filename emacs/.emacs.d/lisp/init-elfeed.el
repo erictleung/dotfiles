@@ -34,7 +34,7 @@
 (defun elfeed-mark-all-as-read ()
   (interactive)
   (mark-whole-buffer)
-  (elfeed-search-untag-all-unread)
+  (elfeed-search-untag-all-unread))
 
 ;; Load database from disk before updating
 (defun etl/elfeed-load-db-and-open ()
