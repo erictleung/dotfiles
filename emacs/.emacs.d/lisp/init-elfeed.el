@@ -71,5 +71,9 @@
   :config
   (elfeed-org)
   (setq rmh-elfeed-org-files (list "~/Dropbox/org/elfeed/feed.org")))
+(use-package elfeed-goodies
+  :ensure t
+  :config
+  (elfeed-goodies/setup))
 
 (provide 'init-elfeed)
