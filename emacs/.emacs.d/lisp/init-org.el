@@ -74,7 +74,7 @@
     ("d"
      "To Read"
      entry
-     (file+olp "~/Dropbox/org/read.org" "Read")
+     (file+olp "~/Dropbox/org/read.org" "Read Queue")
      (file "~/Dropbox/org/templates/read.orgcaptempl")
     )
     ;; Capture incoming tasks
