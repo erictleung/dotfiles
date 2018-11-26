@@ -105,6 +105,9 @@
 (eval-after-load 'org
                  '(org-load-modules-maybe t))
 
+;; Have org-drill look through current directory for files
+(setq org-drill-scope (quote directory))
+
 ;; Enable native fontification in code blocks
 (setq org-src-fontify-natively t)
 
