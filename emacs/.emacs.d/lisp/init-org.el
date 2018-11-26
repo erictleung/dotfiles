@@ -101,7 +101,7 @@
 )))
 
 ;; Setup optional org-modules
-(setq org-modules '(org-habit))
+(setq org-modules (quote (org-habit org-drill)))
 (eval-after-load 'org
                  '(org-load-modules-maybe t))
 
