@@ -38,6 +38,7 @@
 (setq org-tag-alist
       '(("@office" . ?o)
         ("@home" . ?h)
+        ("drill" . ?d)
         ("@computer" . ?c)
         ("@project" . ?p)
         ("@lunchtime" . ?l)
