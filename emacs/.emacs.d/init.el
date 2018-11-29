@@ -28,7 +28,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(column-number-mode t)
+ '(custom-enabled-themes (quote (misterioso)))
  '(doc-view-continuous t)
  '(inhibit-startup-screen t)
  '(tool-bar-mode nil))
@@ -37,6 +40,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 102 :width normal))))
  '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
 
 ;; Add line numbers
