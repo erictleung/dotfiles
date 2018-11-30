@@ -92,6 +92,9 @@ nnoremap <leader>t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nnoremap <leader>T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
 nnoremap <leader>M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
 nnoremap <leader>m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+nnoremap <leader>n :bn<cr>
+nnoremap <leader>p :bp<cr>
+nnoremap <leader>d :bd<cr>
 
 
 " Status Line Setup "
