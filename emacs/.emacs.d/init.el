@@ -35,7 +35,11 @@
  '(doc-view-continuous t)
  '(inhibit-startup-screen t)
  '(org-clock-report-include-clocking-task t)
- '(tool-bar-mode nil))
+ '(org-habit-graph-column 53)
+ '(tool-bar-mode nil)
+ '(whitespace-style
+   (quote
+    (face trailing spaces space-after-tab space-before-tab space-mark tab-mark newline-mark))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
