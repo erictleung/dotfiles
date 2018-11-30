@@ -34,6 +34,7 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(doc-view-continuous t)
  '(inhibit-startup-screen t)
+ '(org-clock-report-include-clocking-task t)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
