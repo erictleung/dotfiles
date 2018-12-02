@@ -39,6 +39,7 @@
       '(("@office" . ?o)
         ("@home" . ?h)
         ("drill" . ?d)
+        ("readend" . ?e)
         ("@computer" . ?c)
         ("@project" . ?p)
         ("@lunchtime" . ?l)
