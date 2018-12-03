@@ -52,9 +52,6 @@ shopt -s audocd 2> /dev/null
 shopt -s dirspell 2> /dev/null
 shopt -s cdspell 2> /dev/null
 
-# Display trailing slash for autocomplete symlinks
-bind "set mark-symlinked-directories on"
-
 # Ignore frequent commands and duplicates
 export HISTIGNORE="&:[ ]*:exit:ls:gd:gs:c:history:clear"
 HISTCONTROL="erasedups:ignoreboth"

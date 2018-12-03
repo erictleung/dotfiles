@@ -11,3 +11,6 @@ set completion-ignore-case on
 
 # List all matches in case multiple completions possible
 set show-all-if-ambiguous on
+
+# Display trailing slash for autocomplete symlinks
+set mark-symlinked-directories on
