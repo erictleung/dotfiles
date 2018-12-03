@@ -55,6 +55,9 @@ shopt -s cdspell 2> /dev/null
 # Display trailing slash for autocomplete symlinks
 bind "set mark-symlinked-directories on"
 
+# Ignore frequent commands
+export HISTIGNORE="&:[ ]*:exit:ls:gd:gs:c:history:clear"
+
 # use aliases
 if [ -f ~/.aliases ]; then
     source ~/.aliases;
