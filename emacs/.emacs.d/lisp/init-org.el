@@ -110,6 +110,10 @@
 ;; Have org-drill look through current directory for files
 (setq org-drill-scope (quote directory))
 
+;; Set learn fraction, higher == larger time interval
+;; Default == 0.5
+(setq org-drill-learn-fraction 0.3)
+
 ;; Enable native fontification in code blocks
 (setq org-src-fontify-natively t)
 
