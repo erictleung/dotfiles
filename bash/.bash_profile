@@ -38,17 +38,22 @@ function extract () {
     fi
 }
 
-# Make bash append rather than overwrite the history on disk
-shopt -s histappend
-
-# Make bash be okay with small directory change typos
-shopt -s cdspell
-
 # ls after cd
 # source: https://dev.to/wulfmann/comment/6mp9
 function cd {
     builtin cd "$@" && ls -Gltr --color
 }
+
+# Make bash append rather than overwrite the history on disk
+shopt -s histappend
+
+# Allow typos for cd, tab-completion, and better directory management
+shopt -s audocd 2> /dev/null
+shopt -s dirspell 2> /dev/null
+shopt -s cdspell 2> /dev/null
+
+# Display trailing slash for autocomplete symlinks
+bind "set mark-symlinked-directories on"
 
 # use aliases
 if [ -f ~/.aliases ]; then
