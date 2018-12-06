@@ -78,8 +78,10 @@
 ;; Install PDF tools
 (use-package pdf-tools
   :ensure t
+  :pin manual ;; Manual update so no need to run install command
   :config
-  (pdf-tools-install))
+  (pdf-tools-install)
+  (setq-default pdf-view-display-size 'fit-page))
 
 ;; Disable linum-mode in pdf-view-mode
 (add-hook 'doc-view-mode-hook (lambda () (linum-mode 0)))
