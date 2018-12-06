@@ -77,7 +77,9 @@
 
 ;; Install PDF tools
 (use-package pdf-tools
-  :ensure t)
+  :ensure t
+  :config
+  (pdf-tools-install))
 
 ;; Disable linum-mode in pdf-view-mode
 (add-hook 'doc-view-mode-hook (lambda () (linum-mode 0)))
