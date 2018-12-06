@@ -75,4 +75,11 @@
 (use-package writegood-mode
   :ensure t)
 
+;; Install PDF tools
+(use-package pdf-tools
+  :ensure t)
+
+;; Disable linum-mode in pdf-view-mode
+(add-hook 'pdf-view-mode-hook (lambda () (linum-mode 0)))
+
 (provide 'init-pkgs)
