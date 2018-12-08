@@ -84,6 +84,6 @@
   (setq-default pdf-view-display-size 'fit-page))
 
 ;; Disable linum-mode in pdf-view-mode
-(add-hook 'doc-view-mode-hook (lambda () (linum-mode 0)))
+(add-hook 'pdf-view-mode-hook (lambda () (linum-mode 0)))
 
 (provide 'init-pkgs)
