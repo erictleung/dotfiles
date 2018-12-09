@@ -86,4 +86,10 @@
 ;; Disable linum-mode in pdf-view-mode
 (add-hook 'pdf-view-mode-hook (lambda () (linum-mode 0)))
 
+;; ESS for R
+(use-package ess
+  :ensure t
+  :defer 5
+  :init (require 'ess-site))
+
 (provide 'init-pkgs)
