@@ -35,7 +35,7 @@
  '(doc-view-continuous t)
  '(inhibit-startup-screen t)
  '(org-clock-report-include-clocking-task t)
- '(org-habit-graph-column 53)
+ '(org-habit-graph-column 63)
  '(tool-bar-mode nil)
  '(whitespace-style
    (quote
