@@ -9,7 +9,6 @@
     (dot . t)
     (emacs-lisp . t)
     (gnuplot . t)
-    (ipython . t)
     (js . t)
     (julia . t)
     (latex . t)
