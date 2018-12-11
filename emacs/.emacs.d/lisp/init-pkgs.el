@@ -74,6 +74,9 @@
 ;; http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
 (use-package writegood-mode
   :ensure t)
+(global-set-key "\C-cg" 'writegood-mode)
+(global-set-key "\C-c\C-gg" 'writegood-grade-level)
+(global-set-key "\C-c\C-ge" 'writegood-reading-ease)
 
 ;; Install PDF tools
 (use-package pdf-tools
