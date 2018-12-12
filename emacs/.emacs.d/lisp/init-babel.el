@@ -17,7 +17,6 @@
     (python . t)
     (R . t)
     (ruby . t)
-    (scala . t)
     (sed . t)
     (shell . t)
     (sql . t)
