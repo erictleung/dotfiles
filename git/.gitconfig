@@ -11,6 +11,7 @@
 	dc = diff --cached
 	ir = !sh -c 'git rebase -i origin/${1-master}' -
 	last = log -p -1
+	lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	me = config user.name
 	rank = shortlog -sn --no-merges
 	rb = rebase
