@@ -1,8 +1,16 @@
+;; init.el
+
+;; Produce trace when error occurs
 (setq debug-on-error t)
 
 ;; Add extra lisp files to path of files to call from
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "elpa" user-emacs-directory))
+
+; Add custom configurations to separate file and load accordingly
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Inhibit startup screen
 (setq inhibit-startup-message t
@@ -23,36 +31,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(column-number-mode t)
- '(custom-enabled-themes (quote (misterioso)))
- '(doc-view-continuous t)
- '(inhibit-startup-screen t)
- '(org-agenda-files
-   (quote
-    ("~/Dropbox/org/references/articles.org" "~/Dropbox/org/gtd.org" "~/Dropbox/org/gtd.org_archive" "~/Dropbox/org/someday.org" "~/Dropbox/org/reminders.org" "~/Dropbox/org/read.org")))
- '(org-clock-report-include-clocking-task t)
- '(org-habit-graph-column 63)
- '(package-selected-packages
-   (quote
-    (xclip writegood-mode use-package try scala-mode ox-pandoc org-ref org-plus-contrib org-edna markdown-mode magit interleave htmlize helm-bibtexkey ess elfeed-org elfeed-goodies ace-window)))
- '(tool-bar-mode nil)
- '(whitespace-style
-   (quote
-    (face trailing spaces space-after-tab space-before-tab space-mark tab-mark newline-mark))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 102 :width normal))))
- '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
 
 ;; Add line numbers
 (global-linum-mode t)
