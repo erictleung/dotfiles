@@ -107,6 +107,10 @@
 ;; (cua-mode 1)
 ;; Note: Had issues with C-RET in Orgmode
 
+;; Toggle truncation of lines
+;; https://stackoverflow.com/a/49692205/
+(global-set-key "C-x w" 'toggle-truncate-lines)
+
 ;; Load configs for specific modes -------------------------------------
 
 (require 'init-pkgs)
