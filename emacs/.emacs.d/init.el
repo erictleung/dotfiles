@@ -105,7 +105,7 @@
 
 ;; Toggle truncation of lines
 ;; https://stackoverflow.com/a/49692205/
-(global-set-key "C-x w" 'toggle-truncate-lines)
+(global-set-key (kbd "C-x w") 'toggle-truncate-lines)
 
 ;; Load configs for specific modes -------------------------------------
 
