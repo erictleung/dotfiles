@@ -34,8 +34,14 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(doc-view-continuous t)
  '(inhibit-startup-screen t)
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/references/articles.org" "~/Dropbox/org/gtd.org" "~/Dropbox/org/gtd.org_archive" "~/Dropbox/org/someday.org" "~/Dropbox/org/reminders.org" "~/Dropbox/org/read.org")))
  '(org-clock-report-include-clocking-task t)
  '(org-habit-graph-column 63)
+ '(package-selected-packages
+   (quote
+    (xclip writegood-mode use-package try scala-mode ox-pandoc org-ref org-plus-contrib org-edna markdown-mode magit interleave htmlize helm-bibtexkey ess elfeed-org elfeed-goodies ace-window)))
  '(tool-bar-mode nil)
  '(whitespace-style
    (quote
@@ -96,16 +102,6 @@
 ;; Use spaces instead of tabs
 ;; source: http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/
 (setq-default indent-tabs-mode nil)
-
-;; Use Emacs Speaks Statistics (ESS)
-;; (require 'ess-site)
-
-;; Enable CUA mode
-;; C-x for cut
-;; C-c for copy
-;; C-v for paste
-;; (cua-mode 1)
-;; Note: Had issues with C-RET in Orgmode
 
 ;; Toggle truncation of lines
 ;; https://stackoverflow.com/a/49692205/
