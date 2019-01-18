@@ -117,6 +117,12 @@
 ;; Enable native fontification in code blocks
 (setq org-src-fontify-natively t)
 
+;; Change column width for habit graph
+(setq org-habit-graph-column 63)
+
+;; Include clock
+(setq org-clock-report-include-clocking-task t)
+
 ;; Additional org functions for checklist handling
 ;; https://orgmode.org/worg/org-contrib/org-checklist.html
 (use-package org
