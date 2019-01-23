@@ -2,7 +2,7 @@
 
 ;; Run top within emacs
 ;; source: https://emacs.stackexchange.com/a/28088/
-(defun etl/htop ()
+(defun etl/top ()
   (interactive)
   (if (get-buffer "*top*")
     (switch-to-buffer "*top*")
