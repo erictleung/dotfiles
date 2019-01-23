@@ -88,13 +88,9 @@
 ;; Load configs for specific modes -------------------------------------
 
 (require 'init-pkgs)
-
 (require 'init-org)
-
 (require 'init-osx-keys)
-
 (require 'init-ref)
-
 (require 'init-babel)
-
 (require 'init-elfeed)
+(require 'init-custom)
