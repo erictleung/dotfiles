@@ -36,14 +36,10 @@
 
 ;; Define tags available
 (setq org-tag-alist
-      '(("@office" . ?o)
-        ("@home" . ?h)
+      '(("ongoing" . ?o)
         ("drill" . ?d)
         ("readend" . ?e)
-        ("@computer" . ?c)
-        ("@project" . ?p)
-        ("@lunchtime" . ?l)
-        ("@transit" . ?t)))
+        ("task" . ?t)))
 
 ;; Load Markdown exporter
 ;; source: https://stackoverflow.com/a/22990257/6873133
