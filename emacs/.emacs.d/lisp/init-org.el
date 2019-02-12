@@ -19,6 +19,7 @@
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 (setq org-log-done t)
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(setq org-agenda-inhibit-startup t) ; Inhibit startup options to speed up agenda
 
 ;; Set up refile targets
 (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
