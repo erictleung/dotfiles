@@ -96,6 +96,13 @@
      (file "~/Dropbox/org/weekly.org")
      (file "~/Dropbox/org/templates/weekly.orgcaptempl")
     )
+    ;; Research and project ideas
+    ("i"
+     "Research and Project Ideas"
+     entry
+     (file "~/Dropbox/org/ideas.org")
+     (file "~/Dropbox/org/templates/research.orgcaptempl")
+    )
 )))
 
 ;; Setup optional org-modules
