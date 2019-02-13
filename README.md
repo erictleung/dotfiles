@@ -41,6 +41,12 @@ sudo pacman -S stow
 ## Installation
 
 ```shell
+# Setup SSH keys
+ssh-keygen
+
+# ...Copy key from ~/.ssh/id_rsa.pub
+# Add value to GitHub list of acceptable keys
+
 # Install dotfiles
 cd ~
 git clone git@github.com:erictleung/dotfiles.git
