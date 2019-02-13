@@ -127,6 +127,13 @@
 ;; Include clock
 (setq org-clock-report-include-clocking-task t)
 
+;; Hook to change visual view of agenda
+;; source: https://superuser.com/a/531670/
+(add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (visual-line-mode -1)
+            (toggle-truncate-lines 1)))
+
 ;; Additional org functions for checklist handling
 ;; https://orgmode.org/worg/org-contrib/org-checklist.html
 (use-package org
