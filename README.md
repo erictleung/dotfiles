@@ -92,6 +92,14 @@ Run the following.
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
+Then from within `vim`, run
+
+```
+:PluginInstall
+```
+
+to install the listed plugins in `vim` configuration file.
+
 ### Git Setup
 
 Reminder that this directory has git configurations that can be done again, but
