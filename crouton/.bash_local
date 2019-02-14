@@ -1,0 +1,11 @@
+# Add golang packages to path, added specifically for rclone
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# Quick update of Dropbox
+alias pulldb="rclone sync --verbose db:org ~/Dropbox/org"
+alias pushdb="rclone sync --verbose ~/Dropbox/org/ db:org"
+
+# Emacs
+alias emacs=emacs26
