@@ -13,6 +13,7 @@ Plugin 'scrooloose/syntastic' " syntax highlighing
 Plugin 'mattn/emmet-vim' " easier HTML/CSS editing
 Plugin 'tpope/vim-surround' " surround objects easier
 Plugin 'tpope/vim-commentary' " comment lines with shortcut
+Plugin 'tpope/vim-fugitive' " Git wrapper
 Plugin 'AutoClose' " autoclose pairs of items
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
 Plugin 'pangloss/vim-javascript'
