@@ -1,3 +1,3 @@
-(setq ess-style 'RStudio')
+(setq ess-style 'RStudio)
 
 (provide 'init-ess)
