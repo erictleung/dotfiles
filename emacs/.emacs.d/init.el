@@ -94,3 +94,4 @@
 (require 'init-babel)
 (require 'init-elfeed)
 (require 'init-custom)
+(require 'init-ess)
