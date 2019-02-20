@@ -47,17 +47,18 @@ function cd {
     builtin cd "$@" && ls -Gltr --color
 }
 
-# Make bash append rather than overwrite the history on disk
-shopt -s histappend
-
-# Allow typos for cd, tab-completion, and better directory management
+# allow typos for cd, tab-completion, and better directory management
 shopt -s audocd 2> /dev/null
 shopt -s dirspell 2> /dev/null
 shopt -s cdspell 2> /dev/null
 
-# Ignore frequent commands and duplicates
+# ignore frequent commands and duplicates
+# source: https://askubuntu.com/a/15930
 export HISTIGNORE="&:[ ]*:exit:ls:gd:gs:c:history:clear"
-HISTCONTROL="erasedups:ignoreboth"
+export HISTCONTROL=ignoredups
+
+# make bash append rather than overwrite the history on disk
+shopt -s histappend
 
 # use aliases
 if [ -f ~/.aliases ]; then
