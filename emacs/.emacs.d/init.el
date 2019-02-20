@@ -85,6 +85,9 @@
 ;; https://stackoverflow.com/a/49692205/
 (global-set-key (kbd "C-x w") 'toggle-truncate-lines)
 
+;; Show and highlight matching parentheses
+(show-paren-mode 1)
+
 ;; Load configs for specific modes -------------------------------------
 
 (require 'init-pkgs)
