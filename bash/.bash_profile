@@ -1,6 +1,9 @@
 # set vim bindings for CLI
 # set -o vi
 
+# set default editor to vim
+export EDITOR=vim
+
 # colors!
 green="\[\033[0;32m\]"
 blue="\[\033[0;34m\]"
