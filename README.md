@@ -12,6 +12,8 @@ A repository of my dotfiles and OS-specific configuration details.
 - [Operating Systems](#operating-systems)
   - [Windows](#windows)
   - [Unix](#unix)
+  - [Termux](#termux)
+  - [Chromebook Crouton](#chromebook-crouton)
 - [Software Specific Setups](#software-specific-setups)
   - [Vim Setup](#vim-setup)
   - [Git Setup](#git-setup)
@@ -80,6 +82,29 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 # For Linux
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### Termux
+
+TODO
+
+### Chromebook Crouton
+
+Not really an operating system, but still distinct from Unix.
+
+Install
+[Chromium OS Universal Chroot Environment](https://github.com/dnschneid/crouton).
+Instructions are pretty well documented at the link.
+
+The default Ubuntu that installs doesn't come with the latest software (e.g.,
+Golang is not up to date). This can cause some issues so be aware.
+
+Instead of making use of the Dropbox link through ChromeOS, you can also
+install [`rclone`](https://rclone.org/), an rsync for cloud storage.
+
+```bash
+# Setup remote cloud storages
+rclone config
 ```
 
 ## Software Specific Setups
