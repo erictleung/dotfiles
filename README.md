@@ -17,6 +17,7 @@ A repository of my dotfiles and OS-specific configuration details.
 - [Software Specific Setups](#software-specific-setups)
   - [Vim Setup](#vim-setup)
   - [Git Setup](#git-setup)
+  - [rclone](#rclone)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -99,14 +100,6 @@ Instructions are pretty well documented at the link.
 The default Ubuntu that installs doesn't come with the latest software (e.g.,
 Golang is not up to date). This can cause some issues so be aware.
 
-Instead of making use of the Dropbox link through ChromeOS, you can also
-install [`rclone`](https://rclone.org/), an rsync for cloud storage.
-
-```bash
-# Setup remote cloud storages
-rclone config
-```
-
 ## Software Specific Setups
 
 ### Vim Setup
@@ -130,3 +123,17 @@ to install the listed plugins in `vim` configuration file.
 Reminder that this directory has git configurations that can be done again, but
 the information already exists here to make a consistent configuration across
 computers.
+
+### rclone
+
+Instead of making use of the Dropbox link through various Linux systems, you
+can also install [`rclone`](https://rclone.org/), an rsync for cloud storage.
+
+```bash
+# Setup remote cloud storages
+rclone config
+```
+
+I've named my Dropbox remote as `db`, so I've created an alias that works with
+this. Otherwise, another alias will have to be written or just be mindful of
+this.
