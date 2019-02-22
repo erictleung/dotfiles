@@ -9,3 +9,10 @@ alias pushdb="rclone sync --verbose ~/Dropbox/org/ db:org"
 
 # Emacs
 alias emacs=emacs26
+
+# Setup global npm install
+# source: https://stackoverflow.com/a/48596268
+mkdir -p ~/.npm-global
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:$PATH
+
