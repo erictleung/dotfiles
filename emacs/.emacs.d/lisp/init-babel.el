@@ -10,7 +10,6 @@
     (emacs-lisp . t)
     (gnuplot . t)
     (js . t)
-    (julia . t)
     (latex . t)
     (makefile . t)
     (perl . t)
