@@ -106,18 +106,6 @@
     )
 )))
 
-;; Setup optional org-modules
-(setq org-modules (quote (org-habit org-drill)))
-(eval-after-load 'org
-                 '(org-load-modules-maybe t))
-
-;; Have org-drill look through current directory for files
-(setq org-drill-scope (quote directory))
-
-;; Set learn fraction, higher == larger time interval
-;; Default == 0.5
-(setq org-drill-learn-fraction 0.3)
-
 ;; Enable native fontification in code blocks
 (setq org-src-fontify-natively t)
 
@@ -139,6 +127,19 @@
 (use-package org
   :ensure org-plus-contrib)
 (require 'org-checklist)
+
+;; Setup optional org-modules
+(setq org-modules (quote (org-habit org-drill)))
+(eval-after-load 'org
+                 '(org-load-modules-maybe t))
+
+;; Have org-drill look through current directory for files
+(setq org-drill-scope (quote directory))
+
+;; Set learn fraction, higher == larger time interval
+;; Default == 0.5
+(setq org-drill-learn-fraction 0.3)
+
 
 ;; Org-mode exporters
 (require 'ox-taskjuggler) ;; Taskjuggler exporter
