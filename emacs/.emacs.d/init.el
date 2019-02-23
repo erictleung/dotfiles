@@ -98,3 +98,4 @@
 (require 'init-elfeed)
 (require 'init-custom)
 (require 'init-ess)
+(require 'init-complete)
