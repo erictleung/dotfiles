@@ -18,6 +18,7 @@ A repository of my dotfiles and OS-specific configuration details.
   - [Vim Setup](#vim-setup)
   - [Git Setup](#git-setup)
   - [rclone](#rclone)
+  - [Conda](#conda)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -137,3 +138,11 @@ rclone config
 I've named my Dropbox remote as `db`, so I've created an alias that works with
 this. Otherwise, another alias will have to be written or just be mindful of
 this.
+
+### Conda
+
+Miniconda and the `conda` package manager are used for general Python software
+management.
+
+See https://docs.conda.io/en/latest/miniconda.html for OS-specific
+installations.
