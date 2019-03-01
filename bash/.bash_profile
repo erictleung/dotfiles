@@ -48,6 +48,7 @@ function cd {
 }
 
 # find top n edited files in git
+# modified from: https://news.ycombinator.com/item?id=16300152
 function get_common_edited {
     git log --pretty=format: --name-only |\
         sort |\
@@ -55,7 +56,6 @@ function get_common_edited {
         sort -rg |\
         head -${1:-11}
 }
-# alias get_common_edited="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
 
 # allow typos for cd, tab-completion, and better directory management
 shopt -s audocd 2> /dev/null
