@@ -47,6 +47,16 @@ function cd {
     builtin cd "$@" && ls -Gltr --color
 }
 
+# find top n edited files in git
+function get_common_edited {
+    git log --pretty=format: --name-only |\
+        sort |\
+        uniq -c |\
+        sort -rg |\
+        head -${1:-11}
+}
+# alias get_common_edited="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10"
+
 # allow typos for cd, tab-completion, and better directory management
 shopt -s audocd 2> /dev/null
 shopt -s dirspell 2> /dev/null
