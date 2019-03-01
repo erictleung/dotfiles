@@ -19,6 +19,7 @@ A repository of my dotfiles and OS-specific configuration details.
   - [Git Setup](#git-setup)
   - [rclone](#rclone)
   - [Conda](#conda)
+- [Useful Software](#useful-software)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -146,3 +147,12 @@ management.
 
 See https://docs.conda.io/en/latest/miniconda.html for OS-specific
 installations.
+
+## Useful Software
+
+Below are some pieces of software that are useful for working on the command
+line and help me interface with files that are typically used in GUI desktop
+versions.
+
+- [`pandiff`](https://github.com/davidar/pandiff) - Prose diffs for any
+  document format supported by Pandoc; installs by `npm`.
