@@ -22,3 +22,8 @@ export PATH="$HOME/gems/bin:$PATH"
 
 # Add miniconda and associated files to path
 export PATH="$HOME/conda/bin:$PATH"
+
+# Quickly link copy of file to Downloads where GUI visible in ChromeOS
+dlcp () {
+    ln -sv $1 ~/Downloads/
+}
