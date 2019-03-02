@@ -64,7 +64,7 @@ shopt -s cdspell 2> /dev/null
 
 # ignore frequent commands and duplicates
 # source: https://askubuntu.com/a/15930
-export HISTIGNORE="&:[ ]*:exit:ls:gd:gs:c:history:clear"
+export HISTIGNORE="&:[ ]*:exit:e:R:make:tmux.*:cd:la:ls:gd:gs:c:history:clear"
 export HISTCONTROL=ignoredups
 
 # make bash append rather than overwrite the history on disk
