@@ -39,6 +39,7 @@
 (setq org-tag-alist
       '(("ongoing" . ?o)
         ("drill" . ?d)
+        ("flag" . ?f)
         ("readend" . ?e)
         ("task" . ?t)))
 
