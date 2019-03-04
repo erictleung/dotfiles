@@ -1,14 +1,14 @@
+# Local Crouton configurations
+# - Exports
+# - Functions
+# - Aliases
+
+# Exports --------------------------------------------------------------
+
 # Add golang packages to path, added specifically for rclone
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-# Quick update of Dropbox
-alias pulldb="rclone sync --verbose db:org ~/Dropbox/org"
-alias pushdb="rclone sync --verbose ~/Dropbox/org/ db:org"
-
-# Emacs
-alias emacs=emacs26
 
 # Setup global npm install
 # source: https://stackoverflow.com/a/48596268
@@ -23,7 +23,24 @@ export PATH="$HOME/gems/bin:$PATH"
 # Add miniconda and associated files to path
 export PATH="$HOME/conda/bin:$PATH"
 
+# Function--------------------------------------------------------------
+
 # Quickly link copy of file to Downloads where GUI visible in ChromeOS
 dlcp () {
     ln -sv $1 ~/Downloads/
 }
+
+# Quick see space left
+spleft () {
+    df -h |\
+        awk '$6 ~ /^\/$/ { print "Space left: " $4 }'
+}
+
+# Aliases --------------------------------------------------------------
+
+# Quick update of Dropbox
+alias pulldb="rclone sync --verbose db:org ~/Dropbox/org"
+alias pushdb="rclone sync --verbose ~/Dropbox/org/ db:org"
+
+# Emacs
+alias emacs=emacs26
