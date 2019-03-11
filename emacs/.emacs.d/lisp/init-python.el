@@ -23,6 +23,7 @@
 ;; Use IPython Notebooks/Jupyter in Emacs
 ;; Docs: http://millejoh.github.io/emacs-ipython-notebook/
 (use-package ein
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'init-python)
