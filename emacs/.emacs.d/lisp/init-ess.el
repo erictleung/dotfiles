@@ -1,7 +1,7 @@
 ;; ESS for R
 (use-package ess
   :ensure t
-  :defer 5
+  :defer t
   :init
   (require 'ess-site)
   :config
