@@ -90,13 +90,13 @@
 
 ;; Load configs for specific modes -------------------------------------
 
+(require 'init-custom)
 (require 'init-pkgs)
+(require 'init-complete)
 (require 'init-org)
-(require 'init-osx-keys)
 (require 'init-ref)
 (require 'init-babel)
 (require 'init-elfeed)
-(require 'init-custom)
 (require 'init-ess)
 (require 'init-python)
-(require 'init-complete)
+(require 'init-osx-keys)
