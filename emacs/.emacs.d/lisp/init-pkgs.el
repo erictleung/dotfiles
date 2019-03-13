@@ -26,16 +26,8 @@
   (setq ido-use-filename-at-point 'guess)
   (ido-mode 1))
 
-;; Search and manage bibliographies in Emacs
-(use-package helm-bibtex
-  :ensure t)
-
 ;; Convert buffer text and decorations to HTML
 (use-package htmlize
-  :ensure t)
-
-;; Minor mode to interleave notes and textbooks
-(use-package interleave
   :ensure t)
 
 ;; Interfafce to version control system Git
@@ -51,10 +43,6 @@
          ("\\.txt\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
-
-;; Org-mode bibliography reference management
-(use-package org-ref
-  :ensure t)
 
 ;; Another org-mode exporter via pandoc
 (use-package ox-pandoc

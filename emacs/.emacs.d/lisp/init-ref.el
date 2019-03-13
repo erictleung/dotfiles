@@ -4,9 +4,17 @@
 ;; - http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/
 ;; - http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/
 
-(require 'org-ref)
-(require 'interleave)
-(require 'helm-bibtex)
+;; Org-mode bibliography reference management
+(use-package org-ref
+  :ensure t)
+
+;; Minor mode to interleave notes and textbooks
+(use-package interleave
+  :ensure t)
+
+;; Search and manage bibliographies in Emacs
+(use-package helm-bibtex
+  :ensure t)
 
 ;; setup bibliography workflow for notetaking
 ;; https://www.reddit.com/r/emacs/comments/4gudyw/d2l16uj/
