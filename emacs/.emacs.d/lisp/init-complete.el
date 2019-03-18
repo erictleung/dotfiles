@@ -4,7 +4,7 @@
   :init
   :config
   (setq company-minimum-prefix-length 2)
-  (setq company-idle-delay 0)
+  (setq company-idle-delay 0.5)
   (setq company-selection-wrap-around t)
   (global-company-mode t))
 
