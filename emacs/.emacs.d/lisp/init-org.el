@@ -141,6 +141,9 @@
 ;; Default == 0.5
 (setq org-drill-learn-fraction 0.3)
 
+;; Setup org-mode useful hooks
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'org-mode-hook 'auto-fill-mode)
 
 ;; Org-mode exporters
 (require 'ox-taskjuggler) ;; Taskjuggler exporter
