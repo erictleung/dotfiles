@@ -21,16 +21,20 @@
   (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
 
 ;; Use IPython Notebooks/Jupyter in Emacs
+;; Interesting background behind ein https://blog.jupyter.org/54bd1c371d57
 ;; Src: https://github.com/millejoh/emacs-ipython-notebook
 ;; Docs: http://millejoh.github.io/emacs-ipython-notebook/
-(use-package ein
-  :ensure t
-  :defer t
-  :config
-  ;; Stop ein from starting company-mode autocomplete
-  (add-hook 'ein:notebook-multilang-mode-hook '(lambda () (company-mode -1)))
-  (use-package ein-notebook)
-  (use-package ein-subpackages)
-  (use-package ein-jupyter))
+;; (use-package ein
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (setq ein:complete-backend 'ein:use-company-backend)
+;;   :config
+;;   ;; Stop ein from starting company-mode autocomplete
+;;   (add-hook 'ein:notebook-multilang-mode-hook '(lambda () (company-mode -1)))
+;;   (add-hook 'ein:notebook-multilang-mode-hook '(lambda () (auto-complete-mode -1)))
+;;   (use-package ein-notebook)
+;;   (use-package ein-subpackages)
+;;   (use-package ein-jupyter))
 
 (provide 'init-python)
