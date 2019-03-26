@@ -146,6 +146,7 @@
 (add-hook 'org-mode-hook 'auto-fill-mode)
 
 ;; Place tags close to the right-hand side of the window
+;; https://lists.gnu.org/archive/html/emacs-orgmode/2010-12/msg00410.html
 (defun etl/place-agenda-tags ()
   "Put the agenda tags by the right border of the agenda window."
   (setq org-agenda-tags-column (- 4 (window-width)))
