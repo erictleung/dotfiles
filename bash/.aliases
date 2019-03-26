@@ -11,9 +11,10 @@ alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
 
 # git shortcuts
+alias g="git"
 alias gs="git status"
 alias ga="git add"
-alias gcom="git commit -v"
+alias gcv="git commit -v"
 alias gpush="git push"
 alias gd="git diff"
 alias gpull="git pull"
