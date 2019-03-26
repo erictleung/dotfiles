@@ -145,6 +145,13 @@
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'auto-fill-mode)
 
+;; Place tags close to the right-hand side of the window
+(defun etl/place-agenda-tags ()
+  "Put the agenda tags by the right border of the agenda window."
+  (setq org-agenda-tags-column (- 4 (window-width)))
+  (org-agenda-align-tags))
+(add-hook 'org-finalize-agenda-hook 'etl/place-agenda-tags)
+
 ;; Org-mode exporters
 (require 'ox-taskjuggler) ;; Taskjuggler exporter
 (require 'ox-freemind) ;; Freemind mindmapping
