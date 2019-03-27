@@ -31,6 +31,14 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; Use y/n for yes/no
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Scroll slower
+(setq scroll-conservatively 100)
+
+;; Stop bell from playing
+(setq ring-bell-function 'ignore)
 
 ;; Add line numbers
 (global-linum-mode t)
