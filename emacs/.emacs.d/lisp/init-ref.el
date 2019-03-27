@@ -47,4 +47,13 @@
       bibtex-autokey-titlewords-stretch 1
       bibtex-autokey-titleword-length 15)
 
+;; Add keybindings for org-ref
+(defun etl/org-ref-hook ()
+  (visual-line-mode)
+  (local-set-key (kbd "C-c r c") 'org-ref-clean-bibtex-entry)
+  (local-set-key (kbd "C-c r o") 'org-ref-open-bibtex-notes))
+
+;; Setup org-ref useful hooks
+(add-hook 'bibtex-mode-hook 'etl/org-ref-hook)
+
 (provide 'init-ref)
