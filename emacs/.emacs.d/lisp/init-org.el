@@ -40,6 +40,7 @@
       '(("ongoing" . ?o)
         ("drill" . ?d)
         ("flag" . ?f)
+        ("random" . ?r)
         ("readend" . ?e)
         ("task" . ?t)))
 
