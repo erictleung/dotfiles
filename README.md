@@ -95,6 +95,33 @@ These tools are missing from the shell, so let's install them here.
 pkg install vim emacs make git golang curl
 ```
 
+To install various machine learning packages, I found this repository helpful
+in some of the commands to run to install
+
+https://github.com/sanheensethi/Installing-ML-in-Termux-Python
+
+A quick summary of the commands below:
+
+```sh
+apt update
+apt upgrade
+
+apt install clang git python python-dev fftw freetype freetype-dev libpng \
+    libpng-dev pkg-config
+
+pip install --upgrade pip
+pip install numpy matplotlib pandas jupyter
+
+apt install wget
+
+curl -o setup.sh https://its-pointless.github.io/setup-pointless-repo.sh
+bash setup.sh
+apt install scipy
+rm setup.sh
+
+pip install scikit-learn
+```
+
 ### Chromebook Crouton
 
 Not really an operating system, but still distinct from Unix.
