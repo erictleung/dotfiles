@@ -18,6 +18,7 @@ Plugin 'AutoClose' " autoclose pairs of items
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'jceb/vim-orgmode'
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
