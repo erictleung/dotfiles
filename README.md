@@ -89,7 +89,11 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 ### Termux
 
-TODO
+These tools are missing from the shell, so let's install them here.
+
+```sh
+pkg install vim emacs make git golang curl
+```
 
 ### Chromebook Crouton
 
