@@ -1,1 +1,10 @@
 .DS_Store
+
+vim/.vim/bundle
+vim/.vim/.netrwhist
+
+emacs/.emacs.d/elpa
+emacs/.emacs.d/history
+emacs/.emacs.d/transient
+emacs/.emacs.d/custom.el
+emacs/.emacs.d/abbrev_defs
