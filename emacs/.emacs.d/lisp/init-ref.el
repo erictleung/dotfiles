@@ -52,8 +52,12 @@
   (visual-line-mode)
   (local-set-key (kbd "C-c r c") 'org-ref-clean-bibtex-entry)
   (local-set-key (kbd "C-c r o") 'org-ref-open-bibtex-notes))
+(defun etl/interleave ()
+  (visual-line-mode)
+  (local-set-key (kbd "C-c i m") 'interleave-mode))
 
 ;; Setup org-ref useful hooks
 (add-hook 'bibtex-mode-hook 'etl/org-ref-hook)
+(add-hook 'org-mode-hook 'etl/interleave)
 
 (provide 'init-ref)
