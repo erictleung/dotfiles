@@ -90,4 +90,24 @@
   :init
   (which-key-mode))
 
+;; Browse internet with w3m
+;; Help and examples:
+;; - http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html
+(use-package w3m
+  :ensure t
+  :config
+  (setq w3m-use-cookies t
+        w3m-cookie-accept-bad-cookies t
+        w3m-fill-column 0
+        w3m-home-page "https://duckduckgo.com")
+  (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+  (autoload 'w3m-region "w3m" "Render region in current buffer and replace with result." t)
+  ;; UTF-8 everything
+  (setq w3m-coding-system 'utf-8
+        w3m-file-coding-system 'utf-8
+        w3m-file-name-coding-system 'utf-8
+        w3m-input-coding-system 'utf-8
+        w3m-output-coding-system 'utf-8
+        w3m-terminal-coding-system 'utf-8))
+
 (provide 'init-pkgs)
