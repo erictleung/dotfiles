@@ -10,6 +10,10 @@ vundle :
 dirs :
 	mkdir -p ../{documents,downloads,misc}
 
+## ssh : Get SSH key for easy copy-paste
+ssh :
+	echo ""
+
 ## conda : Install conda for Python package management
 # Add back "_64" for 64-bit systems
 # Note: doesn't quite work yet
