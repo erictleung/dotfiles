@@ -23,4 +23,10 @@
 (use-package academic-phrases
   :ensure t)
 
+;; Create snippet templates
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1))
+
 (provide 'init-complete)
