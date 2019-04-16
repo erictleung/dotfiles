@@ -48,3 +48,6 @@ alias pushdb="rclone sync --verbose ~/Dropbox/org/ db:org"
 
 # Emacs
 alias emacs=emacs26
+
+# USB removable
+alias usbs="cd /media/removeable"
