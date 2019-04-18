@@ -110,4 +110,15 @@
         w3m-output-coding-system 'utf-8
         w3m-terminal-coding-system 'utf-8))
 
+;; Use org-mode for concept mapping
+(use-package org-brain
+  :ensure t
+  :init
+  (setq org-brain-path "~/Dropbox/org/brain")
+  :config
+  (setq org-id-track-globally t)
+  (setq org-id-locations-files "~/.emacs.d/.org-id-locations")
+  (setq org-brain-visualize-default-choises 'all)
+  (setq org-brain-title-max-length 12))
+
 (provide 'init-pkgs)
