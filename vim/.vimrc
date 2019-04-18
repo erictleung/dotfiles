@@ -9,16 +9,17 @@ call vundle#begin() " initialize vundle
 " Plugins "
 
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
-Plugin 'scrooloose/syntastic' " syntax highlighing
+Plugin 'AutoClose' " autoclose pairs of items
+Plugin 'jceb/vim-orgmode' " text outlining and task management
 Plugin 'mattn/emmet-vim' " easier HTML/CSS editing
+Plugin 'mxw/vim-jsx' "JSX syntax highlight and indenting
+Plugin 'pangloss/vim-javascript' " improve JS indentation and syntax
+Plugin 'scrooloose/syntastic' " syntax highlighing
 Plugin 'tpope/vim-surround' " surround objects easier
 Plugin 'tpope/vim-commentary' " comment lines with shortcut
 Plugin 'tpope/vim-fugitive' " Git wrapper
-Plugin 'AutoClose' " autoclose pairs of items
+Plugin 'tpope/vim-speeddating' " use Ctrl-A/Ctrl-X to increment values
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'jceb/vim-orgmode'
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
