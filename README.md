@@ -15,6 +15,7 @@ A repository of my dotfiles and OS-specific configuration details.
   - [Termux](#termux)
   - [Chromebook Crouton](#chromebook-crouton)
 - [Software Specific Setups](#software-specific-setups)
+  - [Emacs Info](#emacs-info)
   - [Vim Setup](#vim-setup)
   - [Git Setup](#git-setup)
   - [rclone](#rclone)
@@ -134,6 +135,34 @@ The default Ubuntu that installs doesn't come with the latest software (e.g.,
 Golang is not up to date). This can cause some issues so be aware.
 
 ## Software Specific Setups
+
+### Emacs Info
+
+Here are some notable packages I use:
+
+- `org-mode` for drafting documents and organizing
+- `company` for autocomplete
+- `academic-phrases` for academic writing
+- `yasnippet` for quick snippets and templates
+- `elfeed`/`elfeed-org`/`elfeed-goodies` for RSS reading
+- `ess` for R and statistics
+- `ace-window` for better window management
+- `ace-jump-mode` for quick jumping on screen
+- `ido` for interatively doing things
+- `magit` for an additional interface to git
+- `markdown-mode` for editing Markdown files
+- `ox-pandoc` for exporting org-mode documents via pandoc
+- `try` for simply trying out packages without commitments
+- `writegood-mode` for write well
+- `pdf-tools` for viewing PDF files within Emacs
+- `flycheck` for syntax highlighting
+- `which-key` for hints when pressing key chords
+- `w3m` for browsing the internet within Emacs
+- `org-brain` for concept mapping
+- `elpy` for Python programming
+- `org-ref` for BibTeX bibliography management
+- `interleave` for taking notes with org-mode with the PDF side-by-side
+- `helm-bibtex` for searching and managing bibliographies
 
 ### Vim Setup
 
