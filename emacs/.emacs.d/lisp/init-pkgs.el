@@ -30,7 +30,7 @@
 (use-package htmlize
   :ensure t)
 
-;; Interfafce to version control system Git
+;; Interface to version control system Git
 (use-package magit
   :ensure t)
 
