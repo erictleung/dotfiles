@@ -23,6 +23,11 @@ conda :
 		https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh
 	bash ~/downloads/miniconda.sh
 
+## cclean : Clean conda packages and cache
+# See conda clean --help for more
+cclean :
+	conda clean --all
+
 .PHONY : help example conda dirs vundle
 
 ## help : Help page for Makefile
