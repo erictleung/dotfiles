@@ -2,6 +2,7 @@
 
 vim/.vim/bundle
 vim/.vim/.netrwhist
+vim/.vim/spell/en.utf-8.add.spl
 
 emacs/.emacs.d/elpa
 emacs/.emacs.d/history
