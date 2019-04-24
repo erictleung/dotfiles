@@ -16,6 +16,7 @@ alias g="git"
 alias ga="git add" # Git Add
 alias gap="git add -p" # Git Add Patch
 alias gat="git add -u" # Git Add Tracked
+alias gatcom="git add -u; git commit -v" # Git Add Tracked COMit
 alias gbranch="git branch"
 alias gcp="git cp"
 alias gd="git diff" # Git Difference
