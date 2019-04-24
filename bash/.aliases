@@ -11,14 +11,16 @@ alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
 
 # git shortcuts
-alias com="git commit -v"
+alias com="git commit -v" # COMmit
 alias g="git"
-alias ga="git add"
+alias ga="git add" # Git Add
+alias gap="git add -p" # Git Add Patch
+alias gat="git add -u" # Git Add Tracked
 alias gbranch="git branch"
 alias gcp="git cp"
-alias gd="git diff"
-alias gitt="git"
-alias gl="git log"
+alias gd="git diff" # Git Difference
+alias gitt="git" # Account for typos
+alias gl="git log" # Git Log
 alias gmv="git move"
 alias gprum="git pull --rebase upstream master"
 alias gpull="git pull"
