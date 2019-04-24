@@ -10,7 +10,7 @@ vundle :
 dirs :
 	mkdir -p ../{documents,downloads,misc}
 
-## ssh : Get SSH key for easy copy-paste
+## ssh : Get SSH key for easy copy-paste (WIP)
 ssh :
 	echo ""
 
@@ -34,7 +34,7 @@ cclean :
 archclean :
 	sudo paccache -r
 
-.PHONY : help example conda dirs vundle
+.PHONY : help example conda dirs vundle cclean ssh
 
 ## help : Help page for Makefile
 help :
