@@ -23,6 +23,7 @@ alias gd="git diff" # Git Difference
 alias gitt="git" # Account for typos
 alias gl="git log" # Git Log
 alias gmv="git move"
+alias gprom="git pull --rebase origin master"
 alias gprum="git pull --rebase upstream master"
 alias gpull="git pull"
 alias gpush="git push"
