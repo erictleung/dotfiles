@@ -21,7 +21,7 @@
 	s = status
 	slog = log --stat
 	st = status -sb
-	today = !git all --since='12am' --committer=\"`git me`\"
+	today = !git log --since='12am' --committer=\"`git me`\"
 	uc = reset --soft HEAD^
 	uca = reset --hard HEAD^
 	unstage = reset HEAD
