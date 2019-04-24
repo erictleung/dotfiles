@@ -1,6 +1,7 @@
 [alias]
 	a = add
-	ap = add -p
+	ap = add -p # Add patches
+	at = add -u # Add tracked files
 	bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 	ca = commit --amend
 	cm = commit --message
