@@ -1,5 +1,6 @@
 [alias]
 	a = add
+	aliases = !git config --get-regexp ^alias\\. | sed -e s/^alias.// -e s/\\ /\\ $(printf \"\\043\")--\\>\\ / | column -t -s $(printf \"\\043\") | sort -k 1
 	ap = add -p # Add patches
 	at = add -u # Add tracked files
 	bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
