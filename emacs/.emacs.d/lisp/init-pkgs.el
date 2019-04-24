@@ -121,4 +121,31 @@
   (setq org-brain-visualize-default-choises 'all)
   (setq org-brain-title-max-length 12))
 
+;; Create multiple major modes for different langauges
+;; Inspired by
+;; - https://github.com/SteveLane/dot-emacs/blob/master/packages-polymode.el
+;; - http://johnstantongeddes.org/open%20science/2014/03/26/Rmd-polymode.html
+(use-package polymode
+  :ensure markdown-mode
+  :ensure poly-R
+  :ensure poly-noweb
+  :config
+  (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
+  (add-to-list 'auto-mode-alist '("\\.rnw" . poly-noweb+r-mode))
+  (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+  )
+(use-package poly-markdown
+  :ensure polymode
+  :defer t
+  :config
+  ;; Wrap lines at column limit, but don't put hard returns in
+  (add-hook 'markdown-mode-hook (lambda () (visual-line-mode 1)))
+  ;; Flyspell on
+  (add-hook 'markdown-mode-hook (lambda () (flyspell-mode 1))))
+(use-package poly-R
+  :ensure polymode
+  :ensure poly-markdown
+  :ensure poly-noweb
+  :defer t)
+
 (provide 'init-pkgs)

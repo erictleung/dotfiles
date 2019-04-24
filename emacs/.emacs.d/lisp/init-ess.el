@@ -2,8 +2,6 @@
 (use-package ess
   :ensure t
   :defer t
-  :init
-  (require 'ess-site)
   :config
   (setq ess-style 'RStudio))
 
