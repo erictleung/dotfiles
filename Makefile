@@ -28,6 +28,12 @@ conda :
 cclean :
 	conda clean --all
 
+## archclean : Clean Arch Linux cache
+# Source:
+# https://www.ostechnix.com/recommended-way-clean-package-cache-arch-linux/
+archclean :
+	sudo paccache -r
+
 .PHONY : help example conda dirs vundle
 
 ## help : Help page for Makefile
