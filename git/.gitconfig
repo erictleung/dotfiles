@@ -16,6 +16,7 @@
 	pul = pull
 	rank = shortlog -sn --no-merges
 	rb = rebase
+	prum = pull --rebase upstream master
 	rso = remote show origin
 	s = status
 	slog = log --stat
