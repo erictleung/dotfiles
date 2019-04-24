@@ -2,10 +2,10 @@
 	a = add
 	ap = add -p
 	bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
-	co = checkout
-	cob = checkout -b
 	ca = commit --amend
 	cm = commit --message
+	co = checkout
+	cob = checkout -b
 	cv = commit --verbose
 	d = diff
 	dc = diff --cached
