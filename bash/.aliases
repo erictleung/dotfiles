@@ -11,18 +11,19 @@ alias dt="cd ~/Desktop"
 alias doc="cd ~/Documents"
 
 # git shortcuts
-alias g="git"
-alias gs="git status"
-alias ga="git add"
-alias gcv="git commit -v"
 alias com="git commit -v"
-alias gpush="git push"
-alias gd="git diff"
-alias gpull="git pull"
-alias gl="git log"
+alias g="git"
+alias ga="git add"
 alias gbranch="git branch"
-alias gmv="git move"
 alias gcp="git cp"
+alias gd="git diff"
+alias gitt="git"
+alias gl="git log"
+alias gmv="git move"
+alias gprum="git pull --rebase upstream master"
+alias gpull="git pull"
+alias gpush="git push"
+alias gs="git status"
 
 # detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
