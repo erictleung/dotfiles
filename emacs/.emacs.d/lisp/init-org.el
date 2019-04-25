@@ -148,15 +148,21 @@
   (interactive)
   (org-set-tags-to (cons "drill" (org-get-tags))))
 (defun etl/org-drill-hook ()
+  "Miscellaneous keychords for org-drill mode"
   (visual-line-mode)
   (local-set-key (kbd "C-c d d") 'org-drill)
   (local-set-key (kbd "C-c d r") 'org-drill-resume)
   (local-set-key (kbd "C-c d t") 'etl/tag-as-drill))
+(defun etl/org-mode-hook ()
+  "Miscellaneous keychords for org-mode"
+  (visual-line-mode)
+  (local-set-key (kbd "C-c b i") 'org-id-get-create))
 
 ;; Setup org-mode useful hooks
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'auto-fill-mode)
 (add-hook 'org-mode-hook 'etl/org-drill-hook)
+(add-hook 'org-mode-hook 'etl/org-mode-hook)
 
 ;; Place tags close to the right-hand side of the window
 ;; https://lists.gnu.org/archive/html/emacs-orgmode/2010-12/msg00410.html
