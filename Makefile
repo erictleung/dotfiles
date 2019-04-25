@@ -34,6 +34,12 @@ cclean :
 archclean :
 	sudo paccache -r
 
+## aptclean : Clean apt-get computers
+aptclean :
+	sudo apt autoclean
+	sudo apt-get clean
+	sudo apt autoremove
+
 .PHONY : help example conda dirs vundle cclean ssh
 
 ## help : Help page for Makefile
