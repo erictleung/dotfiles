@@ -27,6 +27,10 @@ export PATH="$HOME/conda/bin:$PATH"
 # Note: Spark downloaded through R with install.packages("sparklyr")
 export PATH="$HOME/spark/spark-2.4.0-bin-hadoop2.7/bin:$PATH"
 
+# Add TinyTeX to path
+# https://yihui.name/tinytex/
+export PATH="$PATH:$HOME/.TinyTeX/bin/x86_64-linux"
+
 # Function--------------------------------------------------------------
 
 # Quickly link copy of file to Downloads where GUI visible in ChromeOS
