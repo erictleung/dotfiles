@@ -40,6 +40,12 @@ aptclean :
 	sudo apt-get clean
 	sudo apt autoremove
 
+## npmclean : Clear npm cache
+# Source: https://docs.npmjs.com/cli/cache
+npmclean :
+	sudo npm cache clean --force
+	sudo npm cache verify
+
 .PHONY : help example conda dirs vundle cclean ssh
 
 ## help : Help page for Makefile
