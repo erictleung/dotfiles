@@ -156,6 +156,7 @@
 (defun etl/org-mode-hook ()
   "Miscellaneous keychords for org-mode"
   (visual-line-mode)
+  (local-set-key (kbd "C-c b v") 'org-brain-visualize)
   (local-set-key (kbd "C-c b i") 'org-id-get-create))
 
 ;; Setup org-mode useful hooks
