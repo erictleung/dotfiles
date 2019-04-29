@@ -44,6 +44,23 @@ brew install stow
 sudo pacman -S stow
 ```
 
+### Install Stow from Source
+
+```sh
+# Download repository
+wget http://git.savannah.gnu.org/cgit/stow.git/snapshot/stow-master.tar.gz
+
+# Extract contents
+tar xzf stow-master.tar.gz
+```
+
+Now, the `Makefile` and build files are auto-generated with the following
+command.
+
+```sh
+autoreconf -iv
+```
+
 ## Installation
 
 ```shell
