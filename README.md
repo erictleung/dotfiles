@@ -8,6 +8,7 @@ A repository of my dotfiles and OS-specific configuration details.
 
 - [Motivation](#motivation)
 - [Setup](#setup)
+  - [Install Stow from Source](#install-stow-from-source)
 - [Installation](#installation)
 - [Operating Systems](#operating-systems)
   - [Windows](#windows)
