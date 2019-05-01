@@ -216,3 +216,4 @@ versions.
 
 - [`pandiff`](https://github.com/davidar/pandiff) - Prose diffs for any
   document format supported by Pandoc; installs by `npm`.
+- [QR Code Generator](https://www.the-qrcode-generator.com/) - Simple and useful.
