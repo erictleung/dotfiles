@@ -217,3 +217,5 @@ versions.
 - [`pandiff`](https://github.com/davidar/pandiff) - Prose diffs for any
   document format supported by Pandoc; installs by `npm`.
 - [QR Code Generator](https://www.the-qrcode-generator.com/) - Simple and useful.
+- [repl.it](https://repl.it/) - Create interactive REPLs for lots of languages.
+- [JDoodle](https://www.jdoodle.com/) - Like repl.it, but also include MySQL and MongoDB.
