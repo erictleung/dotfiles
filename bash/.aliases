@@ -12,6 +12,7 @@ alias doc="cd ~/Documents"
 
 # git shortcuts
 alias com="git commit -v" # COMmit
+alias coma="git commit -v --amend" # COMmit Amend
 alias g="git"
 alias ga="git add" # Git Add
 alias gaa="git add -A" # Git Add All
