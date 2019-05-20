@@ -10,7 +10,6 @@ call vundle#begin() " initialize vundle
 
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'AutoClose' " autoclose pairs of items
-Plugin 'jceb/vim-orgmode' " text outlining and task management
 Plugin 'lervag/vimtex' " modern vim plugin for editing LaTeX files
 Plugin 'mattn/emmet-vim' " easier HTML/CSS editing
 Plugin 'mxw/vim-jsx' "JSX syntax highlight and indenting
