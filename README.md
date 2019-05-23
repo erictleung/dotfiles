@@ -222,3 +222,5 @@ versions.
 - [JDoodle](https://www.jdoodle.com/) - Like repl.it, but also include MySQL
   and MongoDB.
 - [Color Oracle](https://colororacle.org/) - Design for color impaired.
+- [Freeplane](https://www.freeplane.org/wiki/index.php/Home) - Free mind
+  mapping and knowledge management software
