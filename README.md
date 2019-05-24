@@ -210,17 +210,27 @@ installations.
 
 ## Useful Software
 
-Below are some pieces of software that are useful for working on the command
-line and help me interface with files that are typically used in GUI desktop
-versions.
+Below are some pieces of software that are useful for working and help me
+interface with files and be productive.
+
+**CLI**
 
 - [`pandiff`](https://github.com/davidar/pandiff) - Prose diffs for any
   document format supported by Pandoc; installs by `npm`.
+
+**Web**
+
 - [QR Code Generator](https://www.the-qrcode-generator.com/) - Simple and
   useful.
 - [repl.it](https://repl.it/) - Create interactive REPLs for lots of languages.
 - [JDoodle](https://www.jdoodle.com/) - Like repl.it, but also include MySQL
   and MongoDB.
+
+**Desktop**
+
 - [Color Oracle](https://colororacle.org/) - Design for color impaired.
 - [Freeplane](https://www.freeplane.org/wiki/index.php/Home) - Free mind
   mapping and knowledge management software
+
+*Note*: The above desktop applications were chosen to be cross platform and
+standards based in terms of their inputs and outputs, if applicable.
