@@ -118,8 +118,8 @@
   :config
   (setq org-id-track-globally t)
   (setq org-id-locations-files "~/.emacs.d/.org-id-locations")
-  (setq org-brain-visualize-default-choises 'all)
-  (setq org-brain-title-max-length 12))
+  (setq org-brain-visualize-default-choices 'all)
+  (setq org-brain-title-max-length 21))
 
 ;; Create multiple major modes for different langauges
 ;; Inspired by
