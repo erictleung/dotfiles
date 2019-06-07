@@ -120,6 +120,11 @@
   (setq org-id-locations-files "~/.emacs.d/.org-id-locations")
   (setq org-brain-visualize-default-choices 'all)
   (setq org-brain-title-max-length 21))
+(defun etl/org-brain-hook ()
+  "Miscellaneous keychords for org-brain mode"
+  (visual-line-mode)
+  (local-set-key (kbd "C-c b s") 'org-brain-switch-brain))
+(add-hook 'org-brain-visualize-mode-hook 'etl/org-brain-hook)
 
 ;; Create multiple major modes for different langauges
 ;; Inspired by
