@@ -57,6 +57,16 @@ function get_common_edited {
         head -${1:-11}
 }
 
+# get diff output to be in color
+# modified from: https://unix.stackexchange.com/a/444159/
+function cdiff {
+    if [[ -f "$1" && -f "$2" ]]; then
+        diff --color=always -- $1 $2 | less -R
+    else
+        echo "Needs two files to compare."
+    fi
+}
+
 # allow typos for cd, tab-completion, and better directory management
 shopt -s audocd 2> /dev/null
 shopt -s dirspell 2> /dev/null
