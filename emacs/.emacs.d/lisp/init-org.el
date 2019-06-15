@@ -145,6 +145,13 @@
 ;; Default == 0.5
 (setq org-drill-learn-fraction 0.3)
 
+;; Define stuck projects
+(setq org-stuck-projects
+      '("+LEVEL=2/-DONE" ;; Tags/TODO/property matcher string
+        ("TODO" "NEXT" "NEXTACTION") ;; List of TODO keywords of non-stuck projects
+        ("childless") ;; List of tags for non-stuck projects
+        "")) ;; Arbitrary regulary expresion for non-stuck projects
+
 ;; Add keybindings for org-drill
 (defun etl/tag-as-drill ()
   "Add `drill` tag to current org entry."
