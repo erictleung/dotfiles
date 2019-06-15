@@ -41,6 +41,7 @@
         ("drill" . ?d)
         ("flag" . ?f)
         ("random" . ?r)
+        ("childless" . ?l)
         ("readend" . ?e)
         ("task" . ?t)))
 
