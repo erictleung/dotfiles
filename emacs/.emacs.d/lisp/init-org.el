@@ -183,6 +183,63 @@
   (org-agenda-align-tags))
 (add-hook 'org-finalize-agenda-hook 'etl/place-agenda-tags)
 
+;; Modify agenda to be facilitate getting things done
+;; https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
+;; https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
+(defun etl/org-skip-subtree-if-priority (priority)
+  "Skip an agenda subtree if it has a priority of PRIORITY.
+
+PRIORITY may be one of the characters ?A, ?B, or ?C."
+  (let ((subtree-end (save-excursion (org-end-of-subtree t)))
+        (pri-value (* 1000 (- org-lowest-priority priority)))
+        (pri-current (org-get-priority (thing-at-point 'line t))))
+    (if (= pri-value pri-current)
+        subtree-end
+      nil)))
+;; TODO WIP
+;; Modified from https://stackoverflow.com/a/10091330/6873133
+(defun etl/org-agenda-skip-tag (tag &optional others)
+  "Skip all entries that correspond to TAG.
+
+If OTHERS is true, skip all entries that do not correspond to TAG."
+  (let ((next-headline (save-excursion (or (outline-next-heading) (point-max))))
+        (current-headline (or (and (org-at-heading-p)
+                                   (point))
+                              (save-excursion (org-back-to-heading)))))
+    (if others
+        (if (not (member tag (org-get-tags-at current-headline)))
+            next-headline
+          nil)
+      (if (member tag (org-get-tags-at current-headine))
+          next-headline
+        nil))))
+(defun etl/org-skip-subtree-if-habit ()
+  "Skip an agenda entry if it has a STYLE property equal to \"habit\"."
+  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
+    (if (string= (org-entry-get nil "STYLE") "habit")
+        subtree-end
+      nil)))
+(setq org-agenda-custom-commands
+      '(("c" "Simple agenda view"
+         ((tags "PRIORITY=\"A\""
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "High-priority unfinished tasks:")))
+          (agenda "")
+          (alltodo ""
+                   ((org-agenda-skip-function
+                     '(or (etl/org-skip-subtree-if-priority ?A)
+                          (etl/org-skip-subtree-if-habit)
+                          (org-agenda-skip-if nil '(scheduled deadline))))
+                    (org-agenda-overriding-header "ALL normal priority tasks:"))))
+         ((org-agenda-compact-blocks t)))
+        ("W" "Weekly Review"
+         ((agenda "" ((org-agenda-span 7))) ; Review upcoming deadlines
+          (stuck "") ; Review stuck tasks that aren't maybe
+          (todo "PROJECT") ; Review all projects being TODO items
+          (todo "MAYBE") ; Review someday/maybe items
+          (todo "WAITING") ; Review waiting items
+          ))))
+
 ;; Org-mode exporters
 (require 'ox-taskjuggler) ;; Taskjuggler exporter
 (require 'ox-freemind) ;; Freemind mindmapping
