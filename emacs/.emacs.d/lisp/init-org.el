@@ -31,6 +31,8 @@
 (setq org-todo-keywords '((sequence "TODO(t)"
                                     "NEXT(n)"
                                     "WAITING(w)"
+                                    "PROJECT(p)"
+                                    "MAYBE(m)"
                                     "|"
                                     "DONE(d)"
                                     "CANCELLED(c)")))
