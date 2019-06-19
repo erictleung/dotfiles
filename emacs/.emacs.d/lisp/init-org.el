@@ -230,7 +230,7 @@ If OTHERS is true, skip all entries that do not correspond to TAG."
                      '(or (etl/org-skip-subtree-if-priority ?A)
                           (etl/org-skip-subtree-if-habit)
                           (org-agenda-skip-if nil '(scheduled deadline))))
-                    (org-agenda-overriding-header "ALL normal priority tasks:"))))
+                    (org-agenda-overriding-header "All normal priority tasks:"))))
          ((org-agenda-compact-blocks t)))
         ("W" "Weekly Review"
          ((agenda "" ((org-agenda-span 7))) ; Review upcoming deadlines
