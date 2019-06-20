@@ -43,6 +43,7 @@
         ("drill" . ?d)
         ("flag" . ?f)
         ("random" . ?r)
+        ("nobrain" . ?n)
         ("childless" . ?l)
         ("readend" . ?e)
         ("task" . ?t)))
