@@ -123,6 +123,7 @@
 (defun etl/org-brain-hook ()
   "Miscellaneous keychords for org-brain mode"
   (visual-line-mode)
+  (local-set-key (kbd "C-c b u") 'org-brain-update-id-locations)
   (local-set-key (kbd "C-c b s") 'org-brain-switch-brain))
 (add-hook 'org-brain-visualize-mode-hook 'etl/org-brain-hook)
 
