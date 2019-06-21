@@ -230,6 +230,8 @@ If OTHERS is true, skip all entries that do not correspond to TAG."
                    ((org-agenda-skip-function
                      '(or (etl/org-skip-subtree-if-priority ?A)
                           (etl/org-skip-subtree-if-habit)
+                          (org-agenda-skip-if 'regexp "^[:digit:]\{4\} - ")
+                          (org-agenda-skip-if 'todo '("WAITING" "MAYBE"))
                           (org-agenda-skip-if nil '(scheduled deadline))))
                     (org-agenda-overriding-header "All normal priority tasks:"))))
          ((org-agenda-compact-blocks t)))
