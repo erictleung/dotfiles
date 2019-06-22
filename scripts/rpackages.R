@@ -16,5 +16,10 @@ install.packages(installPkges)
 
 # install Bioconductor
 # source: https://www.bioconductor.org/install/
-source("https://bioconductor.org/biocLite.R")
-biocLite()
+#
+# For R < 3.5.0
+# > source("https://bioconductor.org/biocLite.R")
+# > biocLite()
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install()
