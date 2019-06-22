@@ -9,13 +9,13 @@
 ;; Set up org mode
 (setq org-startup-indented t)
 (setq org-startup-folded t)
-(setq org-directory "~/Dropbox/org/")
-(setq org-agenda-files '("~/Dropbox/org/gtd.org"
-                         "~/Dropbox/org/gtd.org_archive"
-                         "~/Dropbox/org/someday.org"
-                         "~/Dropbox/org/reminders.org"
-                         "~/Dropbox/org/read.org"
-                         "~/Dropbox/org/references/articles.org"))
+(setq org-directory "~/Sync/org/")
+(setq org-agenda-files '("~/Sync/org/gtd.org"
+                         "~/Sync/org/gtd.org_archive"
+                         "~/Sync/org/someday.org"
+                         "~/Sync/org/reminders.org"
+                         "~/Sync/org/read.org"
+                         "~/Sync/org/references/articles.org"))
 (setq org-default-notes-file (concat org-directory "inbox.org"))
 (setq org-log-done t)
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
@@ -62,8 +62,8 @@
     ("a"              ; key
      "Article"        ; name
      entry            ; type
-     (file+headline "~/Dropbox/org/phd.org" "To Sort") ; target
-     (file "~/Dropbox/org/templates/article.orgcaptempl") ; template
+     (file+headline "~/Sync/org/phd.org" "To Sort") ; target
+     (file "~/Sync/org/templates/article.orgcaptempl") ; template
      :prepend t       ; properties
      :empty-lines 1   ; properties
      :created t       ; properties
@@ -72,43 +72,43 @@
     ("n"
      "Note"
      entry
-     (file+olp "~/Dropbox/org/inbox.org" "Tasks")
-     (file "~/Dropbox/org/templates/note.orgcaptempl")
+     (file+olp "~/Sync/org/inbox.org" "Tasks")
+     (file "~/Sync/org/templates/note.orgcaptempl")
     )
     ;; Capture reading materials
     ("d"
      "To Read"
      entry
-     (file+olp "~/Dropbox/org/read.org" "Read Queue")
-     (file "~/Dropbox/org/templates/read.orgcaptempl")
+     (file+olp "~/Sync/org/read.org" "Read Queue")
+     (file "~/Sync/org/templates/read.orgcaptempl")
     )
     ;; Capture incoming tasks
     ("t"
      "Task"
      entry
-     (file+olp "~/Dropbox/org/inbox.org" "Tasks")
-     (file "~/Dropbox/org/templates/task.orgcaptempl")
+     (file+olp "~/Sync/org/inbox.org" "Tasks")
+     (file "~/Sync/org/templates/task.orgcaptempl")
     )
     ;; Journaling
     ("j"
      "Journal"
      entry
-     (file "~/Dropbox/org/journal.org")
-     (file "~/Dropbox/org/templates/journal.orgcaptempl")
+     (file "~/Sync/org/journal.org")
+     (file "~/Sync/org/templates/journal.orgcaptempl")
     )
     ;; Journaling
     ("r"
      "Weekly Review"
      entry
-     (file "~/Dropbox/org/weekly.org")
-     (file "~/Dropbox/org/templates/weekly.orgcaptempl")
+     (file "~/Sync/org/weekly.org")
+     (file "~/Sync/org/templates/weekly.orgcaptempl")
     )
     ;; Research and project ideas
     ("i"
      "Research and Project Ideas"
      entry
-     (file "~/Dropbox/org/ideas.org")
-     (file "~/Dropbox/org/templates/research.orgcaptempl")
+     (file "~/Sync/org/ideas.org")
+     (file "~/Sync/org/templates/research.orgcaptempl")
     )
 )))
 

@@ -18,25 +18,25 @@
 
 ;; setup bibliography workflow for notetaking
 ;; https://www.reddit.com/r/emacs/comments/4gudyw/d2l16uj/
-(let ((default-directory "~/Dropbox/org/references/"))
+(let ((default-directory "~/Sync/org/references/"))
   (setq org-ref-notes-directory (expand-file-name "notes")
         org-ref-bibliography-notes (expand-file-name "articles.org")
         org-ref-default-bibliography (expand-file-name "articles.bib")
-        org-ref-pdf-directory "~/Dropbox/zotero/"))
+        org-ref-pdf-directory "~/Sync/zotero/"))
 
 ;; setup management of bibliographies
-(let ((default-directory "~/Dropbox/org/references/"))
+(let ((default-directory "~/Sync/org/references/"))
   (setq helm-bibtex-bibliography (expand-file-name "articles.bib")
-        helm-bibtex-library-path "~/Dropbox/zotero/"
+        helm-bibtex-library-path "~/Sync/zotero/"
         helm-bibtex-notes-path (expand-file-name "articles.org")))
 
 ;; setup bibliography path
 (setq bibtex-completion-bibliography
-      '("~/Dropbox/org/references/articles.bib"))
+      '("~/Sync/org/references/articles.bib"))
 
 ;; setup where PDFs can be found
 (setq bibtex-completion-library-path
-      '("~/Dropbox/zotero"))
+      '("~/Sync/zotero"))
 
 ;; setup auto-formatting of citation
 (setq bibtex-autokey-year-length 4
