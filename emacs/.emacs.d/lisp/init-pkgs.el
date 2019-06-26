@@ -114,7 +114,7 @@
 (use-package org-brain
   :ensure t
   :init
-  (setq org-brain-path "~/Dropbox/org/brain")
+  (setq org-brain-path "~/Sync/org/brain")
   :config
   (setq org-id-track-globally t)
   (setq org-id-locations-files "~/.emacs.d/.org-id-locations")
