@@ -236,6 +236,11 @@ interface with files and be productive.
   number of metrics
 - [TikZit](https://tikzit.github.io/) - Simple GUI editor for graphs and string
   diagrams
+- [VLC Media Player](https://www.videolan.org/vlc/) - Free and open source
+  cross-platform multimedia player.
+
+*Note*: The above desktop applications were chosen to be cross platform and
+standards based in terms of their inputs and outputs, if applicable.
 
 **Windows Specific**
 
@@ -246,6 +251,3 @@ interface with files and be productive.
   cleanup tool
 - [Rapid Environment Editor](https://www.rapidee.com/en/about) - Windows
   environment variables management
-
-*Note*: The above desktop applications were chosen to be cross platform and
-standards based in terms of their inputs and outputs, if applicable.
