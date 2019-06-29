@@ -88,6 +88,13 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+To [uninstall Homebrew](https://github.com/Homebrew/brew/blob/master/docs/FAQ.md),
+run the following:
+
+```shell
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+```
+
 ### Termux
 
 These tools are missing from the shell, so let's install them here.
