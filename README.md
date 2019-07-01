@@ -223,6 +223,10 @@ management.
 See https://docs.conda.io/en/latest/miniconda.html for OS-specific
 installations.
 
+See
+https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/
+for using R with Anaconda.
+
 ## Useful Software
 
 Below are some pieces of software that are useful for working and help me
