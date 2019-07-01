@@ -141,6 +141,14 @@ Instructions are pretty well documented at the link.
 The default Ubuntu that installs doesn't come with the latest software (e.g.,
 Golang is not up to date). This can cause some issues so be aware.
 
+After downloading the `crouton` script from the above link, run the
+following:
+
+```shell
+# Install    Just CLI     Encrypt  Get Ubuntu 18.04 LTS 
+sudo crouton -t cli-extra -e       -r bionic
+```
+
 ## Software Specific Setups
 
 ### Emacs Info
