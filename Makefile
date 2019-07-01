@@ -46,7 +46,14 @@ npmclean :
 	sudo npm cache clean --force
 	sudo npm cache verify
 
-.PHONY : help example conda dirs vundle cclean ssh
+## setup : General setup for new environments
+setup :
+	stow vim
+	stow emacs
+	stow git
+	stow bash
+
+.PHONY : help example conda dirs vundle cclean ssh setup
 
 ## help : Help page for Makefile
 help :
