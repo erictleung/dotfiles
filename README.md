@@ -141,13 +141,31 @@ Instructions are pretty well documented at the link.
 The default Ubuntu that installs doesn't come with the latest software (e.g.,
 Golang is not up to date). This can cause some issues so be aware.
 
-After downloading the `crouton` script from the above link, run the
-following:
+After downloading the `crouton` script from the above link, run the following:
 
 ```shell
-# Install    Just CLI     Encrypt  Get Ubuntu 18.04 LTS 
+# Install    Just CLI     Encrypt  Get Ubuntu 18.04 LTS
 sudo crouton -t cli-extra -e       -r bionic
 ```
+
+Here are some tools that need to be added immediately:
+
+```shell
+sudo apt-get install build-essential stow git vim make curl nodejs npm \
+    syncthing
+```
+
+Here are some instructions to
+[install Emacs 26.1 on Ubuntu](http://ubuntuhandbook.org/index.php/2019/02/install-gnu-emacs-26-1-ubuntu-18-04-16-04-18-10/):
+
+```shell
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:kelleyk/emacs
+sudo apt update
+sudo apt install emacs26
+echo "alias emacs=emacs26" >> .bash_local
+```
+
 
 ## Software Specific Setups
 
