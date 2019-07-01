@@ -15,13 +15,13 @@ ssh :
 	echo ""
 
 ## conda : Install conda for Python package management
-# Add back "_64" for 64-bit systems
-# Note: doesn't quite work yet
+# Remove "_64" for 32-bit systems
+# Rename directory from Miniconda3/ to conda/
 conda :
 	curl \
 		-o ~/downloads/miniconda.sh \
-		https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh
-	bash ~/downloads/miniconda.sh
+		https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	cd ~; bash ~/downloads/miniconda.sh
 
 ## cclean : Clean conda packages and cache
 # See conda clean --help for more
