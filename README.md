@@ -152,7 +152,7 @@ Here are some tools that need to be added immediately:
 
 ```shell
 sudo apt-get install build-essential stow git vim make curl nodejs npm \
-    syncthing
+    syncthing htop tmux
 ```
 
 Here are some instructions to
