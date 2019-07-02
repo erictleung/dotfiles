@@ -22,6 +22,7 @@ conda :
 		-o ~/downloads/miniconda.sh \
 		https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 	cd ~; bash ~/downloads/miniconda.sh
+	rm ~/downloads/miniconda.sh
 
 ## cclean : Clean conda packages and cache
 # See conda clean --help for more
