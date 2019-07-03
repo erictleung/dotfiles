@@ -13,4 +13,6 @@ emacs/.emacs.d/auto-save-list/
 emacs/.emacs.d/backup/
 emacs/.emacs.d/eshell/
 emacs/.emacs.d/ido.last
+emacs/.emacs.d/.org-id-locations
 emacs/.emacs.d/request/
+emacs/.emacs.d/url/
