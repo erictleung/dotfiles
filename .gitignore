@@ -9,3 +9,8 @@ emacs/.emacs.d/history
 emacs/.emacs.d/transient
 emacs/.emacs.d/custom.el
 emacs/.emacs.d/abbrev_defs
+emacs/.emacs.d/auto-save-list/
+emacs/.emacs.d/backup/
+emacs/.emacs.d/eshell/
+emacs/.emacs.d/ido.last
+emacs/.emacs.d/request/
