@@ -6,6 +6,7 @@ vim/.vim/spell/en.utf-8.add.spl
 
 emacs/.emacs.d/elpa
 emacs/.emacs.d/history
+emacs/.emacs.d/bookmarks
 emacs/.emacs.d/transient
 emacs/.emacs.d/custom.el
 emacs/.emacs.d/abbrev_defs
