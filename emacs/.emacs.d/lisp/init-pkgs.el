@@ -154,4 +154,11 @@
   :ensure poly-noweb
   :defer t)
 
+;; Help define words
+(use-package define-word
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c d") 'define-word-at-point)
+  (global-set-key (kbd "C-c D") 'define-word))
+
 (provide 'init-pkgs)
