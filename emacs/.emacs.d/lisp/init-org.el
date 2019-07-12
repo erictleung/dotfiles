@@ -162,6 +162,7 @@
   "Miscellaneous keychords for org-drill mode"
   (visual-line-mode)
   (local-set-key (kbd "C-c d d") 'org-drill)
+  (local-set-key (kbd "C-c d e") 'org-drill-tree)
   (local-set-key (kbd "C-c d r") 'org-drill-resume)
   (local-set-key (kbd "C-c d t") 'etl/tag-as-drill))
 (defun etl/org-mode-hook ()
