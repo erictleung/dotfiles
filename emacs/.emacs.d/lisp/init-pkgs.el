@@ -161,4 +161,10 @@
   (global-set-key (kbd "C-c d") 'define-word-at-point)
   (global-set-key (kbd "C-c D") 'define-word))
 
+;; Quickly select semantically meaningful regions
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "C-=") 'er/expand-region))
+
 (provide 'init-pkgs)
