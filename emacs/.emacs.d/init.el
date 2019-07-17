@@ -1,4 +1,10 @@
-;; init.el
+;;; init.el --- My main configuration file for Emacs
+
+;;; Commentary:
+;; This is where my configuration starts with some basic configurations.
+;; Near the end, I source other files for my configuration.
+
+;;; Code:
 
 ;; Produce trace when error occurs
 (setq debug-on-error t)
@@ -61,8 +67,7 @@
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup/per-save")))
 
 (defun force-backup-of-buffer ()
-  ;; Make a special "per session" backup at the first save of each
-  ;; emacs session.
+  "Make a special 'per session' backup at the first save of each Emacs session."
   (when (not buffer-backed-up)
     ;; Override the default parameters for per-session backups.
     (let ((backup-directory-alist '(("" . "~/.emacs.d/backup/per-session")))
@@ -108,3 +113,6 @@
 (require 'init-ess)
 (require 'init-python)
 (require 'init-osx-keys)
+(require 'ob2dot)
+
+;;; init.el ends here
