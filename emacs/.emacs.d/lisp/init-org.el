@@ -244,6 +244,13 @@ If OTHERS is true, skip all entries that do not correspond to TAG."
           (todo "WAITING") ; Review waiting items
           ))))
 
+;; Use org-mode for contacts
+;; https://www.reddit.com/r/emacs/comments/8toivy/tip_how_to_manage_your_contacts_with_orgcontacts/
+(use-package org-contacts
+  :ensure nil
+  :after org
+  :custom (org-contacts-file '("~/Sync/org/contacts.org")))
+
 ;; Org-mode exporters
 (require 'ox-taskjuggler) ;; Taskjuggler exporter
 (require 'ox-freemind) ;; Freemind mindmapping
