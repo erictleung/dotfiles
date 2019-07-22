@@ -5,6 +5,9 @@ PATH=$PATH:~/go/bin
 alias pulldb="rclone sync --verbose db:org ~/Dropbox/org"
 alias pushdb="rclone sync --verbose ~/Dropbox/org/ db:org"
 
+# Link to SyncThing materials
+alias cdsync="cd ~/storage/shared/Sync"
+
 # ls after cd
 # source: https://dev.to/wulfmann/comment/6mp9
 function cd {
