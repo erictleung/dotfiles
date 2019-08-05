@@ -29,7 +29,6 @@ export PATH="$HOME/spark/spark-2.4.0-bin-hadoop2.7/bin:$PATH"
 export PATH="$PATH:$HOME/.TinyTeX/bin/x86_64-linux"
 
 # Add ~/bin to path
-# https://yihui.name/tinytex/
 export PATH="$PATH:$HOME/bin"
 
 # Function--------------------------------------------------------------
