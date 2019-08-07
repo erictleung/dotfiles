@@ -47,6 +47,13 @@ function cd {
     builtin cd "$@" && ls -Gltr --color
 }
 
+# mkdir and then cd into it
+function mcd () {
+    mkdir -p $1
+    cd $1
+}
+
+
 # find top n edited files in git
 # modified from: https://news.ycombinator.com/item?id=16300152
 function get_common_edited {
