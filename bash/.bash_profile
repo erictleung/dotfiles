@@ -44,7 +44,12 @@ function extract () {
 # ls after cd
 # source: https://dev.to/wulfmann/comment/6mp9
 function cd {
-    builtin cd "$@" && ls -Gltr --color
+    OS="$(uname -s)"
+    if [[ $OS == "Darwin" ]]; then
+        builtin cd "$@" && ls -Gltr
+    else
+        builtin cd "$@" && ls -Gltr --color
+    fi
 }
 
 # mkdir and then cd into it
