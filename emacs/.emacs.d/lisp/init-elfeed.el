@@ -57,7 +57,7 @@
 (use-package elfeed
   :ensure t
   :config
-  (setq elfeed-db-directory "~/Dropbox/org/elfeed/")
+  (setq elfeed-db-directory "~/Sync/org/elfeed/")
   :bind (:map elfeed-search-mode-map
               ("A" . etl/elfeed-show-all)
               ("E" . etl/elfeed-show-emacs)
@@ -70,7 +70,7 @@
   :ensure t
   :config
   (elfeed-org)
-  (setq rmh-elfeed-org-files (list "~/Dropbox/org/elfeed/feed.org")))
+  (setq rmh-elfeed-org-files (list "~/Sync/org/elfeed/feed.org")))
 (use-package elfeed-goodies
   :ensure t
   :config
