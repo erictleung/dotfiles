@@ -51,6 +51,7 @@
 (defun etl/org-ref-hook ()
   (visual-line-mode)
   (local-set-key (kbd "C-c r c") 'org-ref-clean-bibtex-entry)
+  (local-set-key (kbd "C-c r l") 'crossref-lookup)
   (local-set-key (kbd "C-c r o") 'org-ref-open-bibtex-notes))
 (defun etl/interleave ()
   (visual-line-mode)
