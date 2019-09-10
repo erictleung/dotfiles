@@ -9,6 +9,7 @@ vundle :
 ## dirs : Setup directory structure
 dirs :
 	mkdir -p ../{documents,downloads,misc}
+	mkdir -p ../documents/{gitlab,github}
 
 ## ssh : Get SSH key for easy copy-paste (WIP)
 ssh :
