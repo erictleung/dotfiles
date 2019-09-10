@@ -249,7 +249,8 @@ If OTHERS is true, skip all entries that do not correspond to TAG."
 (use-package org-contacts
   :ensure nil
   :after org
-  :custom (org-contacts-file '("~/Sync/org/contacts.org")))
+  :config
+  (setq org-contacts-file '("~/Sync/org/contacts.org")))
 
 ;; Org-mode exporters
 (require 'ox-taskjuggler) ;; Taskjuggler exporter
