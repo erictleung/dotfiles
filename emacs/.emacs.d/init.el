@@ -48,8 +48,8 @@
 (setq ring-bell-function 'ignore)
 
 ;; Add line numbers
-(global-linum-mode t)
-(setq linum-format "%d ")
+; (global-linum-mode t)
+; (setq linum-format "%d ")
 
 ;; Word wrap long lines
 (global-visual-line-mode t)
