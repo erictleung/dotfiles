@@ -1,0 +1,21 @@
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/leunge/miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/leunge/miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/leunge/miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/leunge/miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+alias emacs=emacs26
+alias phd='cd ~/documents/gitlab/dissertation'
+
+# https://www.scivision.dev/x11-gui-windows-subsystem-for-linux/
+DISPLAY=:0.0
+export DISPLAY
