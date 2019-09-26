@@ -262,6 +262,8 @@ interface with files and be productive.
 - [repl.it](https://repl.it/) - Create interactive REPLs for lots of languages.
 - [JDoodle](https://www.jdoodle.com/) - Like repl.it, but also include MySQL
   and MongoDB.
+- [Online LaTeX editor](https://www.codecogs.com/latex/eqneditor.php) - Quickly
+  and easily create LaTeX equation images.
 
 **Cross-Platform Desktop**
 
