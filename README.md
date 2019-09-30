@@ -264,6 +264,8 @@ interface with files and be productive.
   and MongoDB.
 - [Online LaTeX editor](https://www.codecogs.com/latex/eqneditor.php) - Quickly
   and easily create LaTeX equation images.
+- [Twitter Card Validator](https://cards-dev.twitter.com/validator) - See how
+  your website will show up on Twitter.
 
 **Cross-Platform Desktop**
 
