@@ -8,6 +8,9 @@ alias pushdb="rclone sync --verbose ~/Dropbox/org/ db:org"
 # Link to SyncThing materials
 alias cdsync="cd ~/storage/shared/Sync"
 
+# Link to dissertation materials
+alias phd="cd ~/documents/gitlab/dissertation"
+
 # ls after cd
 # source: https://dev.to/wulfmann/comment/6mp9
 function cd {
