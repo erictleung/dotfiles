@@ -102,6 +102,9 @@
 ;; Show and highlight matching parentheses
 (show-paren-mode 1)
 
+;; Show column number
+(setq column-number-mode t)
+
 ;; Load configs for specific modes -------------------------------------
 
 (require 'init-custom)
