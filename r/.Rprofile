@@ -46,16 +46,16 @@ options(continue = "... ")
 }
 
 # Custom function to remove rownames
-.env$unrowname <- function(x) {
+.GlobalEnv$unrowname <- function(x) {
     rownames(x) <- NULL
     x
 }
 
 # Custom function to undo factor() call
-.env$unfactor <- function(df){
+.GlobalEnv$unfactor <- function(df){
     id <- sapply(df, is.factor)
     df[id] <- lapply(df[id], as.character)
     df
 }
 
-message("n*** Successfully loaded .Rprofile ***n")
+message("*** Successfully loaded .Rprofile ***")
