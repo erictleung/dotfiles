@@ -27,6 +27,7 @@
 	today = !git log --since='12am' --committer=\"`git me`\"
 	uc = reset --soft HEAD^
 	uca = reset --hard HEAD^
+	undoall = restore '*'
 	unstage = reset HEAD
 [color]
 	ui = auto
