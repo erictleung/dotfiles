@@ -268,6 +268,7 @@ interface with files and be productive.
   your website will show up on Twitter.
 - [OneLook](https://onelook.com/) - Dictionary with more expressive search
   patterns and also has a nice thesaurus and reverse dictionary.
+- [Duckie](http://duckie.me/) - A tool for one person pair programming.
 
 **Cross-Platform Desktop**
 
