@@ -266,6 +266,8 @@ interface with files and be productive.
   and easily create LaTeX equation images.
 - [Twitter Card Validator](https://cards-dev.twitter.com/validator) - See how
   your website will show up on Twitter.
+- [OneLook](https://onelook.com/) - Dictionary with more expressive search
+  patterns and also has a nice thesaurus and reverse dictionary.
 
 **Cross-Platform Desktop**
 
