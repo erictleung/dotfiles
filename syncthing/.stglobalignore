@@ -1,0 +1,93 @@
+// .stglobalignore
+// https://gist.github.com/jult/e2eaedad6b9e29d95977fea0ddffae7d
+
+// These prevent SyncThing from trying to sync data that's locked, constantly
+// changing, going to be thrown out, unimportant, etc.
+// Lots of conflicts/issues disappeared using these ignores, but do check to
+// prevent major disappointment!
+// *.log and *cache* are in there, just so you know.. but firefox' startupCache
+// and offlineCache will be synced.
+// Decided to stop categorizing these. Sorting them Lexicographically from now
+// on. Ignores are case sensitive.
+
+$RECYCLE.BIN
+$WINDOWS.~BT
+*.!Sync
+*.Cache
+*.SyncOld
+*.SyncPart
+*.SyncTemp
+*.bak
+*.bts
+*.crdownload
+*.git
+*.lock
+*.log
+*.old
+*.part
+*.shm
+*.sqlite*
+*.svn
+*.swp
+*.sync
+*.tmp
+*.wal
+*CACHE*
+*S*Conflict*
+*Temporary*
+*cache*
+*inaccessible*
+*s*conflict*
+*~
+.#*
+.*.swp
+.DS_Store
+.Prullenbak
+.Shared
+.Spotlight-V100
+.SyncArchive
+.SyncID
+.SyncIgnore
+.Trash*
+._*
+.escheck.tmp
+.gvfs
+.local/share/trash
+.svn
+.sync
+.thumbnails
+.trash*
+.~lock.
+@eaDir
+LOST.DIR
+System*Volume*
+TEMP
+Temp
+Thumbs.db
+Trash*
+a_writable
+asset-cache
+captcha_tmp
+checkouts
+data/searchIndex
+desktop.ini
+dev/
+ehthumbs.db
+files_trashbin/
+forms.json
+lost+found
+nobackup
+pagefile.sys
+proc/
+run/
+searchIndex
+selinux/
+staging.*
+sys/
+templates_c
+thumbnails
+tmp/
+tmp_uploads
+trash
+var/lib/lxcfs/
+~$*
