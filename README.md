@@ -274,12 +274,12 @@ interface with files and be productive.
 
 - [Color Oracle](https://colororacle.org/) - Design for color impaired.
 - [Freeplane](https://www.freeplane.org/wiki/index.php/Home) - Free mind
-  mapping and knowledge management software
+  mapping and knowledge management software.
 - [Publish or Perish](https://harzing.com/resources/publish-or-perish) -
   Retrieved and analyzes academic citations from variety of sources with a
-  number of metrics
+  number of metrics.
 - [TikZit](https://tikzit.github.io/) - Simple GUI editor for graphs and string
-  diagrams
+  diagrams.
 - [VLC Media Player](https://www.videolan.org/vlc/) - Free and open source
   cross-platform multimedia player.
 
@@ -288,10 +288,10 @@ standards based in terms of their inputs and outputs, if applicable.
 
 **Windows Specific**
 
-- [Dexpot](https://www.dexpot.de) - Virtual desktops for Windows
-- [Cygwin](https://www.cygwin.com/) - Linux feeling on Windows (I've primarily
-  used on Windows 7)
+- [Dexpot](https://www.dexpot.de) - Virtual desktops for Windows.
+- [Cygwin](https://www.cygwin.com/) - Linux feeling on Windows 7 (Windows 10
+  has Windows Subsystem for Linux (WSL) option for terminal).
 - [WinDirStat](https://windirstat.net/) - Disk usage statistics viewer and
-  cleanup tool
+  cleanup tool.
 - [Rapid Environment Editor](https://www.rapidee.com/en/about) - Windows
-  environment variables management
+  environment variables management.
