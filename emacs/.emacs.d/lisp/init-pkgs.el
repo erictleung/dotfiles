@@ -66,18 +66,6 @@
 (global-set-key "\C-c\C-gg" 'writegood-grade-level)
 (global-set-key "\C-c\C-ge" 'writegood-reading-ease)
 
-;; Install PDF tools
-(use-package pdf-tools
-  :ensure t
-  :pin melpa-stable
-  :config
-  (pdf-tools-install)
-  (custom-set-variables
-    '(pdf-tools-handle-upgrade nil))
-  (setq-default pdf-view-display-size 'fit-page)
-  ;; Disable linum-mode in pdf-view-mode
-  (add-hook 'pdf-view-mode-hook (lambda () (linum-mode 0))))
-
 ;; flycheck for syntax checking
 (use-package flycheck
   :ensure t
