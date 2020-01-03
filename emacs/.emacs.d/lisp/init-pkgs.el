@@ -86,6 +86,7 @@
   :config
   (setq w3m-use-cookies t
         w3m-cookie-accept-bad-cookies t
+        w3m-use-tab t
         w3m-fill-column 0
         w3m-home-page "https://duckduckgo.com")
   (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
