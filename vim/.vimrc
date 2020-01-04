@@ -15,6 +15,7 @@ Plugin 'mattn/emmet-vim' " easier HTML/CSS editing
 Plugin 'mxw/vim-jsx' "JSX syntax highlight and indenting
 Plugin 'pangloss/vim-javascript' " improve JS indentation and syntax
 Plugin 'scrooloose/syntastic' " syntax highlighing
+Plugin 'reedes/vim-wordy' " uncover usage problems in writing
 Plugin 'tpope/vim-commentary' " comment lines with shortcut
 Plugin 'tpope/vim-fugitive' " Git wrapper
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
