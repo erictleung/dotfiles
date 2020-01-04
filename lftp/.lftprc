@@ -1,0 +1,5 @@
+# Useful aliases
+alias reconnect "close; cache flush; cd ."
+
+# Make prompt look better
+set prompt "lftp \S\? \u\@\h:\w> "
