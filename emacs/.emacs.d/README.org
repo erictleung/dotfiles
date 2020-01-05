@@ -1,0 +1,910 @@
+#+STARTUP: overview
+#+PROPERTY: header-args :comments yes :results silent
+
+* Explore packages
+
+- posframe
+- iedit
+- pcre2el
+- origami
+- git-timemachine
+- git-gutter
+- smerge-mode
+- forge
+- org-bullets
+- org-msg
+- smartparens
+- dash
+- diminish
+
+* Package sources
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+#+END_SRC
+
+Use =M-x package-refresh-contents= to reload list of packages.
+
+* Interface modifications
+
+#+BEGIN_SRC emacs-lisp
+(setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message t)
+
+;; Use y/n for yes/no
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Scroll slower
+(setq scroll-conservatively 100)
+
+;; Stop bell from playing
+(setq ring-bell-function 'ignore)
+
+;; Word wrap long lines
+(global-visual-line-mode t)
+
+;; Set basic backup settings
+;; Source: https://stackoverflow.com/a/20824625/6873133
+(setq version-control t     ;; Use version numbers for backups.
+      kept-new-versions 10  ;; Number of newest versions to keep.
+      kept-old-versions 0   ;; Number of oldest versions to keep.
+      delete-old-versions t ;; Don't ask to delete excess backup versions.
+      backup-by-copying t)  ;; Copy all files, don't rename them.
+
+(setq vc-make-backup-files t)
+
+;; Default and per-save backups go here:
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup/per-save")))
+
+(defun force-backup-of-buffer ()
+  "Make a special 'per session' backup at the first save of each Emacs session."
+  (when (not buffer-backed-up)
+    ;; Override the default parameters for per-session backups.
+    (let ((backup-directory-alist '(("" . "~/.emacs.d/backup/per-session")))
+          (kept-new-versions 3))
+      (backup-buffer)))
+  ;; Make a "per save" backup on each save.  The first save results in
+  ;; both a per-session and a per-save backup, to keep the numbering
+  ;; of per-save backups consistent.
+  (let ((buffer-backed-up nil))
+    (backup-buffer)))
+
+(add-hook 'before-save-hook  'force-backup-of-buffer)
+(add-hook 'text-mode-hook 'auto-fill-mode)
+
+;; Word wrap lines
+(setq-default word-wrap t)
+(setq-default fill-column 79)
+
+;; Remove unnecessary toolbars, scrollbars, etc
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+
+;; Use spaces instead of tabs
+;; source: http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/
+(setq-default indent-tabs-mode nil)
+
+;; Toggle truncation of lines
+;; https://stackoverflow.com/a/49692205/
+(global-set-key (kbd "C-x w") 'toggle-truncate-lines)
+
+;; Show and highlight matching parentheses
+(show-paren-mode 1)
+
+;; Show column number
+(setq column-number-mode t)
+
+;; Highlights the current cursor line
+(global-hl-line-mode t)
+
+;; Display clock
+(display-time-mode 1)
+
+;; Sentences end with one space
+(setq sentence-end-double-space nil)
+#+END_SRC
+
+* Custom functions
+
+#+BEGIN_SRC emacs-lisp
+;; Run top within emacs
+;; source: https://emacs.stackexchange.com/a/28088/
+(defun etl/top ()
+  (interactive)
+  (if (get-buffer "*top*")
+    (switch-to-buffer "*top*")
+    (ansi-term "/bin/bash" "top")
+    (comint-send-string "*top*" "top\n")))
+#+END_SRC
+
+* Interface packages
+
+#+BEGIN_SRC emacs-lisp
+;; Demo packages before committing
+(use-package try :ensure t)
+
+;; Help display key binding hints
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode))
+
+;; Delete all white space when using backspace
+(use-package hungry-delete
+  :ensure t
+  :config
+  (global-hungry-delete-mode))
+
+;; Have more control when switching windows
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key (kbd "C-x O") 'other-frame)
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+    ))
+
+;; Quickly select semantically meaningful regions with each press of C-=
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "C-=") 'er/expand-region))
+#+END_SRC
+#
+* Swiper/Ivy/Counsel
+
+- Swiper :: Ivy-enhanced alternative to isearch
+- Ivy :: generic completion mechanism for Emacs
+- Counsel :: collection of Ivy-enhanced versions of common Emacs commands
+
+#+BEGIN_SRC emacs-lisp
+(use-package counsel
+  :ensure t
+  :bind
+  (("M-y" . counsel-yank-pop)
+    :map ivy-minibuffer-map
+    ("M-y" . ivy-next-line)))
+
+(use-package ivy
+  :ensure t
+  :diminish (ivy-mode)
+  :bind (("C-x b" . ivy-switch-buffer))
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "%d/%d ")
+  (setq ivy-display-style 'fancy))
+
+(use-package swiper
+  :ensure t
+  :bind (("C-s" . swiper-isearch)
+         ("C-r" . swiper-isearch)
+         ("C-c C-r" . ivy-resume)
+         ("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file))
+  :config
+  (progn
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-display-style 'fancy)
+    (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)))
+#+END_SRC
+
+* IBuffer
+
+Improved buffer management system
+
+https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ibuffer-asap/
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(setq ibuffer-saved-filter-groups
+  (quote (("default"
+          ("dired" (mode . dired-mode))
+          ("org" (name . "^.*org$"))
+          ("magit" (mode . magit-mode))
+          ("web" (or (mode . web-mode) (mode . js2-mode)))
+          ("shell" (or (mode . eshell-mode) (mode . shell-mode)))
+          ("programming" (or
+                          (mode . python-mode)))
+          ("emacs" (or
+                    (name . "^\\*scratch\\*$")
+                    (name . "^\\*Messages\\*$")))
+          ))))
+(add-hook 'ibuffer-mode-hook
+          (lambda ()
+            (ibuffer-auto-mode 1)
+            (ibuffer-switch-to-saved-filter-groups "default")))
+
+;; Don't show filter groups if there are no buffers in that group
+(setq ibuffer-show-empty-filter-groups nil)
+#+END_SRC
+
+* Avy
+
+Powerful text search. Similar to =ido= package.
+
+#+BEGIN_SRC emacs-lisp
+(use-package avy
+    :ensure t
+    :bind ("M-s" . avy-goto-word-1))
+#+END_SRC
+
+* Company and auto-complete
+
+#+BEGIN_SRC emacs-lisp
+;; General auto-complete
+(use-package company
+  :ensure t
+  :init
+  :config
+  (setq company-minimum-prefix-length 2)
+  (setq company-idle-delay 0.5)
+  (setq company-selection-wrap-around t)
+  (global-company-mode t))
+
+;; More quick help
+(use-package company-quickhelp
+  :ensure t
+  :defer t
+  :disabled t
+  :commands company-quickhelp-mode
+  :init
+  (progn
+    (setq company-quickhelp-idle-delay 0.2)
+    (add-hook 'after-init-hook 'company-quickhelp-mode)))
+
+;; Create snippet templates
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1))
+#+END_SRC
+
+* Magit and Git
+
+#+BEGIN_SRC emacs-lisp
+(use-package magit
+  :ensure t
+  :init
+  (progn
+    (bind-key "C-x g" 'magit-status)))
+#+END_SRC
+
+* Markdown
+
+#+BEGIN_SRC emacs-lisp
+;; Create major mode for editing Markdown-formatted text
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.txt\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
+;; Another org-mode exporter via pandoc
+(use-package ox-pandoc
+  :defer t
+  :init
+  (with-eval-after-load 'org '(require 'ox-pandoc)))
+
+;; Create multiple major modes for different langauges
+;; Inspired by
+;; - https://github.com/SteveLane/dot-emacs/blob/master/packages-polymode.el
+;; - http://johnstantongeddes.org/open%20science/2014/03/26/Rmd-polymode.html
+(use-package polymode
+  :ensure markdown-mode
+  :ensure poly-R
+  :ensure poly-noweb
+  :config
+  (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
+  (add-to-list 'auto-mode-alist '("\\.rnw" . poly-noweb+r-mode))
+  (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+  )
+(use-package poly-markdown
+  :ensure polymode
+  :defer t
+  :config
+  ;; Wrap lines at column limit, but don't put hard returns in
+  (add-hook 'markdown-mode-hook (lambda () (visual-line-mode 1)))
+  ;; Flyspell on
+  (add-hook 'markdown-mode-hook (lambda () (flyspell-mode 1))))
+(use-package poly-R
+  :ensure polymode
+  :ensure poly-markdown
+  :ensure poly-noweb
+  :defer t)
+#+END_SRC
+
+* Prose and writing
+
+#+BEGIN_SRC emacs-lisp
+;; Improve writing with tips from
+;; http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
+(use-package writegood-mode
+  :ensure t)
+(global-set-key "\C-cg" 'writegood-mode)
+(global-set-key "\C-c\C-gg" 'writegood-grade-level)
+(global-set-key "\C-c\C-ge" 'writegood-reading-ease)
+
+;; flycheck for syntax checking
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode t))
+
+;; Help define words
+(use-package define-word
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c d") 'define-word-at-point)
+  (global-set-key (kbd "C-c D") 'define-word))
+
+;; Completions for academic phrases
+(use-package academic-phrases
+  :ensure t)
+#+END_SRC
+
+* Internet browsing
+
+#+BEGIN_SRC emacs-lisp
+;; Browse internet with w3m
+;; Help and examples:
+;; - http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html
+(use-package w3m
+  :ensure t
+  :config
+  (setq w3m-use-cookies t
+        w3m-cookie-accept-bad-cookies t
+        w3m-use-tab t
+        w3m-fill-column 0
+        w3m-home-page "https://duckduckgo.com")
+  (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+  (autoload 'w3m-region "w3m" "Render region in current buffer and replace with result." t)
+  ;; UTF-8 everything
+  (setq w3m-coding-system 'utf-8
+        w3m-file-coding-system 'utf-8
+        w3m-file-name-coding-system 'utf-8
+        w3m-input-coding-system 'utf-8
+        w3m-output-coding-system 'utf-8
+        w3m-terminal-coding-system 'utf-8))
+#+END_SRC
+
+* Org-mode
+
+#+BEGIN_SRC emacs-lisp
+(use-package org
+  :ensure t
+  :pin org)
+
+;; Set up key binding shortcuts
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+;; Set up org mode
+(setq org-startup-indented t)
+(setq org-startup-folded t)
+(setq org-directory "~/Sync/org/")
+(setq org-agenda-files '("~/Sync/org/gtd.org"
+                         "~/Sync/org/gtd.org_archive"
+                         "~/Sync/org/someday.org"
+                         "~/Sync/org/reminders.org"
+                         "~/Sync/org/read.org"
+                         "~/Sync/org/references/articles.org"))
+(setq org-default-notes-file (concat org-directory "inbox.org"))
+(setq org-log-done t)
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+(setq org-agenda-inhibit-startup t) ; Inhibit startup options to speed up agenda
+
+;; Set up refile targets
+(setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+(setq org-outline-path-complete-in-steps nil) ; Refile in a single go
+(setq org-refile-use-outline-path t)          ; Show full paths for refiling
+(setq org-refile-allow-creating-parent-nodes 'confirm) ; New parents on refile
+
+;; Define keywords for projects and tasks
+(setq org-todo-keywords '((sequence "TODO(t)"
+                                    "NEXT(n)"
+                                    "WAITING(w)"
+                                    "PROJECT(p)"
+                                    "MAYBE(m)"
+                                    "|"
+                                    "DONE(d)"
+                                    "CANCELLED(c)")))
+
+;; Define tags available
+(setq org-tag-alist
+      '(("ongoing" . ?o)
+        ("drill" . ?d)
+        ("flag" . ?f)
+        ("random" . ?r)
+        ("nobrain" . ?n)
+        ("childless" . ?l)
+        ("readend" . ?e)
+        ("task" . ?t)))
+
+;; Load Markdown exporter
+;; source: https://stackoverflow.com/a/22990257/6873133
+(eval-after-load "org" '(require 'ox-md nil t))
+
+;; Separate fill-column value for org-mode
+;; source: https://emacs.stackexchange.com/a/29063/
+(add-hook 'org-mode-hook (lambda () (setq fill-column nil)))
+
+;; Setup org-capture templates
+(setq org-capture-templates (quote (
+    ;; Capture article summaries
+    ("a"              ; key
+     "Article"        ; name
+     entry            ; type
+     (file+headline "~/Sync/org/phd.org" "To Sort") ; target
+     (file "~/Sync/org/templates/article.orgcaptempl") ; template
+     :prepend t       ; properties
+     :empty-lines 1   ; properties
+     :created t       ; properties
+    )
+    ;; Capture notes and reference material
+    ("n"
+     "Note"
+     entry
+     (file+olp "~/Sync/org/inbox.org" "Tasks")
+     (file "~/Sync/org/templates/note.orgcaptempl")
+    )
+    ;; Capture reading materials
+    ("d"
+     "To Read"
+     entry
+     (file+olp "~/Sync/org/read.org" "Read Queue")
+     (file "~/Sync/org/templates/read.orgcaptempl")
+    )
+    ;; Capture incoming tasks
+    ("t"
+     "Task"
+     entry
+     (file+olp "~/Sync/org/inbox.org" "Tasks")
+     (file "~/Sync/org/templates/task.orgcaptempl")
+    )
+    ;; Journaling
+    ("j"
+     "Journal"
+     entry
+     (file "~/Sync/org/journal.org")
+     (file "~/Sync/org/templates/journal.orgcaptempl")
+    )
+    ;; Journaling
+    ("r"
+     "Weekly Review"
+     entry
+     (file "~/Sync/org/weekly.org")
+     (file "~/Sync/org/templates/weekly.orgcaptempl")
+    )
+    ;; Research and project ideas
+    ("i"
+     "Research and Project Ideas"
+     entry
+     (file "~/Sync/org/ideas.org")
+     (file "~/Sync/org/templates/research.orgcaptempl")
+    )
+)))
+
+;; Enable native fontification in code blocks
+(setq org-src-fontify-natively t)
+
+;; Change column width for habit graph
+(setq org-habit-graph-column 63)
+
+;; Include clock
+(setq org-clock-report-include-clocking-task t)
+
+;; Hook to change visual view of agenda
+;; source: https://superuser.com/a/531670/
+(add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (visual-line-mode -1)
+            (toggle-truncate-lines 1)))
+
+;; Additional org functions for checklist handling
+;; https://orgmode.org/worg/org-contrib/org-checklist.html
+(use-package org :ensure org-plus-contrib)
+
+(setq org-modules '(org-habit
+                    org-drill))
+(eval-after-load 'org
+ '(org-load-modules-maybe t))
+
+;; Active Babel languages
+(org-babel-do-load-languages
+  'org-babel-load-languages
+  '((awk . t)
+    (css . t)
+    (ditaa . t)
+    (dot . t)
+    (emacs-lisp . t)
+    (gnuplot . t)
+    (js . t)
+    (latex . t)
+    (makefile . t)
+    (perl . t)
+    (python . t)
+    (R . t)
+    (ruby . t)
+    (sed . t)
+    (shell . t)
+    (sql . t)
+    (sqlite . t)
+   )
+  )
+
+;; Remove requirement of confirmation for evaluating
+(setq org-confirm-babel-evaluate nil)
+
+;; Have org-drill look through current directory for files
+(setq org-drill-scope (quote directory))
+
+;; Set learn fraction, higher == larger time interval
+;; Default == 0.5
+(setq org-drill-learn-fraction 0.3)
+
+;; Define stuck projects
+(setq org-stuck-projects
+      '("+LEVEL=2/-DONE" ;; Tags/TODO/property matcher string
+        ("TODO" "NEXT" "NEXTACTION") ;; List of TODO keywords of non-stuck projects
+        ("childless") ;; List of tags for non-stuck projects
+        "")) ;; Arbitrary regulary expresion for non-stuck projects
+
+;; Add keybindings for org-drill
+(defun etl/tag-as-drill ()
+  "Add `drill` tag to current org entry."
+  (interactive)
+  (org-set-tags-to (cons "drill" (org-get-tags))))
+(defun etl/org-drill-hook ()
+  "Miscellaneous keychords for org-drill mode"
+  (visual-line-mode)
+  (local-set-key (kbd "C-c d d") 'org-drill)
+  (local-set-key (kbd "C-c d e") 'org-drill-tree)
+  (local-set-key (kbd "C-c d r") 'org-drill-resume)
+  (local-set-key (kbd "C-c d t") 'etl/tag-as-drill))
+(defun etl/org-mode-hook ()
+  "Miscellaneous keychords for org-mode"
+  (visual-line-mode)
+  (local-set-key (kbd "C-c b v") 'org-brain-visualize)
+  (local-set-key (kbd "C-c b i") 'org-id-get-create))
+
+;; Setup org-mode useful hooks
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'org-mode-hook 'auto-fill-mode)
+(add-hook 'org-mode-hook 'etl/org-drill-hook)
+(add-hook 'org-mode-hook 'etl/org-mode-hook)
+
+;; Place tags close to the right-hand side of the window
+;; https://lists.gnu.org/archive/html/emacs-orgmode/2010-12/msg00410.html
+(defun etl/place-agenda-tags ()
+  "Put the agenda tags by the right border of the agenda window."
+  (setq org-agenda-tags-column (- 4 (window-width)))
+  (org-agenda-align-tags))
+(add-hook 'org-finalize-agenda-hook 'etl/place-agenda-tags)
+
+;; Modify agenda to be facilitate getting things done
+;; https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
+;; https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
+(defun etl/org-skip-subtree-if-priority (priority)
+  "Skip an agenda subtree if it has a priority of PRIORITY.
+
+PRIORITY may be one of the characters ?A, ?B, or ?C."
+  (let ((subtree-end (save-excursion (org-end-of-subtree t)))
+        (pri-value (* 1000 (- org-lowest-priority priority)))
+        (pri-current (org-get-priority (thing-at-point 'line t))))
+    (if (= pri-value pri-current)
+        subtree-end
+      nil)))
+;; TODO WIP
+;; Modified from https://stackoverflow.com/a/10091330/6873133
+(defun etl/org-agenda-skip-tag (tag &optional others)
+  "Skip all entries that correspond to TAG.
+
+If OTHERS is true, skip all entries that do not correspond to TAG."
+  (let ((next-headline (save-excursion (or (outline-next-heading) (point-max))))
+        (current-headline (or (and (org-at-heading-p)
+                                   (point))
+                              (save-excursion (org-back-to-heading)))))
+    (if others
+        (if (not (member tag (org-get-tags-at current-headline)))
+            next-headline
+          nil)
+      (if (member tag (org-get-tags-at current-headine))
+          next-headline
+        nil))))
+(defun etl/org-skip-subtree-if-habit ()
+  "Skip an agenda entry if it has a STYLE property equal to \"habit\"."
+  (let ((subtree-end (save-excursion (org-end-of-subtree t))))
+    (if (string= (org-entry-get nil "STYLE") "habit")
+        subtree-end
+      nil)))
+(setq org-agenda-custom-commands
+      '(("c" "Simple agenda view"
+         ((tags "PRIORITY=\"A\""
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "High-priority unfinished tasks:")))
+          (agenda "")
+          (alltodo ""
+                   ((org-agenda-skip-function
+                     '(or (etl/org-skip-subtree-if-priority ?A)
+                          (etl/org-skip-subtree-if-habit)
+                          (org-agenda-skip-entry-if 'regexp "[[:digit:]]\{4\} - .*")
+                          (org-agenda-skip-entry-if 'todo '("WAITING" "MAYBE"))
+                          (org-agenda-skip-if nil '(scheduled deadline))))
+                    (org-agenda-overriding-header "All normal priority tasks:"))))
+         ((org-agenda-compact-blocks t)))
+        ("W" "Weekly Review"
+         ((agenda "" ((org-agenda-span 7))) ; Review upcoming deadlines
+          (stuck "") ; Review stuck tasks that aren't maybe
+          (todo "PROJECT") ; Review all projects being TODO items
+          (todo "MAYBE") ; Review someday/maybe items
+          (todo "WAITING") ; Review waiting items
+          ))))
+
+;; Use org-mode for contacts
+;; https://www.reddit.com/r/emacs/comments/8toivy/tip_how_to_manage_your_contacts_with_orgcontacts/
+(use-package org-contacts
+  :ensure nil
+  :after org
+  :config
+  (setq org-contacts-file '("~/Sync/org/contacts.org")))
+
+;; Org-mode exporters
+(require 'ox-taskjuggler) ;; Taskjuggler exporter
+(require 'ox-freemind) ;; Freemind mindmapping
+
+;; Use org-mode for concept mapping
+(use-package org-brain
+  :ensure t
+  :init
+  (setq org-brain-path "~/Sync/org/brain")
+  :config
+  (setq org-id-track-globally t)
+  (setq org-id-locations-files "~/.emacs.d/.org-id-locations")
+  (setq org-brain-visualize-default-choices 'all)
+  (setq org-brain-file-entries-use-title nil)
+  (setq org-brain-title-max-length 21))
+(defun etl/org-brain-hook ()
+  "Miscellaneous keychords for org-brain mode"
+  (visual-line-mode)
+  (local-set-key (kbd "C-c b u") 'org-brain-update-id-locations)
+  (local-set-key (kbd "C-c b s") 'org-brain-switch-brain))
+(add-hook 'org-brain-visualize-mode-hook 'etl/org-brain-hook)
+#+END_SRC
+
+* Reference managing
+
+- https://github.com/jkitchin/org-ref/blob/master/org-ref.org
+- http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/
+- http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/
+
+#+BEGIN_SRC emacs-lisp
+;; Org-mode bibliography reference management
+(use-package org-ref
+  :ensure t)
+
+;; Minor mode to interleave notes and textbooks
+(use-package interleave
+  :ensure t)
+
+;; Search and manage bibliographies in Emacs
+(use-package helm-bibtex
+  :ensure t)
+
+;; Setup bibliography workflow for notetaking
+;; https://www.reddit.com/r/emacs/comments/4gudyw/d2l16uj/
+(let ((default-directory "~/Sync/org/references/"))
+  (setq org-ref-notes-directory (expand-file-name "notes")
+        org-ref-bibliography-notes (expand-file-name "articles.org")
+        org-ref-default-bibliography (expand-file-name "articles.bib")
+        org-ref-pdf-directory "~/Sync/zotero/"))
+
+;; Setup management of bibliographies
+(let ((default-directory "~/Sync/org/references/"))
+  (setq helm-bibtex-bibliography (expand-file-name "articles.bib")
+        helm-bibtex-library-path "~/Sync/zotero/"
+        helm-bibtex-notes-path (expand-file-name "articles.org")))
+
+;; Setup bibliography path
+(setq bibtex-completion-bibliography
+      '("~/Sync/org/references/articles.bib"))
+
+;; Setup where PDFs can be found
+(setq bibtex-completion-library-path
+      '("~/Sync/zotero"))
+
+;; Setup auto-formatting of citation
+(setq bibtex-autokey-year-length 4
+      bibtex-autokey-name-year-separator ""
+      bibtex-autokey-year-title-separator "-"
+      bibtex-autokey-titleword-separator "-"
+      bibtex-autokey-titlewords 3
+      bibtex-autokey-titlewords-stretch 1
+      bibtex-autokey-titleword-length 15)
+
+;; Add keybindings for org-ref
+(defun etl/org-ref-hook ()
+  (visual-line-mode)
+  (local-set-key (kbd "C-c r c") 'org-ref-clean-bibtex-entry)
+  (local-set-key (kbd "C-c r l") 'crossref-lookup)
+  (local-set-key (kbd "C-c r o") 'org-ref-open-bibtex-notes))
+(defun etl/interleave ()
+  (visual-line-mode)
+  (local-set-key (kbd "C-c i m") 'interleave-mode))
+
+;; Setup org-ref useful hooks
+(add-hook 'bibtex-mode-hook 'etl/org-ref-hook)
+(add-hook 'org-mode-hook 'etl/interleave)
+#+END_SRC
+
+* Elfeed
+
+#+BEGIN_SRC emacs-lisp
+;; Create gloabl binding for elfeed
+(global-set-key (kbd "C-x w") 'elfeed)
+
+;; Shortcut functions to certain feeds
+;; Need to create these bookmarks manually using C-x r m whenever in the
+;; filtered result. Then type in the bookmark name e.g. elfeed-all
+;; http://pragmaticemacs.com/emacs/read-your-rss-feeds-in-emacs-with-elfeed/
+(defun etl/elfeed-show-all ()
+  (interactive)
+  (bookmark-maybe-load-default-file)
+  (bookmark-jump "elfeed-all"))
+(defun etl/elfeed-show-emacs ()
+  (interactive)
+  (bookmark-maybe-load-default-file)
+  (bookmark-jump "elfeed-emacs"))
+(defun etl/elfeed-show-daily ()
+  (interactive)
+  (bookmark-maybe-load-default-file)
+  (bookmark-jump "elfeed-daily"))
+(defun etl/elfeed-show-dev ()
+  (interactive)
+  (bookmark-maybe-load-default-file)
+  (bookmark-jump "elfeed-dev"))
+(defun etl/elfeed-show-academic ()
+  (interactive)
+  (bookmark-maybe-load-default-file)
+  (bookmark-jump "elfeed-academic"))
+(defun etl/elfeed-show-microbiome ()
+  (interactive)
+  (bookmark-maybe-load-default-file)
+  (bookmark-jump "elfeed-microbiome"))
+
+;; Mark all as read
+(defun elfeed-mark-all-as-read ()
+  (interactive)
+  (mark-whole-buffer)
+  (elfeed-search-untag-all-unread))
+
+;; Load database from disk before updating
+(defun etl/elfeed-load-db-and-open ()
+  "Load the elfeed db from disk before updating."
+  (interactive)
+  (elfeed)
+  (elfeed-db-load)
+  (elfeed-search-update--force)
+  (elfeed-update))
+
+;; Write to disk when quitting
+(defun etl/elfeed-save-db-and-bury ()
+  "Wrapper to save the elfeed db to disk before burying buffer"
+  (interactive)
+  (elfeed-db-save)
+  (quit-window))
+
+;; Use org file to organize RSS feeds
+;; http://pragmaticemacs.com/emacs/read-your-rss-feeds-in-emacs-with-elfeed/
+(use-package elfeed
+  :ensure t
+  :config
+  (setq elfeed-db-directory "~/Sync/org/elfeed/")
+  :bind (:map elfeed-search-mode-map
+              ("A" . etl/elfeed-show-all)
+              ("E" . etl/elfeed-show-emacs)
+              ("D" . etl/elfeed-show-daily)
+              ("V" . etl/elfeed-show-dev)
+              ("C" . etl/elfeed-show-academic)
+              ("M" . etl/elfeed-show-microbiome)
+              ("q" . etl/elfeed-save-db-and-bury)))
+(use-package elfeed-org
+  :ensure t
+  :config
+  (elfeed-org)
+  (setq rmh-elfeed-org-files (list "~/Sync/org/elfeed/feed.org")))
+(use-package elfeed-goodies
+  :ensure t
+  :config
+  (elfeed-goodies/setup))
+#+END_SRC
+
+* Emacs Speaks Statistics
+
+#+BEGIN_SRC emacs-lisp
+;; ESS for R
+(use-package ess
+  :ensure t
+  :defer t
+  :config
+  (setq ess-style 'RStudio))
+
+;; Smarter underscore when using ESS
+(use-package ess-smart-underscore
+  :ensure t)
+#+END_SRC
+
+* Python
+
+Notes on using use-package
+https://github.com/howardabrams/dot-files/blob/master/emacs-python.org
+
+RealPython https://realpython.com/emacs-the-best-python-editor/
+
+#+BEGIN_SRC emacs-lisp
+;; General environment
+(use-package elpy
+  :ensure t
+  :commands
+  elpy-enable
+  :init
+  (with-eval-after-load 'python (elpy-enable))
+  (setq python-shell-interpreter "ipython")
+  (setq python-shell-interpreter-args "-i --simple-prompt")
+  )
+
+;; Auto format Python files using PEP8
+(use-package py-autopep8
+  :ensure t
+  :init
+  (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
+
+;; Use IPython Notebooks/Jupyter in Emacs
+;; Interesting background behind ein https://blog.jupyter.org/54bd1c371d57
+;; Src: https://github.com/millejoh/emacs-ipython-notebook
+;; Docs: http://millejoh.github.io/emacs-ipython-notebook/
+ (use-package ein
+   :ensure t
+   :defer t
+;;   :init
+;;   (setq ein:complete-backend 'ein:use-company-backend)
+   :config
+;;   ;; Stop ein from starting company-mode autocomplete
+;;   (add-hook 'ein:notebook-multilang-mode-hook '(lambda () (company-mode -1)))
+;;   (add-hook 'ein:notebook-multilang-mode-hook '(lambda () (auto-complete-mode -1)))
+   (use-package ein-notebook)
+   (use-package ein-subpackages)
+   (use-package ein-jupyter))
+#+END_SRC
+
+* macOS configurations
+
+#+BEGIN_SRC emacs-lisp
+;; I prefer cmd key for meta
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
+#+END_SRC
+
+* Miscellaneous
+
+#+BEGIN_SRC emacs-lisp
+;; Convert buffer text and decorations to HTML
+(use-package htmlize :ensure t)
+#+END_SRC
+
+* Resources
+
+- https://github.com/zamansky/dot-emacs
+- https://github.com/zamansky/using-emacs/
+- https://pages.sachachua.com/.emacs.d/Sacha.html
