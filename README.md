@@ -173,29 +173,26 @@ echo "alias emacs=emacs26" >> .bash_local
 
 Here are some notable packages I use:
 
-- `org-mode` for drafting documents and organizing
-- `company` for autocomplete
 - `academic-phrases` for academic writing
-- `yasnippet` for quick snippets and templates
-- `elfeed`/`elfeed-org`/`elfeed-goodies` for RSS reading
-- `ess` for R and statistics
-- `ace-window` for better window management
 - `ace-jump-mode` for quick jumping on screen
-- `ido` for interatively doing things
+- `ace-window` for better window management
+- `company` for autocomplete
+- `elfeed`/`elfeed-org`/`elfeed-goodies` for RSS reading
+- `elpy` for Python programming
+- `ess` for R and statistics
+- `flycheck` for syntax highlighting
+- `helm-bibtex` for searching and managing bibliographies
 - `magit` for an additional interface to git
 - `markdown-mode` for editing Markdown files
+- `org-brain` for concept mapping
+- `org-mode` for drafting documents and organizing
+- `org-ref` for BibTeX bibliography management
 - `ox-pandoc` for exporting org-mode documents via pandoc
 - `try` for simply trying out packages without commitments
-- `writegood-mode` for write well
-- `pdf-tools` for viewing PDF files within Emacs
-- `flycheck` for syntax highlighting
-- `which-key` for hints when pressing key chords
 - `w3m` for browsing the internet within Emacs
-- `org-brain` for concept mapping
-- `elpy` for Python programming
-- `org-ref` for BibTeX bibliography management
-- `interleave` for taking notes with org-mode with the PDF side-by-side
-- `helm-bibtex` for searching and managing bibliographies
+- `which-key` for hints when pressing key chords
+- `writegood-mode` for write well
+- `yasnippet` for quick snippets and templates
 
 ### Vim Setup
 
