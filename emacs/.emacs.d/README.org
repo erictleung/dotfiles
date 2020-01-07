@@ -3,19 +3,16 @@
 
 * Explore packages
 
-- posframe
-- iedit
-- pcre2el
-- origami
-- git-timemachine
-- git-gutter
-- smerge-mode
-- forge
-- org-bullets
-- org-msg
-- smartparens
-- dash
-- diminish
+- speedbar :: extra frame with information
+- iedit :: edit multiple regions
+- origami :: text folding
+- smerge-mode :: merge tool
+- forge :: interact with git like GitHub
+- org-bullets :: eye candy
+- org-msg :: compose emails with org-mode
+- smartparens :: deals with parens pairs
+- dash :: modern list library
+- diminish :: save display space for minor modes list
 
 * Package sources
 
