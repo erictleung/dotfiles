@@ -264,11 +264,20 @@ Powerful text search. Similar to =ido= package.
 * Magit and Git
 
 #+BEGIN_SRC emacs-lisp
+;; General git wrapper
 (use-package magit
   :ensure t
   :init
   (progn
     (bind-key "C-x g" 'magit-status)))
+
+;; Interactive understanding of file changes across commits
+(use-package git-timemachine
+  :ensure t)
+
+;; See subtle markers for line changes
+(use-package git-gutter
+  :ensure t)
 #+END_SRC
 
 * Markdown
