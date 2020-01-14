@@ -902,6 +902,22 @@ RealPython https://realpython.com/emacs-the-best-python-editor/
       mac-option-modifier 'none)
 #+END_SRC
 
+* Anki
+
+Help create Anki cards through Emacs Org-mode.
+
+Lots of help from https://yiufung.net/post/anki-org/.
+
+#+BEGIN_SRC emacs-lisp
+(use-package anki-editor
+  :ensure t
+  :after org
+  :config
+  (setq anki-editor-create-decks t
+        anki-editor-org-tags-as-anki-tags t)
+)
+#+END_SRC
+
 * Miscellaneous
 
 #+BEGIN_SRC emacs-lisp
