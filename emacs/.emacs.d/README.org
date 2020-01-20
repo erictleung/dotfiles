@@ -13,6 +13,13 @@
 - smartparens :: deals with parens pairs
 - dash :: modern list library
 - diminish :: save display space for minor modes list
+- EMMS :: play audio and video inside Emacs
+- projectile :: manage projects
+- emmet-mode :: web development shortcuts
+- bash-completion :: https://github.com/szermatt/emacs-bash-completion
+- flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
+- outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
+- dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 
 * Package sources
 
