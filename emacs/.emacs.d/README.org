@@ -172,6 +172,8 @@ Use =M-x package-refresh-contents= to reload list of packages.
 - Ivy :: generic completion mechanism for Emacs
 - Counsel :: collection of Ivy-enhanced versions of common Emacs commands
 
+Using =counsel=, the =M-y= keybinding can be used to cycle through the kill ring. Similarly, the other keybindings listed below can be used to give lists of the respective functions (e.g., buffers).
+
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
     :ensure t
