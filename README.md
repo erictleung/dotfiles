@@ -81,10 +81,6 @@ great package managers when you don't have access to root.
 **Note**: must have [Ruby](https://www.ruby-lang.org/) installed.
 
 ```shell
-# For macOS
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# For Linux
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
