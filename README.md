@@ -75,13 +75,17 @@ using it in the future.
 
 ### Unix
 
-[Homebrew](https://brew.sh/) and [Linuxbrew](http://linuxbrew.sh/) are both
-great package managers when you don't have access to root.
+[Homebrew](https://brew.sh/) and [Linuxbrew](https://docs.brew.sh/Homebrew-on-Linux)
+are both great package managers when you don't have access to root.
 
 **Note**: must have [Ruby](https://www.ruby-lang.org/) installed.
 
 ```shell
+# macOS
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Linux
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 ```
 
 To [uninstall Homebrew](https://github.com/Homebrew/brew/blob/master/docs/FAQ.md),
