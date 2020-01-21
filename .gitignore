@@ -1,9 +1,12 @@
+# macOS specific
 .DS_Store
 
+# Vim specific
 vim/.vim/bundle
 vim/.vim/.netrwhist
 vim/.vim/spell/en.utf-8.add.spl
 
+# Emacs specific
 emacs/.emacs.d/elpa
 emacs/.emacs.d/history
 emacs/.emacs.d/bookmarks
@@ -17,3 +20,5 @@ emacs/.emacs.d/ido.last
 emacs/.emacs.d/.org-id-locations
 emacs/.emacs.d/request/
 emacs/.emacs.d/url/
+emacs/.emacs.d/recentf
+emacs/.emacs.d/README.el
