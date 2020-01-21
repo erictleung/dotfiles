@@ -103,6 +103,7 @@ Use =M-x package-refresh-contents= to reload list of packages.
 
   ;; Highlights the current cursor line
   (global-hl-line-mode t)
+  (set-face-background hl-line-face "color-248")
 
   ;; Display clock
   (display-time-mode 1)
