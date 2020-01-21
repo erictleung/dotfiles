@@ -387,6 +387,10 @@ Powerful text search. Similar to =ido= package.
           w3m-use-tab t
           w3m-fill-column 0
           w3m-home-page "https://duckduckgo.com")
+
+    ;; Change default browser for 'browse-url' to w3m
+    (setq browse-url-browser-function 'w3m-goto-url-new-session)
+
     (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
     (autoload 'w3m-region "w3m" "Render region in current buffer and replace with result." t)
     ;; UTF-8 everything
