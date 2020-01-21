@@ -110,6 +110,10 @@ Use =M-x package-refresh-contents= to reload list of packages.
 
   ;; Sentences end with one space
   (setq sentence-end-double-space nil)
+
+  ;; Remove trailing whitespace when saving file
+  (add-hook 'before-save-hook
+            'delete-trailing-whitespace)
 #+END_SRC
 
 * Custom functions
