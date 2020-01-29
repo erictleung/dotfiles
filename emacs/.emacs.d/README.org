@@ -208,6 +208,10 @@ Using =counsel=, the =M-y= keybinding can be used to cycle through the kill ring
       (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)))
 #+END_SRC
 
+Notes:
+
+- After using Ivy, can press `Tab` twice to complete directories instead of displaying a dired buffer
+
 * IBuffer
 
 Improved buffer management system
