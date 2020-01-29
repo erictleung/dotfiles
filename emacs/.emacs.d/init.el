@@ -9,6 +9,10 @@
 (require 'package)
 
 (setq package-enable-at-startup nil)
+
+;; "Speaking as a package maintainer, please do not use MELPA Stable--use
+;; regular MELPA" (2020)
+;; https://www.reddit.com/r/emacs/comments/etikbz
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
