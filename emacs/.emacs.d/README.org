@@ -14,7 +14,6 @@
 - dash :: modern list library
 - diminish :: save display space for minor modes list
 - EMMS :: play audio and video inside Emacs
-- projectile :: manage projects
 - emmet-mode :: web development shortcuts
 - bash-completion :: https://github.com/szermatt/emacs-bash-completion
 - flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
@@ -960,6 +959,20 @@ More on =web-mode= http://web-mode.org/.
             ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
     (setq web-mode-enable-auto-closing t))
   (setq web-mode-enable-auto-quoting t)
+#+END_SRC
+
+* Projectile and project management
+
+- Source :: https://github.com/bbatsov/projectile
+- Documentation :: https://docs.projectile.mx/en/latest/
+
+#+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :ensure t
+    :config
+    (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    (projectile-mode +1))
 #+END_SRC
 
 * Miscellaneous
