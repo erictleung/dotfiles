@@ -426,11 +426,8 @@ Powerful text search. Similar to =ido= package.
   (setq org-startup-folded t)
   (setq org-directory "~/Sync/org/")
   (setq org-agenda-files '("~/Sync/org/gtd.org"
-                           "~/Sync/org/gtd.org_archive"
-                           "~/Sync/org/someday.org"
                            "~/Sync/org/reminders.org"
-                           "~/Sync/org/read.org"
-                           "~/Sync/org/references/articles.org"))
+                           "~/Sync/org/read.org"))
   (setq org-default-notes-file (concat org-directory "inbox.org"))
   (setq org-log-done t)
   (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
