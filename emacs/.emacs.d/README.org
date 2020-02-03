@@ -408,6 +408,8 @@ Powerful text search. Similar to =ido= package.
 
 * Org-mode
 
+[[https://writequit.org/denver-emacs/presentations/2017-04-11-time-clocking-with-org.html]]
+
 #+BEGIN_SRC emacs-lisp
   (use-package org
     :ensure t
