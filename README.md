@@ -267,6 +267,8 @@ interface with files and be productive.
   patterns and also has a nice thesaurus and reverse dictionary.
 - [Duckie](http://duckie.me/) - A tool for one person pair programming.
 - [remove.bg](https://remove.bg) - Remove image backgrounds.
+- [AutoDraw](https://www.autodraw.com/) - Drawing tool with machine learning
+  guessing your drawing for quick illustrations.
 
 **Cross-Platform Desktop**
 
