@@ -914,6 +914,12 @@ RealPython https://realpython.com/emacs-the-best-python-editor/
      (use-package ein-notebook)
      (use-package ein-subpackages)
      (use-package ein-jupyter))
+
+  ;; company-mode completion back-end for Python
+  (use-package company-jedi
+    :ensure t
+    :init
+    (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi))))
 #+END_SRC
 
 * macOS configurations
