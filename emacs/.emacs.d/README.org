@@ -144,12 +144,14 @@ Use =M-x package-refresh-contents= to reload list of packages.
   ;; Delete all white space when using backspace
   (use-package hungry-delete
     :ensure t
+    :defer t
     :config
     (global-hungry-delete-mode))
 
   ;; Have more control when switching windows
   (use-package ace-window
     :ensure t
+    :defer t
     :init
     (progn
       (global-set-key (kbd "C-x O") 'other-frame)
@@ -162,6 +164,7 @@ Use =M-x package-refresh-contents= to reload list of packages.
   ;; Quickly select semantically meaningful regions with each press of C-=
   (use-package expand-region
     :ensure t
+    :defer t
     :config
     (global-set-key (kbd "C-=") 'er/expand-region))
 #+END_SRC
@@ -177,6 +180,7 @@ Using =counsel=, the =M-y= keybinding can be used to cycle through the kill ring
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
     :ensure t
+    :defer t
     :bind
     (("M-y" . counsel-yank-pop)
       :map ivy-minibuffer-map
@@ -184,6 +188,7 @@ Using =counsel=, the =M-y= keybinding can be used to cycle through the kill ring
 
   (use-package ivy
     :ensure t
+    :defer t
     :diminish (ivy-mode)
     :bind (("C-x b" . ivy-switch-buffer))
     :config
@@ -194,6 +199,7 @@ Using =counsel=, the =M-y= keybinding can be used to cycle through the kill ring
 
   (use-package swiper
     :ensure t
+    :defer t
     :bind (("C-s" . swiper-isearch)
            ("C-r" . swiper-isearch)
            ("C-c C-r" . ivy-resume)
@@ -247,8 +253,9 @@ Powerful text search. Similar to =ido= package.
 
 #+BEGIN_SRC emacs-lisp
   (use-package avy
-      :ensure t
-      :bind ("M-s" . avy-goto-word-1))
+    :ensure t
+    :defer t
+    :bind ("M-s" . avy-goto-word-1))
 #+END_SRC
 
 * Company and auto-complete
@@ -257,6 +264,7 @@ Powerful text search. Similar to =ido= package.
   ;; General auto-complete
   (use-package company
     :ensure t
+    :defer
     :init
     :config
     (setq company-minimum-prefix-length 2)
@@ -278,6 +286,7 @@ Powerful text search. Similar to =ido= package.
   ;; Create snippet templates
   (use-package yasnippet
     :ensure t
+    :defer t
     :init
     (yas-global-mode 1))
 #+END_SRC
@@ -288,17 +297,20 @@ Powerful text search. Similar to =ido= package.
   ;; General git wrapper
   (use-package magit
     :ensure t
+    :defer t
     :init
     (progn
       (bind-key "C-x g" 'magit-status)))
 
   ;; Interactive understanding of file changes across commits
   (use-package git-timemachine
-    :ensure t)
+    :ensure t
+    :defer t)
 
   ;; See subtle markers for line changes
   (use-package git-gutter
-    :ensure t)
+    :ensure t
+    :defer t)
 #+END_SRC
 
 * Markdown
@@ -307,6 +319,7 @@ Powerful text search. Similar to =ido= package.
   ;; Create major mode for editing Markdown-formatted text
   (use-package markdown-mode
     :ensure t
+    :defer t
     :commands (markdown-mode gfm-mode)
     :mode (("README\\.md\\'" . gfm-mode)
            ("\\.md\\'" . markdown-mode)
@@ -328,6 +341,7 @@ Powerful text search. Similar to =ido= package.
     :ensure markdown-mode
     :ensure poly-R
     :ensure poly-noweb
+    :defer t
     :config
     (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
     (add-to-list 'auto-mode-alist '("\\.rnw" . poly-noweb+r-mode))
@@ -354,7 +368,8 @@ Powerful text search. Similar to =ido= package.
   ;; Improve writing with tips from
   ;; http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
   (use-package writegood-mode
-    :ensure t)
+    :ensure t
+    :defer t)
   (global-set-key "\C-cg" 'writegood-mode)
   (global-set-key "\C-c\C-gg" 'writegood-grade-level)
   (global-set-key "\C-c\C-ge" 'writegood-reading-ease)
@@ -362,19 +377,22 @@ Powerful text search. Similar to =ido= package.
   ;; flycheck for syntax checking
   (use-package flycheck
     :ensure t
+    :defer t
     :init
     (global-flycheck-mode t))
 
   ;; Help define words
   (use-package define-word
     :ensure t
+    :defer t
     :config
     (global-set-key (kbd "C-c d") 'define-word-at-point)
     (global-set-key (kbd "C-c D") 'define-word))
 
   ;; Completions for academic phrases
   (use-package academic-phrases
-    :ensure t)
+    :ensure t
+    :defer t)
 #+END_SRC
 
 * Internet browsing
@@ -385,6 +403,7 @@ Powerful text search. Similar to =ido= package.
   ;; - http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html
   (use-package w3m
     :ensure t
+    :defer t
     :config
     (setq w3m-use-cookies t
           w3m-cookie-accept-bad-cookies t
@@ -408,11 +427,12 @@ Powerful text search. Similar to =ido= package.
 
 * Org-mode
 
-[[https://writequit.org/denver-emacs/presentations/2017-04-11-time-clocking-with-org.html]]
+- [[https://writequit.org/denver-emacs/presentations/2017-04-11-time-clocking-with-org.html][Clocking time with Org-mode]]
 
 #+BEGIN_SRC emacs-lisp
   (use-package org
     :ensure t
+    :defer t
     :pin org)
 
   ;; Set up key binding shortcuts
@@ -713,22 +733,25 @@ Powerful text search. Similar to =ido= package.
 
 * Reference managing
 
-- https://github.com/jkitchin/org-ref/blob/master/org-ref.org
-- http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/
-- http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/
+- [[https://github.com/jkitchin/org-ref/blob/master/org-ref.org][org-ref - GitHub]]
+- [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][Using org-ref for citations and references (2014)]]
+- [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/][Using org-ref to keep your bibtex files in order (2014)]]
 
 #+BEGIN_SRC emacs-lisp
   ;; Org-mode bibliography reference management
   (use-package org-ref
-    :ensure t)
+    :ensure t
+    :defer t)
 
   ;; Minor mode to interleave notes and textbooks
   (use-package interleave
-    :ensure t)
+    :ensure t
+    :defer t)
 
   ;; Search and manage bibliographies in Emacs
   (use-package helm-bibtex
-    :ensure t)
+    :ensure t
+    :defer t)
 
   ;; Setup bibliography workflow for notetaking
   ;; https://www.reddit.com/r/emacs/comments/4gudyw/d2l16uj/
@@ -837,6 +860,7 @@ Powerful text search. Similar to =ido= package.
   ;; http://pragmaticemacs.com/emacs/read-your-rss-feeds-in-emacs-with-elfeed/
   (use-package elfeed
     :ensure t
+    :defer t
     :config
     (setq elfeed-db-directory "~/Sync/org/elfeed/")
     :bind (:map elfeed-search-mode-map
@@ -849,11 +873,13 @@ Powerful text search. Similar to =ido= package.
                 ("q" . etl/elfeed-save-db-and-bury)))
   (use-package elfeed-org
     :ensure t
+    :defer t
     :config
     (elfeed-org)
     (setq rmh-elfeed-org-files (list "~/Sync/org/elfeed/feed.org")))
   (use-package elfeed-goodies
     :ensure t
+    :defer t
     :config
     (elfeed-goodies/setup))
 #+END_SRC
@@ -884,6 +910,7 @@ RealPython https://realpython.com/emacs-the-best-python-editor/
   ;; General environment
   (use-package elpy
     :ensure t
+    :defer t
     :commands
     elpy-enable
     :init
@@ -918,6 +945,7 @@ RealPython https://realpython.com/emacs-the-best-python-editor/
   ;; company-mode completion back-end for Python
   (use-package company-jedi
     :ensure t
+    :defer t
     :init
     (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi))))
 #+END_SRC
@@ -941,6 +969,7 @@ Lots of help from https://yiufung.net/post/anki-org/.
 #+BEGIN_SRC emacs-lisp
   (use-package anki-editor
     :ensure t
+    :defer t
     :after org
     :config
     (setq anki-editor-create-decks t
@@ -954,6 +983,7 @@ More on =web-mode= http://web-mode.org/.
 #+BEGIN_SRC emacs-lisp
   (use-package web-mode
     :ensure t
+    :defer t
     :config
     (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
     (setq web-mode-engines-alist
@@ -974,6 +1004,7 @@ More on =web-mode= http://web-mode.org/.
 #+BEGIN_SRC emacs-lisp
   (use-package projectile
     :ensure t
+    :defer t
     :config
     (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -984,7 +1015,9 @@ More on =web-mode= http://web-mode.org/.
 
 #+BEGIN_SRC emacs-lisp
   ;; Convert buffer text and decorations to HTML
-  (use-package htmlize :ensure t)
+  (use-package htmlize
+    :ensure t
+    :defer t)
 #+END_SRC
 
 * Resources and tried packages
