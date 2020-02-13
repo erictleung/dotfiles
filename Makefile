@@ -55,6 +55,13 @@ setup :
 	stow git
 	stow bash
 
+## editors : Speed test editor start-up
+# Source: https://emacs.stackexchange.com/q/39484/18898
+editors :
+	time vim +qall
+	time emacs -nw -kill
+	time emacs -nw -q -kill
+
 .PHONY : help example conda dirs vundle cclean ssh setup
 
 ## help : Help page for Makefile
