@@ -1011,6 +1011,16 @@ More on =web-mode= http://web-mode.org/.
     (projectile-mode +1))
 #+END_SRC
 
+* Quickly browse files and knowledge management
+
+#+BEGIN_SRC emacs-lisp
+  (use-package deft
+    :ensure t
+    :defer t
+    :init
+    (setq deft-directory "~/Sync/org/notes"))
+#+END_SRC
+
 * Miscellaneous
 
 #+BEGIN_SRC emacs-lisp
