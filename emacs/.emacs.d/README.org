@@ -20,7 +20,6 @@
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
 - dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - iedit :: useful for coarse multiple cursor editing
-- deft :: quick browsing files https://jblevins.org/projects/deft/
 
 * Package sources
 
