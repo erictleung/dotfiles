@@ -1019,7 +1019,8 @@ More on =web-mode= http://web-mode.org/.
   (use-package deft
     :ensure t
     :init
-    (setq deft-directory "~/Sync/org/notes"))
+    (setq deft-directory "~/Sync/org/notes")
+    (setq deft-recursive t))
 #+END_SRC
 
 * Miscellaneous
