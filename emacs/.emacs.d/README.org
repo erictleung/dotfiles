@@ -1,5 +1,5 @@
 #+STARTUP: overview
-#+PROPERTY: header-args :comments yes :results silent
+#+PROPERTY: header-args :comments yes :results silent :tangle yes
 
 * Explore packages
 
