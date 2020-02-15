@@ -957,6 +957,9 @@ RealPython https://realpython.com/emacs-the-best-python-editor/
         mac-command-key-is-meta t
         mac-command-modifier 'meta
         mac-option-modifier 'none)
+
+  ;; Add brew installed package path
+  (add-to-list 'exec-path "/usr/local/bin")
 #+END_SRC
 
 * Anki
