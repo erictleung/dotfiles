@@ -263,7 +263,7 @@ Powerful text search. Similar to =ido= package.
   ;; General auto-complete
   (use-package company
     :ensure t
-    :defer
+    :defer t
     :init
     :config
     (setq company-minimum-prefix-length 2)
