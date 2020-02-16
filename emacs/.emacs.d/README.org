@@ -1,3 +1,4 @@
+#+TITLE: Emacs literate configuration
 #+STARTUP: overview
 #+PROPERTY: header-args :comments yes :results silent :tangle yes
 
@@ -20,6 +21,9 @@
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
 - dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - iedit :: useful for coarse multiple cursor editing
+- org-cliplink :: https://github.com/rexim/org-cliplink
+- rich-minority :: https://github.com/Malabarba/rich-minority
+- esup :: https://github.com/jschaf/esup
 
 * Package sources
 
