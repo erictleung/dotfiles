@@ -1024,7 +1024,20 @@ More on =web-mode= http://web-mode.org/.
     :ensure t
     :init
     (setq deft-directory "~/Sync/org/notes")
+    (setq deft-file-limit 30)
     (setq deft-recursive t))
+  (global-set-key (kbd "C-x C-g") 'deft)
+#+END_SRC
+
+* Mind mapping
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org-mind-map
+    :init
+    (require 'ox-org)
+    :ensure t
+    :config
+    (setq org-mind-map-engine "dot"))
 #+END_SRC
 
 * Miscellaneous
