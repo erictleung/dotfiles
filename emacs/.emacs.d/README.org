@@ -1027,6 +1027,10 @@ More on =web-mode= http://web-mode.org/.
     (setq deft-file-limit 30)
     (setq deft-recursive t))
   (global-set-key (kbd "C-x C-g") 'deft)
+
+  (use-package zetteldeft
+    :ensure t
+    :after deft)
 #+END_SRC
 
 * Mind mapping
