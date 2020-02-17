@@ -30,7 +30,7 @@
 Basic setup for where to add packages from.
 
 #+BEGIN_SRC emacs-lisp
-  (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+  (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
 #+END_SRC
 
 Use =M-x package-refresh-contents= to reload list of packages.
