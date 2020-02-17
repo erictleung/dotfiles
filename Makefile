@@ -62,7 +62,11 @@ editors :
 	time emacs -nw -kill
 	time emacs -nw -q -kill
 
-.PHONY : help example conda dirs vundle cclean ssh setup
+## emacs : Tangle Emacs config
+emacs :
+	emacs --batch --eval "(require 'org)" --eval "(org-babel-load-file \"~/.emacs.d/README.org\")"
+
+.PHONY : help example conda dirs vundle cclean ssh setup editors emacs
 
 ## help : Help page for Makefile
 help :
