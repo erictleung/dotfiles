@@ -251,6 +251,8 @@ interface with files and be productive.
 
 - [`pandiff`](https://github.com/davidar/pandiff) - Prose diffs for any
   document format supported by Pandoc; installs by `npm`.
+- [`jq`](https://stedolan.github.io/jq/) - Lightweight and flexible
+  command-line JSON processor.
 
 **Web Tools**
 
