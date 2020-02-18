@@ -24,6 +24,8 @@
 - org-cliplink :: https://github.com/rexim/org-cliplink
 - rich-minority :: https://github.com/Malabarba/rich-minority
 - esup :: https://github.com/jschaf/esup
+- perspectives :: https://github.com/nex3/perspective-el
+- csv-mode :: https://elpa.gnu.org/packages/csv-mode.html
 
 * Package sources
 
