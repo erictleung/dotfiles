@@ -452,6 +452,7 @@ Powerful text search. Similar to =ido= package.
   (setq org-directory "~/Sync/org/")
   (setq org-agenda-files '("~/Sync/org/gtd.org"
                            "~/Sync/org/reminders.org"
+                           "~/Sync/org/someday.org"
                            "~/Sync/org/read.org"))
   (setq org-default-notes-file (concat org-directory "inbox.org"))
   (setq org-log-done t)
