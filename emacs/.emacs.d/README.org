@@ -119,6 +119,11 @@ Use =M-x package-refresh-contents= to reload list of packages.
   ;; Remove trailing whitespace when saving file
   (add-hook 'before-save-hook
             'delete-trailing-whitespace)
+
+  ;; Change theme
+  (use-package zenburn-theme
+    :ensure t)
+  (load-theme 'zenburn t)
 #+END_SRC
 
 * Custom functions
