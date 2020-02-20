@@ -28,6 +28,7 @@ alias gcb="git checkout -b" # Git Checkout Branch NEWBRANCHNAME
 alias gd="git diff" # Git Difference
 alias gitt="git" # Account for typos
 alias gl="git log" # Git Log
+alias glf="git log --follow -p" # Git long file
 alias gmv="git mv"
 alias gpoh="git pull origin HEAD" # Git Push Origin Head
 alias gprom="git pull --rebase origin master"
