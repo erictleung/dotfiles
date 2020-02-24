@@ -1,4 +1,4 @@
-personal_ws-1.1 en 163 
+personal_ws-1.1 en 164 
 PLoS
 API
 antimicrobicidal
@@ -49,8 +49,8 @@ taxa
 informatics
 neuromodulation
 Deblur
-microbiomes
 microbiome's
+microbiomes
 urotheliomyogenic
 DESeq
 mucosal
@@ -74,6 +74,7 @@ dysbiosis
 lactobacillus
 eigenvector
 Bing
+covariates
 carpentries
 modularity
 OMSI
