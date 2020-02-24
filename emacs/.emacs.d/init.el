@@ -13,8 +13,8 @@
 ;; "Speaking as a package maintainer, please do not use MELPA Stable--use
 ;; regular MELPA" (2020)
 ;; https://www.reddit.com/r/emacs/comments/etikbz
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
