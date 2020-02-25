@@ -20,6 +20,7 @@ A repository of my dotfiles and OS-specific configuration details.
   - [Git Setup](#git-setup)
   - [rclone](#rclone)
   - [Conda](#conda)
+  - [Ruby](#ruby)
 - [Useful Software](#useful-software)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
