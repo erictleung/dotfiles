@@ -26,6 +26,8 @@
 - esup :: https://github.com/jschaf/esup
 - perspectives :: https://github.com/nex3/perspective-el
 - csv-mode :: https://elpa.gnu.org/packages/csv-mode.html
+- dashboard :: https://github.com/emacs-dashboard/emacs-dashboard
+- org-dashboard :: https://github.com/bard/org-dashboard
 
 * Package sources
 
