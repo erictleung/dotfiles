@@ -242,6 +242,28 @@ See
 https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/
 for using R with Anaconda.
 
+### Ruby
+
+To make sure the Ruby gem path is in the path, run the following to see where
+the gems are being installed.
+
+```shell
+gem environment
+```
+
+Source: https://stackoverflow.com/a/19072136/6873133
+
+This environment can also be manually set as well. (May end up doing this to
+make things more consistent.)
+
+```shell
+export PATH=$PATH':/path/to/add'
+export GEM_HOME=$HOME/.gem
+export GEM_PATH=$HOME/.gem
+```
+
+Source: https://unix.stackexchange.com/a/210012/265438
+
 ## Useful Software
 
 Below are some pieces of software that are useful for working and help me
