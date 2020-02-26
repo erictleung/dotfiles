@@ -485,7 +485,6 @@ Powerful text search. Similar to =ido= package.
   ;; Define tags available
   (setq org-tag-alist
         '(("ongoing" . ?o)
-          ("drill" . ?d)
           ("flag" . ?f)
           ("random" . ?r)
           ("nobrain" . ?n)
@@ -577,8 +576,7 @@ Powerful text search. Similar to =ido= package.
   ;; https://orgmode.org/worg/org-contrib/org-checklist.html
   (use-package org :ensure org-plus-contrib)
 
-  (setq org-modules '(org-habit
-                      org-drill))
+  (setq org-modules '(org-habit))
   (eval-after-load 'org
    '(org-load-modules-maybe t))
 
@@ -608,13 +606,6 @@ Powerful text search. Similar to =ido= package.
   ;; Remove requirement of confirmation for evaluating
   (setq org-confirm-babel-evaluate nil)
 
-  ;; Have org-drill look through current directory for files
-  (setq org-drill-scope (quote directory))
-
-  ;; Set learn fraction, higher == larger time interval
-  ;; Default == 0.5
-  (setq org-drill-learn-fraction 0.3)
-
   ;; Define stuck projects
   (setq org-stuck-projects
         '("+LEVEL=2/-DONE" ;; Tags/TODO/property matcher string
@@ -622,18 +613,6 @@ Powerful text search. Similar to =ido= package.
           ("childless") ;; List of tags for non-stuck projects
           "")) ;; Arbitrary regulary expresion for non-stuck projects
 
-  ;; Add keybindings for org-drill
-  (defun etl/tag-as-drill ()
-    "Add `drill` tag to current org entry."
-    (interactive)
-    (org-set-tags-to (cons "drill" (org-get-tags))))
-  (defun etl/org-drill-hook ()
-    "Miscellaneous keychords for org-drill mode"
-    (visual-line-mode)
-    (local-set-key (kbd "C-c d d") 'org-drill)
-    (local-set-key (kbd "C-c d e") 'org-drill-tree)
-    (local-set-key (kbd "C-c d r") 'org-drill-resume)
-    (local-set-key (kbd "C-c d t") 'etl/tag-as-drill))
   (defun etl/org-mode-hook ()
     "Miscellaneous keychords for org-mode"
     (visual-line-mode)
@@ -643,7 +622,6 @@ Powerful text search. Similar to =ido= package.
   ;; Setup org-mode useful hooks
   (add-hook 'org-mode-hook 'flyspell-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
-  (add-hook 'org-mode-hook 'etl/org-drill-hook)
   (add-hook 'org-mode-hook 'etl/org-mode-hook)
 
   ;; Place tags close to the right-hand side of the window
