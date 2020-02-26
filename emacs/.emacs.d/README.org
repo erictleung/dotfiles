@@ -769,8 +769,8 @@ Powerful text search. Similar to =ido= package.
   ;; Setup auto-formatting of citation
   (setq bibtex-autokey-year-length 4
         bibtex-autokey-name-year-separator ""
-        bibtex-autokey-year-title-separator "-"
-        bibtex-autokey-titleword-separator "-"
+        bibtex-autokey-year-title-separator ""
+        bibtex-autokey-titleword-separator ""
         bibtex-autokey-titlewords 3
         bibtex-autokey-titlewords-stretch 1
         bibtex-autokey-titleword-length 15)
