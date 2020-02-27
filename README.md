@@ -279,6 +279,8 @@ interface with files and be productive.
 
 **Web Tools**
 
+- [Tiny Helpers](https://tiny-helpers.dev/) - A collection of free
+  single-purpose online tools for web developers.
 - [QR Code Generator](https://www.the-qrcode-generator.com/) - Simple and
   useful.
 - [repl.it](https://repl.it/) - Create interactive REPLs for lots of languages.
