@@ -331,6 +331,7 @@ Powerful text search. Similar to =ido= package.
 
   ;; Another org-mode exporter via pandoc
   (use-package ox-pandoc
+    :ensure t
     :init
     (with-eval-after-load 'org '(require 'ox-pandoc)))
 
