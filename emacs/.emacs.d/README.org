@@ -55,6 +55,9 @@ Use =M-x package-refresh-contents= to reload list of packages.
   ;; Stop bell from playing
   (setq ring-bell-function 'ignore)
 
+  ;; Disable version control message
+  (setq vc-handled-backends nil)
+
   ;; Word wrap long lines
   (global-visual-line-mode t)
 
