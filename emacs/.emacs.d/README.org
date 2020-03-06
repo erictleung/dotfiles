@@ -130,6 +130,9 @@ Use =M-x package-refresh-contents= to reload list of packages.
   (use-package zenburn-theme
     :ensure t)
   (load-theme 'zenburn t)
+
+  ;; Save with end-of-file newline to keep things tidy
+  (setq next-line-add-newlines t)
 #+END_SRC
 
 * Custom functions
