@@ -5,4 +5,4 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Install Ubuntu packages
-sudo apt-get install tmux htop
+sudo apt-get install tmux htop ncdu
