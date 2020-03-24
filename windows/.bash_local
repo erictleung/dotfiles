@@ -16,6 +16,9 @@ unset __conda_setup
 alias emacs=emacs26
 alias phd='cd ~/documents/gitlab/dissertation'
 
+# Add local bin files
+export PATH="/home/leunge/bin:$PATH"
+
 # https://www.scivision.dev/x11-gui-windows-subsystem-for-linux/
 DISPLAY=:0.0
 export DISPLAY
