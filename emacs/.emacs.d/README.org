@@ -29,6 +29,7 @@
 - dashboard :: https://github.com/emacs-dashboard/emacs-dashboard
 - org-dashboard :: https://github.com/bard/org-dashboard
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
+- paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 
 * Package sources
 
