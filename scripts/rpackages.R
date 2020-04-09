@@ -10,6 +10,10 @@ installPkges <- c(
   "MASS",           # modern applied statistics functions
   "devtools",       # help create R packages
   "caret"           # powerful metapackage for predictive modeling
+  "tableone",       # table one of basic demographics or sample statistics
+  "summarytools",   # quick data exploration
+  "skimr",          # quick data exploration
+  "Hmisc"           # miscellaneous useful functions
 )
 
 install.packages(installPkges)
