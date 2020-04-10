@@ -6,11 +6,22 @@ sudo apt-get upgrade
 
 # Install Ubuntu packages
 sudo apt-get install \
-    tmux \ # Terminal multiplexer
-    htop ncdu \ # Nice GUI replacements
-    diction aspell \ # Help with writing
-    vim emacs \ # Editors
-    pandoc pandoc-citeproc \ # Pandoc and tools
-    stow \ # Configuration management
-    w3m \ # Command line web browser
-    tree # Misc tools
+    # GUI replacements
+    htop \              # Nicer top
+    ncdu \              # Nicer du
+    dfc \               # Nicer df
+
+    tmux \              # Terminal multiplexer
+    vim emacs \         # Editors
+    stow \              # Configuration management
+    w3m \               # Command line web browser
+
+    # Document writing
+    style \
+    diction \
+    aspell \            # Help with writing
+    pandoc \
+    pandoc-citeproc \   # Pandoc and tools
+
+    # Misc tools
+    tree
