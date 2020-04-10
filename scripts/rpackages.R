@@ -3,17 +3,22 @@
 
 # install useful packages
 installPkges <- c(
+  # General tidy packages
   "tidyverse",      # packages related to tidy data
   "knitr",          # create reproducible documents
   "rmarkdown",      # convert R Markdown documents
+
+  # Tables, summary tools, and exploration
   "tables",         # help create publication tables
-  "MASS",           # modern applied statistics functions
-  "devtools",       # help create R packages
-  "caret"           # powerful metapackage for predictive modeling
   "tableone",       # table one of basic demographics or sample statistics
   "summarytools",   # quick data exploration
   "skimr",          # quick data exploration
-  "Hmisc"           # miscellaneous useful functions
+  "Hmisc",          # miscellaneous useful functions
+
+  # Miscellaneous
+  "devtools",       # help create R packages
+  "MASS",           # modern applied statistics functions
+  "caret"           # powerful metapackage for predictive modeling
 )
 
 install.packages(installPkges)
