@@ -296,6 +296,7 @@ interface with files and be productive.
 - [remove.bg](https://remove.bg) - Remove image backgrounds.
 - [AutoDraw](https://www.autodraw.com/) - Drawing tool with machine learning
   guessing your drawing for quick illustrations.
+- [Rentry.co](https://rentry.co/) - Markdown pastebin.
 
 **Cross-Platform Desktop**
 
