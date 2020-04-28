@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: movies header
+# key: movies
+# --
+#+PROPERTY: DURATION_MINUTES
+#+PROPERTY: RELEASE
+#+PROPERTY: WATCHED
+#+PROPERTY: PERSONAL_RATING

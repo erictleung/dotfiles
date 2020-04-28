@@ -1,0 +1,33 @@
+# -*- mode: snippet -*-
+# name: sow statement of work
+# key: sow
+# --
+Kind: Statement of Work
+Title: <Task or Project Name>
+Author: Eric Leung
+Affiliation: <Company Name>
+Date: YYYY-MM-DD
+Version: 0.1
+
+# SOW: [%Title]
+
+## Overview
+
+<What is the objective/goal is of this work>
+
+## Tasks
+
+<A list of the tasks to be performed  very high level, clearly written>
+
+## Deliverables
+
+<The deliverables of the project, so we know when it is complete>
+
+<OPTIONAL BELOW>
+## Dependencies
+
+<SOWs that need to be done first for this to be viable>
+
+## Assumptions
+
+<Any assumption made in why this work needs to be done>

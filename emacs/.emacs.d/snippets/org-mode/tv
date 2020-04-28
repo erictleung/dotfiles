@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: tv show properties
+# key: tvshows
+# --
+#+PROPERTY: NUM_SEASONS
+#+PROPERTY: NUM_EPISODES
+#+PROPERTY: PREMIER_DATE
+#+PROPERTY: END_DATE
+#+PROPERTY: PERSONAL_RATING

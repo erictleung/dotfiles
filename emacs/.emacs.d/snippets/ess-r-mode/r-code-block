@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: rblock for code blocks
+# key: rblock
+# --
+```{r $1}
+$0
+```
