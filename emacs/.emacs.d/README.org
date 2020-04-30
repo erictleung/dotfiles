@@ -154,6 +154,33 @@ Use =M-x package-refresh-contents= to reload list of packages.
       (switch-to-buffer "*top*")
       (ansi-term "/bin/bash" "top")
       (comint-send-string "*top*" "top\n")))
+
+
+  ;; Get random note in zetteldeft
+  (defun etl/zetteldeft-ergodic ()
+    "Find a random file in the deft directory"
+    (interactive)
+    (deft-filter-clear)
+    (kill-new
+     (nth (random (length (directory-files deft-directory)))
+          (directory-files deft-directory))
+     nil)
+    (deft-filter-yank))
+#+END_SRC
+
+* Emacs Development packages
+
+Packages to help with development.
+
+#+BEGIN_SRC emacs-lisp
+  ;; Modern list API
+  (use-package dash :ensure t)
+
+  ;; Hash table library
+  (use-package ht :ensure t)
+
+  ;; String library
+  (use-package s :ensure t)
 #+END_SRC
 
 * Interface packages
@@ -1017,7 +1044,8 @@ More on =web-mode= http://web-mode.org/.
     (global-set-key (kbd "C-c d n") 'zetteldeft-new-file)
     (global-set-key (kbd "C-c d N") 'zetteldeft-new-file-and-link)
     (global-set-key (kbd "C-c d r") 'zetteldeft-file-rename)
-    (global-set-key (kbd "C-c d x") 'zetteldeft-count-words))
+    (global-set-key (kbd "C-c d x") 'zetteldeft-count-words)
+    (global-set-key (kbd "C-c d e") 'etl/zetteldeft-ergodic))
 #+END_SRC
 
 * Mind mapping
