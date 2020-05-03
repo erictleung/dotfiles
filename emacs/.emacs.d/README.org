@@ -44,8 +44,18 @@ Use =M-x package-refresh-contents= to reload list of packages.
 * Interface modifications
 
 #+BEGIN_SRC emacs-lisp
+  ;; Remove startup messages
   (setq inhibit-startup-message t)
   (setq inhibit-startup-echo-area-message t)
+
+  ;; Set higher carbage collection thresholds
+  ;; https://blog.d46.us/advanced-emacs-startup/
+  ;; https://github.com/purcell/emacs.d/blob/master/init.el
+  (let ((normal-gc-cons-threshold (* 20 1024 1024))
+        (init-gc-cons-threshold (* 128 1024 1024)))
+    (setq gc-cons-threshold init-gc-cons-threshold)
+    (add-hook 'emacs-startup-hook
+              (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
   ;; Use y/n for yes/no
   (defalias 'yes-or-no-p 'y-or-n-p)
