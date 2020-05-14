@@ -172,27 +172,23 @@ echo "alias emacs=emacs26" >> .bash_local
 
 ### Emacs Info
 
-Here are some notable packages I use:
+Here are some notable packages I regularly depend on:
 
 - `academic-phrases` for academic writing
-- `ace-jump-mode` for quick jumping on screen
 - `ace-window` for better window management
+- `avy/swiper` for navigation in files
 - `company` for autocomplete
+- `deft`/`zetteldeft` for quick note management
 - `elfeed`/`elfeed-org`/`elfeed-goodies` for RSS reading
-- `elpy` for Python programming
-- `ess` for R and statistics
-- `flycheck` for syntax highlighting
 - `helm-bibtex` for searching and managing bibliographies
-- `magit` for an additional interface to git
-- `markdown-mode` for editing Markdown files
 - `org-brain` for concept mapping
 - `org-mode` for drafting documents and organizing
 - `org-ref` for BibTeX bibliography management
-- `ox-pandoc` for exporting org-mode documents via pandoc
+- `projectile` for quickly navigating files across project
 - `try` for simply trying out packages without commitments
 - `w3m` for browsing the internet within Emacs
 - `which-key` for hints when pressing key chords
-- `writegood-mode` for write well
+- `writegood-mode` for writing well
 - `yasnippet` for quick snippets and templates
 
 ### Vim Setup
