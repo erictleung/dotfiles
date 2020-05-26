@@ -30,6 +30,8 @@
 - org-dashboard :: https://github.com/bard/org-dashboard
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
+- emacs-jupyter :: https://github.com/dzop/emacs-jupyter
+
 
 * Package sources
 
@@ -43,36 +45,18 @@ Use =M-x package-refresh-contents= to reload list of packages.
 
 * Interface modifications
 
+** Use better color theme
+
 #+BEGIN_SRC emacs-lisp
-  ;; Remove startup messages
-  (setq inhibit-startup-message t)
-  (setq inhibit-startup-echo-area-message t)
+  ;; Change theme
+  (use-package zenburn-theme
+    :ensure t)
+  (add-hook 'after-init-hook (lambda () (load-theme 'zenburn t)))
+#+END_SRC
 
-  ;; Set higher garbage collection thresholds
-  ;; https://blog.d46.us/advanced-emacs-startup/
-  ;; https://github.com/purcell/emacs.d/blob/master/init.el
-  ;; (let ((normal-gc-cons-threshold (* 20 1024 1024))
-  ;;       (init-gc-cons-threshold (* 128 1024 1024)))
-  ;;   (setq gc-cons-threshold init-gc-cons-threshold)
-  ;;   (add-hook 'emacs-startup-hook
-  ;;            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+** Modify backup system
 
-  ;; Use y/n for yes/no
-  ;; https://www.emacswiki.org/emacs/YesOrNoP
-  (defalias 'yes-or-no-p 'y-or-n-p)
-
-  ;; Scroll slower
-  (setq scroll-conservatively 100)
-
-  ;; Stop bell from playing
-  (setq ring-bell-function 'ignore)
-
-  ;; Disable version control message
-  (setq vc-handled-backends nil)
-
-  ;; Word wrap long lines
-  (global-visual-line-mode t)
-
+#+BEGIN_SRC emacs-lisp
   ;; Set basic backup settings
   ;; Source: https://stackoverflow.com/a/20824625/6873133
   (setq version-control t     ;; Use version numbers for backups.
@@ -106,6 +90,106 @@ Use =M-x package-refresh-contents= to reload list of packages.
   ;; https://snarfed.org/gnu_emacs_backup_files
   (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
   (make-directory "~/.emacs.d/autosaves/" t)
+#+END_SRC
+
+** Easier single window navigation
+
+Typically, I only need to move within a single window. And because I'm used to Vim navigation bindings, why not use them to navigate through a single window.
+
+#+BEGIN_SRC emacs-lisp
+  ;; Make it easier to navigate windows using arrow keys
+  (windmove-default-keybindings)
+  (global-set-key (kbd "C-c h")  'windmove-left)
+  (global-set-key (kbd "C-c l") 'windmove-right)
+  (global-set-key (kbd "C-c k")    'windmove-up)
+  (global-set-key (kbd "C-c j")  'windmove-down)
+#+END_SRC
+
+** Better mode-line status bar
+
+#+BEGIN_SRC emacs-lisp
+  ;; Use better mode-line status bar
+  ;; https://github.com/Malabarba/smart-mode-line
+  (use-package smart-mode-line
+    :ensure t
+    :init
+    (sml/setup)
+    :config
+    (setq display-time-format "%a %m-%d %H:%M")
+    (display-time))
+#+END_SRC
+
+** Better copy paste of org-links
+
+Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy entire link).
+
+#+BEGIN_SRC emacs-lisp
+  ;; Modified from https://emacs.stackexchange.com/a/50870/18898
+
+  (defun my-yank-org-link (text)
+    (if (derived-mode-p 'org-mode)
+        (insert text)
+      (string-match org-bracket-link-regexp text)
+      (insert (substring text (match-beginning 1) (match-end 1)))))
+
+  (defun my-org-copy-smart-url ()
+    (interactive)
+    (let* ((link-info (assoc :link (org-context)))
+           (text (when link-info
+                   (buffer-substring-no-properties (or (cadr link-info) (point-min))
+                                                   (or (caddr link-info) (point-max))))))
+      (if (not text)
+          (error "Not in org link")
+        (add-text-properties 0 (length text) '(yank-handler (my-yank-org-link)) text)
+        (kill-new text)))
+    (message "Copied entire org link"))
+  (global-set-key (kbd "C-c c") 'my-org-copy-smart-url)
+
+  (defun my-org-export-url ()
+    (interactive)
+    (let* ((link-info (assoc :link (org-context)))
+           (text (when link-info
+                   (buffer-substring-no-properties (or (cadr link-info) (point-min))
+                                                   (or (caddr link-info) (point-max))))))
+      (if (not text)
+          (error "Not in org link")
+        (string-match org-bracket-link-regexp text)
+        (kill-new (substring text (match-beginning 1) (match-end 1)))))
+    (message "Copied link to computer clipboard"))
+  (global-set-key (kbd "C-c e") 'my-org-export-url)
+#+END_SRC
+
+** Minor user experience changes
+
+#+BEGIN_SRC emacs-lisp
+  ;; Remove startup messages
+  (setq inhibit-startup-message t)
+  (setq inhibit-startup-echo-area-message t)
+
+  ;; Set higher garbage collection thresholds
+  ;; https://blog.d46.us/advanced-emacs-startup/
+  ;; https://github.com/purcell/emacs.d/blob/master/init.el
+  ;; (let ((normal-gc-cons-threshold (* 20 1024 1024))
+  ;;       (init-gc-cons-threshold (* 128 1024 1024)))
+  ;;   (setq gc-cons-threshold init-gc-cons-threshold)
+  ;;   (add-hook 'emacs-startup-hook
+  ;;            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+
+  ;; Use y/n for yes/no
+  ;; https://www.emacswiki.org/emacs/YesOrNoP
+  (defalias 'yes-or-no-p 'y-or-n-p)
+
+  ;; Scroll slower
+  (setq scroll-conservatively 100)
+
+  ;; Stop bell from playing
+  (setq ring-bell-function 'ignore)
+
+  ;; Disable version control message
+  (setq vc-handled-backends nil)
+
+  ;; Word wrap long lines
+  (global-visual-line-mode t)
 
   ;; Word wrap lines
   (setq-default word-wrap t)
@@ -143,20 +227,16 @@ Use =M-x package-refresh-contents= to reload list of packages.
   (add-hook 'before-save-hook
             'delete-trailing-whitespace)
 
-  ;; Change theme
-  (use-package zenburn-theme
-    :ensure t)
-  (load-theme 'zenburn t)
-
   ;; Save with end-of-file newline to keep things tidy
   (setq next-line-add-newlines t)
 
-  ;; Make it easier to navigate windows using arrow keys
-  (windmove-default-keybindings)
-  (global-set-key (kbd "C-c <left>")  'windmove-left')
-  (global-set-key (kbd "C-c <right>") 'windmove-right')
-  (global-set-key (kbd "C-c <up>")    'windmove-up')
-  (global-set-key (kbd "C-c <down>")  'windmove-down')
+  ;; Remove lock files
+  ;; https://erwtc.com/working-emacs-lock-files-and-syncthing/
+  (setq create-lockfiles nil)
+
+  ;; Follow symlinks so Emacs doesn't ask to follow links or not
+  ;; https://stackoverflow.com/a/30900018/6873133
+  (setq vc-follow-symlinks t)
 #+END_SRC
 
 * Custom functions
