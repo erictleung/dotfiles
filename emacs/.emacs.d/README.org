@@ -245,22 +245,24 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
   ;; Run top within emacs
   ;; source: https://emacs.stackexchange.com/a/28088/
   (defun etl/top ()
+    "Run top in eshell correctly."
     (interactive)
     (if (get-buffer "*top*")
       (switch-to-buffer "*top*")
       (ansi-term "/bin/bash" "top")
       (comint-send-string "*top*" "top\n")))
 
-
   ;; Get random note in zetteldeft
   (defun etl/zetteldeft-ergodic ()
-    "Find a random file in the deft directory"
+    "Find a random file in the deft directory."
     (interactive)
+    (switch-to-buffer deft-buffer)
     (deft-filter-clear)
     (kill-new
-     (nth (random (length (directory-files deft-directory)))
-          (directory-files deft-directory))
-     nil)
+     (zetteldeft--lift-id
+      (nth (random (length (deft-find-all-files-no-prefix)))
+           (deft-find-all-files-no-prefix)))
+      nil)
     (deft-filter-yank))
 #+END_SRC
 
