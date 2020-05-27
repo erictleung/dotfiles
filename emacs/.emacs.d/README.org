@@ -264,6 +264,13 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
            (deft-find-all-files-no-prefix)))
       nil)
     (deft-filter-yank))
+
+  ;; Add misc keybindings in org-brain visualize mode
+  (defun etl/org-brain-hook ()
+    "Miscellaneous keychords for org-brain mode."
+    (visual-line-mode)
+    (local-set-key (kbd "C-c b u") 'org-brain-update-id-locations)
+    (local-set-key (kbd "C-c b s") 'org-brain-switch-brain))
 #+END_SRC
 
 * Emacs Development packages
@@ -559,22 +566,29 @@ Powerful text search. Similar to =ido= package.
 
 * Org-mode
 
+Resources:
 - [[https://writequit.org/denver-emacs/presentations/2017-04-11-time-clocking-with-org.html][Clocking time with Org-mode]]
 
 #+BEGIN_SRC emacs-lisp
+  ;; Additional org functions for checklist handling
+  ;; https://orgmode.org/worg/org-contrib/org-checklist.html
+  ;; Install org-plus-contrib separately
   (use-package org
     :ensure t
-    :pin org)
+    :pin org
+    :config
+    (setq org-startup-indented t)
+    (setq org-startup-folded t)
+    (org-reload))
 
   ;; Set up key binding shortcuts
   (global-set-key "\C-cl" 'org-store-link)
   (global-set-key "\C-ca" 'org-agenda)
   (global-set-key "\C-cc" 'org-capture)
   (global-set-key "\C-cb" 'org-iswitchb)
+  (global-set-key "\C-ct" 'org-time-stamp-inactive)
 
   ;; Set up org mode
-  (setq org-startup-indented t)
-  (setq org-startup-folded t)
   (setq org-directory "~/Sync/org/")
   (setq org-agenda-files '("~/Sync/org/gtd.org"
                            "~/Sync/org/reminders.org"
@@ -614,10 +628,6 @@ Powerful text search. Similar to =ido= package.
   ;; Load Markdown exporter
   ;; source: https://stackoverflow.com/a/22990257/6873133
   (eval-after-load "org" '(require 'ox-md nil t))
-
-  ;; Separate fill-column value for org-mode
-  ;; source: https://emacs.stackexchange.com/a/29063/
-  (add-hook 'org-mode-hook (lambda () (setq fill-column nil)))
 
   ;; Setup org-capture templates
   (setq org-capture-templates (quote (
@@ -681,46 +691,18 @@ Powerful text search. Similar to =ido= package.
   ;; Change column width for habit graph
   (setq org-habit-graph-column 63)
 
-  ;; Include clock
+  ;; Include clock and truncate heading for nicer viewing
+  ;; https://stackoverflow.com/a/14527487/6873133
   (setq org-clock-report-include-clocking-task t)
-
-  ;; Hook to change visual view of agenda
-  ;; source: https://superuser.com/a/531670/
-  (add-hook 'org-agenda-mode-hook
-            (lambda ()
-              (visual-line-mode -1)
-              (toggle-truncate-lines 1)))
-
-  ;; Additional org functions for checklist handling
-  ;; https://orgmode.org/worg/org-contrib/org-checklist.html
-  (use-package org :ensure org-plus-contrib)
+  (setq org-clock-heading-function
+        (lambda ()
+          (let ((str (nth 4 (org-heading-components))))
+            (if (> (length str) 6)
+                (substring str 0 6)))))
 
   (setq org-modules '(org-habit))
   (eval-after-load 'org
    '(org-load-modules-maybe t))
-
-  ;; Active Babel languages
-  (org-babel-do-load-languages
-    'org-babel-load-languages
-    '((awk . t)
-      (css . t)
-      (ditaa . t)
-      (dot . t)
-      (emacs-lisp . t)
-      (gnuplot . t)
-      (js . t)
-      (latex . t)
-      (makefile . t)
-      (perl . t)
-      (python . t)
-      (R . t)
-      (ruby . t)
-      (sed . t)
-      (shell . t)
-      (sql . t)
-      (sqlite . t)
-     )
-    )
 
   ;; Remove requirement of confirmation for evaluating
   (setq org-confirm-babel-evaluate nil)
@@ -737,11 +719,6 @@ Powerful text search. Similar to =ido= package.
     (visual-line-mode)
     (local-set-key (kbd "C-c b v") 'org-brain-visualize)
     (local-set-key (kbd "C-c b i") 'org-id-get-create))
-
-  ;; Setup org-mode useful hooks
-  (add-hook 'org-mode-hook 'flyspell-mode)
-  (add-hook 'org-mode-hook 'auto-fill-mode)
-  (add-hook 'org-mode-hook 'etl/org-mode-hook)
 
   ;; Place tags close to the right-hand side of the window
   ;; https://lists.gnu.org/archive/html/emacs-orgmode/2010-12/msg00410.html
@@ -833,12 +810,52 @@ Powerful text search. Similar to =ido= package.
     (setq org-brain-visualize-default-choices 'all)
     (setq org-brain-file-entries-use-title nil)
     (setq org-brain-title-max-length 21))
-  (defun etl/org-brain-hook ()
-    "Miscellaneous keychords for org-brain mode"
-    (visual-line-mode)
-    (local-set-key (kbd "C-c b u") 'org-brain-update-id-locations)
-    (local-set-key (kbd "C-c b s") 'org-brain-switch-brain))
+
+  ;; Use pomodoro within org-mode clock in and outs
+  ;; https://github.com/marcinkoziej/org-pomodoro
+  (use-package org-pomodoro
+    :ensure t)
+#+END_SRC
+
+Load Babel languages separately because each language is loaded at the beginning https://blog.d46.us/advanced-emacs-startup/.
+
+#+BEGIN_SRC emacs-lisp
+  ;; Active Babel languages
+  (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((awk . t)
+      (css . t)
+      (emacs-lisp . t)
+      (js . t)
+      (python . t)
+      (R . t)
+      (shell . t)
+      (sql . t)
+     )
+    )
+#+END_SRC
+
+Custom org-mode hooks.
+
+#+BEGIN_SRC emacs-lisp
+  ;; Separate fill-column value for org-mode
+  ;; source: https://emacs.stackexchange.com/a/29063/
+  (add-hook 'org-mode-hook (lambda () (setq fill-column nil)))
+
+  ;; Hook to change visual view of agenda
+  ;; source: https://superuser.com/a/531670/
+  (add-hook 'org-agenda-mode-hook
+            (lambda ()
+              (visual-line-mode -1)
+              (toggle-truncate-lines 1)))
+
+  ;; Add custom keybindings in org-brain visualize mode
   (add-hook 'org-brain-visualize-mode-hook 'etl/org-brain-hook)
+
+  ;; Setup org-mode useful hooks
+  (add-hook 'org-mode-hook 'flyspell-mode)
+  (add-hook 'org-mode-hook 'auto-fill-mode)
+  (add-hook 'org-mode-hook 'etl/org-mode-hook)
 #+END_SRC
 
 * Reference managing
