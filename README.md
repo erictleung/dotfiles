@@ -293,6 +293,7 @@ interface with files and be productive.
 - [AutoDraw](https://www.autodraw.com/) - Drawing tool with machine learning
   guessing your drawing for quick illustrations.
 - [Rentry.co](https://rentry.co/) - Markdown pastebin.
+- [doi2bib](https://www.doi2bib.org/) - Take DOI and give BibTeX.
 
 **Cross-Platform Desktop**
 
