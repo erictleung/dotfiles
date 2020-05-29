@@ -271,6 +271,13 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
     (visual-line-mode)
     (local-set-key (kbd "C-c b u") 'org-brain-update-id-locations)
     (local-set-key (kbd "C-c b s") 'org-brain-switch-brain))
+
+  ;; Navigate a file randomly for spontaneous review
+  (defun etl/goto-random-line ()
+    "Visit random line in file."
+    (interactive)
+    (end-of-buffer)
+    (goto-line (random (line-number-at-pos))))
 #+END_SRC
 
 * Emacs Development packages
