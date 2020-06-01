@@ -865,9 +865,11 @@ Custom org-mode hooks.
 
 * Reference managing
 
+Resources:
 - [[https://github.com/jkitchin/org-ref/blob/master/org-ref.org][org-ref - GitHub]]
 - [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][Using org-ref for citations and references (2014)]]
 - [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/][Using org-ref to keep your bibtex files in order (2014)]]
+- [[https://github.com/jkitchin/org-ref/blob/75d83ea014e530591cfdafc591b9b1c44509d035/org-ref-core.el#L2697-L2751][Recent changes to org-ref broke opening notes]]
 
 #+BEGIN_SRC emacs-lisp
   ;; Org-mode bibliography reference management
