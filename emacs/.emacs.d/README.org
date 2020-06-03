@@ -878,7 +878,7 @@ Resources:
 
   ;; Minor mode to interleave notes and textbooks
   (use-package interleave
-    :ensure t)
+    :defer t)
 
   ;; Search and manage bibliographies in Emacs
   (use-package helm-bibtex
@@ -1096,7 +1096,7 @@ Lots of help from https://yiufung.net/post/anki-org/.
 
 #+BEGIN_SRC emacs-lisp
   (use-package anki-editor
-    :ensure t
+    :defer t
     :after org
     :config
     (setq anki-editor-create-decks t
@@ -1172,11 +1172,15 @@ More on =web-mode= http://web-mode.org/.
 
 * Mind mapping
 
+Creates mind maps, defined here as directed graphs, through GraphViz.
+
+https://github.com/the-humanities/org-mind-map
+
 #+BEGIN_SRC emacs-lisp
   (use-package org-mind-map
     :init
     (require 'ox-org)
-    :ensure t
+    :defer t
     :config
     (setq org-mind-map-engine "dot"))
 #+END_SRC
