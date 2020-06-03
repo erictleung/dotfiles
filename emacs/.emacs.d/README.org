@@ -31,8 +31,6 @@
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
-
-
 * Package sources
 
 Basic setup for where to add packages from.
@@ -340,6 +338,8 @@ Packages to help with development.
 
 Using =counsel=, the =M-y= keybinding can be used to cycle through the kill ring. Similarly, the other keybindings listed below can be used to give lists of the respective functions (e.g., buffers).
 
+I previously used =helm=, but found Ivy to be more useful immediately with a minimal configuration.
+
 #+BEGIN_SRC emacs-lisp
   (use-package counsel
     :ensure t
@@ -409,7 +409,7 @@ https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ib
 
 * Avy
 
-Powerful text search. Similar to =ido= package.
+Powerful text search. Similar to =ido= package where by you activate it with =M-s= and then specify a letter of where you want to go.
 
 #+BEGIN_SRC emacs-lisp
   (use-package avy
@@ -419,8 +419,11 @@ Powerful text search. Similar to =ido= package.
 
 * Company and auto-complete
 
+** Company
+
+General auto-complete and specifications here for how autocomplete works.
+
 #+BEGIN_SRC emacs-lisp
-  ;; General auto-complete
   (use-package company
     :ensure t
     :init
@@ -429,7 +432,11 @@ Powerful text search. Similar to =ido= package.
     (setq company-idle-delay 0.5)
     (setq company-selection-wrap-around t)
     (global-company-mode t))
+#+END_SRC
 
+When using autocomplete, it helps to have suggestions on what is possible and choose. This =company-quickhelp= solves this problem https://github.com/company-mode/company-quickhelp.
+
+#+BEGIN_SRC emacs-lisp
   ;; More quick help
   (use-package company-quickhelp
     :ensure t
@@ -439,7 +446,13 @@ Powerful text search. Similar to =ido= package.
     (progn
       (setq company-quickhelp-idle-delay 0.2)
       (add-hook 'after-init-hook 'company-quickhelp-mode)))
+#+END_SRC
 
+** Snippets
+
+Sometimes I have some snippets of text I find myself using. So I can define some templates that can be quickly invoked with a tab.
+
+#+BEGIN_SRC emacs-lisp
   ;; Create snippet templates
   (use-package yasnippet
     :ensure t
@@ -815,12 +828,23 @@ Resources:
     (setq org-brain-visualize-default-choices 'all)
     (setq org-brain-file-entries-use-title nil)
     (setq org-brain-title-max-length 21))
+#+END_SRC
 
-  ;; Use pomodoro within org-mode clock in and outs
-  ;; https://github.com/marcinkoziej/org-pomodoro
+** Org-brain
+
+#+BEGIN_SRC emacs-lisp
+#+END_SRC
+
+** Pomodoro
+
+Use a simple implementation of  pomodoro within org-mode clock-in and outs https://github.com/marcinkoziej/org-pomodoro.
+
+#+BEGIN_SRC emacs-lisp
   (use-package org-pomodoro
     :ensure t)
 #+END_SRC
+
+** Babel languages
 
 Load Babel languages separately because each language is loaded at the beginning https://blog.d46.us/advanced-emacs-startup/.
 
@@ -840,7 +864,7 @@ Load Babel languages separately because each language is loaded at the beginning
     )
 #+END_SRC
 
-Custom org-mode hooks.
+** Custom org-mode hooks
 
 #+BEGIN_SRC emacs-lisp
   ;; Separate fill-column value for org-mode
