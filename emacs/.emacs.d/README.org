@@ -2,6 +2,12 @@
 #+STARTUP: overview
 #+PROPERTY: header-args :comments yes :results silent :tangle yes
 
+*Inspiration*:
+
+- https://github.com/zamansky/dot-emacs
+- https://pages.sachachua.com/.emacs.d/Sacha.html
+- https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/
+
 * Explore packages
 
 - speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
@@ -31,6 +37,9 @@
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
+- yassnippet-snippets :: https://github.com/AndreaCrotti/yasnippet-snippets
+- org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
+
 * Package sources
 
 Basic setup for where to add packages from.
@@ -1221,10 +1230,9 @@ https://github.com/the-humanities/org-mind-map
 
 *General resources*
 
-- https://github.com/zamansky/dot-emacs
 - https://github.com/zamansky/using-emacs/
-- https://pages.sachachua.com/.emacs.d/Sacha.html
 
 *Tried packages*
 
-- `org-drill` :: went with Anki because more convenient
+- =org-drill= :: went with Anki because more convenient
+- =helm= :: replaced with =ivy= instead
