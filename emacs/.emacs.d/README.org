@@ -68,11 +68,13 @@ Use =M-x package-refresh-contents= to reload list of packages.
 
 ** Use better color theme
 
+https://github.com/bbatsov/zenburn-emacs
+
 #+BEGIN_SRC emacs-lisp
   ;; Change theme
   (use-package zenburn-theme
-    :ensure t)
-  (add-hook 'after-init-hook (lambda () (load-theme 'zenburn t)))
+    :ensure t
+    :init (load-theme 'zenburn t))
 #+END_SRC
 
 ** Modify backup system
