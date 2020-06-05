@@ -22,7 +22,6 @@
   (package-install 'use-package))
 
 (org-babel-load-file (expand-file-name "~/.emacs.d/README.org"))
-(setq debug-on-error t)
 
 ;; Add custom configurations to separate file and load accordingly
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

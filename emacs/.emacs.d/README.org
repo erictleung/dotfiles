@@ -39,6 +39,20 @@
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
 - yassnippet-snippets :: https://github.com/AndreaCrotti/yasnippet-snippets
 - org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
+- counsel-org-clock :: https://github.com/akirak/counsel-org-clock
+
+* Setup and debugging
+
+Setup debugging and unset them at the end so that if anything breaks, we can jump into the debugger.
+
+#+BEGIN_SRC emacs-lisp
+  ;; Setup debugging configurations
+  (setq debug-on-error t)
+  (setq debug-on-quit t)
+
+  ;; Time setup length
+  (defconst emacs-start-time (current-time))
+#+END_SRC
 
 * Package sources
 
@@ -1224,6 +1238,23 @@ https://github.com/the-humanities/org-mind-map
   ;; Convert buffer text and decorations to HTML
   (use-package htmlize
     :ensure t)
+
+  ;; Create keybinding for emacs shell
+  (global-set-key (kbd "C-c s") 'eshell)
+#+END_SRC
+
+* Clean up
+
+Reset debugging from the beginning and display how long setup took.
+
+#+BEGIN_SRC emacs-lisp
+  (setq debug-on-error nil)
+  (setq debug-on-quit nil)
+
+  (let ((elapsed (float-time (time-subtract (current-time)
+                                            emacs-start-time))))
+    (message "Loading settings...done (%.3fs)" elapsed))
+  (put 'narrow-to-region 'disabled nil)
 #+END_SRC
 
 * Resources and tried packages
