@@ -320,23 +320,41 @@ Packages to help with development.
 
 * Interface packages
 
-#+BEGIN_SRC emacs-lisp
-  ;; Demo packages before committing
-  (use-package try :ensure t)
+** Try
 
-  ;; Help display key binding hints
+Demo packages before committing
+
+#+BEGIN_SRC emacs-lisp
+  (use-package try
+    :ensure t)
+#+END_SRC
+
+** Which-key
+
+Help display key binding hints.
+
+#+BEGIN_SRC emacs-lisp
   (use-package which-key
     :ensure t
     :init
     (which-key-mode))
+#+END_SRC
 
-  ;; Delete all white space when using backspace
+** Hungry-delete
+
+Delete all white space when using backspace.
+
+#+BEGIN_SRC emacs-lisp
   (use-package hungry-delete
     :ensure t
     :config
     (global-hungry-delete-mode))
+#+END_SRC
+** Ace-window
 
-  ;; Have more control when switching windows
+Have more control when switching windows.
+
+#+BEGIN_SRC emacs-lisp
   (use-package ace-window
     :ensure t
     :init
@@ -347,8 +365,12 @@ Packages to help with development.
        '(aw-leading-char-face
          ((t (:inherit ace-jump-face-foreground :height 3.0)))))
       ))
+#+END_SRC
+** Expand-region
 
-  ;; Quickly select semantically meaningful regions with each press of C-=
+Quickly select semantically meaningful regions with each press of =C-==. Typically, this would be more useful in programming.
+
+#+BEGIN_SRC emacs-lisp
   (use-package expand-region
     :ensure t
     :config
