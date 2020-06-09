@@ -995,7 +995,7 @@ Resources:
         bibtex-autokey-titleword-separator ""
         bibtex-autokey-titlewords 3
         bibtex-autokey-titlewords-stretch 1
-        bibtex-autokey-titleword-length 15)
+        bibtex-autokey-titleword-length 5)
 
   ;; Add keybindings for org-ref
   (defun etl/org-ref-hook ()
