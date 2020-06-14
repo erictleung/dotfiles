@@ -1263,12 +1263,14 @@ More on =web-mode= http://web-mode.org/.
 
 * Quickly browse files and knowledge management
 
+General purpose file search that is quick to narrow down files and notes.
+
 #+BEGIN_SRC emacs-lisp
   (use-package deft
     :ensure t
     :init
     (setq deft-directory "~/Sync/org/notes")
-    (setq deft-file-limit 30)
+    (setq deft-file-limit 50)
     (setq deft-recursive t))
 
   (use-package zetteldeft
