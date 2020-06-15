@@ -92,6 +92,9 @@ export HISTCONTROL=ignoredups
 # make bash append rather than overwrite the history on disk
 shopt -s histappend
 
+# disable beep in less
+export LESS="$LESS -R -Q"
+
 # use aliases
 if [ -f ~/.aliases ]; then
     source ~/.aliases;

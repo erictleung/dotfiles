@@ -14,3 +14,7 @@ set show-all-if-ambiguous on
 
 # Display trailing slash for autocomplete symlinks
 set mark-symlinked-directories on
+
+# Disable bell
+# https://stackoverflow.com/a/36726662/6873133
+set bell-style none
