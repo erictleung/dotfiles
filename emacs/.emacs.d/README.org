@@ -262,6 +262,27 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
   (setq vc-follow-symlinks t)
 #+END_SRC
 
+** Keybinding to configuration
+
+I come to this file so often, I should just make a shortcut key to this.
+
+Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-buffer-on-init-and-open-readmeorg.
+
+#+BEGIN_SRC emacs-lisp
+  (defun etl/reload-emacs-configuration()
+    "Reload the configuration"
+    (interactive)
+    (load "~/.emacs.d/init.el"))
+
+  (defun etl/open-emacs-configuration ()
+    "Open the configuration.org file in buffer"
+    (interactive)
+    (find-file "~/.emacs.d/README.org")))
+
+  (global-set-key (kbd "C-c r") 'etl/reload-emacs-configuration)
+  (global-set-key (kbd "C-c z") 'etl/open-emacs-configuration)
+#+END_SRC
+
 * Custom functions
 
 #+BEGIN_SRC emacs-lisp
