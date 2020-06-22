@@ -74,7 +74,7 @@ https://github.com/bbatsov/zenburn-emacs
   ;; Change theme
   (use-package zenburn-theme
     :ensure t
-    :init (load-theme 'zenburn t))
+    :config (load-theme 'zenburn t))
 #+END_SRC
 
 ** Modify backup system
