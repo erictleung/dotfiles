@@ -7,6 +7,9 @@
 - https://github.com/zamansky/dot-emacs
 - https://pages.sachachua.com/.emacs.d/Sacha.html
 - https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/
+- https://github.com/DiegoVicen/my-emacs
+- https://orgmode.org/worg/org-hacks.html
+- https://github.com/alhassy/emacs.d
 
 * Explore packages
 
@@ -37,9 +40,9 @@
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
-- yassnippet-snippets :: https://github.com/AndreaCrotti/yasnippet-snippets
 - org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
 - counsel-org-clock :: https://github.com/akirak/counsel-org-clock
+- dump-jump :: https://github.com/jacktasia/dumb-jump
 
 * Setup and debugging
 
