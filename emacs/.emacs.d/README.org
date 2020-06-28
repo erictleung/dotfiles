@@ -71,13 +71,17 @@ Use =M-x package-refresh-contents= to reload list of packages.
 
 ** Use better color theme
 
-https://github.com/bbatsov/zenburn-emacs
+Theme: https://github.com/bbatsov/zenburn-emacs
+
+I've gone back and forth on how best to load this theme. Sometimes I use a =:init (load-theme 'zenburn t)=. But in doing so, my theme doesn't load.
+
+Doing some reading around, it appears that we need to delay the loading of the theme [[https://emacs.stackexchange.com/a/19271/18898][because of how Emacs loads its packages]].
 
 #+BEGIN_SRC emacs-lisp
-  ;; Change theme
   (use-package zenburn-theme
     :ensure t
-    :config (load-theme 'zenburn t))
+    :config
+    (add-hook 'after-init-hook (lambda () (load-theme 'zenburn t))))
 #+END_SRC
 
 ** Modify backup system
