@@ -666,7 +666,7 @@ Sometimes I have some snippets of text I find myself using. So I can define some
   ;; Keybinding shortcut for browser access
   (global-set-key (kbd "C-c w") 'w3m)
 
-  ;; Keyboard shotcut for opening in w3m
+  ;; Keyboard shortcut for opening in w3m
   (global-set-key (kbd "C-x m") 'browse-url-at-point)
 #+END_SRC
 
