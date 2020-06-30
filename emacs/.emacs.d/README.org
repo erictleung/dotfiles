@@ -533,6 +533,11 @@ Sometimes I have some snippets of text I find myself using. So I can define some
     :init
     (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
     (yas-global-mode 1))
+
+  ;; Crowd-sourced snippets
+  (use-package yasnippet-snippets
+    :defer 3
+    :after (yasnippet))
 #+END_SRC
 
 * Magit and Git
@@ -649,6 +654,7 @@ Sometimes I have some snippets of text I find myself using. So I can define some
 
     (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
     (autoload 'w3m-region "w3m" "Render region in current buffer and replace with result." t)
+
     ;; UTF-8 everything
     (setq w3m-coding-system 'utf-8
           w3m-file-coding-system 'utf-8
