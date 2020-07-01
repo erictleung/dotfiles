@@ -48,22 +48,22 @@
 
 Setup debugging and unset them at the end so that if anything breaks, we can jump into the debugger.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Setup debugging configurations
   (setq debug-on-error t)
   (setq debug-on-quit t)
 
   ;; Time setup length
   (defconst emacs-start-time (current-time))
-#+END_SRC
+#+end_src
 
 * Package sources
 
 Basic setup for where to add packages from.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
-#+END_SRC
+#+end_src
 
 Use =M-x package-refresh-contents= to reload list of packages.
 
@@ -77,16 +77,16 @@ I've gone back and forth on how best to load this theme. Sometimes I use a =:ini
 
 Doing some reading around, it appears that we need to delay the loading of the theme [[https://emacs.stackexchange.com/a/19271/18898][because of how Emacs loads its packages]].
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package zenburn-theme
     :ensure t
     :config
     (add-hook 'after-init-hook (lambda () (load-theme 'zenburn t))))
-#+END_SRC
+#+end_src
 
 ** Modify backup system
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Set basic backup settings
   ;; Source: https://stackoverflow.com/a/20824625/6873133
   (setq version-control t     ;; Use version numbers for backups.
@@ -120,24 +120,24 @@ Doing some reading around, it appears that we need to delay the loading of the t
   ;; https://snarfed.org/gnu_emacs_backup_files
   (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
   (make-directory "~/.emacs.d/autosaves/" t)
-#+END_SRC
+#+end_src
 
 ** Easier single window navigation
 
 Typically, I only need to move within a single window. And because I'm used to Vim navigation bindings, why not use them to navigate through a single window.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Make it easier to navigate windows using arrow keys
   (windmove-default-keybindings)
   (global-set-key (kbd "C-c h")  'windmove-left)
   (global-set-key (kbd "C-c l") 'windmove-right)
   (global-set-key (kbd "C-c k")    'windmove-up)
   (global-set-key (kbd "C-c j")  'windmove-down)
-#+END_SRC
+#+end_src
 
 ** Better mode-line status bar
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Use better mode-line status bar
   ;; https://github.com/Malabarba/smart-mode-line
   (use-package smart-mode-line
@@ -147,13 +147,13 @@ Typically, I only need to move within a single window. And because I'm used to V
     :config
     (setq display-time-format "%a %m-%d %H:%M")
     (display-time))
-#+END_SRC
+#+end_src
 
 ** Better copy paste of org-links
 
 Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy entire link).
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Modified from https://emacs.stackexchange.com/a/50870/18898
   (defun my-yank-org-link (text)
     (if (derived-mode-p 'org-mode)
@@ -186,11 +186,11 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
         (kill-new (substring text (match-beginning 1) (match-end 1)))))
     (message "Copied link to computer clipboard"))
   (global-set-key (kbd "C-c e") 'my-org-export-url)
-#+END_SRC
+#+end_src
 
 ** Minor user experience changes
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Remove startup messages
   (setq inhibit-startup-message t)
   (setq inhibit-startup-echo-area-message t)
@@ -266,7 +266,7 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
   ;; Follow symlinks so Emacs doesn't ask to follow links or not
   ;; https://stackoverflow.com/a/30900018/6873133
   (setq vc-follow-symlinks t)
-#+END_SRC
+#+end_src
 
 ** Keybinding to configuration
 
@@ -274,7 +274,7 @@ I come to this file so often, I should just make a shortcut key to this.
 
 Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-buffer-on-init-and-open-readmeorg.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (defun etl/reload-emacs-configuration()
     "Reload the configuration"
     (interactive)
@@ -287,11 +287,11 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
 
   (global-set-key (kbd "C-c r") 'etl/reload-emacs-configuration)
   (global-set-key (kbd "C-c z") 'etl/open-emacs-configuration)
-#+END_SRC
+#+end_src
 
 * Custom functions
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Run top within emacs
   ;; source: https://emacs.stackexchange.com/a/28088/
   (defun etl/top ()
@@ -328,13 +328,13 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
     (interactive)
     (end-of-buffer)
     (goto-line (random (line-number-at-pos))))
-#+END_SRC
+#+end_src
 
 * Emacs Development packages
 
 Packages to help with development.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Modern list API
   (use-package dash :ensure t)
 
@@ -343,7 +343,7 @@ Packages to help with development.
 
   ;; String library
   (use-package s :ensure t)
-#+END_SRC
+#+end_src
 
 * Interface packages
 
@@ -351,37 +351,38 @@ Packages to help with development.
 
 Demo packages before committing
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package try
     :ensure t)
-#+END_SRC
+#+end_src
 
 ** Which-key
 
 Help display key binding hints.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package which-key
     :ensure t
     :init
     (which-key-mode))
-#+END_SRC
+#+end_src
 
 ** Hungry-delete
 
 Delete all white space when using backspace.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package hungry-delete
     :ensure t
     :config
     (global-hungry-delete-mode))
-#+END_SRC
+#+end_src
+
 ** Ace-window
 
 Have more control when switching windows.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package ace-window
     :ensure t
     :init
@@ -392,17 +393,18 @@ Have more control when switching windows.
        '(aw-leading-char-face
          ((t (:inherit ace-jump-face-foreground :height 3.0)))))
       ))
-#+END_SRC
+#+end_src
+
 ** Expand-region
 
 Quickly select semantically meaningful regions with each press of =C-==. Typically, this would be more useful in programming.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package expand-region
     :ensure t
     :config
     (global-set-key (kbd "C-=") 'er/expand-region))
-#+END_SRC
+#+end_src
 
 * Swiper/Ivy/Counsel
 
@@ -414,7 +416,7 @@ Using =counsel=, the =M-y= keybinding can be used to cycle through the kill ring
 
 I previously used =helm=, but found Ivy to be more useful immediately with a minimal configuration.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package counsel
     :ensure t
     :bind
@@ -445,7 +447,7 @@ I previously used =helm=, but found Ivy to be more useful immediately with a min
       (setq ivy-use-virtual-buffers t)
       (setq ivy-display-style 'fancy)
       (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)))
-#+END_SRC
+#+end_src
 
 Notes:
 
@@ -457,7 +459,7 @@ Improved buffer management system
 
 https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ibuffer-asap/
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ibuffer)
   (setq ibuffer-saved-filter-groups
     (quote (("default"
@@ -479,17 +481,17 @@ https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ib
 
   ;; Don't show filter groups if there are no buffers in that group
   (setq ibuffer-show-empty-filter-groups nil)
-#+END_SRC
+#+end_src
 
 * Avy
 
 Powerful text search. Similar to =ido= package where by you activate it with =M-s= and then specify a letter of where you want to go.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package avy
     :ensure t
     :bind ("M-s" . avy-goto-word-1))
-#+END_SRC
+#+end_src
 
 * Company and auto-complete
 
@@ -497,7 +499,7 @@ Powerful text search. Similar to =ido= package where by you activate it with =M-
 
 General auto-complete and specifications here for how autocomplete works.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package company
     :ensure t
     :init
@@ -506,11 +508,11 @@ General auto-complete and specifications here for how autocomplete works.
     (setq company-idle-delay 0.5)
     (setq company-selection-wrap-around t)
     (global-company-mode t))
-#+END_SRC
+#+end_src
 
 When using autocomplete, it helps to have suggestions on what is possible and choose. This =company-quickhelp= solves this problem https://github.com/company-mode/company-quickhelp.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; More quick help
   (use-package company-quickhelp
     :ensure t
@@ -520,13 +522,13 @@ When using autocomplete, it helps to have suggestions on what is possible and ch
     (progn
       (setq company-quickhelp-idle-delay 0.2)
       (add-hook 'after-init-hook 'company-quickhelp-mode)))
-#+END_SRC
+#+end_src
 
 ** Snippets
 
 Sometimes I have some snippets of text I find myself using. So I can define some templates that can be quickly invoked with a tab.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Create snippet templates
   (use-package yasnippet
     :ensure t
@@ -538,11 +540,11 @@ Sometimes I have some snippets of text I find myself using. So I can define some
   (use-package yasnippet-snippets
     :defer 3
     :after (yasnippet))
-#+END_SRC
+#+end_src
 
 * Magit and Git
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; General git wrapper
   (use-package magit
     :ensure t
@@ -557,11 +559,11 @@ Sometimes I have some snippets of text I find myself using. So I can define some
   ;; See subtle markers for line changes
   (use-package git-gutter
     :ensure t)
-#+END_SRC
+#+end_src
 
 * Markdown
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Create major mode for editing Markdown-formatted text
   (use-package markdown-mode
     :ensure t
@@ -602,11 +604,11 @@ Sometimes I have some snippets of text I find myself using. So I can define some
     :ensure polymode
     :ensure poly-markdown
     :ensure poly-noweb)
-#+END_SRC
+#+end_src
 
 * Prose and writing
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Improve writing with tips from
   ;; http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
   (use-package writegood-mode
@@ -632,11 +634,11 @@ Sometimes I have some snippets of text I find myself using. So I can define some
   ;; Completions for academic phrases
   (use-package academic-phrases
     :ensure t)
-#+END_SRC
+#+end_src
 
 * Internet browsing
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Browse internet with w3m
   ;; Help and examples:
   ;; - http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html
@@ -668,7 +670,7 @@ Sometimes I have some snippets of text I find myself using. So I can define some
 
   ;; Keyboard shortcut for opening in w3m
   (global-set-key (kbd "C-x m") 'browse-url-at-point)
-#+END_SRC
+#+end_src
 
 * Org-mode
 
@@ -678,7 +680,7 @@ As of 2020-06-04, there seems to be some weird bug where I get some =dbus= error
 
 For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot from [[https://writequit.org/denver-emacs/presentations/2017-04-11-time-clocking-with-org.html][this post here]].
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Additional org functions for checklist handling
   ;; https://orgmode.org/worg/org-contrib/org-checklist.html
   ;; Install org-plus-contrib separately
@@ -936,16 +938,16 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
 
 Use a simple implementation of  pomodoro within org-mode clock-in and outs https://github.com/marcinkoziej/org-pomodoro.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package org-pomodoro
     :ensure t)
-#+END_SRC
+#+end_src
 
 ** Babel languages
 
 Load Babel languages separately because each language is loaded at the beginning https://blog.d46.us/advanced-emacs-startup/.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Active Babel languages
   (org-babel-do-load-languages
     'org-babel-load-languages
@@ -963,7 +965,7 @@ Load Babel languages separately because each language is loaded at the beginning
 
 ** Custom org-mode hooks
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Separate fill-column value for org-mode
   ;; source: https://emacs.stackexchange.com/a/29063/
   (add-hook 'org-mode-hook (lambda () (setq fill-column nil)))
@@ -991,7 +993,7 @@ Resources:
 - [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][Using org-ref for citations and references (2014)]]
 - [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/][Using org-ref to keep your bibtex files in order (2014)]]
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Org-mode bibliography reference management
   (use-package org-ref
     :ensure t)
@@ -1106,11 +1108,11 @@ Temporary change because of updates to org-ref that break =org-ref-open-bibtex-n
                         (funcall x))))
                   org-ref-create-notes-hook)
             (save-buffer))))))
-#+END_SRC
+#+end_src
 
 * Elfeed
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; Create gloabl binding for elfeed
   (global-set-key (kbd "C-x w") 'elfeed)
 
@@ -1188,11 +1190,11 @@ Temporary change because of updates to org-ref that break =org-ref-open-bibtex-n
     :ensure t
     :config
     (elfeed-goodies/setup))
-#+END_SRC
+#+end_src
 
 * Emacs Speaks Statistics (ESS)
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; ESS for R
   (use-package ess
     :ensure t
@@ -1202,7 +1204,7 @@ Temporary change because of updates to org-ref that break =org-ref-open-bibtex-n
   ;; Smarter underscore when using ESS
   (use-package ess-smart-underscore
     :ensure t)
-#+END_SRC
+#+end_src
 
 * Python
 
@@ -1211,7 +1213,7 @@ https://github.com/howardabrams/dot-files/blob/master/emacs-python.org
 
 RealPython https://realpython.com/emacs-the-best-python-editor/
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; General environment
   (use-package elpy
     :ensure t
@@ -1238,7 +1240,7 @@ RealPython https://realpython.com/emacs-the-best-python-editor/
 
 * macOS configurations
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   ;; I prefer cmd key for meta
   (setq mac-option-key-is-meta nil
         mac-command-key-is-meta t
@@ -1247,7 +1249,7 @@ RealPython https://realpython.com/emacs-the-best-python-editor/
 
   ;; Add brew installed package path
   (add-to-list 'exec-path "/usr/local/bin")
-#+END_SRC
+#+end_src
 
 * Anki
 
@@ -1255,20 +1257,20 @@ Help create Anki cards through Emacs Org-mode.
 
 Lots of help from https://yiufung.net/post/anki-org/.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package anki-editor
     :defer t
     :after org
     :config
     (setq anki-editor-create-decks t
           anki-editor-org-tags-as-anki-tags t))
-#+END_SRC
+#+end_src
 
 * Web development
 
 More on =web-mode= http://web-mode.org/.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package web-mode
     :ensure t
     :config
@@ -1281,27 +1283,29 @@ More on =web-mode= http://web-mode.org/.
             ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
     (setq web-mode-enable-auto-closing t))
   (setq web-mode-enable-auto-quoting t)
-#+END_SRC
+#+end_src
 
 * Projectile and project management
 
 - Source :: https://github.com/bbatsov/projectile
 - Documentation :: https://docs.projectile.mx/en/latest/
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package projectile
     :ensure t
     :config
     (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
     (projectile-mode +1))
-#+END_SRC
+#+end_src
 
 * Quickly browse files and knowledge management
 
 General purpose file search that is quick to narrow down files and notes.
 
-#+BEGIN_SRC emacs-lisp
+See keybindings below for examples of what is possible. To access =deft=, press =C-c d d=.
+
+#+begin_src emacs-lisp
   (use-package deft
     :ensure t
     :init
@@ -1331,7 +1335,7 @@ General purpose file search that is quick to narrow down files and notes.
     (global-set-key (kbd "C-c d r") 'zetteldeft-file-rename)
     (global-set-key (kbd "C-c d x") 'zetteldeft-count-words)
     (global-set-key (kbd "C-c d e") 'etl/zetteldeft-ergodic))
-#+END_SRC
+#+end_src
 
 * Mind mapping
 
@@ -1339,7 +1343,7 @@ Creates mind maps, defined here as directed graphs, through GraphViz.
 
 https://github.com/the-humanities/org-mind-map
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (use-package org-mind-map
     :init
     (require 'ox-org)
@@ -1350,7 +1354,9 @@ https://github.com/the-humanities/org-mind-map
 
 * Miscellaneous
 
-#+BEGIN_SRC emacs-lisp
+Just some miscellaneous packages or configurations that don't warrant an entire section itself.
+
+#+begin_src emacs-lisp
   ;; Convert buffer text and decorations to HTML
   (use-package htmlize
     :ensure t)
@@ -1363,7 +1369,7 @@ https://github.com/the-humanities/org-mind-map
 
 Reset debugging from the beginning and display how long setup took.
 
-#+BEGIN_SRC emacs-lisp
+#+begin_src emacs-lisp
   (setq debug-on-error nil)
   (setq debug-on-quit nil)
 
@@ -1371,7 +1377,7 @@ Reset debugging from the beginning and display how long setup took.
                                             emacs-start-time))))
     (message "Loading settings...done (%.3fs)" elapsed))
   (put 'narrow-to-region 'disabled nil)
-#+END_SRC
+#+end_src
 
 * Resources and tried packages
 
