@@ -294,6 +294,7 @@ interface with files and be productive.
   guessing your drawing for quick illustrations.
 - [Rentry.co](https://rentry.co/) - Markdown pastebin.
 - [doi2bib](https://www.doi2bib.org/) - Take DOI and give BibTeX.
+- [diagrams.net](https://app.diagrams.net/) - Easy to create diagrams online.
 
 **Cross-Platform Desktop**
 
