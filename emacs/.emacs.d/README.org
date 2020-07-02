@@ -738,62 +738,6 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
   ;; source: https://stackoverflow.com/a/22990257/6873133
   (eval-after-load "org" '(require 'ox-md nil t))
 
-  ;; Setup org-capture templates
-  (setq org-capture-templates (quote (
-      ;; Capture article summaries
-      ("a"              ; key
-       "Article"        ; name
-       entry            ; type
-       (file+headline "~/Sync/org/phd.org" "To Sort") ; target
-       (file "~/Sync/org/templates/article.orgcaptempl") ; template
-       :prepend t       ; properties
-       :empty-lines 1   ; properties
-       :created t       ; properties
-      )
-      ;; Capture notes and reference material
-      ("n"
-       "Note"
-       entry
-       (file+olp "~/Sync/org/inbox.org" "Tasks")
-       (file "~/Sync/org/templates/note.orgcaptempl")
-      )
-      ;; Capture reading materials
-      ("d"
-       "To Read"
-       entry
-       (file+olp "~/Sync/org/read.org" "Read Queue")
-       (file "~/Sync/org/templates/read.orgcaptempl")
-      )
-      ;; Capture incoming tasks
-      ("t"
-       "Task"
-       entry
-       (file+olp "~/Sync/org/inbox.org" "Tasks")
-       (file "~/Sync/org/templates/task.orgcaptempl")
-      )
-      ;; Journaling
-      ("j"
-       "Journal"
-       entry
-       (file "~/Sync/org/journal.org")
-       (file "~/Sync/org/templates/journal.orgcaptempl")
-      )
-      ;; Journaling
-      ("r"
-       "Weekly Review"
-       entry
-       (file "~/Sync/org/weekly.org")
-       (file "~/Sync/org/templates/weekly.orgcaptempl")
-      )
-      ;; Research and project ideas
-      ("i"
-       "Research and Project Ideas"
-       entry
-       (file "~/Sync/org/ideas.org")
-       (file "~/Sync/org/templates/research.orgcaptempl")
-      )
-  )))
-
   ;; Enable native fontification in code blocks
   (setq org-src-fontify-natively t)
 
@@ -813,12 +757,6 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
           ("TODO" "NEXT" "NEXTACTION") ;; List of TODO keywords of non-stuck projects
           ("childless") ;; List of tags for non-stuck projects
           "")) ;; Arbitrary regulary expresion for non-stuck projects
-
-  (defun etl/org-mode-hook ()
-    "Miscellaneous keychords for org-mode"
-    (visual-line-mode)
-    (local-set-key (kbd "C-c b v") 'org-brain-visualize)
-    (local-set-key (kbd "C-c b i") 'org-id-get-create))
 
   ;; Place tags close to the right-hand side of the window
   ;; https://lists.gnu.org/archive/html/emacs-orgmode/2010-12/msg00410.html
@@ -887,36 +825,16 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
             (todo "WAITING") ; Review waiting items
             ))))
 
-  ;; Use org-mode for contacts
-  ;; https://www.reddit.com/r/emacs/comments/8toivy/tip_how_to_manage_your_contacts_with_orgcontacts/
-  (use-package org-contacts
-    :ensure nil
-    :after org
-    :config
-    (setq org-contacts-file '("~/Sync/org/contacts.org")))
-
   ;; Org-mode exporters
   (require 'ox-taskjuggler) ;; Taskjuggler exporter
   (require 'ox-freemind) ;; Freemind mindmapping
+#+end_src
 
-  ;; Use org-mode for concept mapping
-  (use-package org-brain
-    :ensure t
-    :init
-    (setq org-brain-path "~/Sync/org/brain")
-    :config
-    (setq org-id-track-globally t)
-    (setq org-id-locations-files "~/.emacs.d/.org-id-locations")
-    (setq org-brain-visualize-default-choices 'all)
-    (setq org-brain-file-entries-use-title nil)
-    (setq org-brain-title-max-length 21))
-#+END_SRC
+** Clocking time display
 
-** Clocking time
+When clocking in tasks, I like how Emacs reminds me of the task in the bottom right corner. However, if the task name is too long, Emacs will just truncate it and I cannot read it. This code modifies the length of the task so that it can be seen just enough https://stackoverflow.com/a/14527487/6873133.
 
-#+BEGIN_SRC emacs-lisp
-  ;; Include clock and truncate heading for nicer viewing
-  ;; https://stackoverflow.com/a/14527487/6873133
+#+begin_src emacs-lisp
   (setq org-clock-report-include-clocking-task t)
   (setq org-clock-heading-function
         (lambda ()
@@ -927,12 +845,125 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
   ;; If idle for more than 15 minutes, resolve the things by asking what to do
   ;; with the clock time
   (setq org-clock-idle-time 15)
-#+END_SRC
+#+end_src
+
+** Org-mode templates
+
+#+begin_src emacs-lisp
+  ;; Setup org-capture templates
+  (setq org-capture-templates (quote (
+      ;; Capture article summaries
+      ("a"              ; key
+       "Article"        ; name
+       entry            ; type
+       (file+headline "~/Sync/org/phd.org" "To Sort") ; target
+       (file "~/Sync/org/templates/article.orgcaptempl") ; template
+       :prepend t       ; properties
+       :empty-lines 1   ; properties
+       :created t       ; properties
+      )
+      ;; Capture notes and reference material
+      ("n"
+       "Note"
+       entry
+       (file+olp "~/Sync/org/inbox.org" "Tasks")
+       (file "~/Sync/org/templates/note.orgcaptempl")
+      )
+      ;; Capture reading materials
+      ("d"
+       "To Read"
+       entry
+       (file+olp "~/Sync/org/read.org" "Read Queue")
+       (file "~/Sync/org/templates/read.orgcaptempl")
+      )
+      ;; Capture incoming tasks
+      ("t"
+       "Task"
+       entry
+       (file+olp "~/Sync/org/inbox.org" "Tasks")
+       (file "~/Sync/org/templates/task.orgcaptempl")
+      )
+      ;; Journaling
+      ("j"
+       "Journal"
+       entry
+       (file "~/Sync/org/journal.org")
+       (file "~/Sync/org/templates/journal.orgcaptempl")
+      )
+      ;; Journaling
+      ("r"
+       "Weekly Review"
+       entry
+       (file "~/Sync/org/weekly.org")
+       (file "~/Sync/org/templates/weekly.orgcaptempl")
+      )
+      ;; Research and project ideas
+      ("i"
+       "Research and Project Ideas"
+       entry
+       (file "~/Sync/org/ideas.org")
+       (file "~/Sync/org/templates/research.orgcaptempl")
+      )
+  )))
+#+end_src
+
+** Contact information
+
+Use org-mode for managing contact information https://www.reddit.com/r/emacs/comments/8toivy/tip_how_to_manage_your_contacts_with_orgcontacts/.
+
+#+begin_src emacs-lisp
+  (use-package org-contacts
+    :ensure nil
+    :after org
+    :config
+    (setq org-contacts-file '("~/Sync/org/contacts.org")))
+#+end_src
+
+** Add effort estimate when clocking in
+
+Without me having to remember to assign an effort for tasks, this will automatically ask me for an effort estimate when clocking in.
+
+Source: https://orgmode.org/worg/org-hacks.html#orgfa7a73a
+
+#+begin_src emacs-lisp
+  (add-hook 'org-clock-in-prepare-hook
+            'etl/my-org-mode-ask-effort)
+
+  (defun etl/my-org-mode-ask-effort ()
+    "Ask for an effort estimate when clocking in."
+    (unless (org-entry-get (point) "Effort")
+      (let ((effort
+             (completing-read
+              "Effort: "
+              (org-entry-get-multivalued-property (point) "Effort"))))
+        (unless (equal effort "")
+          (org-set-property "Effort" effort)))))
+#+end_src
 
 ** Org-brain
 
-#+BEGIN_SRC emacs-lisp
-#+END_SRC
+Use org-mode for concept mapping. This currently is only useful for managing the citation graph of my journal articles. In the future, I may need to update this to solely work for my articles.
+
+#+begin_src emacs-lisp
+  (use-package org-brain
+    :ensure t
+    :init
+    (setq org-brain-path "~/Sync/org/brain")
+    :config
+    (setq org-id-track-globally t)
+    (setq org-id-locations-files "~/.emacs.d/.org-id-locations")
+    (setq org-brain-visualize-default-choices 'all)
+    (setq org-brain-file-entries-use-title nil)
+    (setq org-brain-title-max-length 21))
+
+  (defun etl/org-mode-hook ()
+    "Miscellaneous keychords for org-mode"
+    (visual-line-mode)
+    (local-set-key (kbd "C-c b v") 'org-brain-visualize)
+    (local-set-key (kbd "C-c b i") 'org-id-get-create))
+  (add-hook 'org-brain-visualize-mode-hook 'etl/org-brain-hook)
+  (add-hook 'org-mode-hook 'etl/org-mode-hook)
+#+end_src
 
 ** Pomodoro
 
