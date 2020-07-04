@@ -262,10 +262,6 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
   ;; Remove lock files
   ;; https://erwtc.com/working-emacs-lock-files-and-syncthing/
   (setq create-lockfiles nil)
-
-  ;; Follow symlinks so Emacs doesn't ask to follow links or not
-  ;; https://stackoverflow.com/a/30900018/6873133
-  (setq vc-follow-symlinks t)
 #+end_src
 
 ** Keybinding to configuration

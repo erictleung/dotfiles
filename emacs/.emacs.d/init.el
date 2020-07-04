@@ -21,6 +21,10 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; Follow symlinks so Emacs doesn't ask to follow links or not
+;; https://stackoverflow.com/a/30900018/6873133
+(setq vc-follow-symlinks t)
+
 (org-babel-load-file (expand-file-name "~/.emacs.d/README.org"))
 
 ;; Add custom configurations to separate file and load accordingly
