@@ -1058,13 +1058,11 @@ Source https://orgmode.org/worg/org-hacks.html#org7e4980d
               (toggle-truncate-lines 1)))
 
   ;; Add custom keybindings in org-brain visualize mode
-  (add-hook 'org-brain-visualize-mode-hook 'etl/org-brain-hook)
 
   ;; Setup org-mode useful hooks
   (add-hook 'org-mode-hook 'flyspell-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
-  (add-hook 'org-mode-hook 'etl/org-mode-hook)
-#+END_SRC
+#+end_src
 
 * Reference managing
 
