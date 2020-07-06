@@ -137,15 +137,27 @@ Typically, I only need to move within a single window. And because I'm used to V
 
 ** Better mode-line status bar
 
+There was a lot going on in my status bar. This package =smart-mode-line= does an excellent job in cleaning things up.
+
+Here are the things I really liked:
+
+- Displaying today's date, without the year, and day of the week
+- Remove listing all my minor modes that take up a lot of space
+- Giving enough room to display my clocked in tasks in other modes and files
+
+Package: https://github.com/Malabarba/smart-mode-line/
+
 #+begin_src emacs-lisp
-  ;; Use better mode-line status bar
-  ;; https://github.com/Malabarba/smart-mode-line
   (use-package smart-mode-line
     :ensure t
     :init
     (sml/setup)
     :config
     (setq display-time-format "%a %m-%d %H:%M")
+    (setq sml/name-width 40)
+    (setq sml/shorten-directory t)
+    (setq sml/shorten-modes t)
+    (setq sml/mode-width nil)
     (display-time))
 #+end_src
 
