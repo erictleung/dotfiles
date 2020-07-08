@@ -278,7 +278,7 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
 
 ** Keybinding to configuration
 
-I come to this file so often, I should just make a shortcut key to this.
+I come to this configuration file so often, I should just make a shortcut key to this.
 
 Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-buffer-on-init-and-open-readmeorg.
 
@@ -336,6 +336,30 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
     (interactive)
     (end-of-buffer)
     (goto-line (random (line-number-at-pos))))
+#+end_src
+
+* Abbreviations
+
+Emacs has an abbreviation mode, so here is a list of abbreviations I find useful. These automatically expand unless you press =Ctrl+q= before typing a space or punctuation.
+
+#+begin_src emacs-lisp
+  ;; Clear previous table
+  (clear-abbrev-table global-abbrev-table)
+
+  (define-abbrev-table 'global-abbrev-table
+    '(
+      ;; Net abbreviations
+      ("afaik" "as far as I know")
+      ("btw" "by the way")
+
+      ;; English word abbreviations
+      ("bc" "because")
+
+      ;; Tech
+      ("sto" "StackOverflow")
+      ))
+
+  (set-default 'abbrev-mode t)
 #+end_src
 
 * Emacs Development packages
