@@ -1321,19 +1321,14 @@ Temporary change because of updates to org-ref that break =org-ref-open-bibtex-n
 Notes on using use-package
 https://github.com/howardabrams/dot-files/blob/master/emacs-python.org
 
-RealPython https://realpython.com/emacs-the-best-python-editor/
+https://realpython.com/emacs-the-best-python-editor/
 
 #+begin_src emacs-lisp
   ;; General environment
   (use-package elpy
-    :ensure t
-    :commands
-    elpy-enable
+    :defer 10
     :init
-    (with-eval-after-load 'python (elpy-enable))
-    (setq python-shell-interpreter "ipython")
-    (setq python-shell-interpreter-args "-i --simple-prompt")
-    )
+    (advice-add 'python-mode :before 'elpy-enable))
 
   ;; Auto format Python files using PEP8
   (use-package py-autopep8
