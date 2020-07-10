@@ -670,17 +670,20 @@ Sometimes I have some snippets of text I find myself using. So I can define some
 
 * Internet browsing
 
+I want a place where my attention isn't always seduced by the internet. Using a text-based browser is my dream to make it more difficult to mind wander.
+
+Help and examples:
+
+- http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html
+
 #+begin_src emacs-lisp
-  ;; Browse internet with w3m
-  ;; Help and examples:
-  ;; - http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html
   (use-package w3m
     :ensure t
     :config
     (setq w3m-use-cookies t
           w3m-cookie-accept-bad-cookies t
           w3m-use-tab t
-          w3m-fill-column 0
+          w3m-fill-column 80
           w3m-home-page "https://duckduckgo.com")
 
     ;; Change default browser for 'browse-url' to w3m
