@@ -1467,7 +1467,37 @@ https://github.com/the-humanities/org-mind-map
     :defer t
     :config
     (setq org-mind-map-engine "dot"))
-#+END_SRC
+#+end_src
+
+* Cheat sheets
+
+Amazing command line cheatsheet http://cht.sh/, but in Emacs form.
+
+#+begin_src emacs-lisp
+  (use-package cheat-sh
+    :ensure t
+    :bind (("C-c ?" . cheat-sh)))
+#+end_src
+
+* ERC
+
+Let's use IRC to chat https://www.gnu.org/software/emacs/manual/html_mono/erc.html.
+
+#+begin_src emacs-lisp
+  (eval-after-load "erc"
+    '(progn
+       (setq erc-nick "erictleung")
+       (setq erc-user-full-name "Eric Leung")
+       (setq erc-autojoin-channels-alist
+             '(("irc.freenode.net" "#python")))))
+
+  (defun etl/my-erc ()
+    "Initialize IRC server connection."
+    (interactive)
+    (erc-tls
+     :server "irc.freenode.net"
+     :port 7000))
+#+end_src
 
 * Miscellaneous
 
