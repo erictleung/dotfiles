@@ -1340,11 +1340,20 @@ https://realpython.com/emacs-the-best-python-editor/
     (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
 
   ;; company-mode completion back-end for Python
-  (use-package company-jedi
-    :ensure t
-    :init
-    (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi))))
-#+END_SRC
+  ;;(use-package company-jedi
+  ;;  :ensure t
+  ;;  :init
+  ;;  (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi))))
+
+  ;; Set to Python 3
+  (setq python-shell-interpreter "~/miniconda/bin/python3")
+
+  ;; Disable offset message
+  ;; https://emacs.stackexchange.com/a/47366/18898
+  (setq python-indent-guess-indent-offset-verbose nil)
+#+end_src
+
+For Jedi, it will require running =M-x jedi:install-server= to work first.
 
 * macOS configurations
 
