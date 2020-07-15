@@ -1499,6 +1499,15 @@ Let's use IRC to chat https://www.gnu.org/software/emacs/manual/html_mono/erc.ht
      :port 7000))
 #+end_src
 
+* LaTeX
+
+Miscellaneous tools to interact with LaTeX documents.
+
+#+begin_src emacs-lisp
+  (use-package auctex
+    :defer 10)
+#+end_src
+
 * Miscellaneous
 
 Just some miscellaneous packages or configurations that don't warrant an entire section itself.
