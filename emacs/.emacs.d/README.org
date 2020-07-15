@@ -570,7 +570,7 @@ Sometimes I have some snippets of text I find myself using. So I can define some
 
   ;; Crowd-sourced snippets
   (use-package yasnippet-snippets
-    :defer 3
+    :ensure t
     :after (yasnippet))
 #+end_src
 
