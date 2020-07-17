@@ -1329,7 +1329,7 @@ https://realpython.com/emacs-the-best-python-editor/
 #+begin_src emacs-lisp
   ;; General environment
   (use-package elpy
-    :defer 10
+    :ensure t
     :init
     (advice-add 'python-mode :before 'elpy-enable))
 
