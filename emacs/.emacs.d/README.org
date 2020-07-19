@@ -1334,6 +1334,8 @@ https://realpython.com/emacs-the-best-python-editor/
     (advice-add 'python-mode :before 'elpy-enable))
 
   ;; Auto format Python files using PEP8
+  ;; Note, need to install autopep8 first
+  ;; https://pypi.org/project/autopep8/
   (use-package py-autopep8
     :ensure t
     :init
