@@ -1521,7 +1521,12 @@ Just some miscellaneous packages or configurations that don't warrant an entire 
 
   ;; Create keybinding for emacs shell
   (global-set-key (kbd "C-c s") 'eshell)
-#+END_SRC
+
+  ;; xkcd reader in Emacs
+  ;; https://github.com/vibhavp/emacs-xkcd
+  (use-package xkcd
+    :defer 5)
+#+end_src
 
 * Clean up
 
