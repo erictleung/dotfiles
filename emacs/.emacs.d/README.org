@@ -1378,7 +1378,6 @@ Lots of help from https://yiufung.net/post/anki-org/.
 
 #+begin_src emacs-lisp
   (use-package anki-editor
-    :defer t
     :after org
     :config
     (setq anki-editor-create-decks t
