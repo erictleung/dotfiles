@@ -1513,18 +1513,31 @@ Miscellaneous tools to interact with LaTeX documents.
 
 Just some miscellaneous packages or configurations that don't warrant an entire section itself.
 
-#+begin_src emacs-lisp
-  ;; Convert buffer text and decorations to HTML
-  (use-package htmlize
-    :ensure t)
+** Emacs shell
 
+Quickly run Emacs shell with keybinding.
+
+#+begin_src emacs-lisp
   ;; Create keybinding for emacs shell
   (global-set-key (kbd "C-c s") 'eshell)
+#+end_src
 
-  ;; xkcd reader in Emacs
-  ;; https://github.com/vibhavp/emacs-xkcd
+** xkcd
+
+xkcd reader in Emacs https://github.com/vibhavp/emacs-xkcd.
+
+#+begin_src emacs-lisp
   (use-package xkcd
-    :defer 5)
+    :ensure t)
+#+end_src
+
+** htmlize
+
+Convert buffer text and decorations to HTML.
+
+#+begin_src emacs-lisp
+  (use-package htmlize
+    :ensure t)
 #+end_src
 
 * Clean up
