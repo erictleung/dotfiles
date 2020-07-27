@@ -35,6 +35,7 @@
 	editor = vim
 	whitespace = warn
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	attributesfile = .gitattributes
 [user]
 	email = eric@erictleung.com
 	name = Eric Leung
