@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: keqi KaTeX inline
+# key: keqi
+# --
+{% katex inline %}$0{% endkatex %}
