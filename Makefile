@@ -48,6 +48,11 @@ npmclean :
 	sudo npm cache clean --force
 	sudo npm cache verify
 
+## pipclean : Clear pip cache
+# Source: https://stackoverflow.com/a/61762308/6873133
+pipclean :
+	pip cache purge
+
 ## setup : General setup for new environments
 setup :
 	stow vim
