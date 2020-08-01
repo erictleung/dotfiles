@@ -13,36 +13,37 @@
 
 * Explore packages
 
-- speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
-- iedit :: edit multiple regions
-- origami :: text folding
-- smerge-mode :: merge tool
-- forge :: interact with git like GitHub
-- org-bullets :: eye candy
-- org-msg :: compose emails with org-mode
-- smartparens :: deals with parens pairs
-- dash :: modern list library
-- diminish :: save display space for minor modes list
 - EMMS :: play audio and video inside Emacs
-- emmet-mode :: web development shortcuts
 - bash-completion :: https://github.com/szermatt/emacs-bash-completion
-- flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
-- outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
-- dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
-- iedit :: useful for coarse multiple cursor editing
-- org-cliplink :: https://github.com/rexim/org-cliplink
-- rich-minority :: https://github.com/Malabarba/rich-minority
-- esup :: https://github.com/jschaf/esup
-- perspectives :: https://github.com/nex3/perspective-el
-- csv-mode :: https://elpa.gnu.org/packages/csv-mode.html
-- dashboard :: https://github.com/emacs-dashboard/emacs-dashboard
-- org-dashboard :: https://github.com/bard/org-dashboard
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
-- paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
-- emacs-jupyter :: https://github.com/dzop/emacs-jupyter
-- org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
 - counsel-org-clock :: https://github.com/akirak/counsel-org-clock
+- csv-mode :: https://elpa.gnu.org/packages/csv-mode.html
+- dash :: modern list library
+- dashboard :: https://github.com/emacs-dashboard/emacs-dashboard
+- diminish :: save display space for minor modes list
+- dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - dump-jump :: https://github.com/jacktasia/dumb-jump
+- emacs-jupyter :: https://github.com/dzop/emacs-jupyter
+- emmet-mode :: web development shortcuts
+- esup :: https://github.com/jschaf/esup
+- flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
+- forge :: interact with git like GitHub
+- iedit :: edit multiple regions
+- iedit :: useful for coarse multiple cursor editing
+- key-quiz :: https://github.com/federicotdn/key-quiz
+- org-bullets :: eye candy
+- org-cliplink :: https://github.com/rexim/org-cliplink
+- org-dashboard :: https://github.com/bard/org-dashboard
+- org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
+- org-msg :: compose emails with org-mode
+- origami :: text folding
+- outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
+- paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
+- perspectives :: https://github.com/nex3/perspective-el
+- rich-minority :: https://github.com/Malabarba/rich-minority
+- smartparens :: deals with parens pairs
+- smerge-mode :: merge tool
+- speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
 
 * Setup and debugging
 
