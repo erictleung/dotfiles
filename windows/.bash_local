@@ -25,6 +25,9 @@ alias python=python3
 # Add local bin files
 export PATH="/home/leunge/bin:$PATH"
 
+# Add other local bin files
+export PATH="/home/leunge/.local/bin:$PATH"
+
 # https://www.scivision.dev/x11-gui-windows-subsystem-for-linux/
 DISPLAY=:0.0
 export DISPLAY
