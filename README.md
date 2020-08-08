@@ -272,6 +272,8 @@ interface with files and be productive.
   document format supported by Pandoc; installs by `npm`.
 - [`jq`](https://stedolan.github.io/jq/) - Lightweight and flexible
   command-line JSON processor.
+- [`ranger`](https://github.com/ranger/ranger) - A VIM-inspired file manager
+  for the console.
 
 **Web Tools**
 
