@@ -321,3 +321,8 @@ standards based in terms of their inputs and outputs, if applicable.
   cleanup tool.
 - [Rapid Environment Editor](https://www.rapidee.com/en/about) - Windows
   environment variables management.
+
+**Firefox Plugins**
+
+- [Mouseless](https://addons.mozilla.org/en-US/firefox/addon/mouseless-plugin/)
+  - Use mouse as least as possible (https://github.com/mortie/mouseless-plugin)
