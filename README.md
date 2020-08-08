@@ -324,5 +324,5 @@ standards based in terms of their inputs and outputs, if applicable.
 
 **Firefox Plugins**
 
-- [Mouseless](https://addons.mozilla.org/en-US/firefox/addon/mouseless-plugin/)
-  - Use mouse as least as possible (https://github.com/mortie/mouseless-plugin)
+- [Mouseless](https://addons.mozilla.org/en-US/firefox/addon/mouseless-plugin/) - Use
+  mouse as least as possible (https://github.com/mortie/mouseless-plugin)
