@@ -382,7 +382,7 @@ Packages to help with development.
 
 ** Try
 
-Demo packages before committing
+Demo packages before committing by doing =M-x try= and then typing in a package to try temporarily.
 
 #+begin_src emacs-lisp
   (use-package try
