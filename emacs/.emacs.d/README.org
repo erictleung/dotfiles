@@ -391,7 +391,7 @@ Demo packages before committing by doing =M-x try= and then typing in a package 
 
 ** Which-key
 
-Help display key binding hints.
+Help display key binding hints after typing in partial keybinding combinations.
 
 #+begin_src emacs-lisp
   (use-package which-key
