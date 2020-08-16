@@ -10,6 +10,7 @@
 - https://github.com/DiegoVicen/my-emacs
 - https://orgmode.org/worg/org-hacks.html
 - https://github.com/alhassy/emacs.d
+- https://github.com/KaratasFurkan/.emacs.d
 
 * Explore packages
 
