@@ -26,12 +26,14 @@
 - dump-jump :: https://github.com/jacktasia/dumb-jump
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
 - emmet-mode :: web development shortcuts
+- emacs-winum :: window numbers https://github.com/deb0ch/emacs-winum
 - esup :: https://github.com/jschaf/esup
 - flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
 - forge :: interact with git like GitHub
 - iedit :: edit multiple regions
 - iedit :: useful for coarse multiple cursor editing
 - key-quiz :: https://github.com/federicotdn/key-quiz
+- lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
 - org-bullets :: eye candy
 - org-cliplink :: https://github.com/rexim/org-cliplink
 - org-dashboard :: https://github.com/bard/org-dashboard
@@ -39,8 +41,8 @@
 - org-msg :: compose emails with org-mode
 - origami :: text folding
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
-- paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - perspectives :: https://github.com/nex3/perspective-el
+- paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - rich-minority :: https://github.com/Malabarba/rich-minority
 - smartparens :: deals with parens pairs
 - smerge-mode :: merge tool
