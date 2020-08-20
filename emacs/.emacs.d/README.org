@@ -444,9 +444,13 @@ Quickly select semantically meaningful regions with each press of =C-==. Typical
 
 * Swiper/Ivy/Counsel
 
-- Swiper :: Ivy-enhanced alternative to isearch
+These are very similar packages that are found together. Here is a key of which package does what.
+
+- Swiper :: Ivy-enhanced alternative to =isearch=
 - Ivy :: generic completion mechanism for Emacs
 - Counsel :: collection of Ivy-enhanced versions of common Emacs commands
+
+In sum, they all contribute to making searching and completing text easier.
 
 Using =counsel=, the =M-y= keybinding can be used to cycle through the kill ring. Similarly, the other keybindings listed below can be used to give lists of the respective functions (e.g., buffers).
 
