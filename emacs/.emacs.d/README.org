@@ -495,7 +495,7 @@ Notes:
 
 * IBuffer
 
-Improved buffer management system
+Improved buffer management system by making the buffer list much nicer by grouping similar mode buffers together.
 
 https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ibuffer-asap/
 
