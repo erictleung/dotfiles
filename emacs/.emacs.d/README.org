@@ -584,6 +584,10 @@ Sometimes I have some snippets of text I find myself using. So I can define some
 
 * Magit and Git
 
+The [[https://magit.vc/][tagline]] is to be "a Git porcelain inside Emacs". I have yet to get to that level yet, but imagining version control tasks at the tip of my fingers with keybindings makes this sound amazing. [[https://emacsair.me/2017/09/01/magit-walk-through/][Here]] is a walk through of how to use essential functions in magit.
+
+This all gets activated using the keybinding =C-x g= while in a git repository.
+
 #+begin_src emacs-lisp
   ;; General git wrapper
   (use-package magit
