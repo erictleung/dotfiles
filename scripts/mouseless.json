@@ -1,0 +1,32 @@
+{
+    "plugin": "mouseless",
+    "browser": "firefox",
+    "blob_characters": ";asdjfir",
+    "auto_submit_timer": 0,
+    "blacklisted_urls": [
+        "https://calendar.google.com/*",
+        "https://duckduckgo.com/*"
+    ],
+    "scroll": {
+        "up": "k",
+        "up_fast": "j",
+        "down": "<Shift>_",
+        "down_fast": "<Shift>+"
+    },
+    "click": "Enter",
+    "open_in_new_tab": "<Shift>Enter",
+    "save_url_to_clipboard": "<Control>Enter",
+    "focus": "Tab",
+    "blobs_backspace": "Backspace",
+    "deselect_current_element": "Escape",
+    "tab": {
+        "switch_left": "h",
+        "switch_right": "l",
+        "move_left": "<Shift>h",
+        "movie_right": "<Shift>l"
+    },
+    "go": {
+        "back": "<Control>j",
+        "forward": "<Control>;"
+    }
+}
