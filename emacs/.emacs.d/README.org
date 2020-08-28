@@ -340,6 +340,18 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
     (interactive)
     (end-of-buffer)
     (goto-line (random (line-number-at-pos))))
+
+  (defun etl/zetteldeft-wander-file ()
+    "Find random link in current zetteldeft file."
+    (interactive)
+    (kill-new
+     (zetteldeft--lift-id
+      (nth (random (length (zetteldeft--extract-links (buffer-file-name))))
+           (zetteldeft--extract-links (buffer-file-name))))
+     nil)
+    (switch-to-buffer deft-buffer)
+    (deft-filter-clear)
+    (deft-filter-yank))
 #+end_src
 
 * Abbreviations
