@@ -47,6 +47,7 @@
 - smartparens :: deals with parens pairs
 - smerge-mode :: merge tool
 - speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
+- wotd :: https://github.com/cute-jumper/emacs-word-of-the-day
 
 * Setup and debugging
 
