@@ -608,11 +608,16 @@ This all gets activated using the keybinding =C-x g= while in a git repository.
     :init
     (progn
       (bind-key "C-x g" 'magit-status)))
+#+end_src
 
+#+begin_src emacs-lisp
   ;; Interactive understanding of file changes across commits
   (use-package git-timemachine
     :ensure t)
+#+end_src
 
+
+#+begin_src emacs-lisp
   ;; See subtle markers for line changes
   (use-package git-gutter
     :ensure t)
