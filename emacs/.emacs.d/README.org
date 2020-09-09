@@ -793,6 +793,7 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
   (setq org-tag-alist
         '(("ongoing" . ?o)
           ("flag" . ?f)
+          ("writing" . ?w)
           ("random" . ?r)
           ("nobrain" . ?n)
           ("childless" . ?l)
