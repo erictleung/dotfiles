@@ -1,4 +1,4 @@
-personal_ws-1.1 en 203 
+personal_ws-1.1 en 212 
 covariates
 ASV
 mentorship
@@ -36,7 +36,9 @@ JSON
 phyloseq
 detrusor
 supraspinal
+renormalize
 Leung
+subtractive
 Spearman
 invasiveness
 benchmarking
@@ -56,19 +58,23 @@ nicotinic
 UTI
 novo
 UUI
-pathophysiologies
 mucosa
+pathophysiologies
 phenotypes
 taxa
 Hadoop
 pathogenesis
 instillations
 dendrogram
+WGCNA
 IgA
 polymicrobial
+zebrafish
+Drosophila
 acceptor
 amplicon
 prespecified
+CRISPR
 prokaryote
 operationalization
 neuromuscular
@@ -104,7 +110,9 @@ vitro
 pyrosequencing
 de
 Döderlein
+silico
 urotypes
+cytometry
 metagenome
 underactivity
 petri
@@ -126,8 +134,8 @@ PLoS
 nocturia
 stimulations
 Karstens
-bioinformatics
 deliverables
+bioinformatics
 interoperable
 Boudreau
 commensal
@@ -151,8 +159,8 @@ commensals
 reductionism
 microbiome
 biogeography
-PCR
 NMR
+PCR
 mucosal
 urolithiasis
 uropathogenic
@@ -175,6 +183,7 @@ urothelial
 pseudocode
 Deblur
 differentially
+centric
 lactobacilli
 SCFA
 heritability
