@@ -873,6 +873,7 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
            ((tags "PRIORITY=\"A\""
                   ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                    (org-agenda-overriding-header "High-priority unfinished tasks:")))
+            (tags-todo "inbox" ((org-agenda-files '("~/Sync/org/inbox.org"))))
             (agenda "")
             (alltodo ""
                      ((org-agenda-skip-function
