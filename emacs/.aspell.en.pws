@@ -1,4 +1,4 @@
-personal_ws-1.1 en 212 
+personal_ws-1.1 en 215 
 covariates
 ASV
 mentorship
@@ -65,8 +65,8 @@ taxa
 Hadoop
 pathogenesis
 instillations
-dendrogram
 WGCNA
+dendrogram
 IgA
 polymicrobial
 zebrafish
@@ -110,11 +110,13 @@ vitro
 pyrosequencing
 de
 Döderlein
+iteratively
 silico
 urotypes
 cytometry
 metagenome
 underactivity
+ggplot
 petri
 isomorphism
 genomic
@@ -159,8 +161,8 @@ commensals
 reductionism
 microbiome
 biogeography
-NMR
 PCR
+NMR
 mucosal
 urolithiasis
 uropathogenic
@@ -184,6 +186,7 @@ pseudocode
 Deblur
 differentially
 centric
+NIST
 lactobacilli
 SCFA
 heritability
