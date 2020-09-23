@@ -297,6 +297,8 @@ interface with files and be productive.
 - [Rentry.co](https://rentry.co/) - Markdown pastebin.
 - [doi2bib](https://www.doi2bib.org/) - Take DOI and give BibTeX.
 - [diagrams.net](https://app.diagrams.net/) - Easy to create diagrams online.
+- [Resumake](https://resumake.io) - Easy template application to create a
+  resume.
 
 **Cross-Platform Desktop**
 
