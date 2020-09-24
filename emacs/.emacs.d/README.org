@@ -11,6 +11,7 @@
 - https://orgmode.org/worg/org-hacks.html
 - https://github.com/alhassy/emacs.d
 - https://github.com/KaratasFurkan/.emacs.d
+- https://wolfecub.github.io/dotfiles/
 
 * Explore packages
 
