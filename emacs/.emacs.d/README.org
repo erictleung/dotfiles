@@ -40,6 +40,9 @@
 - org-dashboard :: https://github.com/bard/org-dashboard
 - org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
 - org-msg :: compose emails with org-mode
+- org-ql :: https://github.com/alphapapa/org-ql
+- org-rifle :: https://github.com/alphapapa/org-rifle
+- org-query :: compose agenda views easier https://github.com/remyhonig/org-query
 - origami :: text folding
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
 - perspectives :: https://github.com/nex3/perspective-el
