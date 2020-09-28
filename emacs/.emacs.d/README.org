@@ -88,9 +88,11 @@ Doing some reading around, it appears that we need to delay the loading of the t
 
 #+begin_src emacs-lisp
   (use-package zenburn-theme
-    :ensure t)
-    ;; :config
+    :ensure t
+    :config
+    (load-theme 'zenburn t))
     ;; (add-hook 'after-init-hook (lambda () (load-theme 'zenburn t))))
+
 #+end_src
 
 ** Modify backup system
