@@ -1,10 +1,11 @@
 # Download useful packages
-# Last updated: 2018-01-12
+# Last updated: 2020-09-30
 
 # install useful packages
 installPkges <- c(
   # General tidy packages
   "tidyverse",      # packages related to tidy data
+  "tidymodels",     # packages for modeling and machine learning using tidy
   "knitr",          # create reproducible documents
   "rmarkdown",      # convert R Markdown documents
 
