@@ -316,3 +316,6 @@ standards based in terms of their inputs and outputs, if applicable.
 - [Mouseless](https://addons.mozilla.org/en-US/firefox/addon/mouseless-plugin/) - Use
   mouse as least as possible (https://github.com/mortie/mouseless-plugin). See
   `scripts/mouseless.json` file with configuration in JSON form.
+- [web-archives](https://addons.mozilla.org/en-US/firefox/addon/view-page-archive) - View
+  archived and cached versions of web pages of 10+ search engines
+  (https://github.com/dessant/web-archives).
