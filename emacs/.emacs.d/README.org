@@ -750,6 +750,8 @@ As of 2020-06-04, there seems to be some weird bug where I get some =dbus= error
 
 For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot from [[https://writequit.org/denver-emacs/presentations/2017-04-11-time-clocking-with-org.html][this post here]].
 
+** Basic setup
+
 #+begin_src emacs-lisp
   ;; Additional org functions for checklist handling
   ;; https://orgmode.org/worg/org-contrib/org-checklist.html
@@ -759,8 +761,7 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
     :pin org
     :config
     (setq org-startup-indented t)
-    (setq org-startup-folded t)
-    (org-reload))
+    (setq org-startup-folded t))
 
   ;; Set up key binding shortcuts
   (global-set-key "\C-cl" 'org-store-link)
