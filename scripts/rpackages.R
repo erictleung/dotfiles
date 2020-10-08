@@ -8,6 +8,7 @@ installPkges <- c(
   "tidymodels",     # packages for modeling and machine learning using tidy
   "knitr",          # create reproducible documents
   "rmarkdown",      # convert R Markdown documents
+  "janitor",        # simple tools to examining and cleaning dirty data
 
   # Tables, summary tools, and exploration
   "tables",         # help create publication tables
