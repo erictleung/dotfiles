@@ -20,35 +20,31 @@
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - counsel-org-clock :: https://github.com/akirak/counsel-org-clock
 - csv-mode :: https://elpa.gnu.org/packages/csv-mode.html
-- dash :: modern list library
-- dashboard :: https://github.com/emacs-dashboard/emacs-dashboard
+- dash :: modern list library https://github.com/magnars/dash.el
 - diminish :: save display space for minor modes list
 - dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - dump-jump :: https://github.com/jacktasia/dumb-jump
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
 - emmet-mode :: web development shortcuts
 - emacs-winum :: window numbers https://github.com/deb0ch/emacs-winum
-- esup :: https://github.com/jschaf/esup
+- esup :: Emacs Start Up Profiler https://github.com/jschaf/esup
 - flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
-- forge :: interact with git like GitHub
-- iedit :: edit multiple regions
-- iedit :: useful for coarse multiple cursor editing
+- forge :: interact with git like GitHub https://github.com/magit/forge
+- iedit :: edit multiple regions, useful for coarse multiple cursor editing https://github.com/victorhge/iedit
 - key-quiz :: https://github.com/federicotdn/key-quiz
 - lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
-- org-bullets :: eye candy
 - org-cliplink :: https://github.com/rexim/org-cliplink
-- org-dashboard :: https://github.com/bard/org-dashboard
 - org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
-- org-msg :: compose emails with org-mode
+- org-msg :: compose emails with org-mode https://github.com/jeremy-compostella/org-msg
 - org-ql :: https://github.com/alphapapa/org-ql
 - org-query :: compose agenda views easier https://github.com/remyhonig/org-query
-- origami :: text folding
+- origami :: text folding https://github.com/gregsexton/origami.el
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
 - perspectives :: https://github.com/nex3/perspective-el
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - rich-minority :: https://github.com/Malabarba/rich-minority
-- smartparens :: deals with parens pairs
-- smerge-mode :: merge tool
+- smartparens :: deals with parens pairs https://github.com/Fuco1/smartparens
+- smerge-mode :: merge tool with git and already installed
 - speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
 - wotd :: https://github.com/cute-jumper/emacs-word-of-the-day
 
