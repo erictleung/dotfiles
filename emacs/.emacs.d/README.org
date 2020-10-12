@@ -171,17 +171,17 @@ Package: https://github.com/Malabarba/smart-mode-line/
 
 ** Better copy paste of org-links
 
-Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy entire link).
+Keybindings with =C-c e= (export for use outside of Emacs) and =C-c E= (copy entire link).
 
 #+begin_src emacs-lisp
   ;; Modified from https://emacs.stackexchange.com/a/50870/18898
-  (defun my-yank-org-link (text)
+  (defun etl/yank-org-link (text)
     (if (derived-mode-p 'org-mode)
         (insert text)
       (string-match org-bracket-link-regexp text)
       (insert (substring text (match-beginning 1) (match-end 1)))))
 
-  (defun my-org-copy-smart-url ()
+  (defun etl/org-copy-smart-url ()
     (interactive)
     (let* ((link-info (assoc :link (org-context)))
            (text (when link-info
@@ -189,12 +189,12 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
                                                    (or (caddr link-info) (point-max))))))
       (if (not text)
           (error "Not in org link")
-        (add-text-properties 0 (length text) '(yank-handler (my-yank-org-link)) text)
+        (add-text-properties 0 (length text) '(yank-handler (etl/yank-org-link)) text)
         (kill-new text)))
     (message "Copied entire org link"))
-  (global-set-key (kbd "C-c c") 'my-org-copy-smart-url)
+  (global-set-key (kbd "C-c E") 'etl/org-copy-smart-url)
 
-  (defun my-org-export-url ()
+  (defun etl/org-export-url ()
     (interactive)
     (let* ((link-info (assoc :link (org-context)))
            (text (when link-info
@@ -205,7 +205,7 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c c= (copy ent
         (string-match org-bracket-link-regexp text)
         (kill-new (substring text (match-beginning 1) (match-end 1)))))
     (message "Copied link to computer clipboard"))
-  (global-set-key (kbd "C-c e") 'my-org-export-url)
+  (global-set-key (kbd "C-c e") 'etl/org-export-url)
 #+end_src
 
 ** Minor user experience changes
