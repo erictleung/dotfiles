@@ -458,6 +458,55 @@ Quickly select semantically meaningful regions with each press of =C-==. Typical
     (global-set-key (kbd "C-=") 'er/expand-region))
 #+end_src
 
+** Emojify
+
+#+begin_quote
+Display emojis in Emacs
+#+end_quote
+
+#+BEGIN_SRC emacs-lisp
+  (use-package emojify
+    :ensure 10
+    :hook (after-init . global-emojify-mode))
+#+END_SRC
+
+** Dashboard
+
+Will need to run =M-X all-the-icons-install-fonts= before icons will show up properly. In the future, maybe I'll create a hook/conditional to check for these icons being installed so the install will happen only once.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons
+    :ensure t)
+
+  (use-package dashboard
+    :ensure t
+    :init
+    (dashboard-setup-startup-hook)
+    :config
+    (defun etl/switch-to-dashboard ()
+      (interactive)
+      (switch-to-buffer "*dashboard*"))
+    (defun etl/read-lines (filepath)
+      "Return a list of lines of a file at filepath."
+      ;; http://ergoemacs.org/emacs/elisp_read_file_content.html
+      (with-temp-buffer
+        (insert-file-contents filepath)
+        (split-string (buffer-string) "\n" t)))
+    (global-set-key (kbd "C-c o d") 'etl/switch-to-dashboard)
+    (setq dashboard-set-file-icons t)
+    (setq dashboard-set-heading-icons t)
+    (setq dashboard-startup-banner 'logo)
+    (setq dashboard-set-init-info t)
+    (setq dashboard-set-navigator t)
+    (setq dashboard-banner-logo-title "Welcome to Your Dashboard")
+    (setq dashboard-items '((agenda . 10)
+                            (recents . 5)
+                            (projects . 5)))
+    (setq show-week-agenda-p t)
+    (setq dashboard-footer-messages
+          (etl/read-lines "~/Sync/org/documents/quotes.txt")))
+#+END_SRC
+
 * Swiper/Ivy/Counsel
 
 These are very similar packages that are found together. Here is a key of which package does what.
@@ -618,7 +667,6 @@ This all gets activated using the keybinding =C-x g= while in a git repository.
   (use-package git-timemachine
     :ensure t)
 #+end_src
-
 
 #+begin_src emacs-lisp
   ;; See subtle markers for line changes
