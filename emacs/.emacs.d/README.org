@@ -18,6 +18,7 @@
 - EMMS :: play audio and video inside Emacs
 - bash-completion :: https://github.com/szermatt/emacs-bash-completion
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
+- centaur-tabs :: tabs plugin https://github.com/ema2159/centaur-tabs
 - counsel-org-clock :: https://github.com/akirak/counsel-org-clock
 - csv-mode :: https://elpa.gnu.org/packages/csv-mode.html
 - dash :: modern list library https://github.com/magnars/dash.el
@@ -32,6 +33,7 @@
 - forge :: interact with git like GitHub https://github.com/magit/forge
 - iedit :: edit multiple regions, useful for coarse multiple cursor editing https://github.com/victorhge/iedit
 - key-quiz :: https://github.com/federicotdn/key-quiz
+- lispy :: help with LISP editing https://github.com/abo-abo/lispy
 - lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
 - org-cliplink :: https://github.com/rexim/org-cliplink
 - org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
