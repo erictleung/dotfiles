@@ -239,7 +239,7 @@ This environment can also be manually set as well. (May end up doing this to
 make things more consistent.)
 
 ```shell
-export PATH=$PATH':/path/to/add'
+export PATH=$PATH:$HOME/.gem/bin
 export GEM_HOME=$HOME/.gem
 export GEM_PATH=$HOME/.gem
 ```
