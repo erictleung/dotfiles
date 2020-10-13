@@ -12,10 +12,14 @@ installPkges <- c(
 
   # Tables, summary tools, and exploration
   "tables",         # help create publication tables
+  "gt",             # new grammar of table generation
   "tableone",       # table one of basic demographics or sample statistics
   "summarytools",   # quick data exploration
   "skimr",          # quick data exploration
   "Hmisc",          # miscellaneous useful functions
+
+  # Plotting
+  "gghighlight",    # easily highlight points and data in ggplot2
 
   # Miscellaneous
   "devtools",       # help create R packages
