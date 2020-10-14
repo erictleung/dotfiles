@@ -1143,7 +1143,7 @@ https://orgmode.org/worg/org-hacks.html#orga7f07e8
     )
 
   ;; Idle time is 600 seconds / 60 = 10 minutes
-  (run-with-idle-timer 600 t 'etl/jump-to-org-agenda)
+  (run-with-idle-timer (* 60 15) t 'etl/jump-to-org-agenda)
 #+end_src
 
 ** Refresh agenda view regularly
