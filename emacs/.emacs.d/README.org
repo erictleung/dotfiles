@@ -25,24 +25,26 @@
 - diminish :: save display space for minor modes list
 - dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - dump-jump :: https://github.com/jacktasia/dumb-jump
+- elfeed-score :: score elfeed entries https://github.com/sp1ff/elfeed-score
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
 - emmet-mode :: web development shortcuts
 - emacs-winum :: window numbers https://github.com/deb0ch/emacs-winum
 - esup :: Emacs Start Up Profiler https://github.com/jschaf/esup
 - flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
 - forge :: interact with git like GitHub https://github.com/magit/forge
+- hydra :: make Emacs bindings stick https://github.com/abo-abo/hydra
 - iedit :: edit multiple regions, useful for coarse multiple cursor editing https://github.com/victorhge/iedit
 - key-quiz :: https://github.com/federicotdn/key-quiz
 - lispy :: help with LISP editing https://github.com/abo-abo/lispy
 - lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
-- org-cliplink :: https://github.com/rexim/org-cliplink
-- org-journal :: https://github.com/bastibe/org-journal as a work journal, rather than personal
+- org-cliplink :: insert org-mode links from clipboard https://github.com/rexim/org-cliplink
+- org-journal :: as a work journal, rather than personal https://github.com/bastibe/org-journal
 - org-msg :: compose emails with org-mode https://github.com/jeremy-compostella/org-msg
-- org-ql :: https://github.com/alphapapa/org-ql
+- org-ql :: org-mode query language https://github.com/alphapapa/org-ql
 - org-query :: compose agenda views easier https://github.com/remyhonig/org-query
 - origami :: text folding https://github.com/gregsexton/origami.el
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
-- perspectives :: https://github.com/nex3/perspective-el
+- perspectives :: create named workspaces/perspectives https://github.com/nex3/perspective-el
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - rich-minority :: https://github.com/Malabarba/rich-minority
 - smartparens :: deals with parens pairs https://github.com/Fuco1/smartparens
