@@ -4,13 +4,13 @@
 
 *Inspiration*:
 
-- https://github.com/zamansky/dot-emacs
-- https://pages.sachachua.com/.emacs.d/Sacha.html
-- https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/
 - https://github.com/DiegoVicen/my-emacs
-- https://orgmode.org/worg/org-hacks.html
-- https://github.com/alhassy/emacs.d
 - https://github.com/KaratasFurkan/.emacs.d
+- https://github.com/alhassy/emacs.d
+- https://github.com/zamansky/dot-emacs
+- https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/
+- https://orgmode.org/worg/org-hacks.html
+- https://pages.sachachua.com/.emacs.d/Sacha.html
 - https://wolfecub.github.io/dotfiles/
 
 * Explore packages
