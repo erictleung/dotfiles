@@ -11,9 +11,13 @@ dirs :
 	mkdir -p ../{documents,downloads,misc}
 	mkdir -p ../documents/{gitlab,github}
 
-## ssh : Get SSH key for easy copy-paste (WIP)
-ssh :
-	echo ""
+## ssh : Get SSH key for easy copy-paste
+ssh : ~/.ssh/id_rsa.pub
+	cat ~/.ssh/id_rsa.pub
+
+## makessh : Generate local SSH key
+makessh :
+	ssh-keygen
 
 ## conda : Install conda for Python package management
 # Remove "_64" for 32-bit systems
