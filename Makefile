@@ -82,8 +82,8 @@ help :
 	@echo ""
 	@echo "Usage:"
 	@echo -e "\tmake <target>\n"
-	@echo -e "Target\t\tDescription"
-	@echo -e "------\t\t-----------"
+	@echo -e "Target       Description"
+	@echo -e "------       -----------"
 	@grep '## [A-Za-z]* : [A-Za-z]*' $(MAKEFILE_LIST) | \
 		sed 's/## //' | \
 		awk -F" : " '{ printf "%-13s%s\n", $$1, $$2}'
