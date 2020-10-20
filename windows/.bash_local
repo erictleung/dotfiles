@@ -34,3 +34,9 @@ export DISPLAY
 
 # Add Rust software to path
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Add gem paths to be local
+# https://stackoverflow.com/a/2619731/6873133
+export PATH=$PATH:$HOME/.gem/bin
+export GEM_HOME=~/.gem
+export GEM_PATH=~/.gem
