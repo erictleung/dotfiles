@@ -79,20 +79,30 @@ Use =M-x package-refresh-contents= to reload list of packages.
 
 ** Use better color theme
 
-Theme: https://github.com/bbatsov/zenburn-emacs
+I've found the [[https://github.com/bbatsov/zenburn-emacs][=zenburn=]] theme sufficient for my needs and is not too tiring on the eyes.
+
+#+begin_src emacs-lisp
+  ;; Example:
+  ;; http://pragmaticemacs.com/emacs/using-the-zenburn-theme/
+  ;; https://github.com/nashamri/spacemacs-theme/issues/42#issuecomment-192128264
+  (use-package zenburn-theme
+    ;; https://github.com/bbatsov/zenburn-emacs
+    ;; :ensure t
+    :defer t
+    :config
+    ;; (load-theme 'zenburn t))
+    ;; (add-hook 'after-init-hook (lambda () (load-theme 'zenburn t))))
+    (defun etl/load-zenburn-theme ()
+      (interactive)
+      (load-theme 'zenburn t))
+    :bind
+    ("C-c o l" . etl/load-zenburn-theme))
+  (etl/load-zenburn-theme)
+#+end_src
 
 I've gone back and forth on how best to load this theme. Sometimes I use a =:init (load-theme 'zenburn t)=. But in doing so, my theme doesn't load.
 
 Doing some reading around, it appears that we need to delay the loading of the theme [[https://emacs.stackexchange.com/a/19271/18898][because of how Emacs loads its packages]].
-
-#+begin_src emacs-lisp
-  (use-package zenburn-theme
-    :ensure t
-    :config
-    (load-theme 'zenburn t))
-    ;; (add-hook 'after-init-hook (lambda () (load-theme 'zenburn t))))
-
-#+end_src
 
 ** Modify backup system
 
