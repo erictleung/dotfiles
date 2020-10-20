@@ -1466,20 +1466,6 @@ For Jedi, it will require running =M-x jedi:install-server= to work first.
   (add-to-list 'exec-path "/usr/local/bin")
 #+end_src
 
-* Anki
-
-Help create Anki cards through Emacs Org-mode.
-
-Lots of help from https://yiufung.net/post/anki-org/.
-
-#+begin_src emacs-lisp
-  (use-package anki-editor
-    :after org
-    :config
-    (setq anki-editor-create-decks t
-          anki-editor-org-tags-as-anki-tags t))
-#+end_src
-
 * Web development
 
 More on =web-mode= http://web-mode.org/.
@@ -1644,3 +1630,9 @@ Reset debugging from the beginning and display how long setup took.
 
 - =org-drill= :: went with Anki because more convenient
 - =helm= :: replaced with =ivy= instead
+- =anki-enditor= :: works really well, just felt it easier to maintain directly from Anki because it already has a backup system; if I ever need it or want to help guide someone else https://yiufung.net/post/anki-org/.
+
+*No interest packages*
+
+- =org-dashboard= :: too much setup to categorize headings to sum up; not to be confused with =emacs-dashboard=
+- =org-bullets= :: not maintained; alternative =org-superstar-mode= not needed as well
