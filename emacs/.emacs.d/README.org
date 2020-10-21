@@ -15,19 +15,22 @@
 
 * Explore packages
 
-- EMMS :: play audio and video inside Emacs
+- EMMS :: play audio and video inside Emacs https://www.gnu.org/software/emms/
 - bash-completion :: https://github.com/szermatt/emacs-bash-completion
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - centaur-tabs :: tabs plugin https://github.com/ema2159/centaur-tabs
 - counsel-org-clock :: https://github.com/akirak/counsel-org-clock
 - csv-mode :: https://elpa.gnu.org/packages/csv-mode.html
 - dash :: modern list library https://github.com/magnars/dash.el
-- diminish :: save display space for minor modes list
+- diminish :: save display space for minor modes list https://github.com/myrjola/diminish.el
 - dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - dump-jump :: https://github.com/jacktasia/dumb-jump
 - elfeed-score :: score elfeed entries https://github.com/sp1ff/elfeed-score
+- emacs-calfw :: calendar framework https://github.com/kiwanami/emacs-calfw
+- emacs-easy-jekyll :: major mode for managing Jekyll https://github.com/masasam/emacs-easy-jekyll
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
-- emmet-mode :: web development shortcuts
+- emmet-mode :: web development shortcuts https://github.com/smihica/emmet-mode
+- emacs-presentation-mode :: presentation and live coding https://github.com/zonuexe/emacs-presentation-mode
 - emacs-winum :: window numbers https://github.com/deb0ch/emacs-winum
 - esup :: Emacs Start Up Profiler https://github.com/jschaf/esup
 - flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
@@ -38,7 +41,6 @@
 - lispy :: help with LISP editing https://github.com/abo-abo/lispy
 - lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
 - org-cliplink :: insert org-mode links from clipboard https://github.com/rexim/org-cliplink
-- org-journal :: as a work journal, rather than personal https://github.com/bastibe/org-journal
 - org-msg :: compose emails with org-mode https://github.com/jeremy-compostella/org-msg
 - org-ql :: org-mode query language https://github.com/alphapapa/org-ql
 - org-query :: compose agenda views easier https://github.com/remyhonig/org-query
@@ -50,6 +52,7 @@
 - smartparens :: deals with parens pairs https://github.com/Fuco1/smartparens
 - smerge-mode :: merge tool with git and already installed
 - speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
+- spotify.el :: control Spotify app within Emacs https://github.com/danielfm/spotify.el
 - wotd :: https://github.com/cute-jumper/emacs-word-of-the-day
 
 * Setup and debugging
