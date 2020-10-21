@@ -1174,6 +1174,23 @@ Source https://orgmode.org/worg/org-hacks.html#org7e4980d
   (run-at-time nil 3600 'etl/org-agenda-redo-in-other-window)
 #+end_src
 
+** Rifle through org buffers quickly
+
+#+begin_quote
+Rifle through your Org-mode buffers and acquire your target
+#+end_quote
+
+Run =M-x helm-org-rifle= to get started.
+
+Source: https://github.com/alphapapa/org-rifle
+
+#+BEGIN_SRC emacs-lisp
+  (use-package helm-org-rifle
+    :ensure t
+    :config
+    (global-set-key (kbd "C-c o r") 'helm-org-rifle))
+#+END_SRC
+
 ** Custom org-mode hooks
 
 #+begin_src emacs-lisp
