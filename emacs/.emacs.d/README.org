@@ -482,7 +482,7 @@ Display emojis in Emacs
 
 #+BEGIN_SRC emacs-lisp
   (use-package emojify
-    :ensure 10
+    :ensure t
     :hook (after-init . global-emojify-mode))
 #+END_SRC
 
