@@ -22,12 +22,13 @@ makessh :
 ## conda : Install conda for Python package management
 # Remove "_64" for 32-bit systems
 # Rename directory from Miniconda3/ to conda/
+CONDA=~/documents/miniconda.sh
 conda :
 	curl \
-		-o ~/downloads/miniconda.sh \
+		-o $(CONDA) \
 		https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-	cd ~; bash ~/downloads/miniconda.sh
-	rm ~/downloads/miniconda.sh
+	cd ~; bash $(CONDA)
+	rm $(CONDA)
 
 ## cclean : Clean conda packages and cache
 # See conda clean --help for more
@@ -74,6 +75,11 @@ editors :
 ## emacs : Tangle Emacs config
 emacs :
 	emacs --batch --eval "(require 'org)" --eval "(org-babel-load-file \"~/.emacs.d/README.org\")"
+
+## ubuntu : Setup Ubuntu setup
+#
+ubuntu :
+	echo ""
 
 .PHONY : help example conda dirs vundle cclean ssh setup editors emacs
 
