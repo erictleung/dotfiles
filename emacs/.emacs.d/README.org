@@ -1612,6 +1612,28 @@ Miscellaneous tools to interact with LaTeX documents.
     :defer 10)
 #+end_src
 
+* Finances and command line ledger
+
+Use plain text for accounting system =ledger=.
+
+- =ledger= GitHub https://github.com/ledger/ledger
+- Documentation https://www.ledger-cli.org/docs.html
+- More info https://plaintextaccounting.org/
+
+#+BEGIN_SRC emacs-lisp
+  (use-package ledger-mode
+    :ensure t
+    :bind (("C-c f e" . ledger-jentry)
+           ("C-c f j" . ledger-run-command))
+    :mode "\\.ledger\\'"
+    :config
+    (add-hook 'ledger-mode-hook
+              (lambda ()
+                (setq-local tab-always-indent 'complete)
+                (setq-local completion-cycle-threshold t)
+                (setq-local ledger-complete-in-steps t))))
+#+END_SRC
+
 * Miscellaneous
 
 Just some miscellaneous packages or configurations that don't warrant an entire section itself.
