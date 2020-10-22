@@ -654,7 +654,8 @@ Sometimes I have some snippets of text I find myself using. So I can define some
   (use-package yasnippet
     :ensure t
     :init
-    (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+    (setq yas-snippet-dirs '("~/.emacs.d/snippets"
+                             "~/Sync/org/snippets"))
     (yas-global-mode 1))
 
   ;; Crowd-sourced snippets
