@@ -109,6 +109,8 @@ Doing some reading around, it appears that we need to delay the loading of the t
 
 ** Modify backup system
 
+By default, Emacs creates lots of backup files in the same directory of files you are editing. I still believe in backups, so instead of polluting these files in the same director, let's consolidate them in a separate directory.
+
 #+begin_src emacs-lisp
   ;; Set basic backup settings
   ;; Source: https://stackoverflow.com/a/20824625/6873133
