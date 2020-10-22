@@ -149,13 +149,12 @@ By default, Emacs creates lots of backup files in the same directory of files yo
 
 ** Easier single window navigation
 
-Typically, I only need to move within a single window. And because I'm used to Vim navigation bindings, why not use them to navigate through a single window.
+Typically, I only need to move within a single window. And because I'm used to Vim navigation bindings, why not use (most of) them to navigate through a single window.
+
+Currently, I use =C-c l= to store Org-mode links, so I'm unable to use all of Vim's navigation. So I've settled for just moving up and down.
 
 #+begin_src emacs-lisp
-  ;; Make it easier to navigate windows using arrow keys
   (windmove-default-keybindings)
-  (global-set-key (kbd "C-c h")  'windmove-left)
-  (global-set-key (kbd "C-c l") 'windmove-right)
   (global-set-key (kbd "C-c k")    'windmove-up)
   (global-set-key (kbd "C-c j")  'windmove-down)
 #+end_src
