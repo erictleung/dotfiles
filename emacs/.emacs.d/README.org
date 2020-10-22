@@ -1195,6 +1195,22 @@ Source: https://github.com/alphapapa/org-rifle
     (global-set-key (kbd "C-c o r") 'helm-org-rifle))
 #+END_SRC
 
+** Use org-journal for work journaling
+
+It'll be nice to consolidate notes during the day in note form through org-mode. This can complement the work I do using calendars.
+
+#+begin_src emacs-lisp
+  (use-package org-journal
+    :ensure t
+    :defer t
+    :bind ("C-c n j" . org-journal-new-entry)
+    :config
+    (setq org-journal-dir "~/Sync/org/journal/")
+    (setq org-journal-file-format "%Y-%m-%d.org")
+    (setq org-journal-date-format "%e %b %Y (%A)")
+    (setq org-journal-time-format "%R "))
+#+end_src
+
 ** Custom org-mode hooks
 
 #+begin_src emacs-lisp
