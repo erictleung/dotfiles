@@ -284,6 +284,8 @@ interface with files and be productive.
 - [diagrams.net](https://app.diagrams.net/) - Easy to create diagrams online.
 - [Resumake](https://resumake.io) - Easy template application to create a
   resume.
+- [dbdigram.io](https://dbdiagram.io/home/) - Draw entity-relationship
+  diagrams by writing pseudocode.
 
 **Cross-Platform Desktop**
 
