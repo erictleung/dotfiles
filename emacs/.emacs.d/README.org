@@ -360,6 +360,7 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
     (interactive)
     (end-of-buffer)
     (goto-line (random (line-number-at-pos))))
+  (global-set-key (kbd "C-c o e") 'etl/goto-random-line)
 
   (defun etl/zetteldeft-wander-file ()
     "Find random link in current zetteldeft file."
