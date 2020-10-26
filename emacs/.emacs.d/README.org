@@ -1201,6 +1201,10 @@ Source: https://github.com/alphapapa/org-rifle
 
 It'll be nice to consolidate notes during the day in note form through org-mode. This can complement the work I do using calendars.
 
+While in a journal file, =C-c C-o j= will activate a number of options to use. These entries are linked to the agenda, so doing =M-x calendar= gives a number of keybindings that [[https://github.com/bastibe/org-journal#basic-usage][can be seen here]].
+
+GitHub: https://github.com/bastibe/org-journal
+
 #+begin_src emacs-lisp
   (use-package org-journal
     :ensure t
