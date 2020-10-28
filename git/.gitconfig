@@ -36,6 +36,7 @@
 	whitespace = warn
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	attributesfile = .gitattributes
+	autocrlf = input
 [user]
 	email = eric@erictleung.com
 	name = Eric Leung
