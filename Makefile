@@ -1,11 +1,6 @@
 # set shell
 SHELL := /usr/bin/env bash
 
-## vundle : Install Vundle for managing Vim packages
-vundle :
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	vim +PluginInstall +qall
-
 ## dirs : Setup directory structure
 dirs :
 	mkdir -p ../{documents,downloads,misc}
@@ -73,11 +68,22 @@ editors :
 	time emacs -nw -q -kill
 
 ## emacs : Tangle Emacs config
-emacs :
-	emacs --batch --eval "(require 'org)" --eval "(org-babel-load-file \"~/.emacs.d/README.org\")"
+emacs : ~/.emacs.d/README.org
+	emacs \
+		--batch \
+		--eval \
+		"(require 'org)" \
+		--eval "(org-babel-load-file \"~/.emacs.d/README.org\")"
+
+## vundle : Install Vundle for managing Vim packages
+vundle :
+	git clone \
+		https://github.com/VundleVim/Vundle.vim.git \
+		~/.vim/bundle/Vundle.vim
+	vim +PluginInstall +qall
 
 ## ubuntu : Setup Ubuntu setup
-#
+# Setup new Ubuntu setup such as on crouton Chromebook
 ubuntu :
 	echo ""
 
