@@ -84,8 +84,8 @@ vundle :
 
 ## ubuntu : Setup Ubuntu setup
 # Setup new Ubuntu setup such as on crouton Chromebook
-ubuntu :
-	echo ""
+ubuntu : scripts/setup_ubuntu.sh
+	bash scripts/setup_ubuntu.sh
 
 .PHONY : help example conda dirs vundle cclean ssh setup editors emacs
 
