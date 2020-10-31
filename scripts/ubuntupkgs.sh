@@ -24,4 +24,8 @@ sudo apt-get install \
     pandoc-citeproc \   # Pandoc and tools
 
     # Misc tools
-    tree
+    tree \
+
+    # Needed for installing R packages
+    libcurl4-openssl-dev \
+    libxml2-dev
