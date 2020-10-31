@@ -1448,15 +1448,10 @@ Temporary change because of updates to org-ref that break =org-ref-open-bibtex-n
 * Emacs Speaks Statistics (ESS)
 
 #+begin_src emacs-lisp
-  ;; ESS for R
   (use-package ess
-    :ensure t
     :config
-    (setq ess-style 'RStudio))
-
-  ;; Smarter underscore when using ESS
-  (use-package ess-smart-underscore
-    :ensure t)
+    (setq ess-style 'RStudio)
+    (use-package ess-smart-underscore))
 #+end_src
 
 * Python
