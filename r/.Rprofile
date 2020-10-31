@@ -58,4 +58,12 @@ options(continue = "... ")
     df
 }
 
+# Prevent question on saving workspace
+# Source: https://stackoverflow.com/a/4996252/6873133
+utils::assignInNamespace(
+  "q",
+  function(save = "no", status = 0, runLast = TRUE) {
+    .Internal(quit(save, status, runLast))
+  }, "base")
+
 message("*** Successfully loaded .Rprofile ***")
