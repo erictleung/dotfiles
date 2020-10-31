@@ -25,6 +25,7 @@ sudo apt-get install \
 
     # Misc tools
     tree \
+    man-db \            # Build manual pages
 
     # Needed for installing R packages
     libcurl4-openssl-dev \
