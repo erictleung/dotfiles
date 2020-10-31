@@ -655,15 +655,21 @@ Sometimes I have some snippets of text I find myself using. So I can define some
   ;; Create snippet templates
   (use-package yasnippet
     :ensure t
+    :commands (yas-reload-all)
     :init
-    (setq yas-snippet-dirs '("~/.emacs.d/snippets"
-                             "~/Sync/org/snippets"))
-    (yas-global-mode 1))
+    (add-hook 'prog-mode-hook #'yas-minor-mode)
+    (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
+    (add-to-list 'yas-snippet-dirs "~/Sync/org/snippets")
+    :config
+    (yas-global-mode 1)
+    (yas-reload-all))
 
-  ;; Crowd-sourced snippets
   (use-package yasnippet-snippets
     :ensure t
-    :after (yasnippet))
+    :after yasnippet)
+    ;; :init
+    ;; (autoload 'yasnippet-snippets-initialize "yasnippet-snippets" nil t)
+    ;; (eval-after-load 'yasnippet #'yasnippet-snippets-initialize))
 #+end_src
 
 * Magit and Git
