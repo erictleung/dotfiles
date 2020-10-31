@@ -520,8 +520,9 @@ Will need to run =M-X all-the-icons-install-fonts= before icons will show up pro
                             (recents . 5)
                             (projects . 5)))
     (setq show-week-agenda-p t)
-    (setq dashboard-footer-messages
-          (etl/read-lines "~/Sync/org/documents/quotes.txt")))
+    (if (file-exists-p "~/Sync/org/documents/quotes.txt")
+        (setq dashboard-footer-messages
+              (etl/read-lines "~/Sync/org/documents/quotes.txt"))))
 #+END_SRC
 
 * Swiper/Ivy/Counsel
