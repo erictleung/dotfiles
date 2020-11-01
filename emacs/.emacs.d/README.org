@@ -1647,10 +1647,9 @@ Just some miscellaneous packages or configurations that don't warrant an entire 
 
 ** Emacs shell
 
-Quickly run Emacs shell with keybinding.
+Quickly run Emacs shell with keybinding of =C-c s=.
 
 #+begin_src emacs-lisp
-  ;; Create keybinding for emacs shell
   (global-set-key (kbd "C-c s") 'eshell)
 #+end_src
 
