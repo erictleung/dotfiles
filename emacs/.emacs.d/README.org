@@ -35,6 +35,7 @@
 - esup :: Emacs Start Up Profiler https://github.com/jschaf/esup
 - flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
 - forge :: interact with git like GitHub https://github.com/magit/forge
+- helpful :: a better *help* buffer https://github.com/Wilfred/helpful
 - hydra :: make Emacs bindings stick https://github.com/abo-abo/hydra
 - iedit :: edit multiple regions, useful for coarse multiple cursor editing https://github.com/victorhge/iedit
 - key-quiz :: https://github.com/federicotdn/key-quiz
@@ -53,6 +54,7 @@
 - smerge-mode :: merge tool with git and already installed
 - speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
 - spotify.el :: control Spotify app within Emacs https://github.com/danielfm/spotify.el
+- suggest.el :: discover Emacs Lisp functions https://github.com/Wilfred/suggest.el
 - wotd :: https://github.com/cute-jumper/emacs-word-of-the-day
 
 * Setup and debugging
