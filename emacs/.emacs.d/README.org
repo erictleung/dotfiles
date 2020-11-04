@@ -49,7 +49,8 @@
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
 - perspectives :: create named workspaces/perspectives https://github.com/nex3/perspective-el
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
-- rich-minority :: https://github.com/Malabarba/rich-minority
+- prescient.el :: effective sorting and filtering https://github.com/raxod502/prescient.el
+- selectrum :: incremental narrowing https://github.com/raxod502/selectrum
 - smartparens :: deals with parens pairs https://github.com/Fuco1/smartparens
 - smerge-mode :: merge tool with git and already installed
 - speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
@@ -1702,3 +1703,4 @@ Reset debugging from the beginning and display how long setup took.
 
 - =org-dashboard= :: too much setup to categorize headings to sum up; not to be confused with =emacs-dashboard=
 - =org-bullets= :: not maintained; alternative =org-superstar-mode= not needed as well
+- =rich-minority= :: hiding minor-modes https://github.com/Malabarba/rich-minority, but already have it with =smart-mode-line=
