@@ -301,6 +301,9 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c E= (copy ent
   ;; Remove lock files
   ;; https://erwtc.com/working-emacs-lock-files-and-syncthing/
   (setq create-lockfiles nil)
+
+  ;; Quick keybinding to agenda
+  (global-set-key (kbd "<f12>") 'org-agenda)
 #+end_src
 
 ** Keybinding to configuration
