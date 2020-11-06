@@ -267,8 +267,9 @@ interface with files and be productive.
 - [QR Code Generator](https://www.the-qrcode-generator.com/) - Simple and
   useful.
 - [repl.it](https://repl.it/) - Create interactive REPLs for lots of languages.
-- [JDoodle](https://www.jdoodle.com/) - Like repl.it, but also include MySQL
+- [JDoodle](https://www.jdoodle.com/) - Like repl.it, but also includes MySQL
   and MongoDB.
+- [DB Fiddle](https://www.db-fiddle.com/) - Database-specific fiddle.
 - [Online LaTeX editor](https://www.codecogs.com/latex/eqneditor.php) - Quickly
   and easily create LaTeX equation images.
 - [Twitter Card Validator](https://cards-dev.twitter.com/validator) - See how
