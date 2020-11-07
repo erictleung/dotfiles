@@ -314,12 +314,12 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
 
 #+begin_src emacs-lisp
   (defun etl/reload-emacs-configuration()
-    "Reload the configuration"
+    "Reload Emacs configuration file."
     (interactive)
     (load "~/.emacs.d/init.el"))
 
   (defun etl/open-emacs-configuration ()
-    "Open the configuration.org file in buffer"
+    "Open the configuration README.org file in buffer."
     (interactive)
     (find-file "~/.emacs.d/README.org"))
 
