@@ -41,6 +41,7 @@
 - key-quiz :: https://github.com/federicotdn/key-quiz
 - lispy :: help with LISP editing https://github.com/abo-abo/lispy
 - lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
+- literate-calc-mode :: literate programming for =M-x calc= https://github.com/sulami/literate-calc-mode.el
 - org-cliplink :: insert org-mode links from clipboard https://github.com/rexim/org-cliplink
 - org-msg :: compose emails with org-mode https://github.com/jeremy-compostella/org-msg
 - org-ql :: org-mode query language https://github.com/alphapapa/org-ql
