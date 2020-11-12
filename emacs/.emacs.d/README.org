@@ -480,7 +480,6 @@ Will need to run =M-X all-the-icons-install-fonts= before icons will show up pro
     :ensure t
     :init
     (dashboard-setup-startup-hook)
-    :config
     (defun etl/switch-to-dashboard ()
       (interactive)
       (switch-to-buffer "*dashboard*"))
@@ -490,7 +489,8 @@ Will need to run =M-X all-the-icons-install-fonts= before icons will show up pro
       (with-temp-buffer
         (insert-file-contents filepath)
         (split-string (buffer-string) "\n" t)))
-    (global-set-key (kbd "C-c o d") 'etl/switch-to-dashboard)
+    :bind (("C-c o d" . 'etl/switch-to-dashboard))
+    :config
     (setq dashboard-set-file-icons t)
     (setq dashboard-set-heading-icons t)
     (setq dashboard-startup-banner 'logo)
