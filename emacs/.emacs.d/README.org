@@ -736,11 +736,12 @@ This all gets activated using the keybinding =C-x g= while in a git repository.
   ;; Improve writing with tips from
   ;; http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
   (use-package writegood-mode
-    :ensure t)
-  (global-set-key "\C-cg" 'writegood-mode)
-  (global-set-key "\C-c\C-gg" 'writegood-grade-level)
-  (global-set-key "\C-c\C-ge" 'writegood-reading-ease)
-  (add-hook 'markdown-mode-hook 'writegood-mode)  ;; Activate when in Markdown
+    :ensure t
+    :bind (("C-c g" . 'writegood-mode)
+           ("C-c C-g g" . 'writegood-grade-level)
+           ("C-c C-g e" . 'writegood-reading-ease))
+    :init
+    (add-hook 'markdown-mode-hook 'writegood-mode))
 
   ;; flycheck for syntax checking
   (use-package flycheck
