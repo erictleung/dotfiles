@@ -589,12 +589,17 @@ https://mytechrants.wordpress.com/2010/03/25/emacs-tip-of-the-day-start-using-ib
 
 * Avy
 
-Powerful text search. Similar to =ido= package where by you activate it with =M-s= and then specify a letter of where you want to go.
+Powerful text search.
+
+Similar to =ido= package where by you activate it with =M-s= and then specify a letter of where you want to go.
+
+Also similar to the predecessor [[https://github.com/winterTTr/ace-jump-mode][=ace-jump-mode=]], but it appears [[https://emacsredux.com/blog/2015/07/19/ace-jump-mode-is-dead-long-live-avy/][Avy has "everything ace-jump does and more"]].
 
 #+begin_src emacs-lisp
   (use-package avy
     :ensure t
-    :bind ("M-s" . avy-goto-word-1))
+    :bind (("M-s" . avy-goto-char)
+           ("M-g f" . avy-goto-line)))
 #+end_src
 
 * Company and auto-complete
