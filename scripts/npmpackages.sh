@@ -6,4 +6,12 @@ npm config set prefix ~/.npm
 export PATH="$PATH:$HOME/.npm/bin"
 
 # npm packages
-npm install -g pandiff diff-so-fancy
+npm install -g \
+    # File diff between pandoc files
+    pandiff \
+
+    # Better diffs in git
+    diff-so-fancy \
+
+    # Generate table of contents for Markdown files
+    doctoc
