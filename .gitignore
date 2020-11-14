@@ -2,25 +2,25 @@
 .DS_Store
 
 # Vim specific
-vim/.vim/bundle
 vim/.vim/.netrwhist
+vim/.vim/bundle
 vim/.vim/spell/en.utf-8.add.spl
 
 # Emacs specific
-emacs/.emacs.d/elpa
-emacs/.emacs.d/history
-emacs/.emacs.d/bookmarks
-emacs/.emacs.d/transient
-emacs/.emacs.d/custom.el
+emacs/.emacs.d/.org-id-locations
+emacs/.emacs.d/README.el
 emacs/.emacs.d/abbrev_defs
 emacs/.emacs.d/auto-save-list/
 emacs/.emacs.d/backup/
-emacs/.emacs.d/eshell/
-emacs/.emacs.d/ido.last
-emacs/.emacs.d/.org-id-locations
-emacs/.emacs.d/request/
-emacs/.emacs.d/url/
-emacs/.emacs.d/recentf
-emacs/.emacs.d/README.el
+emacs/.emacs.d/bookmarks
+emacs/.emacs.d/custom.el
+emacs/.emacs.d/elpa
 emacs/.emacs.d/emojis
+emacs/.emacs.d/eshell/
+emacs/.emacs.d/history
+emacs/.emacs.d/ido.last
 emacs/.emacs.d/projectile*
+emacs/.emacs.d/recentf
+emacs/.emacs.d/request/
+emacs/.emacs.d/transient
+emacs/.emacs.d/url/
