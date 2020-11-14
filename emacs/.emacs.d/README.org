@@ -752,9 +752,8 @@ This all gets activated using the keybinding =C-x g= while in a git repository.
   ;; Help define words
   (use-package define-word
     :ensure t
-    :config
-    (global-set-key (kbd "C-c d w") 'define-word-at-point)
-    (global-set-key (kbd "C-c d W") 'define-word))
+    :bind (("C-c d w" . 'define-word-at-point)
+           ("C-c d W" . 'define-word)))
 
   ;; Completions for academic phrases
   (use-package academic-phrases
@@ -772,6 +771,8 @@ Help and examples:
 #+begin_src emacs-lisp
   (use-package w3m
     :ensure t
+    :bind (("C-c w" . 'w3m)
+           ("C-x m" . 'browse-url-at-point))
     :config
     (setq w3m-use-cookies t
           w3m-cookie-accept-bad-cookies t
@@ -792,12 +793,6 @@ Help and examples:
           w3m-input-coding-system 'utf-8
           w3m-output-coding-system 'utf-8
           w3m-terminal-coding-system 'utf-8))
-
-  ;; Keybinding shortcut for browser access
-  (global-set-key (kbd "C-c w") 'w3m)
-
-  ;; Keyboard shortcut for opening in w3m
-  (global-set-key (kbd "C-x m") 'browse-url-at-point)
 #+end_src
 
 * Org-mode
@@ -817,16 +812,15 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
   (use-package org
     :ensure t
     :pin org
+    :bind (("C-c l" . 'org-store-link)
+           ("C-c a" . 'org-agenda)
+           ("C-c c" . 'org-capture)
+           ("C-c b" . 'org-iswitchb)
+           ("C-c t" . 'org-time-stamp-inactive)
+           ("<f12>" . 'org-agenda))
     :config
     (setq org-startup-indented t)
     (setq org-startup-folded t))
-
-  ;; Set up key binding shortcuts
-  (global-set-key "\C-cl" 'org-store-link)
-  (global-set-key "\C-ca" 'org-agenda)
-  (global-set-key "\C-cc" 'org-capture)
-  (global-set-key "\C-cb" 'org-iswitchb)
-  (global-set-key "\C-ct" 'org-time-stamp-inactive)
 
   ;; Set up org mode
   (setq org-directory "~/Sync/org/")
@@ -1187,8 +1181,7 @@ Source: https://github.com/alphapapa/org-rifle
 #+BEGIN_SRC emacs-lisp
   (use-package helm-org-rifle
     :ensure t
-    :config
-    (global-set-key (kbd "C-c o r") 'helm-org-rifle))
+    :bind (("C-c o r" . 'helm-org-rifle)))
 #+END_SRC
 
 ** Use org-journal for work journaling
@@ -1359,9 +1352,6 @@ Temporary change because of updates to org-ref that break =org-ref-open-bibtex-n
 * Elfeed
 
 #+begin_src emacs-lisp
-  ;; Create gloabl binding for elfeed
-  (global-set-key (kbd "C-x w") 'elfeed)
-
   ;; Shortcut functions to certain feeds
   ;; Need to create these bookmarks manually using C-x r m whenever in the
   ;; filtered result. Then type in the bookmark name e.g. elfeed-all
@@ -1417,6 +1407,7 @@ Temporary change because of updates to org-ref that break =org-ref-open-bibtex-n
   ;; http://pragmaticemacs.com/emacs/read-your-rss-feeds-in-emacs-with-elfeed/
   (use-package elfeed
     :ensure t
+    :bind (("C-x w" . 'elfeed))
     :config
     (setq elfeed-db-directory "~/Sync/org/elfeed/")
     :bind (:map elfeed-search-mode-map
