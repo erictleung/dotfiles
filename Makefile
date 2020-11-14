@@ -89,7 +89,8 @@ vundle :
 ubuntu : scripts/setup_ubuntu.sh
 	bash scripts/setup_ubuntu.sh
 
-.PHONY : help example conda dirs vundle cclean ssh setup editors emacs
+.PHONY : help example conda dirs vundle cclean ssh makessh setup editors emacs \
+	ubuntu npmclean pipclean archclean
 
 ## help : Help page for Makefile
 help :
