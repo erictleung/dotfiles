@@ -364,6 +364,8 @@ Emacs has an abbreviation mode, so here is a list of abbreviations I find useful
 #+begin_src emacs-lisp
   ;; Clear previous table
   (clear-abbrev-table global-abbrev-table)
+  (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+  (setq save-abbrevs 'silent)  ;; Save abbrevs when files are saved
 
   (define-abbrev-table 'global-abbrev-table
     '(
