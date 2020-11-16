@@ -84,6 +84,9 @@ alias x="exit"
 # access history
 alias h="history"
 
+# Emacs aliases
+alias t="emacsclient -t"
+
 # export local exports if found
 if [ -f ~/.aliases.local ]; then
     . ~/.aliases.local
