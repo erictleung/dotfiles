@@ -24,3 +24,5 @@ emacs/.emacs.d/recentf
 emacs/.emacs.d/request/
 emacs/.emacs.d/transient
 emacs/.emacs.d/url/
+/emacs/.emacs.d/savefile/
+/emacs/.emacs.d/tramp
