@@ -800,12 +800,16 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
 
 ** Basic setup
 
+Note, =org-plus-contrib= is not a package, but rather, it is a wrapper package
+around other contributed packages. Thus it cannot be loaded using =use-package=
+in the traditional sense. A work around here is to [[https://github.com/jwiegley/use-package/issues/597#issuecomment-352898477][make it a dependency of =org=]].
+
 #+begin_src emacs-lisp
   ;; Additional org functions for checklist handling
   ;; https://orgmode.org/worg/org-contrib/org-checklist.html
   ;; Install org-plus-contrib separately
   (use-package org
-    :ensure t
+    :ensure org-plus-contrib
     :pin org
     :bind (("C-c l" . 'org-store-link)
            ("C-c a" . 'org-agenda)
@@ -818,10 +822,11 @@ For clocking in tasks in Org-mode, I took a lot of inspiration and learned a lot
     (setq org-startup-folded t))
 
   ;; Set up org mode
-  (setq org-directory "~/Sync/org/")
-  (setq org-agenda-files '("~/Sync/org/gtd.org"
-                           "~/Sync/org/reminders.org"))
-  (setq org-default-notes-file (concat org-directory "inbox.org"))
+  (if (file-directory-p "~/Sync/org")
+      (setq org-directory "~/Sync/org/")
+      (setq org-agenda-files '("~/Sync/org/gtd.org"
+                               "~/Sync/org/reminders.org"))
+      (setq org-default-notes-file (concat org-directory "inbox.org")))
   (setq org-log-done t)
   (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
   (setq org-agenda-inhibit-startup t) ; Inhibit startup options to speed up agenda
