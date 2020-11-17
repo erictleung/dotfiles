@@ -646,12 +646,14 @@ Sometimes I have some snippets of text I find myself using. So I can define some
     :ensure t
     :commands (yas-reload-all)
     :init
-    (add-hook 'prog-mode-hook #'yas-minor-mode)
-    (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets")
-    (add-to-list 'yas-snippet-dirs "~/Sync/org/snippets")
+    (if (file-directory-p "~/Sync/org/snippets")
+        (add-to-list 'yas-snippet-dirs "~/Sync/org/snippets"))
     :config
-    (yas-global-mode 1)
-    (yas-reload-all))
+    (yas-global-mode 1))
+
+  ;; Optional settings to use yas-minor-mode on per-buffer basis
+  ;; (yas-reload-all)
+  ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
 
   (use-package yasnippet-snippets
     :ensure t
