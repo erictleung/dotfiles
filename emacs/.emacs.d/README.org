@@ -36,6 +36,7 @@
 - flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
 - forge :: interact with git like GitHub https://github.com/magit/forge
 - helpful :: a better *help* buffer https://github.com/Wilfred/helpful
+- highlight :: minor mode to highlight indentation https://github.com/DarthFennec/highlight-indent-guides
 - hydra :: make Emacs bindings stick https://github.com/abo-abo/hydra
 - iedit :: edit multiple regions, useful for coarse multiple cursor editing https://github.com/victorhge/iedit
 - key-quiz :: https://github.com/federicotdn/key-quiz
