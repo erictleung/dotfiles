@@ -1073,7 +1073,8 @@ Use org-mode for concept mapping. This currently is only useful for managing the
   (use-package org-brain
     :ensure t
     :init
-    (setq org-brain-path "~/Sync/org/brain")
+    (if (file-directory-p "~/Sync/org/brain")
+        (setq org-brain-path "~/Sync/org/brain"))
     :config
     (setq org-id-track-globally t)
     (setq org-id-locations-files "~/.emacs.d/.org-id-locations")
@@ -1433,9 +1434,11 @@ Temporary change because of updates to org-ref that break =org-ref-open-bibtex-n
 
 #+begin_src emacs-lisp
   (use-package ess
+    :ensure t
     :config
     (setq ess-style 'RStudio)
-    (use-package ess-smart-underscore))
+    (use-package ess-smart-underscore
+      :ensure t))
 #+end_src
 
 * Python
