@@ -1470,7 +1470,10 @@ https://realpython.com/emacs-the-best-python-editor/
   ;;  (add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi))))
 
   ;; Set to Python 3
-  (setq python-shell-interpreter "~/miniconda/bin/python3")
+  (if (file-exists-p "~/miniconda/bin/python3")
+      (setq python-shell-interpreter "~/miniconda/bin/python3"))
+  (if (file-exists-p "~/miniconda3/bin/python3")
+      (setq python-shell-interpreter "~/miniconda3/bin/python3"))
 
   ;; Disable offset message
   ;; https://emacs.stackexchange.com/a/47366/18898
