@@ -206,11 +206,15 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c E= (copy ent
     (interactive)
     (let* ((link-info (assoc :link (org-context)))
            (text (when link-info
-                   (buffer-substring-no-properties (or (cadr link-info) (point-min))
-                                                   (or (caddr link-info) (point-max))))))
+                   (buffer-substring-no-properties
+                    (or (cadr link-info) (point-min))
+                    (or (caddr link-info) (point-max))))))
       (if (not text)
           (error "Not in org link")
-        (add-text-properties 0 (length text) '(yank-handler (etl/yank-org-link)) text)
+        (add-text-properties 0
+                             (length text)
+                             '(yank-handler (etl/yank-org-link))
+                             text)
         (kill-new text)))
     (message "Copied entire org link"))
   (global-set-key (kbd "C-c E") 'etl/org-copy-smart-url)
@@ -219,8 +223,9 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c E= (copy ent
     (interactive)
     (let* ((link-info (assoc :link (org-context)))
            (text (when link-info
-                   (buffer-substring-no-properties (or (cadr link-info) (point-min))
-                                                   (or (caddr link-info) (point-max))))))
+                   (buffer-substring-no-properties
+                    (or (cadr link-info) (point-min))
+                    (or (caddr link-info) (point-max))))))
       (if (not text)
           (error "Not in org link")
         (string-match org-bracket-link-regexp text)
