@@ -1,4 +1,4 @@
-personal_ws-1.1 en 239 
+personal_ws-1.1 en 243 
 agarose
 covariates
 ASV
@@ -15,6 +15,7 @@ qPCR
 microbiome's
 microbiomes
 Plotly
+NumPy
 spectrometry
 urothelium
 ANOVA
@@ -103,9 +104,11 @@ pathophysiological
 neuromodulation
 biofilm
 OMSI
+MongoDB
 pathophysiology
 mutualism
 Helicobacter
+centralities
 transurethral
 urotype
 Kubernetes
@@ -125,6 +128,7 @@ anticholinergic
 uropathogens
 vitro
 pyrosequencing
+compositionality
 de
 iteratively
 Döderlein
