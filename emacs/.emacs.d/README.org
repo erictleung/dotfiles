@@ -763,6 +763,29 @@ This all gets activated using the keybinding =C-x g= while in a git repository.
   ;; Completions for academic phrases
   (use-package academic-phrases
     :ensure t)
+
+  ;; Avoid cliches and bad grammar
+  (use-package artbollocks-mode
+    :defer t
+    :config
+    (progn
+      (setq artbollocks-weasel-words-regex
+            (concat "\\b" (regexp-opt
+                           '("one of the"
+                             "should"
+                             "just"
+                             "sort of"
+                             "a lot"
+                             "probably"
+                             "maybe"
+                             "perhaps"
+                             "I think"
+                             "really"
+                             "pretty"
+                             "nice"
+                             "action"
+                             "utilize"
+                             "leverage") t) "\\b"))))
 #+end_src
 
 * Internet browsing
