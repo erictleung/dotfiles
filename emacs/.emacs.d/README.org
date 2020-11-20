@@ -966,7 +966,9 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
                        '(or (etl/org-skip-subtree-if-priority ?A)
                             (etl/org-skip-subtree-if-habit)
                             (org-agenda-skip-entry-if 'regexp "[[:digit:]]\{4\} - .*")
-                            (org-agenda-skip-entry-if 'todo '("WAITING" "MAYBE"))
+                            (org-agenda-skip-entry-if 'todo '("WAITING"
+                                                              "MAYBE"
+                                                              "PROJECT"))
                             (org-agenda-skip-if nil '(scheduled deadline))))
                       (org-agenda-overriding-header "All normal priority tasks:"))))
            ((org-agenda-compact-blocks t)))
