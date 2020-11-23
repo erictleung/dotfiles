@@ -4,14 +4,15 @@
 
 *Inspiration*:
 
+- https://pages.sachachua.com/.emacs.d/Sacha.html :: extensive literate configuration
+- https://github.com/zamansky/dot-emacs :: example configuration with YouTube tutorials
+- https://github.com/rememberYou/.emacs.d :: great tips in README and variety of packages used
+- https://orgmode.org/worg/org-hacks.html :: amazing list of tips and tricks using org-mode
 - https://github.com/DiegoVicen/my-emacs
 - https://github.com/KaratasFurkan/.emacs.d
 - https://github.com/alhassy/emacs.d
-- https://github.com/zamansky/dot-emacs
 - https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/
-- https://orgmode.org/worg/org-hacks.html
-- https://pages.sachachua.com/.emacs.d/Sacha.html
-- https://wolfecub.github.io/dotfiles/
+- https://github.com/WolfeCub/dotfiles
 
 * Explore packages
 
