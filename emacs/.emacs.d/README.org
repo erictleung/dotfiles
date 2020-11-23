@@ -16,7 +16,7 @@
 
 * Explore packages
 
-- EMMS :: play audio and video inside Emacs https://www.gnu.org/software/emms/
+- annotate.el :: add arbitrary annotations to file https://github.com/bastibe/annotate.el
 - bash-completion :: https://github.com/szermatt/emacs-bash-completion
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - centaur-tabs :: tabs plugin https://github.com/ema2159/centaur-tabs
@@ -27,6 +27,7 @@
 - dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - dump-jump :: https://github.com/jacktasia/dumb-jump
 - elfeed-score :: score elfeed entries https://github.com/sp1ff/elfeed-score
+- EMMS :: play audio and video inside Emacs https://www.gnu.org/software/emms/
 - emacs-calfw :: calendar framework https://github.com/kiwanami/emacs-calfw
 - emacs-easy-jekyll :: major mode for managing Jekyll https://github.com/masasam/emacs-easy-jekyll
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
@@ -42,16 +43,16 @@
 - iedit :: edit multiple regions, useful for coarse multiple cursor editing https://github.com/victorhge/iedit
 - key-quiz :: https://github.com/federicotdn/key-quiz
 - lispy :: help with LISP editing https://github.com/abo-abo/lispy
-- lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
 - literate-calc-mode :: literate programming for =M-x calc= https://github.com/sulami/literate-calc-mode.el
+- lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
 - org-cliplink :: insert org-mode links from clipboard https://github.com/rexim/org-cliplink
 - org-msg :: compose emails with org-mode https://github.com/jeremy-compostella/org-msg
 - org-ql :: org-mode query language https://github.com/alphapapa/org-ql
 - org-query :: compose agenda views easier https://github.com/remyhonig/org-query
 - origami :: text folding https://github.com/gregsexton/origami.el
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
-- perspectives :: create named workspaces/perspectives https://github.com/nex3/perspective-el
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
+- perspectives :: create named workspaces/perspectives https://github.com/nex3/perspective-el
 - prescient.el :: effective sorting and filtering https://github.com/raxod502/prescient.el
 - selectrum :: incremental narrowing https://github.com/raxod502/selectrum
 - smartparens :: deals with parens pairs https://github.com/Fuco1/smartparens
