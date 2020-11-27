@@ -65,6 +65,10 @@ nnoremap k gk
 set path+=** " search recursively through files within other folders
 set wildmenu " show options above commands
 
+" Justifies current block of text
+" https://twitter.com/vsbuffalo/status/1331313958754521088
+nmap <space><space> gwip
+
 
 " Searching "
 
