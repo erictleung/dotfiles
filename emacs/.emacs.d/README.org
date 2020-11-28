@@ -365,32 +365,6 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
   (global-set-key (kbd "C-c o e") 'etl/goto-random-line)
 #+end_src
 
-* Abbreviations
-
-Emacs has an abbreviation mode, so here is a list of abbreviations I find useful. These automatically expand unless you press =Ctrl+q= before typing a space or punctuation.
-
-#+begin_src emacs-lisp
-  ;; Clear previous table
-  (clear-abbrev-table global-abbrev-table)
-  (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
-  (setq save-abbrevs 'silent)  ;; Save abbrevs when files are saved
-
-  (define-abbrev-table 'global-abbrev-table
-    '(
-      ;; Net abbreviations
-      ("afaik" "as far as I know")
-      ("btw" "by the way")
-
-      ;; English word abbreviations
-      ("bc" "because")
-
-      ;; Tech
-      ("sto" "StackOverflow")
-      ))
-
-  (set-default 'abbrev-mode t)
-#+end_src
-
 * Emacs Development packages
 
 Packages to help with development.
@@ -668,6 +642,32 @@ Sometimes I have some snippets of text I find myself using. So I can define some
     ;; :init
     ;; (autoload 'yasnippet-snippets-initialize "yasnippet-snippets" nil t)
     ;; (eval-after-load 'yasnippet #'yasnippet-snippets-initialize))
+#+end_src
+
+** Abbreviations
+
+Emacs has an abbreviation mode, so here is a list of abbreviations I find useful. These automatically expand unless you press =Ctrl+q= before typing a space or punctuation.
+
+#+begin_src emacs-lisp
+  ;; Clear previous table
+  (clear-abbrev-table global-abbrev-table)
+  (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
+  (setq save-abbrevs 'silent)  ;; Save abbrevs when files are saved
+
+  (define-abbrev-table 'global-abbrev-table
+    '(
+      ;; Net abbreviations
+      ("afaik" "as far as I know")
+      ("btw" "by the way")
+
+      ;; English word abbreviations
+      ("bc" "because")
+
+      ;; Tech
+      ("sto" "StackOverflow")
+      ))
+
+  (set-default 'abbrev-mode t)
 #+end_src
 
 * Magit and Git
