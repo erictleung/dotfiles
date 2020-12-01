@@ -336,6 +336,21 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
   (global-set-key (kbd "C-c z") 'etl/open-emacs-configuration)
 #+end_src
 
+** Never lose the cursor
+
+#+begin_src emacs-lisp
+  (use-package beacon
+    :ensure t
+    :diminish beacon-mode
+    :config
+    (setq beacon-blink-when-window-scrolls nil
+          beacon-dont-blink-major-modes '(t pdf-view-mode)
+          beacon-size 50
+          beacon-blink-duration 0.4
+          beacon-blink-delay 0.3)
+    (beacon-mode 1))
+#+end_src
+
 * Custom functions
 
 #+begin_src emacs-lisp
