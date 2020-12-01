@@ -47,6 +47,7 @@
 - lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
 - org-cliplink :: insert org-mode links from clipboard https://github.com/rexim/org-cliplink
 - org-msg :: compose emails with org-mode https://github.com/jeremy-compostella/org-msg
+- org-reveal :: exports org-mode to Reveal.js https://github.com/yjwen/org-reveal/
 - org-ql :: org-mode query language https://github.com/alphapapa/org-ql
 - org-query :: compose agenda views easier https://github.com/remyhonig/org-query
 - origami :: text folding https://github.com/gregsexton/origami.el
