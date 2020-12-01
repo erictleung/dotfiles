@@ -1,11 +1,13 @@
-personal_ws-1.1 en 245 
+personal_ws-1.1 en 249 
 agarose
 covariates
 ASV
 mentorship
 metagenomics
+PCoA
 catheterization
 Guanming
+PERMANOVA
 Corynebacterium
 electrophoresis
 menarche
@@ -66,6 +68,7 @@ undirected
 nicotinic
 UTI
 novo
+Chromebook
 Reddit
 UUI
 denoising
@@ -126,6 +129,7 @@ reproducibility
 phylogenetic
 anticholinergic
 uropathogens
+UniFrac
 vitro
 pyrosequencing
 compositionality
