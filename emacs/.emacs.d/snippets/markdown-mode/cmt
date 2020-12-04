@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: cmt Insert comment
+# key: cmt
+# comment: https://stackoverflow.com/a/32190021/6873133
+# --
+[comment]: # ($0)
