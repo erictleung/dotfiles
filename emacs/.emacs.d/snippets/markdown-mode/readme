@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: readme
+# key: readme
+# --
+# $1
+
+> $2
+
+$3
+
+## Usage
+
+$4
+
+## Installation
+
+$5
+
+## Acknowledgements
+
+$6
+
+## See Also
+
+$7
+
+## License
+
+$8
