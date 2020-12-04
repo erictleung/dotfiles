@@ -396,6 +396,15 @@ Packages to help with development.
   (use-package s :ensure t)
 #+end_src
 
+Structural editing of Lisp code.
+
+#+begin_src emacs-lisp
+  (use-package paredit
+    :ensure t
+    :hook ((emacs-lisp-mode . paredit-mode)
+           (clojure-mode . paredit-mode)))
+#+end_src
+
 * Interface packages
 
 ** Try
