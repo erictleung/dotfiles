@@ -652,8 +652,10 @@ Sometimes I have some snippets of text I find myself using. So I can define some
     :ensure t
     :commands (yas-reload-all)
     :init
-    (if (file-directory-p "~/Sync/org/snippets")
-        (add-to-list 'yas-snippet-dirs "~/Sync/org/snippets"))
+    (let ((etlsnips "~/Sync/org/snippets"))
+      (if (and (file-directory-p 'etlsnips) (boundp 'yas-snippet-dirs))
+          (add-to-list 'yas-snippet-dirs 'etlsnips)
+        (setq yas-snippet-dirs 'etlsnips)))
     :config
     (yas-global-mode 1))
 
