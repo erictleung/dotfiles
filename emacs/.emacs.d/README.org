@@ -713,14 +713,16 @@ This all gets activated using the keybinding =C-x g= while in a git repository.
     (git-commit-fill-column 72))
 #+end_src
 
+Interactive understanding of file changes across commits.
+
 #+begin_src emacs-lisp
-  ;; Interactive understanding of file changes across commits
   (use-package git-timemachine
     :ensure t)
 #+end_src
 
+See subtle markers for line changes.
+
 #+begin_src emacs-lisp
-  ;; See subtle markers for line changes
   (use-package git-gutter
     :ensure t)
 #+end_src
