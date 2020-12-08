@@ -724,7 +724,9 @@ See subtle markers for line changes.
 
 #+begin_src emacs-lisp
   (use-package git-gutter
-    :ensure t)
+    :ensure t
+    :init
+    (global-git-gutter-mode t))
 #+end_src
 
 * Markdown
