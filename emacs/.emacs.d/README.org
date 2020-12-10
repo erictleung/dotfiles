@@ -185,11 +185,11 @@ Package: https://github.com/Malabarba/smart-mode-line/
     :init
     (sml/setup)
     :config
-    (setq display-time-format "%a %m-%d %H:%M")
-    (setq sml/name-width '(20 . 70))
-    (setq sml/shorten-modes t)
-    (setq sml/shorten-directory t)
-    (setq sml/mode-width "right")
+    (setq display-time-format "%a %m-%d %H:%M"
+          sml/name-width '(20 . 70)
+          sml/shorten-modes t
+          sml/shorten-directory t
+          sml/mode-width "right")
     (display-time))
 #+end_src
 
