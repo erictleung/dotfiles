@@ -352,6 +352,21 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
     (beacon-mode 1))
 #+end_src
 
+** Highlight indentation
+
+It can be difficult to follow indentation of code with lots of lines, so highlight those indentations.
+
+GitHub: https://github.com/DarthFennec/highlight-indent-guides
+
+#+begin_src emacs-lisp
+  (use-package highlight-indent-guides
+    :ensure t
+    :hook (prog-mode . highlight-indent-guides-mode)
+    :config
+    (setq highlight-indent-guides-method 'bitmap
+          highlight-indent-guides-responsive 'top))
+#+end_src
+
 * Custom functions
 
 #+begin_src emacs-lisp
