@@ -69,8 +69,8 @@ Setup debugging and unset them at the end so that if anything breaks, we can jum
 
 #+begin_src emacs-lisp
   ;; Setup debugging configurations
-  (setq debug-on-error t)
-  (setq debug-on-quit t)
+  (setq debug-on-error t
+        debug-on-quit t)
 
   ;; Time setup length
   (defconst emacs-start-time (current-time))
