@@ -54,12 +54,14 @@
 - outshine :: bring feel of Org-mode everywhere https://github.com/alphapapa/outshine
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - perspectives :: create named workspaces/perspectives https://github.com/nex3/perspective-el
+- poporg :: edit strings/comments in Org mode https://github.com/QBobWatson/poporg
 - prescient.el :: effective sorting and filtering https://github.com/raxod502/prescient.el
 - selectrum :: incremental narrowing https://github.com/raxod502/selectrum
 - smartparens :: deals with parens pairs https://github.com/Fuco1/smartparens
 - smerge-mode :: merge tool with git and already installed
 - speedbar :: extra frame with information https://www.gnu.org/software/emacs/manual/html_node/emacs/Speedbar.html
 - spotify.el :: control Spotify app within Emacs https://github.com/danielfm/spotify.el
+- spray :: speed reading mode https://melpa.org/#/spray
 - suggest.el :: discover Emacs Lisp functions https://github.com/Wilfred/suggest.el
 - wotd :: https://github.com/cute-jumper/emacs-word-of-the-day
 
