@@ -157,6 +157,18 @@ By default, Emacs creates lots of backup files in the same directory of files yo
   (make-directory "~/.emacs.d/autosaves/" t)
 #+end_src
 
+** Auto-refresh all buffers when files change
+
+Occasionally, SyncThing will modify my files on my computer when there are no
+actual changes to the file. So this setting is to have Emacs refresh the buffer
+for me so I don't have to.
+
+See also: https://stackoverflow.com/q/1480572/6873133
+
+#+begin_src emacs-lisp
+  (global-auto-revert-mode t)
+#+end_src
+
 ** Easier single window navigation
 
 Typically, I only need to move within a single window. And because I'm used to Vim navigation bindings, why not use (most of) them to navigate through a single window.
