@@ -527,6 +527,13 @@ Will need to run =M-X all-the-icons-install-fonts= before icons will show up pro
       (with-temp-buffer
         (insert-file-contents filepath)
         (split-string (buffer-string) "\n" t)))
+    (defun etl/dashboard-insert-custom (list-size)
+      (insert (all-the-icons-octicon (cdr (assoc 'registers dashboard-heading-icons))
+                                     :height 1.2 :v-adjust 0.0 :face 'dashboard-heading)
+              " Habits Checklist:\n")
+      (insert "    Morning:   Stretch, breathe, music, review TODO, write out main tasks\n")
+      (insert "    Afternoon: Walk, stretch, workout, review TODO\n")
+      (insert "    Evening:   Review TODO"))
     :bind (("C-c o d" . 'etl/switch-to-dashboard))
     :config
     (setq dashboard-set-file-icons t)
