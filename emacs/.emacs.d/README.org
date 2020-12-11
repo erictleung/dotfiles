@@ -536,19 +536,21 @@ Will need to run =M-X all-the-icons-install-fonts= before icons will show up pro
       (insert "    Evening:   Review TODO"))
     :bind (("C-c o d" . 'etl/switch-to-dashboard))
     :config
-    (setq dashboard-set-file-icons t)
-    (setq dashboard-set-heading-icons t)
-    (setq dashboard-startup-banner 'logo)
-    (setq dashboard-set-init-info t)
-    (setq dashboard-set-navigator t)
-    (setq dashboard-banner-logo-title "Welcome to Your Dashboard")
-    (setq dashboard-items '((agenda . 10)
+    (setq dashboard-set-file-icons t
+          dashboard-set-heading-icons t
+          dashboard-startup-banner 'logo
+          dashboard-set-init-info t
+          dashboard-set-navigator t
+          dashboard-banner-logo-title "Welcome to Your Dashboard"
+          dashboard-items '((agenda . 10)
                             (recents . 5)
-                            (projects . 5)))
-    (setq show-week-agenda-p t)
+                            (projects . 5))
+          show-week-agenda-p t)
     (if (file-exists-p "~/Sync/org/documents/quotes.txt")
         (setq dashboard-footer-messages
-              (etl/read-lines "~/Sync/org/documents/quotes.txt"))))
+              (etl/read-lines "~/Sync/org/documents/quotes.txt")))
+    (add-to-list 'dashboard-item-generators  '(custom . etl/dashboard-insert-custom))
+    (add-to-list 'dashboard-items '(custom) t))
 #+END_SRC
 
 * Swiper/Ivy/Counsel
