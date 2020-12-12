@@ -581,9 +581,9 @@ I previously used =helm=, but found Ivy to be more useful immediately with a min
     :bind (("C-x b" . ivy-switch-buffer))
     :config
     (ivy-mode 1)
-    (setq ivy-use-virtual-buffers t)
-    (setq ivy-count-format "%d/%d ")
-    (setq ivy-display-style 'fancy))
+    (setq ivy-use-virtual-buffers t
+          ivy-count-format "%d/%d "
+          ivy-display-style 'fancy))
 
   (use-package swiper
     :ensure t
