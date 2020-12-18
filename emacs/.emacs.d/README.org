@@ -203,7 +203,7 @@ Package: https://github.com/Malabarba/smart-mode-line/
           sml/name-width '(20 . 70)
           sml/shorten-modes t
           sml/shorten-directory t
-          sml/mode-width "right")
+          sml/mode-width 'right)
     (display-time))
 #+end_src
 
