@@ -1,6 +1,6 @@
 #+TITLE: Emacs literate configuration
 #+STARTUP: overview
-#+PROPERTY: header-args :comments yes :results silent :tangle yes
+#+PROPERTY: header-args:emacs-lisp :comments yes :results silent :tangle yes
 
 *Inspiration*:
 
