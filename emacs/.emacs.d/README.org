@@ -549,7 +549,8 @@ Will need to run =M-X all-the-icons-install-fonts= before icons will show up pro
       (insert "    Morning:   Stretch, breathe, music, review TODO, write out main tasks\n")
       (insert "    Afternoon: Walk, stretch, workout, review TODO\n")
       (insert "    Evening:   Review TODO"))
-    :bind (("C-c o d" . 'etl/switch-to-dashboard))
+    :bind (("C-c o d" . 'etl/switch-to-dashboard)
+           ("C-c o D" . 'dashboard-refresh-buffer))
     :config
     (setq dashboard-set-file-icons t
           dashboard-set-heading-icons t
