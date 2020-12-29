@@ -915,12 +915,15 @@ See subtle markers for line changes.
 
   ;; Completions for academic phrases
   (use-package academic-phrases
-    :ensure t)
+    :ensure t
+    :bind (("C-c u a" . 'academic-phrases)
+           ("C-c u s" . 'academic-phrases-by-section)))
 
   ;; Avoid cliches and bad grammar
   (use-package artbollocks-mode
-    :defer t
+    :ensure t
     :config
+    (add-hook 'text-mode-hook 'artbollocks-mode)
     (progn
       (setq artbollocks-weasel-words-regex
             (concat "\\b" (regexp-opt
@@ -939,6 +942,15 @@ See subtle markers for line changes.
                              "action"
                              "utilize"
                              "leverage") t) "\\b"))))
+
+  ;; Thesaurus
+  (use-package popup)
+  (use-package synosaurus
+    :ensure t
+    :disabled
+    :config
+    (setq synosaurus-choose-method 'popup)
+    (setq synosaurus-backend ""))
 #+end_src
 
 * Internet browsing
