@@ -1583,8 +1583,8 @@ More on =web-mode= http://web-mode.org/.
           '(("css" . (ac-source-css-property))
             ("vue" . (ac-source-words-in-buffer ac-source-abbrev))
             ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
-    (setq web-mode-enable-auto-closing t))
-  (setq web-mode-enable-auto-quoting t)
+    (setq web-mode-enable-auto-closing t
+          web-mode-enable-auto-quoting t))
 #+end_src
 
 * Mind mapping
