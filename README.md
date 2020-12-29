@@ -100,7 +100,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 These tools are missing from the shell, so let's install them here.
 
 ```sh
-pkg install vim emacs make git golang curl
+pkg install vim emacs make git curl openssh stow
 ```
 
 To install various machine learning packages, I found this repository helpful
