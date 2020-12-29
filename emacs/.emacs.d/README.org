@@ -775,25 +775,20 @@ Sometimes I have some snippets of text I find myself using. So I can define some
   ;; Create snippet templates
   (use-package yasnippet
     :ensure t
-    :commands (yas-reload-all)
-    :init
-    (let ((etlsnips "~/Sync/org/snippets"))
-      (if (and (file-directory-p etlsnips) (boundp 'yas-snippet-dirs))
-          (add-to-list 'yas-snippet-dirs 'etlsnips)
-        (setq yas-snippet-dirs 'etlsnips)))
+    :commands (yas-global-mode)
     :config
-    (yas-global-mode 1))
+    (add-to-list #'yas-snippet-dirs "~/Sync/org/snippets")
+    (yas-reload-all)
+    (use-package yasnippet-snippets
+      :ensure t
+      :init
+      (autoload 'yasnippet-snippets-initialize "yasnippet-snippets" nil t)
+      (eval-after-load 'yasnippet #'yasnippet-snippets-initialize))
+    (yas-global-mode))
 
   ;; Optional settings to use yas-minor-mode on per-buffer basis
   ;; (yas-reload-all)
   ;; (add-hook 'prog-mode-hook #'yas-minor-mode)
-
-  (use-package yasnippet-snippets
-    :ensure t
-    :after yasnippet)
-    ;; :init
-    ;; (autoload 'yasnippet-snippets-initialize "yasnippet-snippets" nil t)
-    ;; (eval-after-load 'yasnippet #'yasnippet-snippets-initialize))
 #+end_src
 
 ** Abbreviations
