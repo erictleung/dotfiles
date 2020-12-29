@@ -1760,8 +1760,16 @@ Let's use IRC to chat https://www.gnu.org/software/emacs/manual/html_mono/erc.ht
 Miscellaneous tools to interact with LaTeX documents.
 
 #+begin_src emacs-lisp
-  (use-package auctex
-    :defer 10)
+  (use-package latex
+    :ensure auctex
+    :init
+    :mode ("\\.tex\\'" . latex-mode)
+    :config
+    (setq TeX-parse-self t
+          TeX-auto-save t))
+
+  (use-package reftex
+    :after latex)
 #+end_src
 
 * Finances and command line ledger
