@@ -1501,11 +1501,15 @@ GitHub: https://github.com/bastibe/org-journal
 
 * Emacs Speaks Statistics (ESS)
 
+Let Emacs do some statistics.
+
 #+begin_src emacs-lisp
   (use-package ess
     :ensure t
     :config
-    (setq ess-style 'RStudio)
+    (setq ess-style 'RStudio
+          ess-eval-visibly nil  ;; Don't print evaluated commands
+          ess-ask-for-ess-directory nil)  ;; Don't prompt whenever starting
     (use-package ess-smart-underscore
       :ensure t))
 #+end_src
