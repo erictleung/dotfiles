@@ -665,6 +665,77 @@ Also similar to the predecessor [[https://github.com/winterTTr/ace-jump-mode][=a
            ("M-g f" . avy-goto-line)))
 #+end_src
 
+* Projectile and project management
+
+- Source :: https://github.com/bbatsov/projectile
+- Documentation :: https://docs.projectile.mx/en/latest/
+
+#+begin_src emacs-lisp
+  (use-package projectile
+    :ensure t
+    :config
+    (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    (projectile-mode +1))
+
+  (use-package counsel-projectile
+    :ensure t
+    :after (counsel projectile)
+    :bind (("C-c p" . counsel-projectile))
+    :config
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    (counsel-projectile-mode))
+#+end_src
+
+* Quickly browse files and knowledge management
+
+General purpose file search that is quick to narrow down files and notes.
+
+See keybindings below for examples of what is possible. To access =deft=, press =C-c d d=.
+
+#+begin_src emacs-lisp
+  (use-package deft
+    :ensure t
+    :init
+    (setq deft-directory "~/Sync/org/notes"
+          deft-file-limit 75
+          deft-recursive t))
+
+  (use-package zetteldeft
+    :ensure t
+    :after deft
+    :bind (("C-c d e" . 'etl/zetteldeft-ergodic)
+           ("C-c d E" . 'etl/zetteldeft-wander-file))
+    :init
+    (defun etl/zetteldeft-ergodic ()
+      "Find a random file in the deft directory."
+      (interactive)
+      (switch-to-buffer deft-buffer)
+      (deft-filter-clear)
+      (kill-new
+       (zetteldeft--lift-id
+        (nth (random (length (deft-find-all-files-no-prefix)))
+             (deft-find-all-files-no-prefix)))
+       nil)
+      (deft-filter-yank))
+    (defun etl/zetteldeft-ergodic-wander ()
+      "TODO Randomly wander zettelkasten."
+      (interactive))
+    (defun etl/zetteldeft-wander-file ()
+      "Find random link in current zetteldeft file."
+      (interactive)
+      (kill-new
+       (zetteldeft--lift-id
+        (nth (random (length (zetteldeft--extract-links (buffer-file-name))))
+             (zetteldeft--extract-links (buffer-file-name))))
+       nil)
+      (switch-to-buffer deft-buffer)
+      (deft-filter-clear)
+      (deft-filter-yank))
+    :config
+    (zetteldeft-set-classic-keybindings))
+#+end_src
+
 * Company and auto-complete
 
 ** Company
@@ -1343,130 +1414,6 @@ GitHub: https://github.com/bastibe/org-journal
   (add-hook 'org-mode-hook 'auto-fill-mode)
 #+end_src
 
-* Reference managing
-
-Resources:
-- [[https://github.com/jkitchin/org-ref/blob/master/org-ref.org][org-ref - GitHub]]
-- [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][Using org-ref for citations and references (2014)]]
-- [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/][Using org-ref to keep your bibtex files in order (2014)]]
-
-#+begin_src emacs-lisp
-  ;; Org-mode bibliography reference management
-  (use-package org-ref
-    :ensure t)
-
-  ;; Minor mode to interleave notes and textbooks
-  (use-package interleave
-    :defer t)
-
-  ;; Search and manage bibliographies in Emacs
-  (use-package helm-bibtex
-    :ensure t)
-
-  ;; Setup bibliography workflow for notetaking
-  ;; https://www.reddit.com/r/emacs/comments/4gudyw/d2l16uj/
-  (let ((default-directory "~/Sync/org/references/"))
-    (setq org-ref-notes-directory (expand-file-name "notes")
-          org-ref-bibliography-notes (expand-file-name "articles.org")
-          org-ref-default-bibliography (expand-file-name "articles.bib")
-          org-ref-pdf-directory "~/Sync/zotero/"))
-
-  ;; Setup management of bibliographies
-  (let ((default-directory "~/Sync/org/references/"))
-    (setq helm-bibtex-bibliography (expand-file-name "articles.bib")
-          helm-bibtex-library-path "~/Sync/zotero/"
-          helm-bibtex-notes-path (expand-file-name "articles.org")))
-
-  ;; Setup bibliography path
-  (setq bibtex-completion-bibliography
-        '("~/Sync/org/references/articles.bib"))
-
-  ;; Setup where PDFs can be found
-  (setq bibtex-completion-library-path
-        '("~/Sync/zotero"))
-
-  ;; Setup auto-formatting of citation
-  (setq bibtex-autokey-year-length 4
-        bibtex-autokey-name-year-separator ""
-        bibtex-autokey-year-title-separator ""
-        bibtex-autokey-titleword-separator ""
-        bibtex-autokey-titlewords 3
-        bibtex-autokey-titlewords-stretch 1
-        bibtex-autokey-titleword-length 5)
-
-  ;; Add keybindings for org-ref
-  (defun etl/org-ref-hook ()
-    (visual-line-mode)
-    (local-set-key (kbd "C-c r c") 'org-ref-clean-bibtex-entry)
-    (local-set-key (kbd "C-c r l") 'crossref-lookup)
-    (local-set-key (kbd "C-c r a") 'crossref-add-bibtex-entry)
-    (local-set-key (kbd "C-c r o") 'org-ref-open-bibtex-notes))
-  (defun etl/interleave ()
-    (visual-line-mode)
-    (local-set-key (kbd "C-c i m") 'interleave-mode))
-
-  ;; Setup org-ref useful hooks
-  (add-hook 'bibtex-mode-hook 'etl/org-ref-hook)
-  (add-hook 'org-mode-hook 'etl/interleave)
-#+END_SRC
-
-Temporary change because of updates to org-ref that break =org-ref-open-bibtex-notes()=, so below is the [[https://github.com/jkitchin/org-ref/blob/75d83ea014e530591cfdafc591b9b1c44509d035/org-ref-core.el#L2697-L2751][code before the breaking change]].
-
-#+BEGIN_SRC emacs-lisp
-  (defun org-ref-open-bibtex-notes ()
-    "From a bibtex entry, open the notes if they exist.
-  If the notes do not exist, then create a heading.
-  I never did figure out how to use reftex to make this happen
-  non-interactively.  the `reftex-format-citation' function did not
-  work perfectly; there were carriage returns in the strings, and
-  it did not put the key where it needed to be.  so, below I replace
-  the carriage returns and extra spaces with a single space and
-  construct the heading by hand."
-    (interactive)
-
-    (bibtex-beginning-of-entry)
-    (let* ((cb (current-buffer))
-           (bibtex-expand-strings t)
-           (entry (cl-loop for (key . value) in (bibtex-parse-entry t)
-                           collect (cons (downcase key) (s-collapse-whitespace value))))
-           (key (reftex-get-bib-field "=key=" entry)))
-
-      ;; save key to clipboard to make saving pdf later easier by pasting.
-      (with-temp-buffer
-        (insert key)
-        (kill-ring-save (point-min) (point-max)))
-
-      ;; now look for entry in the notes file
-      (save-restriction
-        (if  org-ref-bibliography-notes
-            (find-file-other-window org-ref-bibliography-notes)
-          (error "org-ref-bibliography-notes is not set to anything"))
-
-        (widen)
-        (goto-char (point-min))
-        (let* ((headlines (org-element-map
-                              (org-ref-parse-buffer)
-                              'headline 'identity))
-               (keys (mapcar
-                      (lambda (hl) (org-element-property :CUSTOM_ID hl))
-                      headlines)))
-          ;; put new entry in notes if we don't find it.
-          (if (-contains? keys key)
-              (progn
-                (org-open-link-from-string (format "[[#%s]]" key))
-                (funcall org-ref-open-notes-function))
-            ;; no entry found, so add one
-            (goto-char (point-max))
-            (insert (org-ref-reftex-format-citation
-                     entry (concat "\n" org-ref-note-title-format)))
-            (mapc (lambda (x)
-                    (save-restriction
-                      (save-excursion
-                        (funcall x))))
-                  org-ref-create-notes-hook)
-            (save-buffer))))))
-#+end_src
-
 * Elfeed
 
 #+begin_src emacs-lisp
@@ -1631,66 +1578,6 @@ More on =web-mode= http://web-mode.org/.
   (setq web-mode-enable-auto-quoting t)
 #+end_src
 
-* Projectile and project management
-
-- Source :: https://github.com/bbatsov/projectile
-- Documentation :: https://docs.projectile.mx/en/latest/
-
-#+begin_src emacs-lisp
-  (use-package projectile
-    :ensure t
-    :config
-    (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-    (projectile-mode +1))
-#+end_src
-
-* Quickly browse files and knowledge management
-
-General purpose file search that is quick to narrow down files and notes.
-
-See keybindings below for examples of what is possible. To access =deft=, press =C-c d d=.
-
-#+begin_src emacs-lisp
-  (use-package deft
-    :ensure t
-    :init
-    (setq deft-directory "~/Sync/org/notes")
-    (setq deft-file-limit 50)
-    (setq deft-recursive t))
-
-  (use-package zetteldeft
-    :ensure t
-    :after deft
-    :bind (("C-c d e" . 'etl/zetteldeft-ergodic)
-           ("C-c d E" . 'etl/zetteldeft-wander-file))
-    :init
-    (defun etl/zetteldeft-ergodic ()
-      "Find a random file in the deft directory."
-      (interactive)
-      (switch-to-buffer deft-buffer)
-      (deft-filter-clear)
-      (kill-new
-       (zetteldeft--lift-id
-        (nth (random (length (deft-find-all-files-no-prefix)))
-             (deft-find-all-files-no-prefix)))
-       nil)
-      (deft-filter-yank))
-    (defun etl/zetteldeft-wander-file ()
-      "Find random link in current zetteldeft file."
-      (interactive)
-      (kill-new
-       (zetteldeft--lift-id
-        (nth (random (length (zetteldeft--extract-links (buffer-file-name))))
-             (zetteldeft--extract-links (buffer-file-name))))
-       nil)
-      (switch-to-buffer deft-buffer)
-      (deft-filter-clear)
-      (deft-filter-yank))
-    :config
-    (zetteldeft-set-classic-keybindings))
-#+end_src
-
 * Mind mapping
 
 Creates mind maps, defined here as directed graphs, through GraphViz.
@@ -1704,6 +1591,129 @@ https://github.com/the-humanities/org-mind-map
     :defer t
     :config
     (setq org-mind-map-engine "dot"))
+#+end_src
+
+* Reference managing
+
+Resources:
+- [[https://github.com/jkitchin/org-ref/blob/master/org-ref.org][org-ref - GitHub]]
+- [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][Using org-ref for citations and references (2014)]]
+- [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/][Using org-ref to keep your bibtex files in order (2014)]]
+
+#+begin_src emacs-lisp
+  ;; Org-mode bibliography reference management
+  (use-package org-ref
+    :ensure t)
+
+  ;; Minor mode to interleave notes and textbooks
+  (use-package interleave
+    :defer t)
+
+  ;; Search and manage bibliographies in Emacs
+  (use-package helm-bibtex
+    :ensure t)
+
+  ;; Setup bibliography workflow for notetaking
+  ;; https://www.reddit.com/r/emacs/comments/4gudyw/d2l16uj/
+  (let ((default-directory "~/Sync/org/references/"))
+    (setq org-ref-notes-directory (expand-file-name "notes")
+          org-ref-bibliography-notes (expand-file-name "articles.org")
+          org-ref-default-bibliography (expand-file-name "articles.bib")
+          org-ref-pdf-directory "~/Sync/zotero/"))
+
+  ;; Setup management of bibliographies
+  (let ((default-directory "~/Sync/org/references/"))
+    (setq helm-bibtex-bibliography (expand-file-name "articles.bib")
+          helm-bibtex-library-path "~/Sync/zotero/"
+          helm-bibtex-notes-path (expand-file-name "articles.org")))
+
+  ;; Setup bibliography path
+  (setq bibtex-completion-bibliography
+        '("~/Sync/org/references/articles.bib"))
+
+  ;; Setup where PDFs can be found
+  (setq bibtex-completion-library-path
+        '("~/Sync/zotero"))
+
+  ;; Setup auto-formatting of citation
+  (setq bibtex-autokey-year-length 4
+        bibtex-autokey-name-year-separator ""
+        bibtex-autokey-year-title-separator ""
+        bibtex-autokey-titleword-separator ""
+        bibtex-autokey-titlewords 3
+        bibtex-autokey-titlewords-stretch 1)
+
+  ;; Add keybindings for org-ref
+  (defun etl/org-ref-hook ()
+    (visual-line-mode)
+    (local-set-key (kbd "C-c r c") 'org-ref-clean-bibtex-entry)
+    (local-set-key (kbd "C-c r l") 'crossref-lookup)
+    (local-set-key (kbd "C-c r a") 'crossref-add-bibtex-entry)
+    (local-set-key (kbd "C-c r o") 'org-ref-open-bibtex-notes))
+  (defun etl/interleave ()
+    (visual-line-mode)
+    (local-set-key (kbd "C-c i m") 'interleave-mode))
+
+  ;; Setup org-ref useful hooks
+  (add-hook 'bibtex-mode-hook 'etl/org-ref-hook)
+  (add-hook 'org-mode-hook 'etl/interleave)
+#+END_SRC
+
+Temporary change because of updates to org-ref that break =org-ref-open-bibtex-notes()=, so below is the [[https://github.com/jkitchin/org-ref/blob/75d83ea014e530591cfdafc591b9b1c44509d035/org-ref-core.el#L2697-L2751][code before the breaking change]].
+
+#+BEGIN_SRC emacs-lisp
+  (defun org-ref-open-bibtex-notes ()
+    "From a bibtex entry, open the notes if they exist.
+  If the notes do not exist, then create a heading.
+  I never did figure out how to use reftex to make this happen
+  non-interactively.  the `reftex-format-citation' function did not
+  work perfectly; there were carriage returns in the strings, and
+  it did not put the key where it needed to be.  so, below I replace
+  the carriage returns and extra spaces with a single space and
+  construct the heading by hand."
+    (interactive)
+
+    (bibtex-beginning-of-entry)
+    (let* ((cb (current-buffer))
+           (bibtex-expand-strings t)
+           (entry (cl-loop for (key . value) in (bibtex-parse-entry t)
+                           collect (cons (downcase key) (s-collapse-whitespace value))))
+           (key (reftex-get-bib-field "=key=" entry)))
+
+      ;; save key to clipboard to make saving pdf later easier by pasting.
+      (with-temp-buffer
+        (insert key)
+        (kill-ring-save (point-min) (point-max)))
+
+      ;; now look for entry in the notes file
+      (save-restriction
+        (if  org-ref-bibliography-notes
+            (find-file-other-window org-ref-bibliography-notes)
+          (error "org-ref-bibliography-notes is not set to anything"))
+
+        (widen)
+        (goto-char (point-min))
+        (let* ((headlines (org-element-map
+                              (org-ref-parse-buffer)
+                              'headline 'identity))
+               (keys (mapcar
+                      (lambda (hl) (org-element-property :CUSTOM_ID hl))
+                      headlines)))
+          ;; put new entry in notes if we don't find it.
+          (if (-contains? keys key)
+              (progn
+                (org-open-link-from-string (format "[[#%s]]" key))
+                (funcall org-ref-open-notes-function))
+            ;; no entry found, so add one
+            (goto-char (point-max))
+            (insert (org-ref-reftex-format-citation
+                     entry (concat "\n" org-ref-note-title-format)))
+            (mapc (lambda (x)
+                    (save-restriction
+                      (save-excursion
+                        (funcall x))))
+                  org-ref-create-notes-hook)
+            (save-buffer))))))
 #+end_src
 
 * Cheat sheets
