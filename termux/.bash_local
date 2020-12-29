@@ -16,3 +16,5 @@ alias phd="cd ~/documents/gitlab/dissertation"
 function cd {
     builtin cd "$@" && ls -ltr --color
 }
+
+export PATH="$PATH:$HOME/.npm/bin"
