@@ -425,7 +425,7 @@ Source: https://www.gnu.org/software/emacs/manual/html_node/efaq/Matching-parent
   (global-set-key (kbd "C-c o e") 'etl/goto-random-line)
 #+end_src
 
-* Emacs Development packages
+* Emacs development
 
 Packages to help with development.
 
