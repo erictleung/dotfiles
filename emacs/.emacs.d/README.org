@@ -1011,13 +1011,24 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
            ("C-c t" . 'org-time-stamp-inactive)
            ("<f12>" . 'org-agenda))
     :config
-    (setq org-startup-indented t)
-    (setq org-startup-folded t))
+    (setq org-startup-indented t
+          org-startup-folder t
+          org-hide-leading-stars t
+          ;; Remove requirement of confirmation for evaluating
+          org-confirm-babel-evaluate nil
+          org-use-fast-todo-selection t)
+    (setq org-todo-keywords
+          (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+                  (sequence "WAITING(w)"
+                            "PROJECT(p)"
+                            "MAYBE(m)"
+                            "|"
+                            "CANCELLED(c)")))))
 
   ;; Set up org mode
   (if (file-directory-p "~/Sync/org")
-      (setq org-directory "~/Sync/org/")
-      (setq org-agenda-files '("~/Sync/org/gtd.org"
+      (setq org-directory "~/Sync/org/"
+            org-agenda-files '("~/Sync/org/gtd.org"
                                "~/Sync/org/reminders.org"))
       (setq org-default-notes-file (concat org-directory "inbox.org")))
   (setq org-log-done t)
@@ -1029,16 +1040,6 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
   (setq org-outline-path-complete-in-steps nil) ; Refile in a single go
   (setq org-refile-use-outline-path t)          ; Show full paths for refiling
   (setq org-refile-allow-creating-parent-nodes 'confirm) ; New parents on refile
-
-  ;; Define keywords for projects and tasks
-  (setq org-todo-keywords '((sequence "TODO(t)"
-                                      "NEXT(n)"
-                                      "WAITING(w)"
-                                      "PROJECT(p)"
-                                      "MAYBE(m)"
-                                      "|"
-                                      "DONE(d)"
-                                      "CANCELLED(c)")))
 
   ;; Define tags available
   (setq org-tag-alist
@@ -1064,9 +1065,6 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
   (setq org-modules '(org-habit))
   (eval-after-load 'org
    '(org-load-modules-maybe t))
-
-  ;; Remove requirement of confirmation for evaluating
-  (setq org-confirm-babel-evaluate nil)
 
   ;; Define stuck projects
   (setq org-stuck-projects
