@@ -885,7 +885,7 @@ See subtle markers for line changes.
       ;; Wrap lines at column limit, but don't put hard returns in
       (add-hook 'markdown-mode-hook (lambda () (visual-line-mode 1)))
       ;; Flyspell on
-      (add-hook 'markdown-mode-hook (lambda () (flyspell-mode 1))))
+      (add-hook 'markdown-mode-hook (lambda () (flyspell-mode 1)))))
 #+end_src
 
 * Prose and writing
