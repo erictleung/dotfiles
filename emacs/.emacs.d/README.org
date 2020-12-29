@@ -1390,13 +1390,12 @@ GitHub: https://github.com/bastibe/org-journal
 #+begin_src emacs-lisp
   (use-package org-journal
     :ensure t
-    :defer t
     :bind ("C-c n j" . org-journal-new-entry)
     :config
-    (setq org-journal-dir "~/Sync/org/journal/")
-    (setq org-journal-file-format "%Y-%m-%d.org")
-    (setq org-journal-date-format "%e %b %Y (%A)")
-    (setq org-journal-time-format "%R "))
+    (setq org-journal-dir "~/Sync/org/journal/"
+          org-journal-file-format "%Y-%m-%d.org"
+          org-journal-date-format "%e %b %Y (%A)"
+          org-journal-time-format "%R "))
 #+end_src
 
 ** Custom org-mode hooks
@@ -1410,8 +1409,8 @@ GitHub: https://github.com/bastibe/org-journal
   ;; source: https://superuser.com/a/531670/
   (add-hook 'org-agenda-mode-hook
             (lambda ()
-              (visual-line-mode -1)
-              (toggle-truncate-lines 1)))
+              (visual-line-mode t)
+              (toggle-truncate-lines nil)))
 
   ;; Add custom keybindings in org-brain visualize mode
 
