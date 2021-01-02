@@ -100,8 +100,8 @@ I've found the [[https://github.com/bbatsov/zenburn-emacs][=zenburn=]] theme suf
   ;; https://github.com/nashamri/spacemacs-theme/issues/42#issuecomment-192128264
   (use-package zenburn-theme
     ;; https://github.com/bbatsov/zenburn-emacs
-    ;; :ensure t
-    :defer t
+    :ensure t
+    ;; :defer t
     :config
     ;; (load-theme 'zenburn t))
     ;; (add-hook 'after-init-hook (lambda () (load-theme 'zenburn t))))
