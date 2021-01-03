@@ -285,8 +285,10 @@ interface with files and be productive.
 - [diagrams.net](https://app.diagrams.net/) - Easy to create diagrams online.
 - [Resumake](https://resumake.io) - Easy template application to create a
   resume.
-- [Quick Database Diagrams](https://quickdatabasediagrams.com/) - Draw entity-relationship
-  diagrams by writing pseudocode.
+- [Quick Database Diagrams](https://quickdatabasediagrams.com/) - Draw
+  entity-relationship diagrams by writing pseudocode.
+- [Excalidraw](https://github.com/excalidraw/excalidraw) - Virtual whiteboard
+  for sketching hand-drawn like diagrams.
 
 **Cross-Platform Desktop**
 
