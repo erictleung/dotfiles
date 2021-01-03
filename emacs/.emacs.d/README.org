@@ -778,6 +778,7 @@ Sometimes I have some snippets of text I find myself using. So I can define some
     :commands (yas-global-mode)
     :config
     (add-to-list #'yas-snippet-dirs "~/Sync/org/snippets")
+    (add-to-list #'yas-snippet-dirs "~/.emacs.d/snippets")
     (yas-reload-all)
     (use-package yasnippet-snippets
       :ensure t
