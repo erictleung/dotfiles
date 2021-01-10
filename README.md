@@ -289,6 +289,10 @@ interface with files and be productive.
   entity-relationship diagrams by writing pseudocode.
 - [Excalidraw](https://github.com/excalidraw/excalidraw) - Virtual whiteboard
   for sketching hand-drawn like diagrams.
+- [Color Wheel - Canva](https://www.canva.com/colors/color-wheel/) - Tool to
+  create good color combinations.
+- [Banner](https://liyasthomas.github.io/banner/) - Generate banner images for
+  blog posts. Source at https://github.com/liyasthomas/banner.
 
 **Cross-Platform Desktop**
 
