@@ -26,6 +26,7 @@
 - diminish :: save display space for minor modes list https://github.com/myrjola/diminish.el
 - dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - dump-jump :: https://github.com/jacktasia/dumb-jump
+- elfeed-dashboard :: frontend for elfeed https://github.com/Manoj321/elfeed-dashboard
 - elfeed-score :: score elfeed entries https://github.com/sp1ff/elfeed-score
 - EMMS :: play audio and video inside Emacs https://www.gnu.org/software/emms/
 - emacs-calfw :: calendar framework https://github.com/kiwanami/emacs-calfw
