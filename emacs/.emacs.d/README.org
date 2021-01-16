@@ -683,9 +683,10 @@ Also similar to the predecessor [[https://github.com/winterTTr/ace-jump-mode][=a
     :ensure t
     :after (counsel projectile)
     :bind (("C-c p" . counsel-projectile))
+    :init
+    (counsel-projectile-mode)
     :config
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-    (counsel-projectile-mode))
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 #+end_src
 
 * Quickly browse files and knowledge management
