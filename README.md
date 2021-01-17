@@ -95,6 +95,15 @@ run the following:
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
 ```
 
+For LaTeX on Ubuntu,
+
+```shell
+cd ~
+mkdir texmf
+sudo apt-get install xzdec
+tlmgr init-usertree
+```
+
 ### Termux
 
 These tools are missing from the shell, so let's install them here.
