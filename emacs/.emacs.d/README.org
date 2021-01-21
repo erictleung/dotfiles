@@ -13,6 +13,7 @@
 - https://github.com/alhassy/emacs.d
 - https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/
 - https://github.com/WolfeCub/dotfiles
+- https://github.com/daviwil/dotfiles/blob/master/Emacs.org
 
 * Explore packages
 
