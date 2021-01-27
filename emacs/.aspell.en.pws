@@ -1,4 +1,4 @@
-personal_ws-1.1 en 263 
+personal_ws-1.1 en 290 
 MNIST
 agarose
 covariates
@@ -9,6 +9,7 @@ metagenomics
 catheterization
 Guanming
 PERMANOVA
+urogynecologist
 Corynebacterium
 electrophoresis
 menarche
@@ -20,6 +21,7 @@ microbiomes
 NumPy
 Plotly
 spectrometry
+VBA
 urothelium
 ANOVA
 urethrogenic
@@ -29,10 +31,11 @@ DESeq
 decomposer
 premenopausal
 probiotics
+erictleung
 subsampling
 SQL
-centrifugation
 convolutional
+centrifugation
 OHSU
 vaginosis
 CSS
@@ -43,7 +46,9 @@ metagenomic
 STI
 journaling
 JSON
+tidyverse
 phyloseq
+scikit
 detrusor
 supraspinal
 renormalize
@@ -67,19 +72,22 @@ eigenvector
 bootcamp
 uropathogen
 syllabi
+repurpose
 medoids
 observability
 bioinformatic
+AbSci
 Matplotlib
 undirected
 nicotinic
+mentee
 UTI
 novo
 Chromebook
 Reddit
+Mendeley
 UUI
 denoising
-Mendeley
 mucosa
 pathophysiologies
 phenotypes
@@ -108,9 +116,12 @@ probiotic
 HMP
 ASVs
 relatable
+macOS
 vulvovaginal
+tidyr
 urotheliomyogenic
 authorships
+SymPy
 interpretability
 pathophysiological
 neuromodulation
@@ -121,9 +132,11 @@ pathophysiology
 mutualism
 Helicobacter
 centralities
+dplyr
 transurethral
 urotype
 Kubernetes
+yml
 quartiles
 prescreened
 irreproducible
@@ -133,12 +146,15 @@ closer
 dataset
 productionizing
 coronavirus
+Django
 urobiome
 Jupyter
 scalable
+Jenks
 reproducibility
 phylogenetic
 anticholinergic
+mAh
 uropathogens
 UniFrac
 vitro
@@ -158,6 +174,7 @@ isomorphism
 interquartile
 genomic
 Eilis
+SQLite
 coli
 biomedicine
 myogenic
@@ -176,9 +193,13 @@ stimulations
 Karstens
 deliverables
 bioinformatics
+js
+PostgreSQL
 interoperable
 Boudreau
 dimensionality
+mentees
+Redis
 commensal
 UTIs
 genotype
@@ -197,8 +218,10 @@ NLM
 micturition
 betweenness
 commensals
+LaTeX
 reductionism
 microbiome
+th
 biogeography
 NMR
 PCR
@@ -215,10 +238,12 @@ extremophiles
 psychometrically
 Illumina
 UNOISE
+Clojure
 throughline
 ontologies
 overactivity
 ultrafast
+Seaborn
 SparCC
 Wikimedia
 lactobacillus
@@ -252,9 +277,11 @@ Pixar
 API
 bacteriocins
 undersampling
+Macromedia
 BMI
 mutualistic
 sigmoid
+TODO
 symbiont
 Rmd
 bacteriuria
