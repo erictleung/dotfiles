@@ -398,6 +398,12 @@ Source: https://www.gnu.org/software/emacs/manual/html_node/efaq/Matching-parent
           (t (self-insert-command (or arg 1)))))
 #+end_src
 
+** Create keybinding for spell check on buffer
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-c o s") 'ispell-buffer)
+#+end_src
+
 * Custom functions
 
 #+begin_src emacs-lisp
