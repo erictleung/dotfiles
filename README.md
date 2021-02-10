@@ -297,7 +297,7 @@ interface with files and be productive.
 - [Quick Database Diagrams](https://quickdatabasediagrams.com/) - Draw
   entity-relationship diagrams by writing pseudocode.
 - [Excalidraw](https://github.com/excalidraw/excalidraw) - Virtual whiteboard
-  for sketching hand-drawn like diagrams.
+  for sketching hand-drawn like diagrams (https://excalidraw.com/).
 - [Color Wheel - Canva](https://www.canva.com/colors/color-wheel/) - Tool to
   create good color combinations.
 - [Banner](https://liyasthomas.github.io/banner/) - Generate banner images for
