@@ -404,6 +404,15 @@ Source: https://www.gnu.org/software/emacs/manual/html_node/efaq/Matching-parent
   (global-set-key (kbd "C-c o s") 'ispell-buffer)
 #+end_src
 
+** Shortcut to reload org-mode
+
+Unfortunately, I haven't figured out why org-mode isn't loading correctly on one my
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-c o o") 'org-mode-restart)
+#+end_src
+
+
 * Custom functions
 
 #+begin_src emacs-lisp
