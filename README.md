@@ -268,6 +268,8 @@ interface with files and be productive.
   command-line JSON processor.
 - [`ranger`](https://github.com/ranger/ranger) - A VIM-inspired file manager
   for the console.
+- [`sqlfluff`](https://github.com/sqlfluff/sqlfluff) - The SQL Linter for
+  humans.
 
 **Web Tools**
 
