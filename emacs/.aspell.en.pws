@@ -1,10 +1,11 @@
-personal_ws-1.1 en 313 
+personal_ws-1.1 en 334 
 Quora
 MNIST
 agarose
+CSVs
+Niantic's
 covariates
 ASV
-Niantic's
 mentorship
 PCoA
 metagenomics
@@ -21,9 +22,11 @@ brainstem
 qPCR
 microbiome's
 microbiomes
+SciPy
 NumPy
 Plotly
 spectrometry
+ROpenSci
 VBA
 urothelium
 ANOVA
@@ -74,6 +77,7 @@ Architected
 epidemiologic
 duffel
 lymphocytic
+NCBI
 eigenvector
 bootcamp
 uropathogen
@@ -81,6 +85,7 @@ syllabi
 repurpose
 medoids
 observability
+ETL
 bioinformatic
 UTF
 AbSci
@@ -99,6 +104,7 @@ Quora's
 mucosa
 pathophysiologies
 phenotypes
+RMarkdown
 taxa
 IBS
 Hadoop
@@ -119,6 +125,7 @@ prespecified
 urogynecology
 CRISPR
 codebase
+bioinformatician
 prokaryote
 operationalization
 microtubule
@@ -133,6 +140,7 @@ tidyr
 Forecasted
 urotheliomyogenic
 authorships
+DevOps
 SymPy
 interpretability
 pathophysiological
@@ -149,12 +157,15 @@ transurethral
 urotype
 Kubernetes
 yml
+reticulate
 quartiles
 prescreened
 irreproducible
 vivo
 smartphone
+OCHIN
 comorbidities
+TSVs
 closer
 dataset
 productionizing
@@ -169,6 +180,7 @@ Pokémon
 phylogenetic
 mAh
 anticholinergic
+al
 uropathogens
 UniFrac
 vitro
@@ -188,6 +200,7 @@ bioinformaticist
 petri
 isomorphism
 interquartile
+et
 genomic
 kinesin
 Eilis
@@ -225,6 +238,7 @@ biotic
 QIIME
 affective
 datasets
+PCA
 metacommunity
 counterintuitive
 cloze
@@ -234,6 +248,7 @@ urotheliogenic
 consortiums
 carpentries
 NLM
+SLURM
 micturition
 betweenness
 commensals
@@ -250,17 +265,21 @@ Prevotella
 uropathogenic
 evolutionarily
 metadata
+PubMed
+hotspotting
 microbicidal
 organismal
 antimicrobicidal
 extremophiles
 psychometrically
+YAML
 Illumina
 UNOISE
 Clojure
 throughline
 ontologies
 overactivity
+Modelling
 ultrafast
 Seaborn
 SparCC
@@ -273,6 +292,7 @@ Deblur
 differentially
 triaging
 centric
+GitLab
 cryptocurrency
 NIST
 lactobacilli
@@ -296,6 +316,7 @@ OTU
 analytics
 RStudio
 Bioconductor
+amyloidosis
 Pixar
 API
 bacteriocins
