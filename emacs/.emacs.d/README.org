@@ -1840,6 +1840,13 @@ xkcd reader in Emacs https://github.com/vibhavp/emacs-xkcd.
     :ensure t)
 #+end_src
 
+** YAML
+
+#+begin_src emacs-lisp
+  (use-package yaml-mode
+    :ensure t)
+#+end_src
+
 ** htmlize
 
 Convert buffer text and decorations to HTML.
