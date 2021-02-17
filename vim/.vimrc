@@ -175,6 +175,8 @@ au BufNewFile,BufFilePre,BufRead *.js,*.jsx
     \ set autoindent |
     \ set fileformat=unix
 
+" Edit SQL in Vim "
+au BufRead /tmp/psql.edit.* set syntax=sql
 
 " Text, Tab, and Indent Related "
 
