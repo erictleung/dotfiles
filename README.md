@@ -304,6 +304,9 @@ interface with files and be productive.
   create good color combinations.
 - [Banner](https://liyasthomas.github.io/banner/) - Generate banner images for
   blog posts. Source at https://github.com/liyasthomas/banner.
+- [Webb Developer Tools](https://www.browserling.com/tools) - Miscellaneous
+  convenience tools for web development, the most useful to me so far have been
+  the image conversion tools.
 
 **Cross-Platform Desktop**
 
