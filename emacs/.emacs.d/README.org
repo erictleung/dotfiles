@@ -75,10 +75,22 @@ Setup debugging and unset them at the end so that if anything breaks, we can jum
   ;; Setup debugging configurations
   (setq debug-on-error t
         debug-on-quit t)
-
-  ;; Time setup length
-  (defconst emacs-start-time (current-time))
 #+end_src
+
+Add hook to see start up time.
+
+#+begin_src emacs-lisp
+  (defun etl/display-startup-time ()
+    "Calculate and display start up time"
+    (message "Emacs loaded in %s with %d garbage collections."
+             (format ("%.2f seconds"
+                      (float-time
+                       (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
+  (add-hook 'emacs-startup-hook #'etl/display-startup-time)
+#+end_src
+
+More info on [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html][sequence of actions at startup.]]
 
 * Package sources
 
@@ -411,8 +423,6 @@ Unfortunately, I haven't figured out why org-mode isn't loading correctly on one
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-c o o") 'org-mode-restart)
 #+end_src
-
-
 * Custom functions
 
 #+begin_src emacs-lisp
@@ -1863,10 +1873,6 @@ Reset debugging from the beginning and display how long setup took.
 #+begin_src emacs-lisp
   (setq debug-on-error nil)
   (setq debug-on-quit nil)
-
-  (let ((elapsed (float-time (time-subtract (current-time)
-                                            emacs-start-time))))
-    (message "Loading settings...done (%.3fs)" elapsed))
   (put 'narrow-to-region 'disabled nil)
 #+end_src
 
