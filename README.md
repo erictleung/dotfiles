@@ -307,6 +307,7 @@ interface with files and be productive.
 - [Web Developer Tools](https://www.browserling.com/tools) - Miscellaneous
   convenience tools for web development, the most useful to me so far have been
   the image conversion tools.
+- [tinypng](https://tinypng.com/) - Smart PNG and JPEG compression.
 
 **Cross-Platform Desktop**
 
