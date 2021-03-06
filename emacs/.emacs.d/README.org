@@ -1045,7 +1045,9 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
           org-hide-leading-stars t
           ;; Remove requirement of confirmation for evaluating
           org-confirm-babel-evaluate nil
-          org-use-fast-todo-selection t)
+          org-use-fast-todo-selection t
+          ;; Remove blank lines between collapsed views
+          org-cycle-separator-lines 0)
     (setq org-todo-keywords
           (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
                   (sequence "WAITING(w)"
