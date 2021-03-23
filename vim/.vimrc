@@ -21,6 +21,7 @@ Plugin 'tpope/vim-fugitive' " Git wrapper
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
 Plugin 'tpope/vim-speeddating' " use Ctrl-A/Ctrl-X to increment values
 Plugin 'tpope/vim-surround' " surround objects easier
+Plugin 'kalafut/vim-taskjuggler' " syntax for TaskJuggler
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
