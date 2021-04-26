@@ -237,3 +237,5 @@ tibble
 chr
 Incredibles
 IMDB
+SQLite3
+datasette
