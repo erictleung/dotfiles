@@ -293,7 +293,8 @@ interface with files and be productive.
   guessing your drawing for quick illustrations.
 - [Rentry.co](https://rentry.co/) - Markdown pastebin.
 - [doi2bib](https://www.doi2bib.org/) - Take DOI and give BibTeX.
-- [diagrams.net](https://app.diagrams.net/) - Easy to create diagrams online.
+- [diagrams.net](https://app.diagrams.net/) - Easy to create diagrams online
+  (formerly draw.io).
 - [Resumake](https://resumake.io) - Easy template application to create a
   resume.
 - [Quick Database Diagrams](https://quickdatabasediagrams.com/) - Draw
