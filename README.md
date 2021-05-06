@@ -310,6 +310,8 @@ interface with files and be productive.
   the image conversion tools.
 - [tinypng](https://tinypng.com/) - Smart PNG and JPEG compression.
 - [readme.so](https://readme.so/) - Easily create a README.
+- [Online PNG Tools](https://onlinepngtools.com/) - Collection of useful PNG
+  image utilities for working with PNG graphics files.
 
 **Cross-Platform Desktop**
 
