@@ -16,10 +16,12 @@
 - https://jonathanabennett.github.io/blog/2019/05/28/emacs.org-~-may-2019/
 - https://github.com/WolfeCub/dotfiles
 - https://github.com/daviwil/dotfiles/blob/master/Emacs.org
+- https://github.com/hsinhaoyu/.emacs.d
 
 * Explore packages
 
 - annotate.el :: add arbitrary annotations to file https://github.com/bastibe/annotate.el
+- bannedit :: minor mode to highlight words from banned list https://github.com/ksafford/bannedit
 - bash-completion :: https://github.com/szermatt/emacs-bash-completion
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - centaur-tabs :: tabs plugin https://github.com/ema2159/centaur-tabs
