@@ -25,6 +25,7 @@
 ;; https://stackoverflow.com/a/30900018/6873133
 (setq vc-follow-symlinks t)
 
+(require 'org)
 (org-babel-load-file (expand-file-name "~/.emacs.d/README.org"))
 
 ;; Add custom configurations to separate file and load accordingly
