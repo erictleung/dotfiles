@@ -807,17 +807,20 @@ Sometimes I have some snippets of text I find myself using. So I can define some
   ;; Create snippet templates
   (use-package yasnippet
     :ensure t
-    :commands (yas-global-mode)
+    :diminish yas-minor-mode
     :config
+    (use-package yasnippet-snippets)
     (add-to-list #'yas-snippet-dirs "~/Sync/org/snippets")
     (add-to-list #'yas-snippet-dirs "~/.emacs.d/snippets")
-    (yas-reload-all)
-    (use-package yasnippet-snippets
-      :ensure t
-      :init
-      (autoload 'yasnippet-snippets-initialize "yasnippet-snippets" nil t)
-      (eval-after-load 'yasnippet #'yasnippet-snippets-initialize))
-    (yas-global-mode))
+    (yas-reload-all))
+
+  ;; (use-package yasnippet-snippets
+    ;; :ensure t
+    ;; :init
+    ;; (autoload 'yasnippet-snippets-initialize "yasnippet-snippets" nil t)
+    ;; (eval-after-load 'yasnippet #'yasnippet-snippets-initialize)))
+
+  ;; https://github.com/AndreaCrotti/yasnippet-snippets
 
   ;; Optional settings to use yas-minor-mode on per-buffer basis
   ;; (yas-reload-all)
