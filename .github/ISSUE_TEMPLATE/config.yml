@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: General Test
+    url: mailto:toaddress@email.com
+    about: Here is a test contact link without one
