@@ -312,6 +312,7 @@ interface with files and be productive.
 - [readme.so](https://readme.so/) - Easily create a README.
 - [Online PNG Tools](https://onlinepngtools.com/) - Collection of useful PNG
   image utilities for working with PNG graphics files.
+- [sequel fumpt](https://sqlfum.pt/) - Help format SQL with slider width.
 
 **Cross-Platform Desktop**
 
