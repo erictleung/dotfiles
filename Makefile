@@ -77,6 +77,14 @@ emacs : ~/.emacs.d/README.org
 		"(require 'org)" \
 		--eval "(org-babel-load-file \"~/.emacs.d/README.org\")"
 
+## rstudio : Install RStudio config in Unix-like systems
+rstudio :
+	cp rstudio/rstudio-prefs.json ~/.config/rstudio
+
+## rstudio-win : Install RStudio config in Windows
+rstudio-win :
+	cp rstudio/rstudio-prefs.json ~/AppData/Roaming/RStudio/
+
 ## vundle : Install Vundle for managing Vim packages
 vundle :
 	git clone \
