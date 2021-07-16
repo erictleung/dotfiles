@@ -66,8 +66,37 @@ stow bash # e.g. bash configuration files
 
 ### Windows
 
-Currently using [Cygwin](http://cygwin.com/) as the terminal window I use.
-Updates and package management are done using the Cygwin executable file.
+If possible, installing the
+[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+is the most ideal situation to having a terminal-like interface.
+
+As an Emacs user, I want to use the visual GUI. This requires an X Client to
+generate the GUI. This can done using X Launch. Some instructions to set this
+up are written up [here](https://sudhakaryblog.wordpress.com/2018/08/30/run-gui-app-on-windows-xlaunch-vcxsrv/).
+
+If WSL cannot used because of administrative privileges, the second best option
+is to install an Emacs GUI with [Git Bash](https://gitforwindows.org/). To
+install the GUI from [here](https://ftp.gnu.org/gnu/emacs/windows/). Download
+one of the installers, like `emacs-27.2-x86_64-installer.exe`,should install
+Emacs in `C:/Program Files/`.
+
+When opening Emacs, the home directory is located in
+`C:/Users/<user_name>/AppData/Roaming/`. Because I use SyncThing to sync my Org
+mode notes, SyncThing should put its folders in this `Roaming/` directory for
+path navigation to work as expected. Similarly, my `dotfiles/` should be copied
+into this directory.
+
+From Git Bash, you can run the following to link these files because `stow`
+don't be able to reach it properly.
+
+```sh
+cd
+ln -s ~/dotfiles/emacs/.emacs.d ~/AppData/Roaming
+```
+
+In the past, I have made use of [Cygwin](http://cygwin.com/) as the terminal
+window I use. Updates and package management are done using the Cygwin
+executable file.
 
 There is a package manager, [chocolatey](https://chocolatey.org/), that I've
 heard about and have downloaded, but it is less utilized. I will note here on
