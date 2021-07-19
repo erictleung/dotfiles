@@ -96,7 +96,22 @@ ln -s ~/dotfiles/emacs/.emacs.d ~/AppData/Roaming
 
 In the past, I have made use of [Cygwin](http://cygwin.com/) as the terminal
 window I use. Updates and package management are done using the Cygwin
-executable file.
+executable file. However, it appears [MYSY2](https://www.msys2.org/) is a
+better alternative bceause it
+
+> "...provide[s] a build environment for native Windows software and the
+> Cygwin-using parts are kept at a minimum."
+
+When setting up MSYS2, the path defaults to the `AppData/Roaming/` directory.
+To make it more native with the Window's user home director, navigate to
+`~/etc/nsswitch.conf` and make the edit
+
+```
+db_home: windows # cygwin desc
+```
+
+These changes are summarized
+[here](https://aktasfatih.com/setting-up-windows-with-msys2/).
 
 There is a package manager, [chocolatey](https://chocolatey.org/), that I've
 heard about and have downloaded, but it is less utilized. I will note here on
