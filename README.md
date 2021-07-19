@@ -96,7 +96,7 @@ ln -s ~/dotfiles/emacs/.emacs.d ~/AppData/Roaming
 
 In the past, I have made use of [Cygwin](http://cygwin.com/) as the terminal
 window I use. Updates and package management are done using the Cygwin
-executable file. However, it appears [MYSY2](https://www.msys2.org/) is a
+executable file. However, it appears [MSYS2](https://www.msys2.org/) is a
 better alternative bceause it
 
 > "...provide[s] a build environment for native Windows software and the
