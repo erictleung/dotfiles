@@ -111,7 +111,10 @@ db_home: windows # cygwin desc
 ```
 
 These changes are summarized
-[here](https://aktasfatih.com/setting-up-windows-with-msys2/).
+[here](https://aktasfatih.com/setting-up-windows-with-msys2/). The packages in
+MSYS2 can be found
+[here](https://github.com/msys2/MSYS2-packages) and
+[here](https://github.com/msys2-unofficial/MSYS2-packages).
 
 There is a package manager, [chocolatey](https://chocolatey.org/), that I've
 heard about and have downloaded, but it is less utilized. I will note here on
@@ -383,6 +386,8 @@ standards based in terms of their inputs and outputs, if applicable.
   cleanup tool.
 - [Rapid Environment Editor](https://www.rapidee.com/en/about) - Windows
   environment variables management.
+- [ImageGlass](https://github.com/d2phap/ImageGlass) - A lightweight, versatile
+  image viewer.
 
 **Firefox Plugins**
 
