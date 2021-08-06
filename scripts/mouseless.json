@@ -5,28 +5,33 @@
     "auto_submit_timer": 0,
     "blacklisted_urls": [
         "https://calendar.google.com/*",
-        "https://duckduckgo.com/*"
+        "https://duckduckgo.com/*",
+        "http://localhost:8888/*"
     ],
     "scroll": {
         "up": "k",
-        "up_fast": "j",
-        "down": "<Shift>_",
+        "down": "j",
+        "up_fast": "<Shift>_",
         "down_fast": "<Shift>+"
     },
     "click": "Enter",
     "open_in_new_tab": "<Shift>Enter",
     "save_url_to_clipboard": "<Control>Enter",
     "focus": "Tab",
-    "blobs_backspace": "Backspace",
+    "blobs": {
+        "show": "/",
+        "hide": "Escape",
+        "backspace": "Backspace"
+    },
     "deselect_current_element": "Escape",
     "tab": {
         "switch_left": "h",
         "switch_right": "l",
-        "move_left": "<Shift>h",
-        "movie_right": "<Shift>l"
+        "move_left": "<Shift>H",
+        "movie_right": "<Shift>L"
     },
     "go": {
-        "back": "<Control>j",
-        "forward": "<Control>;"
+        "back": "<Shift>B",
+        "forward": "<Shift>F"
     }
 }
