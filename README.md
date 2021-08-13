@@ -373,6 +373,8 @@ interface with files and be productive.
   diagrams.
 - [VLC Media Player](https://www.videolan.org/vlc/) - Free and open source
   cross-platform multimedia player.
+- [LICEcap](https://www.cockos.com/licecap/) - Capture an area of your desktop
+  and save it directly to .GIF.
 
 *Note*: The above desktop applications were chosen to be cross platform and
 standards based in terms of their inputs and outputs, if applicable.
