@@ -65,6 +65,7 @@ nnoremap j gj
 nnoremap k gk
 set path+=** " search recursively through files within other folders
 set wildmenu " show options above commands
+" set mouse=a " Allow mouse to mouse cursor
 
 " Justifies current block of text
 " https://twitter.com/vsbuffalo/status/1331313958754521088
