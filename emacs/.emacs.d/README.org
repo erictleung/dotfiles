@@ -1,5 +1,5 @@
 #+TITLE: Emacs literate configuration
-#+DESCRIPTION: An org-babel based Emacs configuration
+#+DESCRIPTION: An org-babel based Emacs configuration with literate programming
 #+LANGUAGE: en
 #+STARTUP: overview
 #+PROPERTY: header-args:emacs-lisp :comments yes :results silent :tangle yes
