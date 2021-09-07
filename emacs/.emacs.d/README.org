@@ -809,7 +809,7 @@ Sometimes I have some snippets of text I find myself using. So I can define some
     :ensure t
     :diminish yas-minor-mode
     :config
-    (use-package yasnippet-snippets)
+    (use-package yasnippet-snippets :ensure t)
     (add-to-list #'yas-snippet-dirs "~/Sync/org/snippets")
     (add-to-list #'yas-snippet-dirs "~/.emacs.d/snippets")
     (yas-reload-all))
