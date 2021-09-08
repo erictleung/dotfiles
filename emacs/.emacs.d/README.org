@@ -993,6 +993,8 @@ See subtle markers for line changes.
 
 I want a place where my attention isn't always seduced by the internet. Using a text-based browser is my dream to make it more difficult to mind wander.
 
+I'm having some second thoughts about using w3m as my browser in case I'm unable to install it. A more sustainable solution may to use Emacs' built-in browser, eww https://writequit.org/eos/eos-web.html.
+
 Help and examples:
 
 - http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html
