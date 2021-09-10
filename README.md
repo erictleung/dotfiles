@@ -399,3 +399,5 @@ standards based in terms of their inputs and outputs, if applicable.
 - [web-archives](https://addons.mozilla.org/en-US/firefox/addon/view-page-archive) - View
   archived and cached versions of web pages of 10+ search engines
   (https://github.com/dessant/web-archives).
+- [Unpaywall](https://github.com/ourresearch/unpaywall-extension) - Gives you a
+  link to a free PDF when viewing scholarly articles.
