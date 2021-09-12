@@ -77,6 +77,12 @@ emacs : ~/.emacs.d/README.org
 		"(require 'org)" \
 		--eval "(org-babel-load-file \"~/.emacs.d/README.org\")"
 
+## emacsconfig : Copy over configuration on Windows
+# Windows computer setup has the configuration elsewhere and needs to be moved
+# Symbolic linking didn't work.
+emacsconfig :
+	cp ~/Application\ Data/.emacs.d/README.org emacs/.emacs.d/README.org
+
 ## rstudio : Install RStudio config in Unix-like systems
 rstudio :
 	cp rstudio/rstudio-prefs.json ~/.config/rstudio
@@ -98,7 +104,7 @@ ubuntu : scripts/setup_ubuntu.sh
 	bash scripts/setup_ubuntu.sh
 
 .PHONY : help example conda dirs vundle cclean ssh makessh setup editors emacs \
-	ubuntu npmclean pipclean archclean
+	ubuntu npmclean pipclean archclean emacsconfig
 
 ## help : Help page for Makefile
 help :
