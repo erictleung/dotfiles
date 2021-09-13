@@ -1144,7 +1144,8 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
            ((tags "PRIORITY=\"A\""
                   ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                    (org-agenda-overriding-header "High-priority unfinished tasks:")))
-            (tags-todo "inbox" ((org-agenda-files '("~/Sync/org/inbox.org"))))
+            (tags-todo "inbox" ((org-agenda-files '("~/Sync/org/inbox.org"
+                                                    "~/Sync/org/android_inbox.org"))))
             (agenda "")
             (alltodo ""
                      ((org-agenda-skip-function
