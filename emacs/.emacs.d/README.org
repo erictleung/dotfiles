@@ -1881,7 +1881,8 @@ Reset debugging from the beginning and display how long setup took.
 
 - =org-drill= :: went with Anki because more convenient
 - =helm= :: replaced with =ivy= instead
-- =anki-enditor= :: works really well, just felt it easier to maintain directly from Anki because it already has a backup system; if I ever need it or want to help guide someone else https://yiufung.net/post/anki-org/.
+- =anki-enditor= :: works really well, just felt it easier to maintain directly from Anki because it already has a backup system; if I ever need it or want to help guide someone else https://yiufung.net/post/anki-org/
+- =w3m= :: really cool text-based browser within Emacs, but it required downloading the browser first; trying to rely on built-in browser EWW instead
 
 *No interest packages*
 
