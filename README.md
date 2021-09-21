@@ -317,6 +317,7 @@ interface with files and be productive.
   for the console.
 - [`sqlfluff`](https://github.com/sqlfluff/sqlfluff) - The SQL Linter for
   humans.
+- [QRcode.show](https://qrcode.show/) - Generate QR code using curl.
 
 **Web Tools**
 
