@@ -371,17 +371,16 @@ Inspired by https://github.com/DiegoVicen/my-emacs#define-keybindings-to-eval-bu
 
 ** Never lose the cursor
 
+This flashes the line the cursor is on to create a visual cue as to where things are. This previous was implemented using the =beacon= package, but was replaced with this no dependency version.
+
 #+begin_src emacs-lisp
-  (use-package beacon
-    :ensure t
-    :diminish beacon-mode
-    :config
-    (setq beacon-blink-when-window-scrolls nil
-          beacon-dont-blink-major-modes '(t pdf-view-mode)
-          beacon-size 50
-          beacon-blink-duration 0.4
-          beacon-blink-delay 0.3)
-    (beacon-mode 1))
+  (defun pulse-line (&rest _)
+        "Pulse the current line."
+        (pulse-momentary-highlight-one-line (point)))
+
+  (dolist (command '(scroll-up-command scroll-down-command
+                     recenter-top-bottom other-window))
+    (advice-add command :after #'pulse-line))
 #+end_src
 
 ** Highlight indentation
