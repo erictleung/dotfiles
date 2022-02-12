@@ -6,7 +6,11 @@
     "blacklisted_urls": [
         "https://calendar.google.com/*",
         "https://duckduckgo.com/*",
-        "http://localhost:8888/*"
+        "http://localhost:8888/*",
+        "https://docs.google.com/presentation/*",
+        "https://www.nytimes.com/games/wordle/index.html",
+        "https://mail.google.com/*",
+        "https://youtube.com/*"
     ],
     "scroll": {
         "up": "k",
