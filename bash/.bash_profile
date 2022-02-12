@@ -79,6 +79,12 @@ function cdiff {
     fi
 }
 
+
+# open up Word documents with Vim
+function vimd () {
+    pandoc -f docx -t rst $1 | vim -
+}
+
 # allow typos for cd, tab-completion, and better directory management
 shopt -s audocd 2> /dev/null
 shopt -s dirspell 2> /dev/null
