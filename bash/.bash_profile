@@ -85,6 +85,18 @@ function vimd () {
     pandoc -f docx -t rst $1 | vim -
 }
 
+
+# Find and Display SyncThing Conflict Differences
+# Take in file name without the extension and compare one of the conflicts.
+# Usage: sd gtd
+sd () {
+    f1=$1.org
+    f2=$(ls | grep $1.sync | head -n 1)
+    diff $f1 $f2 | less
+    echo "Looked at $f2"
+}
+
+
 # allow typos for cd, tab-completion, and better directory management
 shopt -s audocd 2> /dev/null
 shopt -s dirspell 2> /dev/null
