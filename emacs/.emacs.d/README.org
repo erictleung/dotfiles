@@ -4,12 +4,17 @@
 #+STARTUP: overview
 #+PROPERTY: header-args:emacs-lisp :comments yes :results silent :tangle yes
 
+* About
+
+Here is my configuration file for Emacs. I've pulled my inspiration for this configuration from a number of places, which I list below.
+
 *Inspiration*:
 
 - https://pages.sachachua.com/.emacs.d/Sacha.html :: extensive literate configuration
 - https://github.com/zamansky/dot-emacs :: example configuration with YouTube tutorials
 - https://github.com/rememberYou/.emacs.d :: great tips in README and variety of packages used
 - https://orgmode.org/worg/org-hacks.html :: amazing list of tips and tricks using org-mode
+- https://karthinks.com/software/batteries-included-with-emacs/ :: showing how Emacs comes with lots of "batteries" already
 - https://github.com/DiegoVicen/my-emacs
 - https://github.com/KaratasFurkan/.emacs.d
 - https://github.com/alhassy/emacs.d
