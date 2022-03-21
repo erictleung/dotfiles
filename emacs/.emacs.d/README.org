@@ -22,6 +22,18 @@ Here is my configuration file for Emacs. I've pulled my inspiration for this con
 - https://github.com/WolfeCub/dotfiles
 - https://github.com/daviwil/dotfiles/blob/master/Emacs.org
 - https://github.com/hsinhaoyu/.emacs.d
+- https://github.com/link0ff/emacs-init
+
+* System information
+
+Here are settings to allow my configuration to change its behavior based on what system you're on.
+
+#+begin_src emacs-lisp
+  (defvar etl/my-laptop-p (equal (system-name) "WX-PF2ESKWK"))
+  (defvar my-server-p (and (equal (system-name) "localhost") (equal user-login-name "eric")))
+  (defvar etl/my-phone-p (not (null (getenv "ANDROID_ROOT")))
+    "If non-nill, GNU Emacs is rnuning on Termux")
+#+end_src
 
 * Explore packages
 
