@@ -443,6 +443,46 @@ Unfortunately, I haven't figured out why org-mode isn't loading correctly on one
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-c o o") 'org-mode-restart)
 #+end_src
+** Setup regular expression builder
+
+There is a built-in regular expression builder in Emacs. It will search the entire buffer based on the given expression.
+
+#+begin_src emacs-lisp
+  (require 're-builder)
+  (setq reb-re-syntax 'string)
+#+end_src
+
+There are engines that can be used: https://masteringemacs.org/article/re-builder-interactive-regexp-builder.
+** Org-mode shortcut to cut and yank subtrees to the end of buffer
+
+#+begin_src emacs-lisp
+  (defun etl/yank-to-end-buffer ()
+    "Cut and yank org subtree to end of the buffer"
+    (interactive)
+    (org-cut-special)
+    (end-of-buffer)
+    (org-yank))
+  (global-set-key (kbd "C-c C-x j") 'etl/yank-to-end-buffer)
+#+end_src
+
+** Org-mode shortcut to cut and yank subtrees to the end of subtree
+
+Similar to the previous tool, but only put it to the end of the substree. This is because each heading subtree I have are usually grouped by topic or work. So sometimes when reorgnizing my tasks, I want to force something to the end.
+
+#+begin_src emacs-lisp
+  (defun etl/yank-to-end-subtree ()
+    "Cut and yank org subtree to end of the subtree"
+    (interactive)
+    (org-cut-special)
+    (org-up-heading-safe)
+    (org-forward-heading-same-level 1 t)
+    (forward-line -1)
+    (org-end-of-line)
+    (org-return)
+    (org-yank))
+  (global-set-key (kbd "C-c C-x n") 'etl/yank-to-end-subtree)
+#+end_src
+
 * Custom functions
 
 #+begin_src emacs-lisp
