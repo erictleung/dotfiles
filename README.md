@@ -361,6 +361,7 @@ interface with files and be productive.
 - [Online PNG Tools](https://onlinepngtools.com/) - Collection of useful PNG
   image utilities for working with PNG graphics files.
 - [sequel fumpt](https://sqlfum.pt/) - Help format SQL with slider width.
+- [ConvertCSV](https://www.convertcsv.com/) - Convert CSV files to others.
 
 **Cross-Platform Desktop**
 
