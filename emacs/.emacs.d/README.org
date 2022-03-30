@@ -1939,6 +1939,7 @@ Reset debugging from the beginning and display how long setup took.
 - =helm= :: replaced with =ivy= instead
 - =anki-enditor= :: works really well, just felt it easier to maintain directly from Anki because it already has a backup system; if I ever need it or want to help guide someone else https://yiufung.net/post/anki-org/
 - =w3m= :: really cool text-based browser within Emacs, but it required downloading the browser first; trying to rely on built-in browser EWW instead
+- =beacon= :: was useful to keep track of my cursor when switching windows, but this feature is built-in
 
 *No interest packages*
 
