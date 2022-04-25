@@ -23,6 +23,7 @@ Here is my configuration file for Emacs. I've pulled my inspiration for this con
 - https://github.com/daviwil/dotfiles/blob/master/Emacs.org
 - https://github.com/hsinhaoyu/.emacs.d
 - https://github.com/link0ff/emacs-init
+- https://github.com/caisah/emacs.dz
 
 * System information
 
@@ -68,6 +69,7 @@ Here are settings to allow my configuration to change its behavior based on what
 - lispy :: help with LISP editing https://github.com/abo-abo/lispy
 - literate-calc-mode :: literate programming for =M-x calc= https://github.com/sulami/literate-calc-mode.el
 - lsp-mode :: language server protocol https://github.com/emacs-lsp/lsp-mode/
+- olivetti :: balance window margins https://github.com/rnkn/olivetti
 - org-cliplink :: insert org-mode links from clipboard https://github.com/rexim/org-cliplink
 - org-msg :: compose emails with org-mode https://github.com/jeremy-compostella/org-msg
 - org-reveal :: exports org-mode to Reveal.js https://github.com/yjwen/org-reveal/
