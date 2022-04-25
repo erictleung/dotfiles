@@ -322,7 +322,7 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c E= (copy ent
 
   ;; Word wrap lines
   (setq-default word-wrap t)
-  (setq-default fill-column 79)
+  ;; (setq-default fill-column 79)
 
   ;; Remove unnecessary toolbars, scrollbars, etc
   (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
