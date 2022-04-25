@@ -461,12 +461,12 @@ There are engines that can be used: https://masteringemacs.org/article/re-builde
   (defun etl/yank-to-end-buffer ()
     "Cut and yank org subtree to end of the buffer"
     (interactive)
-    (org-cut-special)
-    (end-of-buffer)
-    (org-yank))
+    (save-excursion
+      (org-cut-special)
+      (end-of-buffer)
+      (org-yank)))
   (global-set-key (kbd "C-c C-x j") 'etl/yank-to-end-buffer)
 #+end_src
-
 ** Org-mode shortcut to cut and yank subtrees to the end of subtree
 
 Similar to the previous tool, but only put it to the end of the substree. This is because each heading subtree I have are usually grouped by topic or work. So sometimes when reorgnizing my tasks, I want to force something to the end.
