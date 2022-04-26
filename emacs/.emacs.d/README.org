@@ -485,6 +485,37 @@ Similar to the previous tool, but only put it to the end of the substree. This i
   (global-set-key (kbd "C-c C-x n") 'etl/yank-to-end-subtree)
 #+end_src
 
+** Org-mode shortcut to cut and yank finished subtree to closest finished
+
+I like to organize my org-mode headings together by TODO status.
+
+#+begin_src emacs-lisp
+
+#+end_src
+
+** Delete file and buffer
+
+Interactive and keybound way to delete files and buffers at the same time in case I'm finished with the buffer and file. A use case is for when I'm dealing with consolidating notes, I've had to search through dired etc to delete the file.
+
+Source: https://emacsredux.com/blog/2013/04/03/delete-file-and-buffer/
+
+#+begin_src emacs-lisp
+  (defun etl/delete-file-and-buffer ()
+    "Kill the current buffer and deletes the file it is visiting."
+    (interactive)
+    (let ((filename (buffer-file-name)))
+      (when filename
+        (if (vc-backend filename)
+            (vc-delete-file filename)
+          (progn
+            (delete-file filename)
+            (message "Deleted file %s" filename)
+            (kill-buffer))))))
+
+  (global-set-key (kbd "C-c D")  #'etl/delete-file-and-buffer)
+#+end_src
+
+
 * Custom functions
 
 #+begin_src emacs-lisp
