@@ -680,9 +680,13 @@ Will need to run =M-X all-the-icons-install-fonts= before icons will show up pro
     (setq dashboard-set-file-icons t
           dashboard-set-heading-icons t
           dashboard-startup-banner 'logo
+          dashboard-path-max-length 40
+          dashboard-path-style 'truncate-end
+          dashboard-projects-show-base 'align
+          dashboard-recentf-show-base 'align
           dashboard-set-init-info t
           dashboard-set-navigator t
-          dashboard-banner-logo-title "Welcome to Your Dashboard"
+          dashboard-banner-logo-title "Welcome to Your Dashboard!"
           dashboard-items '((agenda . 10)
                             (recents . 5)
                             (projects . 5))
