@@ -81,7 +81,7 @@ emacs : ~/.emacs.d/README.org
 # Windows computer setup has the configuration elsewhere and needs to be moved
 # Symbolic linking didn't work.
 emacsconfig :
-	cp ~/AppData/Roaming/.emacs.d/README.org emacs/.emacs.d/README.org
+	cp ~/.emacs.d/README.org emacs/.emacs.d/README.org
 
 ## rstudio : Install RStudio config in Unix-like systems
 rstudio :
