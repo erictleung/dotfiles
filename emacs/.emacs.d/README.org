@@ -515,6 +515,28 @@ Source: https://emacsredux.com/blog/2013/04/03/delete-file-and-buffer/
   (global-set-key (kbd "C-c D")  #'etl/delete-file-and-buffer)
 #+end_src
 
+** Change file extension
+
+Occasionally, I need to change the file extensions of files and buffers I'm in. The below blog post contains a solution to this.
+
+https://deepumohan.com/tech/function-to-change-the-extension-of-current-file-in-emacs-lisp/
+
+#+begin_src emacs-lisp
+  (defun etl/change-file-extension ()
+    (interactive)
+    (let* ((new-extension
+            (read-from-minibuffer "Type the new extension including the dot (.): "))
+           (new-file-name (concat (file-name-sans-extension buffer-file-name)
+                                  new-extension))
+           (filename (buffer-file-name)))
+      (rename-file filename new-file-name t)
+      (rename-buffer (concat (file-name-sans-extension (buffer-name))
+                             new-extension))
+      (set-visited-file-name new-file-name)
+      (set-buffer-modified-p nil)
+      (message (concat "File renamed to " new-file-name))))
+#+end_src
+
 
 * Custom functions
 
