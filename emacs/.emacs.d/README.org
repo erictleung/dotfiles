@@ -846,13 +846,42 @@ General purpose file search that is quick to narrow down files and notes.
 
 See keybindings below for examples of what is possible. To access =deft=, press =C-c d d=.
 
+https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_text_100s_of_tags/
+
 #+begin_src emacs-lisp
   (use-package deft
     :ensure t
-    :init
+    :config
     (setq deft-directory "~/Sync/org/notes"
           deft-file-limit 75
-          deft-recursive t))
+          deft-text-mode 'org-mode
+          deft-default-extension "md"
+          deft-markdown-mode-title-level 1
+          deft-file-naming-rules '((noslash . "-")
+                                   (nospace . "-")
+                                   (case-fn . downcase))
+          deft-strip-summary-regexp (concat "\\("
+                                            "[\n\t]"  ;; Blank
+                                            "\\|^---$"  ;; Front matter
+                                            "\\|^[[:lower:]]+:.*"  ;; Front matter
+                                            "\\|^#\\+[[:upper:]_]+:.*$" ;; org-mode metadata
+                                            "\\|^#\\+[[:alnum:]_]+:.*$" ;; org-mode metadata
+                                            "\\|#+ *.*$"  ;; Markdown headers
+                                            "\\|\\*\\*Date\\*\\*: +[[:alnum:]-]+"  ;; Dates
+                                            "\\|\\*\\*Tags\\*\\*: +"  ;; Tags
+                                            "\\)")
+          deft-extensions '("md" "org" "txt")
+          deft-strip-title-regexp (concat "\\(?:"
+                                          "^%+" ;; Lines begin with %
+                                          "\\|#+"  ;; Line with just # characters
+                                          "\\|# +"  ;; Markdown header
+                                          "\\|^[#* ]+"  ;; line begin with #, * and/or space
+                                          "\\|\\*\\*[[:alnum:]]+\\*\\*"  ;; bolded terms
+                                          "\\|^#\\+TITLE:"  ;; org-mode title
+                                          "\\|^Title:[\t ]*"  ;; MultiMarkdown metadata
+                                          "$\\)")
+          deft-use-filename-as-title nil)
+    (add-hook 'deft-open-file-hook 'deft-filter-clear))
 
   (use-package zetteldeft
     :ensure t
