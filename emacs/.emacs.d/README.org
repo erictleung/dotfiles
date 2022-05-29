@@ -1062,18 +1062,23 @@ See subtle markers for line changes.
            ("\\.txt\\'" . markdown-mode)
            ("\\.markdown\\'" . markdown-mode))
     :init (setq markdown-command "multimarkdown"))
+#+end_src
 
+#+begin_src emacs-lisp :eval nil
   ;; Another org-mode exporter via pandoc
   (use-package ox-pandoc
     :ensure t
     :init
     (with-eval-after-load 'org '(require 'ox-pandoc)))
+#+end_src
 
+#+begin_src emacs-lisp
   ;; Create multiple major modes for different langauges
   ;; Inspired by
   ;; - https://github.com/SteveLane/dot-emacs/blob/master/packages-polymode.el
   ;; - http://johnstantongeddes.org/open%20science/2014/03/26/Rmd-polymode.html
   (use-package polymode
+    :defer t
     :config
     (use-package poly-R
       :after ess)
