@@ -537,6 +537,15 @@ https://deepumohan.com/tech/function-to-change-the-extension-of-current-file-in-
       (message (concat "File renamed to " new-file-name))))
 #+end_src
 
+** Autload dired-jump
+
+Quickly access a file in dired with =dired-jump=, which should then activate it and bound it to =C-x C-j=.
+
+#+begin_src emacs-lisp
+  (autoload 'dired-jump "dired-x"
+    "Jump to Dired buffer corresponding to current buffer." t)
+#+end_src
+
 
 * Custom functions
 
