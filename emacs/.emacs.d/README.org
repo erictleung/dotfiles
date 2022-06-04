@@ -1177,6 +1177,18 @@ I'm having some second thoughts about using w3m as my browser in case I'm unable
 Help and examples:
 
 - http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html
+- https://www.emacswiki.org/emacs/eww
+
+Setup some visual preferences and to ensure using DuckDuckGo as the search engine.
+
+#+begin_src emacs-lisp
+  (setq shr-indentation 15
+        shr-width 80
+        shr-use-fonts nil
+        eww-search-prefix "https://duckduckgo.com/?q=")
+#+end_src
+
+Then lets setup a keybinding for quick access.
 
 #+begin_src emacs-lisp
 
