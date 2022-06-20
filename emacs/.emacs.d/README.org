@@ -576,6 +576,11 @@ Quickly access a file in dired with =dired-jump=, which should then activate it 
     (end-of-buffer)
     (goto-line (random (line-number-at-pos))))
   (global-set-key (kbd "C-c o e") 'etl/goto-random-line)
+
+  (defun etl/kebab-case (str)
+    "Convert text to kebab case."
+    (interactive)
+    (replace-regexp-in-string " " "-" str))
 #+end_src
 
 * Emacs development
