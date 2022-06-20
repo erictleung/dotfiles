@@ -55,6 +55,7 @@ Here are settings to allow my configuration to change its behavior based on what
 - emacs-calfw :: calendar framework https://github.com/kiwanami/emacs-calfw
 - emacs-easy-jekyll :: major mode for managing Jekyll https://github.com/masasam/emacs-easy-jekyll
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
+- ement.el :: https://github.com/alphapapa/ement.el
 - emmet-mode :: web development shortcuts https://github.com/smihica/emmet-mode
 - emacs-presentation-mode :: presentation and live coding https://github.com/zonuexe/emacs-presentation-mode
 - emacs-winum :: window numbers https://github.com/deb0ch/emacs-winum
@@ -80,6 +81,7 @@ Here are settings to allow my configuration to change its behavior based on what
 - paredit :: http://danmidwood.com/content/2014/11/21/animated-paredit.html
 - perspectives :: create named workspaces/perspectives https://github.com/nex3/perspective-el
 - poporg :: edit strings/comments in Org mode https://github.com/QBobWatson/poporg
+- popper :: https://github.com/karthink/popper
 - prescient.el :: effective sorting and filtering https://github.com/raxod502/prescient.el
 - selectrum :: incremental narrowing https://github.com/raxod502/selectrum
 - smartparens :: deals with parens pairs https://github.com/Fuco1/smartparens
