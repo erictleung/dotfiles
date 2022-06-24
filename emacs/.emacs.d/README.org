@@ -885,6 +885,7 @@ https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_te
                                             "\\|#+ *.*$"  ;; Markdown headers
                                             "\\|\\*\\*Date\\*\\*: +[[:alnum:]-]+"  ;; Dates
                                             "\\|\\*\\*Tags\\*\\*: +"  ;; Tags
+                                            "\\|\\*\\*Link\\*\\*: "  ;; Link
                                             "\\)")
           deft-extensions '("md" "org" "txt")
           deft-strip-title-regexp (concat "\\(?:"
