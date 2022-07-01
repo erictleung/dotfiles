@@ -918,7 +918,7 @@ https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_te
        nil)
       (deft-filter-yank))
     (defun etl/zetteldeft-ergodic-wander ()
-      "TODO Randomly wander zettelkasten."
+      "TODO Randomly wander zettelkasten every couple of seconds."
       (interactive))
     (defun etl/zetteldeft-wander-file ()
       "Find random link in current zetteldeft file."
