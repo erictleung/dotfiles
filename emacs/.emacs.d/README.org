@@ -931,6 +931,12 @@ https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_te
       (switch-to-buffer deft-buffer)
       (deft-filter-clear)
       (deft-filter-yank))
+    (defun etl/zetteldeft-custom-insert-style (id &optional title)
+      "Insert a Zetteldeft link with custom style to match with Obsidian."
+      (insert zetteldeft-link-indicator
+              id
+              zetteldeft-link-suffix))
+    (defun etl/zetteldeft-find-file-full-title-insert ())
     (setq zetteldeft-link-indicator "[["
           zetteldeft-link-suffix "]]"
           zetteldeft-title-prefix "# "
