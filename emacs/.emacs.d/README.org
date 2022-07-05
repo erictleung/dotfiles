@@ -952,7 +952,8 @@ https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_te
     ;;              "\\]\\]")
     ;;     . font-lock-warning-face)))
     :config
-    (zetteldeft-set-classic-keybindings))
+    (zetteldeft-set-classic-keybindings)
+    (setq zetteldeft-insert-link-function 'etl/zetteldeft-custom-insert-style))
 #+end_src
 
 * Company and auto-complete
