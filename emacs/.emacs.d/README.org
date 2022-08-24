@@ -881,20 +881,21 @@ https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_te
                                             "\\|^[[:lower:]]+:.*"  ;; Front matter
                                             "\\|^#\\+[[:upper:]_]+:.*$" ;; org-mode metadata
                                             "\\|^#\\+[[:alnum:]_]+:.*$" ;; org-mode metadata
-                                            "\\|#+ *.*$"  ;; Markdown headers
+                                            "\\|^\\#\\+TITLE:"  ;; Title
                                             "\\|\\*\\*Date\\*\\*: +[[:alnum:]-]+"  ;; Dates
                                             "\\|\\*\\*Tags\\*\\*: +"  ;; Tags
-                                            "\\|\\*\\*Link\\*\\*: "  ;; Link
+                                            "\\|\\*\\*Link\\*\\*: .*$"  ;; Link
+                                            "\\|#+ *.*$"  ;; Markdown headers
                                             "\\)")
           deft-extensions '("md" "org" "txt")
           deft-strip-title-regexp (concat "\\(?:"
                                           "^%+" ;; Lines begin with %
+                                          "\\|^#\\+TITLE:"  ;; org-mode title
+                                          "\\|^Title:[\t ]*"  ;; MultiMarkdown metadata
                                           "\\|#+"  ;; Line with just # characters
                                           "\\|# +"  ;; Markdown header
                                           "\\|^[#* ]+"  ;; line begin with #, * and/or space
                                           "\\|\\*\\*[[:alnum:]]+\\*\\*"  ;; bolded terms
-                                          "\\|^#\\+TITLE:"  ;; org-mode title
-                                          "\\|^Title:[\t ]*"  ;; MultiMarkdown metadata
                                           "$\\)")
           deft-use-filename-as-title nil)
     (add-hook 'deft-open-file-hook 'deft-filter-clear))
