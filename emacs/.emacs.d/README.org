@@ -998,8 +998,10 @@ Sometimes I have some snippets of text I find myself using. So I can define some
     :diminish yas-minor-mode
     :config
     (use-package yasnippet-snippets :ensure t)
+    (require 'warnings)
     (add-to-list #'yas-snippet-dirs "~/Sync/org/snippets")
     (add-to-list #'yas-snippet-dirs "~/.emacs.d/snippets")
+    ;; (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
     (yas-reload-all)
     (yas-global-mode))
 
