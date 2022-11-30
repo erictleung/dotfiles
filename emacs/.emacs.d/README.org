@@ -1208,7 +1208,13 @@ Setup some visual preferences and to ensure using DuckDuckGo as the search engin
 Then lets setup a keybinding for quick access.
 
 #+begin_src emacs-lisp
+  (global-set-key (kbd "C-c w") 'eww)
+#+end_src
 
+And lastly, make links open into Emacs first before choosing to open externally. I can use =&= to open externally if needed.
+
+#+begin_src emacs-lisp
+  (setq browse-url-browser-function 'eww-browse-url)
 #+end_src
 
 * Org-mode
