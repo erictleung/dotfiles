@@ -1265,6 +1265,7 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
   (if (file-directory-p "~/Sync/org")
       (setq org-directory "~/Sync/org/"
             org-agenda-files '("~/Sync/org/gtd.org"
+                               "~/Sync/org/friendships.org"
                                "~/Sync/org/reminders.org"))
       (setq org-default-notes-file (concat org-directory "inbox.org")))
   (setq org-log-done t)
