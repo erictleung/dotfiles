@@ -24,6 +24,7 @@ Here is my configuration file for Emacs. I've pulled my inspiration for this con
 - https://github.com/hsinhaoyu/.emacs.d
 - https://github.com/link0ff/emacs-init
 - https://github.com/caisah/emacs.dz
+- https://github.com/redguardtoo/emacs.d :: author also wrote https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/
 
 * System information
 
@@ -44,6 +45,7 @@ Here are settings to allow my configuration to change its behavior based on what
 - benchmark-init-el :: https://github.com/dholm/benchmark-init-el (similar to esup)
 - centaur-tabs :: tabs plugin https://github.com/ema2159/centaur-tabs
 - counsel-org-clock :: https://github.com/akirak/counsel-org-clock
+- crus :: collection of ridiculously useful extensions for Emacs https://github.com/bbatsov/crux
 - csv-mode :: https://elpa.gnu.org/packages/csv-mode.html
 - dash :: modern list library https://github.com/magnars/dash.el
 - diminish :: save display space for minor modes list https://github.com/myrjola/diminish.el
@@ -60,6 +62,7 @@ Here are settings to allow my configuration to change its behavior based on what
 - emacs-presentation-mode :: presentation and live coding https://github.com/zonuexe/emacs-presentation-mode
 - emacs-winum :: window numbers https://github.com/deb0ch/emacs-winum
 - esup :: Emacs Start Up Profiler https://github.com/jschaf/esup
+- focus :: dim font color of surrounding text https://github.com/larstvei/Focus
 - flymake-diagnostic-at-point :: https://github.com/meqif/flymake-diagnostic-at-point
 - forge :: interact with git like GitHub https://github.com/magit/forge
 - helpful :: a better *help* buffer https://github.com/Wilfred/helpful
