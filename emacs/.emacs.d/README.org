@@ -191,7 +191,7 @@ By default, Emacs creates lots of backup files in the same directory of files yo
       (backup-buffer)))
 
   (add-hook 'before-save-hook  'force-backup-of-buffer)
-  (add-hook 'text-mode-hook 'auto-fill-mode)
+  ;; (add-hook 'text-mode-hook 'auto-fill-mode)
 
   ;; Move autosave files
   ;; https://snarfed.org/gnu_emacs_backup_files
@@ -326,7 +326,7 @@ Keybindings with =C-c e= (export for use outside of Emacs) and =C-c E= (copy ent
   (global-visual-line-mode t)
 
   ;; Word wrap lines
-  (setq-default word-wrap t)
+  (setq-default word-wrap nil)
   ;; (setq-default fill-column 79)
 
   ;; Remove unnecessary toolbars, scrollbars, etc
@@ -551,6 +551,13 @@ Quickly access a file in dired with =dired-jump=, which should then activate it 
   (autoload 'dired-jump "dired-x"
     "Jump to Dired buffer corresponding to current buffer." t)
 #+end_src
+** Prevent auto-fill in plain text
+
+#+begin_src emacs-lisp
+  (remove-hook 'text-mode-hook #'turn-on-auto-fill)
+  (remove-hook 'markdown-mode-hook #'turn-on-auto-fill)
+#+end_src
+
 * Custom functions
 
 #+begin_src emacs-lisp
