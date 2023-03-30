@@ -838,8 +838,12 @@ Also similar to the predecessor [[https://github.com/winterTTr/ace-jump-mode][=a
 #+begin_src emacs-lisp
   (use-package avy
     :ensure t
-    :bind (("M-s" . avy-goto-char)
-           ("M-g f" . avy-goto-line)))
+    :bind
+    (("M-g f" . avy-goto-line)
+     ("C-:" . avy-goto-char)
+     ("C-'" . avy-goto-char-2)
+     ("M-g w" . avy-goto-word-1)
+     ("M-g e" . avy-goto-word-0)))
 #+end_src
 
 * Projectile and project management
