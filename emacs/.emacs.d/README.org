@@ -1092,8 +1092,9 @@ See subtle markers for line changes.
 
 * Markdown
 
+Basic setup for Markdown-formatted text.
+
 #+begin_src emacs-lisp
-  ;; Create major mode for editing Markdown-formatted text
   (use-package markdown-mode
     :ensure t
     :commands (markdown-mode gfm-mode)
@@ -1101,7 +1102,12 @@ See subtle markers for line changes.
            ("\\.md\\'" . markdown-mode)
            ("\\.txt\\'" . markdown-mode)
            ("\\.markdown\\'" . markdown-mode))
-    :init (setq markdown-command "multimarkdown"))
+    :init
+    (setq markdown-command "multimarkdown")
+    (defun etl/markdown-config ()
+      (local-set-key (kbd "M-q") 'ignore))
+    (add-hook 'markdown-mode-hook 'visual-line-mode)
+    (add-hook 'markdown-mode-hook 'etl/markdown-config))
 #+end_src
 
 #+begin_src emacs-lisp :eval nil
