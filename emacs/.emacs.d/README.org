@@ -1110,19 +1110,23 @@ Basic setup for Markdown-formatted text.
     (add-hook 'markdown-mode-hook 'etl/markdown-config))
 #+end_src
 
+Another org-mode exporter via pandoc.
+
 #+begin_src emacs-lisp :eval nil
-  ;; Another org-mode exporter via pandoc
   (use-package ox-pandoc
     :ensure t
     :init
     (with-eval-after-load 'org '(require 'ox-pandoc)))
 #+end_src
 
+Create multiple major modes for different langauges
+
+Inspired by
+
+- https://github.com/SteveLane/dot-emacs/blob/master/packages-polymode.el
+- http://johnstantongeddes.org/open%20science/2014/03/26/Rmd-polymode.html
+
 #+begin_src emacs-lisp
-  ;; Create multiple major modes for different langauges
-  ;; Inspired by
-  ;; - https://github.com/SteveLane/dot-emacs/blob/master/packages-polymode.el
-  ;; - http://johnstantongeddes.org/open%20science/2014/03/26/Rmd-polymode.html
   (use-package polymode
     :defer t
     :config
