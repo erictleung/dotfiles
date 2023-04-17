@@ -1297,7 +1297,9 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
   (setq org-agenda-inhibit-startup t) ; Inhibit startup options to speed up agenda
 
   ;; Set up refile targets
-  (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 2)
+                             ("~/Sync/org/someday.org" :maxlevel . 2)
+                             ("~/Sync/org/blogideas.org" :maxlevel . 2)))
   (setq org-outline-path-complete-in-steps nil) ; Refile in a single go
   (setq org-refile-use-outline-path t)          ; Show full paths for refiling
   (setq org-refile-allow-creating-parent-nodes 'confirm) ; New parents on refile
@@ -1470,7 +1472,7 @@ When clocking in tasks, I like how Emacs reminds me of the task in the bottom ri
        (file "~/Sync/org/journal.org")
        (file "~/Sync/org/templates/journal.orgcaptempl")
       )
-      ;; Journaling
+      ;; Weekly Review
       ("r"
        "Weekly Review"
        entry
@@ -1483,6 +1485,20 @@ When clocking in tasks, I like how Emacs reminds me of the task in the bottom ri
        entry
        (file "~/Sync/org/ideas.org")
        (file "~/Sync/org/templates/research.orgcaptempl")
+      )
+      ;; Blog
+      ("b"
+       "Blog idea"
+       entry
+       (file+headline "~/Sync/org/blogideas.org" "Blog Drafts")
+       "** %?\n:PROPERTIES:\n:CREATED:  %U\n:END:"
+      )
+      ;; Someday
+      ("s"
+       "Someday tasks"
+       entry
+       (file+headline "~/Sync/org/someday.org" "Someday")
+       "** %?\n:PROPERTIES:\n:CREATED:  %U\n:END:"
       )
   )))
 #+end_src
