@@ -13,7 +13,7 @@ A repository of my dotfiles and OS-specific configuration details.
   - [Windows](#windows)
   - [Unix](#unix)
   - [Termux](#termux)
-  - [Chromebook Crouton](#chromebook-crouton)
+  - [Chromebook](#chromebook)
 - [Software Specific Setups](#software-specific-setups)
   - [Emacs Info](#emacs-info)
   - [Vim Setup](#vim-setup)
@@ -186,9 +186,15 @@ rm setup.sh
 pip install scikit-learn
 ```
 
-### Chromebook Crouton
+### Chromebook
 
 Not really an operating system, but still distinct from Unix.
+
+For Chromebooks before 2019, install Crouton as noted below. Otherwise,
+Chromebooks after 2019 support Linux (Beta)
+(Source: https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-linux).
+
+**Crouton**
 
 Install
 [Chromium OS Universal Chroot Environment](https://github.com/dnschneid/crouton).
@@ -204,12 +210,19 @@ After downloading the `crouton` script from the above link, run the following:
 sudo crouton -t cli-extra -e       -r bionic
 ```
 
+**Built-in**
+
+Post-2019 Chromebooks, follow these instructions:
+https://support.google.com/chromebook/answer/9145439?hl=en.
+
 Here are some tools that need to be added immediately:
 
 ```shell
 sudo apt-get install build-essential stow git vim make curl nodejs npm \
     syncthing htop tmux
 ```
+
+#### Emacs
 
 Here are some instructions to
 [install Emacs 26.1 on Ubuntu](http://ubuntuhandbook.org/index.php/2019/02/install-gnu-emacs-26-1-ubuntu-18-04-16-04-18-10/):
@@ -221,6 +234,19 @@ sudo apt update
 sudo apt install emacs26
 echo "alias emacs=emacs26" >> .bash_local
 ```
+
+#### Firefox
+
+With an ARM-powered Chromebook, run the following
+
+```
+sudo apt install firefox-esr
+```
+
+This will download a Linux Firefox browser, rather than the more limited Android
+Firefox version.
+
+Source: http://techradar.com/how-to/how-to-install-firefox-on-a-chromebook
 
 
 ## Software Specific Setups
@@ -268,39 +294,6 @@ Reminder that this directory has git configurations that can be done again, but
 the information already exists here to make a consistent configuration across
 computers.
 
-### Conda
-
-Miniconda and the `conda` package manager are used for general Python software
-management.
-
-See https://docs.conda.io/en/latest/miniconda.html for OS-specific
-installations.
-
-See
-https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/
-for using R with Anaconda.
-
-### Ruby
-
-To make sure the Ruby gem path is in the path, run the following to see where
-the gems are being installed.
-
-```shell
-gem environment
-```
-
-Source: https://stackoverflow.com/a/19072136/6873133
-
-This environment can also be manually set as well. (May end up doing this to
-make things more consistent.)
-
-```shell
-export PATH=$PATH:$HOME/.gem/bin
-export GEM_HOME=$HOME/.gem
-export GEM_PATH=$HOME/.gem
-```
-
-Source: https://unix.stackexchange.com/a/210012/265438
 
 ## Useful Software
 
