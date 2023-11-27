@@ -318,6 +318,8 @@ interface with files and be productive.
 - [`sqlfluff`](https://github.com/sqlfluff/sqlfluff) - The SQL Linter for
   humans.
 - [QRcode.show](https://qrcode.show/) - Generate QR code using curl.
+- [ShellCheck](https://github.com/koalaman/shellcheck) - A static analysis
+  tool for shell scripts ([live editor](https://www.shellcheck.net/)).
 
 **Web Tools**
 
