@@ -1734,6 +1734,14 @@ GitHub: https://github.com/bastibe/org-journal
   (add-hook 'org-mode-hook 'auto-fill-mode)
 #+end_src
 
+** Load checklist functionality
+
+http://orgmode.org/worg/org-contrib/org-checklist.html
+
+#+begin_src emacs-lisp
+  (require 'org-checklist)
+#+end_src
+
 * Elfeed
 
 #+begin_src emacs-lisp
