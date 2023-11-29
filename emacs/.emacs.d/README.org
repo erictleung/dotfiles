@@ -1706,9 +1706,11 @@ GitHub: https://github.com/bastibe/org-journal
     :bind ("C-c n j" . org-journal-new-entry)
     :config
     (setq org-journal-dir "~/Sync/org/journal/"
+          org-journal-file-type 'monthly
           org-journal-file-format "%Y-%m-%d.org"
+          org-journal-find-file #'find-file
           org-journal-date-format "%e %b %Y (%A)"
-          org-journal-time-format "%R "))
+          org-journal-time-format ""))
 #+end_src
 
 ** Custom org-mode hooks
