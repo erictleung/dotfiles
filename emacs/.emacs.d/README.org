@@ -1860,10 +1860,11 @@ https://realpython.com/emacs-the-best-python-editor/
     :ensure t
     :init
     (advice-add 'python-mode :before 'elpy-enable))
+#+end_src
 
-  ;; Auto format Python files using PEP8
-  ;; Note, need to install autopep8 first
-  ;; https://pypi.org/project/autopep8/
+Auto format Python files using PEP8. Note, need to install autopep8 first https://pypi.org/project/autopep8/
+
+#+begin_src emacs-lisp
   (use-package py-autopep8
     :ensure t
     :init
@@ -1878,8 +1879,6 @@ https://realpython.com/emacs-the-best-python-editor/
   ;; Set to Python 3
   (if (file-exists-p "~/miniconda/bin/python3")
       (setq python-shell-interpreter "~/miniconda/bin/python3"))
-  (if (file-exists-p "~/miniconda3/bin/python3")
-      (setq python-shell-interpreter "~/miniconda3/bin/python3"))
 
   ;; Disable offset message
   ;; https://emacs.stackexchange.com/a/47366/18898
@@ -1887,6 +1886,24 @@ https://realpython.com/emacs-the-best-python-editor/
 #+end_src
 
 For Jedi, it will require running =M-x jedi:install-server= to work first.
+
+Use Pyenv to help manage and access different Python versions. Here are some notes from another who set this up similarly http://rakan.me/emacs/python-dev-with-emacs-and-pyenv/.
+
+#+begin_src emacs-lisp
+  (use-package pyenv-mode
+    :ensure t
+    :init
+    (add-to-list 'exec-path (if (eq system-type 'windows-nt)
+                                "~/.pyenv/pyenv-win/shims"
+                              "~/.pyenv/shims"))
+    (setenv "WORKON_HOME" (if (eq system-type 'windows-nt)
+                              "~/.pyenv/pyenv-win/versions/"
+                            "~/.pyenv/versions/"))
+    :config
+    (pyenv-mode)
+    :bind
+    ("C-x p e" . pyenv-activate-current-project))
+#+end_src
 
 * macOS configurations
 
