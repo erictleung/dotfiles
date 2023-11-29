@@ -1830,20 +1830,21 @@ http://orgmode.org/worg/org-contrib/org-checklist.html
 Let Emacs do some statistics.
 
 #+begin_src emacs-lisp
-  (use-package ess
+  (use-package ess-smart-underscore
     :ensure t
-    :config
-    (setq ess-style 'RStudio
-          ess-eval-visibly nil  ;; Don't print evaluated commands
-          ess-ask-for-ess-directory nil)  ;; Don't prompt whenever starting
-    (font-lock-add-keywords
-     'ess-r-mode
-     '(("^# .* ---$" 0 'markdown-header-face-1 t)
-       ("^## .* ---$" 0 'markdown-header-face-2 t)
-       ("^### .* ---$" 0 'markdown-header-face-3 t)
-       ("^#### .* ---$" 0 'markdown-header-face-4 t)))
-    (use-package ess-smart-underscore
-      :ensure t))
+    :after ess)
+  (use-package ess
+      :ensure t
+      :config
+      (setq ess-style 'RStudio
+            ess-eval-visibly nil  ;; Don't print evaluated commands
+            ess-ask-for-ess-directory nil)  ;; Don't prompt whenever starting
+      (font-lock-add-keywords
+       'ess-r-mode
+       '(("^# .* ---$" 0 'markdown-header-face-1 t)
+         ("^## .* ---$" 0 'markdown-header-face-2 t)
+         ("^### .* ---$" 0 'markdown-header-face-3 t)
+         ("^#### .* ---$" 0 'markdown-header-face-4 t))))
 #+end_src
 
 * Python
