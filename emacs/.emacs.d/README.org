@@ -51,11 +51,11 @@ Here are settings to allow my configuration to change its behavior based on what
 - diminish :: save display space for minor modes list https://github.com/myrjola/diminish.el
 - dired-ranger :: help with directory management https://github.com/ralesi/ranger.el
 - dump-jump :: https://github.com/jacktasia/dumb-jump
+- el-easydraw :: embedded drawing tools https://github.com/misohena/el-easydraw
 - elfeed-dashboard :: frontend for elfeed https://github.com/Manoj321/elfeed-dashboard
 - elfeed-score :: score elfeed entries https://github.com/sp1ff/elfeed-score
 - EMMS :: play audio and video inside Emacs https://www.gnu.org/software/emms/
 - emacs-calfw :: calendar framework https://github.com/kiwanami/emacs-calfw
-- emacs-easy-jekyll :: major mode for managing Jekyll https://github.com/masasam/emacs-easy-jekyll
 - emacs-jupyter :: https://github.com/dzop/emacs-jupyter
 - ement.el :: https://github.com/alphapapa/ement.el
 - emmet-mode :: web development shortcuts https://github.com/smihica/emmet-mode
