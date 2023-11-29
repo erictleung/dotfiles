@@ -919,23 +919,41 @@ https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_te
                                             "\\|^#\\+[[:upper:]_]+:.*$" ;; org-mode metadata
                                             "\\|^#\\+[[:alnum:]_]+:.*$" ;; org-mode metadata
                                             "\\|^\\#\\+TITLE:"  ;; Title
+                                            "\\|^  -.*$"  ;; Tags
                                             "\\|\\*\\*Date\\*\\*: +[[:alnum:]-]+"  ;; Dates
                                             "\\|\\*\\*Tags\\*\\*: +"  ;; Tags
                                             "\\|\\*\\*Link\\*\\*: .*$"  ;; Link
                                             "\\|#+ *.*$"  ;; Markdown headers
+                                            "\\|---"  ;; End front matter
                                             "\\)")
           deft-extensions '("md" "org" "txt")
           deft-strip-title-regexp (concat "\\(?:"
                                           "^%+" ;; Lines begin with %
+                                          "\\|---" ;; Front matter
                                           "\\|^#\\+TITLE:"  ;; org-mode title
-                                          "\\|^Title:[\t ]*"  ;; MultiMarkdown metadata
-                                          "\\|#+"  ;; Line with just # characters
+                                          "\\|^[Tt]itle:[\t ]"  ;; MultiMarkdown metadata
+                                          "\\|#+$"  ;; Line with just # characters
                                           "\\|# +"  ;; Markdown header
+                                          "\\|## +"  ;; H2 Markdown header
                                           "\\|^[#* ]+"  ;; line begin with #, * and/or space
                                           "\\|\\*\\*[[:alnum:]]+\\*\\*"  ;; bolded terms
                                           "$\\)")
           deft-use-filename-as-title nil)
     (add-hook 'deft-open-file-hook 'deft-filter-clear))
+
+  (defun etl/strip-front-matter (contents)
+    (replace-regexp-in-string "^---\\(?:\n.*\\)*---.*$" "" contents))
+
+  (defun etl/deft-parse-title-wrapper (f file contents)
+    (let ((new-contents (etl/strip-front-matter contents)))
+      (funcall f file new-contents)))
+
+  (defun etl/deft-parse-summary-wrapper (f contents title)
+    (let ((new-contents (etl/strip-front-matter contents)))
+      (funcall f new-contents title)))
+
+  (advice-add 'deft-parse-title :around 'etl/deft-parse-title-wrapper)
+  (advice-add 'deft-parse-summary :around 'etl/deft-parse-summary-wrapper)
 
   (use-package zetteldeft
     :ensure t
