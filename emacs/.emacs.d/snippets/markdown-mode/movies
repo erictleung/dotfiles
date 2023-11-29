@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: movies
+# key: movies
+# --
+| Key             | Value   |
+|-----------------|---------|
+| Duration        | $1      |
+| Personal rating | $2      |
+| Release         | $3      |
+| Watched         | $4      |
