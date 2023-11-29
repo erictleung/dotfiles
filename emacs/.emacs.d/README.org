@@ -1800,6 +1800,9 @@ http://orgmode.org/worg/org-contrib/org-checklist.html
   ;; http://pragmaticemacs.com/emacs/read-your-rss-feeds-in-emacs-with-elfeed/
   (use-package elfeed
     :ensure t
+    :init (add-hook 'dashboard-mode-hook
+              '(lambda ()
+                 (visual-line-mode 0)))
     :bind (("C-x w" . 'elfeed))
     :config
     (setq elfeed-db-directory "~/Sync/org/elfeed/")
