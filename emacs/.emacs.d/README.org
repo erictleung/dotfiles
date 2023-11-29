@@ -1122,15 +1122,6 @@ Interactive understanding of file changes across commits.
     :ensure t)
 #+end_src
 
-See subtle markers for line changes.
-
-#+begin_src emacs-lisp
-  (use-package git-gutter
-    :ensure t
-    :init
-    (global-git-gutter-mode t))
-#+end_src
-
 * Markdown
 
 Basic setup for Markdown-formatted text.
