@@ -2204,9 +2204,17 @@ Reset debugging from the beginning and display how long setup took.
 - =anki-enditor= :: works really well, just felt it easier to maintain directly from Anki because it already has a backup system; if I ever need it or want to help guide someone else https://yiufung.net/post/anki-org/
 - =w3m= :: really cool text-based browser within Emacs, but it required downloading the browser first; trying to rely on built-in browser EWW instead
 - =beacon= :: was useful to keep track of my cursor when switching windows, but this feature is built-in
+- =git-gutter= :: tried it out but I don't code very much in Emacs to use this often
 
 *No interest packages*
 
 - =org-dashboard= :: too much setup to categorize headings to sum up; not to be confused with =emacs-dashboard=
 - =org-bullets= :: not maintained; alternative =org-superstar-mode= not needed as well
 - =rich-minority= :: hiding minor-modes https://github.com/Malabarba/rich-minority, but already have it with =smart-mode-line=
+- =emacs-easy-jekyll= :: wanting to switch away from Jekyll; major mode for managing Jekyll https://github.com/masasam/emacs-easy-jekyll
+
+*Without org-mode*
+
+An interesting blog post talks about creating an =init.org= without actually using org-mode by simply processing an org-mode file manually.
+
+https://endlessparentheses.com/init-org-Without-org-mode.html
