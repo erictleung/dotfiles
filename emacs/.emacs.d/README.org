@@ -1679,11 +1679,14 @@ Rifle through your Org-mode buffers and acquire your target
 
 Run =M-x helm-org-rifle= to get started.
 
+Disabling temporarily until I have time to experiment and incorporate it into my workflow.
+
 Source: https://github.com/alphapapa/org-rifle
 
 #+BEGIN_SRC emacs-lisp
   (use-package helm-org-rifle
-    :disabled
+    ;; :disabled
+    :ensure t
     :bind (("C-c o r" . 'helm-org-rifle))
     :config
     (use-package helm))
