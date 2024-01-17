@@ -13,13 +13,10 @@ A repository of my dotfiles and OS-specific configuration details.
   - [Windows](#windows)
   - [Unix](#unix)
   - [Termux](#termux)
-  - [Chromebook](#chromebook)
 - [Software Specific Setups](#software-specific-setups)
   - [Emacs Info](#emacs-info)
   - [Vim Setup](#vim-setup)
   - [Git Setup](#git-setup)
-  - [Conda](#conda)
-  - [Ruby](#ruby)
 - [Useful Software](#useful-software)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -185,69 +182,6 @@ rm setup.sh
 
 pip install scikit-learn
 ```
-
-### Chromebook
-
-Not really an operating system, but still distinct from Unix.
-
-For Chromebooks before 2019, install Crouton as noted below. Otherwise,
-Chromebooks after 2019 support Linux (Beta)
-(Source: https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-linux).
-
-**Crouton**
-
-Install
-[Chromium OS Universal Chroot Environment](https://github.com/dnschneid/crouton).
-Instructions are pretty well documented at the link.
-
-The default Ubuntu that installs doesn't come with the latest software (e.g.,
-Golang is not up to date). This can cause some issues so be aware.
-
-After downloading the `crouton` script from the above link, run the following:
-
-```shell
-# Install    Just CLI     Encrypt  Get Ubuntu 18.04 LTS
-sudo crouton -t cli-extra -e       -r bionic
-```
-
-**Built-in**
-
-Post-2019 Chromebooks, follow these instructions:
-https://support.google.com/chromebook/answer/9145439?hl=en.
-
-Here are some tools that need to be added immediately:
-
-```shell
-sudo apt-get install build-essential stow git vim make curl nodejs npm \
-    syncthing htop tmux
-```
-
-#### Emacs
-
-Here are some instructions to
-[install Emacs 26.1 on Ubuntu](http://ubuntuhandbook.org/index.php/2019/02/install-gnu-emacs-26-1-ubuntu-18-04-16-04-18-10/):
-
-```shell
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:kelleyk/emacs
-sudo apt update
-sudo apt install emacs26
-echo "alias emacs=emacs26" >> .bash_local
-```
-
-#### Firefox
-
-With an ARM-powered Chromebook, run the following
-
-```
-sudo apt install firefox-esr
-```
-
-This will download a Linux Firefox browser, rather than the more limited Android
-Firefox version.
-
-Source: http://techradar.com/how-to/how-to-install-firefox-on-a-chromebook
-
 
 ## Software Specific Setups
 
