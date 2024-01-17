@@ -9,7 +9,6 @@ call vundle#begin() " initialize vundle
 " Plugins "
 
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
-Plugin 'AutoClose' " autoclose pairs of items
 Plugin 'lervag/vimtex' " modern vim plugin for editing LaTeX files
 Plugin 'mattn/emmet-vim' " easier HTML/CSS editing
 Plugin 'mxw/vim-jsx' "JSX syntax highlight and indenting
