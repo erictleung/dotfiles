@@ -120,16 +120,6 @@ Add hook to see start up time.
 
 More info on [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html][sequence of actions at startup.]]
 
-* Package sources
-
-Basic setup for where to add packages from.
-
-#+begin_src emacs-lisp
-  (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
-#+end_src
-
-Use =M-x package-refresh-contents= to reload list of packages.
-
 * Interface modifications
 
 ** Use better color theme
@@ -900,6 +890,8 @@ See keybindings below for examples of what is possible. To access =deft=, press 
 
 https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_text_100s_of_tags/
 
+On setting =deft-strip-summary-regexp= https://github.com/jrblevin/deft/issues/75
+
 #+begin_src emacs-lisp
   (use-package deft
     :ensure t
@@ -912,33 +904,21 @@ https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_te
           deft-file-naming-rules '((noslash . "-")
                                    (nospace . "-")
                                    (case-fn . downcase))
-          deft-strip-summary-regexp (concat "\\("
-                                            "[\n\t]"  ;; Blank
-                                            "\\|^---$"  ;; Front matter
-                                            "\\|^[[:lower:]]+:.*"  ;; Front matter
-                                            "\\|^#\\+[[:upper:]_]+:.*$" ;; org-mode metadata
-                                            "\\|^#\\+[[:alnum:]_]+:.*$" ;; org-mode metadata
-                                            "\\|^\\#\\+TITLE:"  ;; Title
-                                            "\\|^  -.*$"  ;; Tags
-                                            "\\|\\*\\*Date\\*\\*: +[[:alnum:]-]+"  ;; Dates
-                                            "\\|\\*\\*Tags\\*\\*: +"  ;; Tags
-                                            "\\|\\*\\*Link\\*\\*: .*$"  ;; Link
-                                            "\\|#+ *.*$"  ;; Markdown headers
-                                            "\\|---"  ;; End front matter
-                                            "\\)")
           deft-extensions '("md" "org" "txt")
-          deft-strip-title-regexp (concat "\\(?:"
-                                          "^%+" ;; Lines begin with %
-                                          "\\|---" ;; Front matter
-                                          "\\|^#\\+TITLE:"  ;; org-mode title
-                                          "\\|^[Tt]itle:[\t ]"  ;; MultiMarkdown metadata
-                                          "\\|#+$"  ;; Line with just # characters
-                                          "\\|# +"  ;; Markdown header
-                                          "\\|## +"  ;; H2 Markdown header
-                                          "\\|^[#* ]+"  ;; line begin with #, * and/or space
-                                          "\\|\\*\\*[[:alnum:]]+\\*\\*"  ;; bolded terms
-                                          "$\\)")
-          deft-use-filename-as-title nil)
+          deft-use-filename-as-title 't)
+    (setq deft-strip-title-regexp
+          (concat "\\(?:"
+                  "^%+"
+                  "\\|```"
+                  "$\\)"))
+    (setq deft-strip-summary-regexp
+          (concat "\\("
+                  "^:.+:.*\n" ;; Any line with a :SOMETHING:
+                  "\\|:PROPERTIES:\n\\(.+\n\\)+:END:\n" ;; Org-mode metadata
+                  "\\|```" ;; Verbatim indications
+                  "\\|^|.*|$"  ;; Tables
+                  "\\|^#+.*\n" ;; Anyline starting with a #
+                  "\\)"))
     (add-hook 'deft-open-file-hook 'deft-filter-clear))
 
   (defun etl/strip-front-matter (contents)
@@ -1110,6 +1090,8 @@ This all gets activated using the keybinding =C-x g= while in a git repository.
   (use-package magit
     :ensure t
     :bind (("C-x g" . magit-status))
+    :config
+    (add-to-list 'exec-path "/usr/bin/git")
     :custom
     (git-commit-summary-max-length 50)
     (git-commit-fill-column 72))
@@ -1287,13 +1269,14 @@ Note, =org-plus-contrib= is not a package, but rather, it is a wrapper package
 around other contributed packages. Thus it cannot be loaded using =use-package=
 in the traditional sense. A work around here is to [[https://github.com/jwiegley/use-package/issues/597#issuecomment-352898477][make it a dependency of =org=]].
 
+"IMPORTANT: please install Org from GNU ELPA as Org ELPA will close before Org 9.6" https://emacs.stackexchange.com/q/70081
+
 #+begin_src emacs-lisp
   ;; Additional org functions for checklist handling
   ;; https://orgmode.org/worg/org-contrib/org-checklist.html
   ;; Install org-plus-contrib separately
   (use-package org
-    :ensure org-plus-contrib
-    :pin org
+    :pin gnu
     :bind (("C-c l" . 'org-store-link)
            ("C-c a" . 'org-agenda)
            ("C-c c" . 'org-capture)
@@ -1439,9 +1422,16 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
             (todo "WAITING") ; Review waiting items
             ))))
 
+  ;; Add in additional Org-mode contributed modules
+  (use-package org-contrib)
+
   ;; Org-mode exporters
-  (require 'ox-taskjuggler) ;; Taskjuggler exporter
-  (require 'ox-freemind) ;; Freemind mindmapping
+  ;; (setq org-export-backends (quote (
+  ;;     freemind
+  ;;     md
+  ;;     taskjuggler)))
+  ;; (require 'ox-taskjuggler) ;; Taskjuggler exporter
+  ;; (require 'ox-freemind) ;; Freemind mindmapping
 #+end_src
 
 ** Clocking time display
@@ -1533,18 +1523,6 @@ When clocking in tasks, I like how Emacs reminds me of the task in the bottom ri
        "** %?\n:PROPERTIES:\n:CREATED:  %U\n:END:"
       )
   )))
-#+end_src
-
-** Contact information
-
-Use org-mode for managing contact information https://www.reddit.com/r/emacs/comments/8toivy/tip_how_to_manage_your_contacts_with_orgcontacts/.
-
-#+begin_src emacs-lisp
-  (use-package org-contacts
-    :ensure nil
-    :after org
-    :config
-    (setq org-contacts-file '("~/Sync/org/contacts.org")))
 #+end_src
 
 ** Add effort estimate when clocking in
@@ -1732,14 +1710,9 @@ GitHub: https://github.com/bastibe/org-journal
   ;; Setup org-mode useful hooks
   (add-hook 'org-mode-hook 'flyspell-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
-#+end_src
 
-** Load checklist functionality
-
-http://orgmode.org/worg/org-contrib/org-checklist.html
-
-#+begin_src emacs-lisp
-  (require 'org-checklist)
+  ;; Enable indent mode in org-mode
+  (add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
 
 * Elfeed
@@ -1858,6 +1831,7 @@ https://realpython.com/emacs-the-best-python-editor/
   ;; General environment
   (use-package elpy
     :ensure t
+    :defer t
     :init
     (advice-add 'python-mode :before 'elpy-enable))
 #+end_src
@@ -1868,7 +1842,7 @@ Auto format Python files using PEP8. Note, need to install autopep8 first https:
   (use-package py-autopep8
     :ensure t
     :init
-    (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
+    (add-hook 'elpy-mode-hook 'py-autopep8-mode))
 
   ;; company-mode completion back-end for Python
   ;;(use-package company-jedi
@@ -1900,7 +1874,7 @@ Use Pyenv to help manage and access different Python versions. Here are some not
                               "~/.pyenv/pyenv-win/versions/"
                             "~/.pyenv/versions/"))
     :config
-    (pyenv-mode)
+    (add-to-list 'auto-mode-alist '("\\.py\\'" . pyenv-mode))
     :bind
     ("C-x p e" . pyenv-activate-current-project))
 #+end_src
@@ -1950,129 +1924,6 @@ https://github.com/the-humanities/org-mind-map
     :defer t
     :config
     (setq org-mind-map-engine "dot"))
-#+end_src
-
-* Reference managing
-
-Resources:
-- [[https://github.com/jkitchin/org-ref/blob/master/org-ref.org][org-ref - GitHub]]
-- [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/13/Using-org-ref-for-citations-and-references/][Using org-ref for citations and references (2014)]]
-- [[http://kitchingroup.cheme.cmu.edu/blog/2014/05/15/Using-org-ref-to-keep-your-bibtex-files-in-order/][Using org-ref to keep your bibtex files in order (2014)]]
-
-#+begin_src emacs-lisp
-  ;; Org-mode bibliography reference management
-  (use-package org-ref
-    :ensure t)
-
-  ;; Minor mode to interleave notes and textbooks
-  (use-package interleave
-    :defer t)
-
-  ;; Search and manage bibliographies in Emacs
-  (use-package helm-bibtex
-    :ensure t)
-
-  ;; Setup bibliography workflow for notetaking
-  ;; https://www.reddit.com/r/emacs/comments/4gudyw/d2l16uj/
-  (let ((default-directory "~/Sync/org/references/"))
-    (setq org-ref-notes-directory (expand-file-name "notes")
-          org-ref-bibliography-notes (expand-file-name "articles.org")
-          org-ref-default-bibliography (expand-file-name "articles.bib")
-          org-ref-pdf-directory "~/Sync/zotero/"))
-
-  ;; Setup management of bibliographies
-  (let ((default-directory "~/Sync/org/references/"))
-    (setq helm-bibtex-bibliography (expand-file-name "articles.bib")
-          helm-bibtex-library-path "~/Sync/zotero/"
-          helm-bibtex-notes-path (expand-file-name "articles.org")))
-
-  ;; Setup bibliography path
-  (setq bibtex-completion-bibliography
-        '("~/Sync/org/references/articles.bib"))
-
-  ;; Setup where PDFs can be found
-  (setq bibtex-completion-library-path
-        '("~/Sync/zotero"))
-
-  ;; Setup auto-formatting of citation
-  (setq bibtex-autokey-year-length 4
-        bibtex-autokey-name-year-separator ""
-        bibtex-autokey-year-title-separator ""
-        bibtex-autokey-titleword-separator ""
-        bibtex-autokey-titlewords 3
-        bibtex-autokey-titlewords-stretch 1)
-
-  ;; Add keybindings for org-ref
-  (defun etl/org-ref-hook ()
-    (visual-line-mode)
-    (local-set-key (kbd "C-c r c") 'org-ref-clean-bibtex-entry)
-    (local-set-key (kbd "C-c r l") 'crossref-lookup)
-    (local-set-key (kbd "C-c r a") 'crossref-add-bibtex-entry)
-    (local-set-key (kbd "C-c r o") 'org-ref-open-bibtex-notes))
-  (defun etl/interleave ()
-    (visual-line-mode)
-    (local-set-key (kbd "C-c i m") 'interleave-mode))
-
-  ;; Setup org-ref useful hooks
-  (add-hook 'bibtex-mode-hook 'etl/org-ref-hook)
-  (add-hook 'org-mode-hook 'etl/interleave)
-#+END_SRC
-
-Temporary change because of updates to org-ref that break =org-ref-open-bibtex-notes()=, so below is the [[https://github.com/jkitchin/org-ref/blob/75d83ea014e530591cfdafc591b9b1c44509d035/org-ref-core.el#L2697-L2751][code before the breaking change]].
-
-#+BEGIN_SRC emacs-lisp
-  (defun org-ref-open-bibtex-notes ()
-    "From a bibtex entry, open the notes if they exist.
-  If the notes do not exist, then create a heading.
-  I never did figure out how to use reftex to make this happen
-  non-interactively.  the `reftex-format-citation' function did not
-  work perfectly; there were carriage returns in the strings, and
-  it did not put the key where it needed to be.  so, below I replace
-  the carriage returns and extra spaces with a single space and
-  construct the heading by hand."
-    (interactive)
-
-    (bibtex-beginning-of-entry)
-    (let* ((cb (current-buffer))
-           (bibtex-expand-strings t)
-           (entry (cl-loop for (key . value) in (bibtex-parse-entry t)
-                           collect (cons (downcase key) (s-collapse-whitespace value))))
-           (key (reftex-get-bib-field "=key=" entry)))
-
-      ;; save key to clipboard to make saving pdf later easier by pasting.
-      (with-temp-buffer
-        (insert key)
-        (kill-ring-save (point-min) (point-max)))
-
-      ;; now look for entry in the notes file
-      (save-restriction
-        (if  org-ref-bibliography-notes
-            (find-file-other-window org-ref-bibliography-notes)
-          (error "org-ref-bibliography-notes is not set to anything"))
-
-        (widen)
-        (goto-char (point-min))
-        (let* ((headlines (org-element-map
-                              (org-ref-parse-buffer)
-                              'headline 'identity))
-               (keys (mapcar
-                      (lambda (hl) (org-element-property :CUSTOM_ID hl))
-                      headlines)))
-          ;; put new entry in notes if we don't find it.
-          (if (-contains? keys key)
-              (progn
-                (org-open-link-from-string (format "[[#%s]]" key))
-                (funcall org-ref-open-notes-function))
-            ;; no entry found, so add one
-            (goto-char (point-max))
-            (insert (org-ref-reftex-format-citation
-                     entry (concat "\n" org-ref-note-title-format)))
-            (mapc (lambda (x)
-                    (save-restriction
-                      (save-excursion
-                        (funcall x))))
-                  org-ref-create-notes-hook)
-            (save-buffer))))))
 #+end_src
 
 * Cheat sheets
