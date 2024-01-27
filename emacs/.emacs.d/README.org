@@ -700,64 +700,6 @@ Display emojis in Emacs
     :hook (after-init . global-emojify-mode))
 #+END_SRC
 
-** Dashboard
-
-Will need to run =M-X all-the-icons-install-fonts= before icons will show up properly. In the future, maybe I'll create a hook/conditional to check for these icons being installed so the install will happen only once.
-
-#+BEGIN_SRC emacs-lisp
-  (use-package all-the-icons
-    :ensure t)
-
-  (use-package dashboard
-    :ensure t
-    :after all-the-icons
-    :init
-    (add-hook 'dashboard-mode-hook
-              '(lambda ()
-                 (toggle-truncate-lines 1)))
-    (defun etl/switch-to-dashboard ()
-      (interactive)
-      (switch-to-buffer "*dashboard*"))
-    (defun etl/read-lines (filepath)
-      "Return a list of lines of a file at filepath."
-      ;; http://ergoemacs.org/emacs/elisp_read_file_content.html
-      (with-temp-buffer
-        (insert-file-contents filepath)
-        (split-string (buffer-string) "\n" t)))
-    (defun etl/dashboard-insert-custom (list-size)
-      (insert (all-the-icons-octicon (cdr (assoc 'registers dashboard-heading-icons))
-                                     :height 1.2
-                                     :v-adjust 0.0
-                                     :face 'dashboard-heading)
-              " Habits Checklist:\n")
-      (insert "    Morning:   Stretch, breathe, music, review TODO, write out main tasks\n")
-      (insert "    Afternoon: Walk, stretch, workout, review TODO\n")
-      (insert "    Evening:   Review TODO"))
-    :bind (("C-c o d" . 'etl/switch-to-dashboard)
-           ("C-c o D" . 'dashboard-refresh-buffer))
-    :config
-    (setq dashboard-set-file-icons t
-          dashboard-set-heading-icons t
-          dashboard-startup-banner 'logo
-          dashboard-path-max-length 40
-          dashboard-path-style 'truncate-end
-          dashboard-projects-show-base 'align
-          dashboard-recentf-show-base 'align
-          dashboard-set-init-info t
-          dashboard-set-navigator t
-          dashboard-banner-logo-title "Welcome to Your Dashboard!"
-          dashboard-items '((agenda . 10)
-                            (recents . 5)
-                            (projects . 5))
-          show-week-agenda-p t)
-    (if (file-exists-p "~/Sync/org/documents/quotes.txt")
-        (setq dashboard-footer-messages
-              (etl/read-lines "~/Sync/org/documents/quotes.txt")))
-    (add-to-list 'dashboard-item-generators  '(custom . etl/dashboard-insert-custom))
-    (add-to-list 'dashboard-items '(custom) t)
-    (dashboard-setup-startup-hook))
-#+END_SRC
-
 * Swiper/Ivy/Counsel
 
 These are very similar packages that are found together. Here is a key of which package does what.
