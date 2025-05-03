@@ -291,6 +291,7 @@ interface with files and be productive.
   image utilities for working with PNG graphics files.
 - [sequel fumpt](https://sqlfum.pt/) - Help format SQL with slider width.
 - [ConvertCSV](https://www.convertcsv.com/) - Convert CSV files to others.
+- [Pixelate Image](https://pinetools.com/pixelate-effect-image) - Make pixels of image "bigger"
 
 **Cross-Platform Desktop**
 
