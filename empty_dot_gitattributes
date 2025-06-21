@@ -1,0 +1,7 @@
+# https://stackoverflow.com/a/38017715/6873133
+*.txt text
+*.html text
+*.css text
+*.js text
+*.R text
+*.py text
