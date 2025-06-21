@@ -117,6 +117,8 @@ There is a package manager, [chocolatey](https://chocolatey.org/), that I've
 heard about and have downloaded, but it is less utilized. I will note here on
 using it in the future.
 
+Install [git](https://gitforwindows.org/) here.
+
 ### Unix
 
 [Homebrew](https://brew.sh/) and [Linuxbrew](https://docs.brew.sh/Homebrew-on-Linux)
