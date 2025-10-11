@@ -1,0 +1,2 @@
+# Add locally installed bin files
+export PATH=$PATH:~/bin
