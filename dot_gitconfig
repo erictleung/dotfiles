@@ -1,7 +1,11 @@
-[init]
-	defaultBranch = main
+[core]
+	autocrlf = input
+	editor = vim
+	whitespace = warn
+	# pager = diff-so-fancy | less --tabs=4 -RFX  # Need to automate install
+	attributesfile = .gitattributes
 [user]
-	email = eric@erictleung.com
+	email = 2754821+erictleung@users.noreply.github.com>
 	name = Eric Leung
 [alias]
 	a = add
@@ -37,12 +41,6 @@
 	unstage = reset HEAD
 [color]
 	ui = true
-[core]
-	editor = vim
-	whitespace = warn
-	pager = diff-so-fancy | less --tabs=4 -RFX
-	attributesfile = .gitattributes
-	autocrlf = input
 [help]
 	autocorrect = 1
 [push]

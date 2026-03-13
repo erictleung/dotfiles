@@ -13,13 +13,10 @@ A repository of my dotfiles and OS-specific configuration details.
   - [Windows](#windows)
   - [Unix](#unix)
   - [Termux](#termux)
-  - [Chromebook Crouton](#chromebook-crouton)
 - [Software Specific Setups](#software-specific-setups)
   - [Emacs Info](#emacs-info)
   - [Vim Setup](#vim-setup)
   - [Git Setup](#git-setup)
-  - [Conda](#conda)
-  - [Ruby](#ruby)
 - [Useful Software](#useful-software)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -120,6 +117,8 @@ There is a package manager, [chocolatey](https://chocolatey.org/), that I've
 heard about and have downloaded, but it is less utilized. I will note here on
 using it in the future.
 
+Install [git](https://gitforwindows.org/) here.
+
 ### Unix
 
 [Homebrew](https://brew.sh/) and [Linuxbrew](https://docs.brew.sh/Homebrew-on-Linux)
@@ -186,43 +185,6 @@ rm setup.sh
 pip install scikit-learn
 ```
 
-### Chromebook Crouton
-
-Not really an operating system, but still distinct from Unix.
-
-Install
-[Chromium OS Universal Chroot Environment](https://github.com/dnschneid/crouton).
-Instructions are pretty well documented at the link.
-
-The default Ubuntu that installs doesn't come with the latest software (e.g.,
-Golang is not up to date). This can cause some issues so be aware.
-
-After downloading the `crouton` script from the above link, run the following:
-
-```shell
-# Install    Just CLI     Encrypt  Get Ubuntu 18.04 LTS
-sudo crouton -t cli-extra -e       -r bionic
-```
-
-Here are some tools that need to be added immediately:
-
-```shell
-sudo apt-get install build-essential stow git vim make curl nodejs npm \
-    syncthing htop tmux
-```
-
-Here are some instructions to
-[install Emacs 26.1 on Ubuntu](http://ubuntuhandbook.org/index.php/2019/02/install-gnu-emacs-26-1-ubuntu-18-04-16-04-18-10/):
-
-```shell
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:kelleyk/emacs
-sudo apt update
-sudo apt install emacs26
-echo "alias emacs=emacs26" >> .bash_local
-```
-
-
 ## Software Specific Setups
 
 ### Emacs Info
@@ -268,39 +230,6 @@ Reminder that this directory has git configurations that can be done again, but
 the information already exists here to make a consistent configuration across
 computers.
 
-### Conda
-
-Miniconda and the `conda` package manager are used for general Python software
-management.
-
-See https://docs.conda.io/en/latest/miniconda.html for OS-specific
-installations.
-
-See
-https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/
-for using R with Anaconda.
-
-### Ruby
-
-To make sure the Ruby gem path is in the path, run the following to see where
-the gems are being installed.
-
-```shell
-gem environment
-```
-
-Source: https://stackoverflow.com/a/19072136/6873133
-
-This environment can also be manually set as well. (May end up doing this to
-make things more consistent.)
-
-```shell
-export PATH=$PATH:$HOME/.gem/bin
-export GEM_HOME=$HOME/.gem
-export GEM_PATH=$HOME/.gem
-```
-
-Source: https://unix.stackexchange.com/a/210012/265438
 
 ## Useful Software
 
@@ -364,6 +293,7 @@ interface with files and be productive.
   image utilities for working with PNG graphics files.
 - [sequel fumpt](https://sqlfum.pt/) - Help format SQL with slider width.
 - [ConvertCSV](https://www.convertcsv.com/) - Convert CSV files to others.
+- [Pixelate Image](https://pinetools.com/pixelate-effect-image) - Make pixels of image "bigger"
 
 **Cross-Platform Desktop**
 

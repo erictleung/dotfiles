@@ -13,8 +13,10 @@
 ;; "Speaking as a package maintainer, please do not use MELPA Stable--use
 ;; regular MELPA" (2020)
 ;; https://www.reddit.com/r/emacs/comments/etikbz
+;; https://emacsredux.com/blog/2021/08/02/nongnu-elpa-package-repository/
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
