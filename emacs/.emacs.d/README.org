@@ -931,7 +931,7 @@ https://www.reddit.com/r/emacs/comments/agw3o5/3500_note_files_40_mb_of_plain_te
                                           "^%+" ;; Lines begin with %
                                           "\\|---" ;; Front matter
                                           "\\|^#\\+TITLE:"  ;; org-mode title
-                                          "\\|^[Tt]itle:[\t ]"  ;; MultiMarkdown metadata
+                                          "\\|^[Tt]itle:[\t ]+"  ;; MultiMarkdown metadata
                                           "\\|#+$"  ;; Line with just # characters
                                           "\\|# +"  ;; Markdown header
                                           "\\|## +"  ;; H2 Markdown header
@@ -1707,9 +1707,10 @@ GitHub: https://github.com/bastibe/org-journal
     :config
     (setq org-journal-dir "~/Sync/org/journal/"
           org-journal-file-type 'monthly
-          org-journal-file-format "%Y-%m-%d.org"
+          org-journal-file-format "%Y-%m-%d.md"
           org-journal-find-file #'find-file
           org-journal-date-format "%e %b %Y (%A)"
+          org-journal-file-header "---\ntitle:\ndate:\nlink:\ntags:\n---\n#\n"
           org-journal-time-format ""))
 #+end_src
 
