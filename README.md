@@ -9,6 +9,7 @@ A repository of my dotfiles and OS-specific configuration details.
 - [Motivation](#motivation)
 - [Setup](#setup)
 - [Installation](#installation)
+- [Manual Installation](#manual-installation)
 - [Operating Systems](#operating-systems)
   - [Windows](#windows)
   - [Unix](#unix)
@@ -57,6 +58,16 @@ cd dotfiles
 
 # Install specific configurations
 stow bash # e.g. bash configuration files
+```
+
+## Manual Installation
+
+```bash
+cd dotfiles
+
+for filename in dot_*; do
+    cp "$filename" "~/.${filename}"
+done
 ```
 
 ## Operating Systems
