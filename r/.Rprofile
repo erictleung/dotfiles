@@ -5,7 +5,7 @@
 # Always pull packages from Oregon State University
 local({
     r = getOption("repos")
-    r["CRAN"] = "https://ftp.osuosl.org/pub/cran/"
+    r["CRAN"] = "https://lib.stat.cmu.edu/R/CRAN/"
     options(repos = r)
 })
 
