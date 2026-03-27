@@ -93,6 +93,11 @@ alias t="emacsclient -t"
 # https://stackoverflow.com/a/60394725/6873133
 alias yaml2json="python3 -c 'import yaml, json, sys; print(json.dumps(yaml.safe_load(open(sys.argv[1])), indent=2))'"
 
+# use neovim over vim
+if ! command -v nvim >/dev/null 2>&1; then
+    alias vim=nvim
+fi
+
 # export local exports if found
 if [ -f ~/.aliases.local ]; then
     . ~/.aliases.local
