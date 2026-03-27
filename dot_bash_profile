@@ -11,7 +11,9 @@ purple="\[\033[0;35m\]"
 reset="\[\033[0m\]"
 
 # change command prompt
-source ~/.git-prompt.sh
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh;
+fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 # '\u' adds the name of the current user to the prompt
 # '\$(__git_ps1)' adds git-related stuff
