@@ -70,6 +70,8 @@ for filename in dot_*; do
 done
 ```
 
+Inspired by: https://stackoverflow.com/a/208220/2468369
+
 ## Operating Systems
 
 ### Windows
