@@ -99,6 +99,13 @@ sd () {
 }
 
 
+# Quickly see space left
+spleft () {
+    df -h |\
+        awk '$6 ~ /^\/$/ { print "Space left: " $4 }'
+}
+
+
 # allow typos for cd, tab-completion, and better directory management
 shopt -s audocd 2> /dev/null
 shopt -s dirspell 2> /dev/null

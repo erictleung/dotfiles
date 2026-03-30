@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: keq KaTeX inline
-# key: keq
-# --
-{% katex %}
-$0
-{% endkatex %}

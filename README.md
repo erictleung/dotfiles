@@ -13,6 +13,7 @@ A repository of my dotfiles and OS-specific configuration details.
 - [Operating Systems](#operating-systems)
   - [Windows](#windows)
   - [Unix](#unix)
+  - [macOS](#macos)
   - [Termux](#termux)
 - [Software Specific Setups](#software-specific-setups)
   - [Emacs Info](#emacs-info)
@@ -161,6 +162,55 @@ cd ~
 mkdir texmf
 sudo apt-get install xzdec
 tlmgr init-usertree
+```
+
+### macOS
+
+Leftover from some configurations and have yet to convert to chezmoi.
+
+```bash
+#!/usr/bin/env bash
+
+# Ask for administrator password upfront
+sudo -v
+
+
+# General UI/UX -----
+
+# Keep-alive: updating existing `sudo` time stamp unitl `osx` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exist; done 2>/dev/null &
+
+#Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+# Restart automatically if the computer freezes
+sudo systemsetup -setrestartfreeze on
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+
+# Trackpad, mouse, keyboard, bluetooth, and input -----
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Increase sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+
+# Screen -----
+
+# Save screenshots to the desktop
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
 ```
 
 ### Termux

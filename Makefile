@@ -55,13 +55,6 @@ npmclean :
 pipclean :
 	pip cache purge
 
-## setup : General setup for new environments
-setup :
-	stow vim
-	stow emacs
-	stow git
-	stow bash
-
 ## editors : Speed test editor start-up
 # Source: https://emacs.stackexchange.com/q/39484/18898
 editors :
@@ -100,11 +93,73 @@ vundle :
 
 ## ubuntu : Setup Ubuntu setup
 # Setup new Ubuntu setup such as on crouton Chromebook
-ubuntu : scripts/setup_ubuntu.sh
-	bash scripts/setup_ubuntu.sh
+ubuntu :
+	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get install \
+		htop ncdu dfc \
+		tmux vim emacs w3m \
+		style diction aspell pandoc pandoc-citeproc \
+		tree man-db \
+		libcurl4-openssl-dev libxml2-dev
+
+
+## flatpak : Setup Flatpak
+# Set up Flatpak applications, usually on Chromebook
+flatpak :
+	# https://flathub.org/apps/me.kozec.syncthingtk
+	flatpak install flathub me.kozec.syncthingtk
+
+	# https://flathub.org/apps/com.visualstudio.code
+	flathub install flathub com.visualstudio.code
+
+	# https://flathub.org/apps/org.gimp.GIMP
+	flathub install flathub org.gimp.GIMP
+
+	# https://flathub.org/apps/org.libreoffice.LibreOffice
+	flathub install flathub org.libreoffice.LibreOffice
+
+	# https://flathub.org/apps/md.obsidian.Obsidian
+	flathub install flathub md.obsidian.Obsidian
+
+## homebrew : Setup Homebrew software
+# Install useful Homebrew software
+homebrew :
+	# Basic updates
+	brew update
+	brew upgrade --all
+
+	# Install command-line tools
+	brew install vim --override-system-vi
+	brew install git
+	brew install pandoc
+	brew install pandoc-citeproc
+
+	brew cleanup  # Clean up outdate versions
+
+
+## npm : Setup npm software
+# Install useful npm software
+npm :
+	# Setup by changing folders
+	# https://stackoverflow.com/a/23889603/2468369
+	npm config set prefix ~/.npm
+	export PATH="$PATH:$HOME/.npm/bin"
+
+	# Install npm packages
+	npm install -g \
+		# File diff between pandoc files
+		pandiff \
+
+		# Better diffs in git
+		diff-so-fancy \
+
+		# Generate table of contents for Markdown files
+		doctoc
+
 
 .PHONY : help example conda dirs vundle cclean ssh makessh setup editors emacs \
-	ubuntu npmclean pipclean archclean emacsconfig
+	ubuntu npmclean pipclean archclean emacsconfig flatpak homebrew npm
 
 ## help : Help page for Makefile
 help :
