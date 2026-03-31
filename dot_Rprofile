@@ -15,7 +15,7 @@ options(width = 80)  # Keep things nice and narrow
 options(editor = "vim")  # Default editor
 
 # Don't save workspace when you quit
-q <- function(save = "no", ...) {
+qq <- function(save = "no", ...) {
     quit(save = save, ...)
 }
 
