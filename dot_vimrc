@@ -9,9 +9,7 @@ call vundle#begin() " initialize vundle
 " Plugins "
 
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
-Plugin 'lervag/vimtex' " modern vim plugin for editing LaTeX files
 Plugin 'mattn/emmet-vim' " easier HTML/CSS editing
-Plugin 'mxw/vim-jsx' "JSX syntax highlight and indenting
 Plugin 'pangloss/vim-javascript' " improve JS indentation and syntax
 Plugin 'scrooloose/syntastic' " syntax highlighing
 Plugin 'reedes/vim-wordy' " uncover usage problems in writing
@@ -20,7 +18,6 @@ Plugin 'tpope/vim-fugitive' " Git wrapper
 Plugin 'tpope/vim-repeat' " add Vim repeat convention to other
 Plugin 'tpope/vim-speeddating' " use Ctrl-A/Ctrl-X to increment values
 Plugin 'tpope/vim-surround' " surround objects easier
-Plugin 'kalafut/vim-taskjuggler' " syntax for TaskJuggler
 call vundle#end() " add all plugins before this line
 filetype plugin indent on
 
@@ -36,7 +33,7 @@ set noswapfile " no swap file
 
 " VIM User Interface (UI) "
 
-colorscheme pablo
+colorscheme desert
 set number " display line numbers
 set ruler " set ruler to show where I'm at
 set relativenumber " toggle relative numbering
