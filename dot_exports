@@ -4,6 +4,7 @@ export PATH='/opt/nvim-linux-arm64/bin':$PATH
 export PATH='/home/mirage/.duckdb/cli/latest':$PATH
 export PATH='/home/mirage/bin':$PATH
 export PATH='/usr/local/lib/node_modules':$PATH
+export PATH="$HOME/.local/bin":$PATH
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
