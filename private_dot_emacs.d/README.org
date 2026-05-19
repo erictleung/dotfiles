@@ -111,10 +111,10 @@ Add hook to see start up time.
   (defun etl/display-startup-time ()
     "Calculate and display start up time"
     (message "Emacs loaded in %s with %d garbage collections."
-             (format ("%.2f seconds"
+             (format "%.2f seconds"
                       (float-time
                        (time-subtract after-init-time before-init-time)))
-                     gcs-done)))
+                     gcs-done))
   (add-hook 'emacs-startup-hook #'etl/display-startup-time)
 #+end_src
 
@@ -478,14 +478,6 @@ Similar to the previous tool, but only put it to the end of the substree. This i
     (org-return)
     (org-yank))
   (global-set-key (kbd "C-c C-x n") 'etl/yank-to-end-subtree)
-#+end_src
-
-** Org-mode shortcut to cut and yank finished subtree to closest finished
-
-I like to organize my org-mode headings together by TODO status.
-
-#+begin_src emacs-lisp
-
 #+end_src
 
 ** Delete file and buffer
