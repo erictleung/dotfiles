@@ -31,10 +31,20 @@ Here is my configuration file for Emacs. I've pulled my inspiration for this con
 Here are settings to allow my configuration to change its behavior based on what system you're on.
 
 #+begin_src emacs-lisp
-  (defvar etl/my-laptop-p (equal (system-name) "WX-PF2ESKWK"))
-  (defvar my-server-p (and (equal (system-name) "localhost") (equal user-login-name "eric")))
-  (defvar etl/my-phone-p (not (null (getenv "ANDROID_ROOT")))
+  (defvar is-termux (string-match-p "android" system-configuration)
+    "Check if we are runnning inside Termux on Android.")
+  (setq org-directory
+        (if is-termux
+            "~/storage/shared/Sync/org/"  ;; Common path for shared Android
+          "~/Sync/org"  ;; Typically within Syncthing directory
+          ))
+  (defvar my-server-p
+    (and (equal (system-name) "localhost")
+         (equal user-login-name "eric")))
+  (defvar etl/my-phone-p
+    (not (null (getenv "ANDROID_ROOT")))
     "If non-nill, GNU Emacs is rnuning on Termux")
+
 #+end_src
 
 * Explore packages
@@ -1122,12 +1132,6 @@ Inspired by
     :init
     (global-flycheck-mode t))
 
-  ;; Help define words
-  (use-package define-word
-    :ensure t
-    :bind (("C-c d w" . 'define-word-at-point)
-           ("C-c d W" . 'define-word)))
-
   ;; Completions for academic phrases
   (use-package academic-phrases
     :ensure t
@@ -1157,15 +1161,6 @@ Inspired by
                              "action"
                              "utilize"
                              "leverage") t) "\\b"))))
-
-  ;; Thesaurus
-  (use-package popup)
-  (use-package synosaurus
-    :ensure t
-    :disabled
-    :config
-    (setq synosaurus-choose-method 'popup)
-    (setq synosaurus-backend ""))
 #+end_src
 
 * Internet browsing
