@@ -877,7 +877,8 @@ On setting =deft-strip-summary-regexp= https://github.com/jrblevin/deft/issues/7
     (add-hook 'deft-open-file-hook 'deft-filter-clear))
 
   (defun etl/strip-front-matter (contents)
-    (replace-regexp-in-string "^---\\(?:\n.*\\)*---.*$" "" contents))
+    "Strip YAML front matter from CONTENTS safely using a non-greedy match."
+    (replace-regexp-in-string "\\'---[\n.\n]*?^---.*\n" "" contents))
 
   (defun etl/deft-parse-title-wrapper (f file contents)
     (let ((new-contents (etl/strip-front-matter contents)))
