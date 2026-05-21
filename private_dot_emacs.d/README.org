@@ -1638,7 +1638,7 @@ GitHub: https://github.com/bastibe/org-journal
 #+begin_src emacs-lisp
   ;; Separate fill-column value for org-mode
   ;; source: https://emacs.stackexchange.com/a/29063/
-  (add-hook 'org-mode-hook (lambda () (setq fill-column nil)))
+  (add-hook 'org-mode-hook (lambda () (setq auto-fill-mode -1)))
 
   ;; Hook to change visual view of agenda
   ;; source: https://superuser.com/a/531670/
