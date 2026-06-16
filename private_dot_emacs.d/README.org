@@ -839,42 +839,47 @@ On setting =deft-strip-summary-regexp= https://github.com/jrblevin/deft/issues/7
 #+begin_src emacs-lisp
   (use-package deft
     :ensure t
+    :custom
+    (deft-directory
+     (expand-file-name "notes"
+                       (if (boundp 'org-directory)
+                           org-directory
+                         "~/Sync/org")))
+    (deft-file-limit 75)
+    (deft-text-mode 'org-mode)
+    (deft-default-extension "md")
+    (deft-markdown-mode-title-level 1)
+    (deft-extensions '("md" "org" "txt"))
+    (deft-file-naming-rules '((noslash . "-")
+                              (nospace . "-")
+                              (case-fn . downcase)))
+
+    (deft-strip-title-regexp
+     (concat "\\(?:"
+             "^%+"                          ; Lines beginning with %
+             "\\|---"                       ; Font matter markers
+             "\\|^#\\+TITLE:"               ; Org-mode title metadata
+             "\\|^[Tt]itle:[\t ]+"          ; MultiMarkdown metadata
+             "\\|#+$"                       ; Lines with trailing # characters
+             "\\|^[##* ]+"                  ; Lines starting with Markdown/Org headers/spaces
+             "\\|\\*\\*[[:alnum:]]+\\*\\*"  ; Bolded terms
+             "\\|```"                       ; Code blocks
+             "$\\)"
+             ))
+    ;; Optimized summary stripping regex
+    (deft-strip-summary-regexp
+     (concat "\\("
+             "^:.+:.*\n"                           ; Any line with a :SOMETHING:
+             "\\|:PROPERTIES:\n\\(.+\n\\)+:END:\n" ; Org-mode metadata
+             "\\|```"                              ; Code block fences
+             "\\|```"                              ; Verbatim indications
+             "\\|^#+.*\n"                          ; Any line starting with a # (header
+             "\\|^|.*|$"                           ; Tables
+             "\\|)"
+             ))
+
     :config
-    (setq deft-directory "~/Sync/org/notes"
-          deft-file-limit 75
-          deft-text-mode 'org-mode
-          deft-default-extension "md"
-          deft-markdown-mode-title-level 1
-          deft-file-naming-rules '((noslash . "-")
-                                   (nospace . "-")
-                                   (case-fn . downcase))
-          deft-extensions '("md" "org" "txt")
-          deft-strip-title-regexp (concat "\\(?:"
-                                          "^%+" ;; Lines begin with %
-                                          "\\|---" ;; Front matter
-                                          "\\|^#\\+TITLE:"  ;; org-mode title
-                                          "\\|^[Tt]itle:[\t ]+"  ;; MultiMarkdown metadata
-                                          "\\|#+$"  ;; Line with just # characters
-                                          "\\|# +"  ;; Markdown header
-                                          "\\|## +"  ;; H2 Markdown header
-                                          "\\|^[#* ]+"  ;; line begin with #, * and/or space
-                                          "\\|\\*\\*[[:alnum:]]+\\*\\*"  ;; bolded terms
-                                          "$\\)")
-          deft-use-filename-as-title 't)
-    (setq deft-strip-title-regexp
-          (concat "\\(?:"
-                  "^%+"
-                  "\\|```"
-                  "$\\)"))
-    (setq deft-strip-summary-regexp
-          (concat "\\("
-                  "^:.+:.*\n" ;; Any line with a :SOMETHING:
-                  "\\|:PROPERTIES:\n\\(.+\n\\)+:END:\n" ;; Org-mode metadata
-                  "\\|```" ;; Verbatim indications
-                  "\\|^|.*|$"  ;; Tables
-                  "\\|^#+.*\n" ;; Anyline starting with a #
-                  "\\)"))
-    (add-hook 'deft-open-file-hook 'deft-filter-clear))
+    (add-hook 'deft-open-file-hook #'deft-filter-clear))
 
   (defun etl/strip-front-matter (contents)
     "Strip YAML front matter from CONTENTS safely using a non-greedy match."
@@ -888,8 +893,8 @@ On setting =deft-strip-summary-regexp= https://github.com/jrblevin/deft/issues/7
     (let ((new-contents (etl/strip-front-matter contents)))
       (funcall f new-contents title)))
 
-  (advice-add 'deft-parse-title :around 'etl/deft-parse-title-wrapper)
-  (advice-add 'deft-parse-summary :around 'etl/deft-parse-summary-wrapper)
+  (advice-add 'deft-parse-title :around #'etl/deft-parse-title-wrapper)
+  (advice-add 'deft-parse-summary :around #'etl/deft-parse-summary-wrapper)
 
   (use-package zetteldeft
     :ensure t
@@ -1131,7 +1136,11 @@ Inspired by
   (use-package flycheck
     :ensure t
     :init
-    (global-flycheck-mode t))
+    (global-flycheck-mode t)
+    :config
+    ;; Safely add org-lint to disabled checkers list.
+    ;; Prevent Flycheck from running in the background on every keystroke
+    (add-to-list 'flycheck-disabled-checkers 'org-lint))
 
   ;; Completions for academic phrases
   (use-package academic-phrases
@@ -1218,47 +1227,47 @@ in the traditional sense. A work around here is to [[https://github.com/jwiegley
   ;; Install org-plus-contrib separately
   (use-package org
     :pin gnu
+    :ensure t
     :bind (("C-c l" . 'org-store-link)
            ("C-c a" . 'org-agenda)
            ("C-c c" . 'org-capture)
-           ("C-c b" . 'org-iswitchb)
+           ("C-c b" . 'org-switchb)
            ("C-c t" . 'org-time-stamp-inactive)
            ("<f12>" . 'org-agenda))
+    :custom
+    (org-startup-indented t)
+    (org-startup-folder t)
+    (org-hide-leading-stars t)
+    (org-confirm-babel-evaluate nil)  ;; Remove requirement of configuratmion for eval
+    (org-use-fast-todo-selection t)
+    (org-cycle-separator-lines 0)
+    (org-log-done t)
+    (org-agenda-inhibit-startup t)  ;; Keeps generating the agenda super fast
+
+    ;; File management using expand-file-name with base directory
+    (org-default-notes-file (expand-file-name "inbox.org" org-directory))
+    (org-agenda-files (list (expand-file-name "gtd.org" org-directory)
+                            (expand-file-name "friendships.org" org-directory)
+                            (expand-file-name "reminders.org" org-directory)))
+
+    ;; Refile configuration
+    (org-outline-path-complete-in-steps nil)
+    (org-refile-use-outline-path t)
+    (org-refile-allow-creating-parent-nodes 'confirm)
+
+    (org-refile-targets
+     `((org-agenda-files :maxlevel . 2)
+       (, (expand-file-name "someday.org" org-directory) :maxlevel . 2)
+       (, (expand-file-name "blogideas.org" org-directory) :maxlevel . 2)))
+
+    ;; Custom workflow keywords
+    (org-todo-keywords
+     '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+       (sequence "WAITING(w)" "PROJECT(p)" "MAYBE(m)" "|" "CANCELLED(c)")))
+
     :config
-    (setq org-startup-indented t
-          org-startup-folder t
-          org-hide-leading-stars t
-          ;; Remove requirement of confirmation for evaluating
-          org-confirm-babel-evaluate nil
-          org-use-fast-todo-selection t
-          ;; Remove blank lines between collapsed views
-          org-cycle-separator-lines 0)
-    (setq org-todo-keywords
-          (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-                  (sequence "WAITING(w)"
-                            "PROJECT(p)"
-                            "MAYBE(m)"
-                            "|"
-                            "CANCELLED(c)")))))
-
-  ;; Set up org mode
-  (if (file-directory-p "~/Sync/org")
-      (setq org-directory "~/Sync/org/"
-            org-agenda-files '("~/Sync/org/gtd.org"
-                               "~/Sync/org/friendships.org"
-                               "~/Sync/org/reminders.org"))
-      (setq org-default-notes-file (concat org-directory "inbox.org")))
-  (setq org-log-done t)
-  (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
-  (setq org-agenda-inhibit-startup t) ; Inhibit startup options to speed up agenda
-
-  ;; Set up refile targets
-  (setq org-refile-targets '((org-agenda-files :maxlevel . 2)
-                             ("~/Sync/org/someday.org" :maxlevel . 2)
-                             ("~/Sync/org/blogideas.org" :maxlevel . 2)))
-  (setq org-outline-path-complete-in-steps nil) ; Refile in a single go
-  (setq org-refile-use-outline-path t)          ; Show full paths for refiling
-  (setq org-refile-allow-creating-parent-nodes 'confirm) ; New parents on refile
+    (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+    )
 
   ;; Define tags available
   (setq org-tag-alist
